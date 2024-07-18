@@ -5371,10 +5371,10 @@ body.home .apus-header .sticky-header .vertical-wrapper .content-vertical {
   line-height: inherit;
 }
 .navbar-nav.megamenu .dropdown-menu li > a {
-  background: transparent;
+  background: #fff;
   position: relative;
   font-size: 14px;
-  color: #fff;
+  color: #000;
   padding: 5px 30px;
   width: 100%;
   display: inline-block;
@@ -5383,7 +5383,7 @@ body.home .apus-header .sticky-header .vertical-wrapper .content-vertical {
   transition: all 0.2s ease-in-out 0s;
 }
 .navbar-nav.megamenu .dropdown-menu li > a:hover, .navbar-nav.megamenu .dropdown-menu li > a:active {
-  background: #333041;
+  background: #347bff;
   color: #fff;
 }
 .navbar-nav.megamenu .dropdown-menu li > a .caret {
@@ -8682,7 +8682,7 @@ a.vc_single_image-wrapper:hover:after {
 }
 .apus-vertical-menu > li > a .caret {
   float: right;
-  margin: 18px 0 0;
+  margin: 10px 19px 0px 0px;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
@@ -8707,8 +8707,8 @@ a.vc_single_image-wrapper:hover:after {
 }
 .apus-vertical-menu .dropdown-menu {
   visibility: hidden;
-  padding: 30px;
-  font-size: 14px;
+  padding: 20px;
+  font-size: 16px;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -8751,7 +8751,7 @@ a.vc_single_image-wrapper:hover:after {
   transform: rotate(-90deg);
 }
 .apus-vertical-menu .aligned-left > .dropdown-menu {
-  top: 0;
+  top: -16px;
   left: 100%;
 }
 .apus-vertical-menu .aligned-right > a:hover .caret {
@@ -8764,6 +8764,9 @@ a.vc_single_image-wrapper:hover:after {
   top: 0;
   right: 100%;
   left: inherit;
+}
+.apus-vertical-menu .dropdown-menu > li > a .caret {
+  margin: 12px 20px 0px 0px;
 }
 
 .apus_custom_menu.center {
@@ -11932,7 +11935,7 @@ a.vc_single_image-wrapper:hover:after {
 .widget_apus_vertical_menu .apus-vertical-menu > li > a {
   border-left: 4px solid transparent;
   font-size: 16px;
-  padding: 0 30px;
+  padding: 0 10px 0 30px;
 }
 .rtl .widget_apus_vertical_menu .apus-vertical-menu > li > a {
   border-right: 4px solid transparent;
@@ -14049,7 +14052,7 @@ a.vc_single_image-wrapper:hover:after {
   }
 
   .apus-vertical-menu > li > a .caret {
-    margin-top: 13px;
+    margin: 12px 20px 0px 0px !important;
   }
 
   .shop-list-smallest .content-left {

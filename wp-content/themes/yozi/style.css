@@ -187,7 +187,7 @@ a img.aligncenter {
 }
 .apus-vertical-menu > li  a .caret {
     float: right;
-    margin: 18px 0 0;
+    margin: 18px 20px 0px 0px;
     -webkit-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -216,6 +216,6 @@ rs-module-wrap{
 }
 
 .apus-vertical-menu .aligned-left .dropdown-menu {
-  top: 0;
+  top: -16px;
   left: 100%;
 }
