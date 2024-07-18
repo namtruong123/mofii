@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                                 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                                <div class="col-md-5 p-static">
+                                <div class="col-md-4 p-static">
                                     <div class="main-menu">
                                         <nav data-duration="400" class="hidden-xs hidden-sm apus-megamenu slide animate navbar p-static" role="navigation">
                                         <?php   $args = array(
@@ -79,6 +79,13 @@
                                     </div>
                                 </div>
                                 <?php endif; ?>
+                                <div class="col-md-4">
+                                    <?php if ( yozi_get_config('show_searchform') ): ?>
+                                        <div class="pull-right apus-search-style2">
+                                            <?php get_template_part( 'template-parts/productsearch' ); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                                 <div class="col-md-2">
                                 <div class="header-right pull-right">
                                         <?php if ( defined('YOZI_WOOCOMMERCE_ACTIVED') && yozi_get_config('show_cartbtn') && !yozi_get_config( 'enable_shop_catalog' ) ): ?>
@@ -108,13 +115,6 @@
                                             </div>
                                         <?php } ?>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <?php if ( yozi_get_config('show_searchform') ): ?>
-                                        <div class="pull-right apus-search-style2">
-                                            <?php get_template_part( 'template-parts/productsearch' ); ?>
-                                        </div>
-                                    <?php endif; ?>
                                 </div>
                             </div>   
                         </div> 

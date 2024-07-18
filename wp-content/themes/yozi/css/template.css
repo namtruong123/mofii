@@ -12588,15 +12588,14 @@ a.vc_single_image-wrapper:hover:after {
   float: none !important;
 }
 .apus-search-form form .form-control {
-  font-size: 13px;
+  font-size: 15px;
   border: none;
-  padding-left: 20px;
-  padding-right: 20px;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
+  margin: 0px 115px 0px 0px;
 }
 .apus-search-form form .form-control::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
