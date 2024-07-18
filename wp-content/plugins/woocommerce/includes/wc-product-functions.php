@@ -29,6 +29,7 @@ defined( 'ABSPATH' ) || exit;
  * @return array|stdClass Number of pages and an array of product objects if
  *                             paginate is true, or just an array of values.
  */
+
 function wc_get_products( $args ) {
 	// Handle some BW compatibility arg names where wp_query args differ in naming.
 	$map_legacy = array(
