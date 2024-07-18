@@ -6255,7 +6255,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   margin: 0 0 10px !important;
 }
 .details-product .information .cart div.quantity {
-  margin: 0 0 40px !important;
+  margin: 15px 0 40px !important;
   width: 100%;
 }
 .details-product .information .cart .group_table tr td:first-child div.quantity {
@@ -11228,4 +11228,5 @@ table.woosc_table .add-cart a.added{
 .swatch-item-wrapper{
   display: inline-block;
   vertical-align: middle;
+  margin: 0px 10px 15px 10px;
 }
