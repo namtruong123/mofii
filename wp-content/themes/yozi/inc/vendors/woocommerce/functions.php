@@ -369,7 +369,7 @@ if ( !function_exists('yozi_woocommerce_enqueue_styles') ) {
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
             'ajax_nonce' => wp_create_nonce( "yozi-ajax-nonce" ),
             'enable_search' => (yozi_get_config('enable_autocompleate_search', true) ? '1' : '0'),
-            'template' => apply_filters( 'yozi_autocompleate_search_template', '<a href="{{url}}" class="media autocompleate-media"><div class="media-left media-middle"><img src="{{image}}" class="media-object" height="40" width="40"></div><div class="media-body media-middle"><h4>{{{title}}}</h4><p class="price">{{{price}}}</p></div></a>' ),
+            'template' => apply_filters( 'yozi_autocompleate_search_template', '<a href="{{url}}" class="media autocompleate-media"><div class="media-left media-middle"><img src="{{image}}" class="media-object" height="60" width="60"></div><div class="media-body media-middle"><h4>{{{title}}}</h4><p class="product-sku">SKU: {{{sku}}}</p><p class="price">{{{price}}}</p></div></a>' ),
             'empty_msg' => apply_filters( 'yozi_autocompleate_search_empty_msg', esc_html__( 'Unable to find any products that match the currenty query', 'yozi' ) ),
 
             'success'       => sprintf( '<div class="woocommerce-message">%s <a class="button btn btn-primary btn-inverse wc-forward" href="%s">%s</a></div>', esc_html__( 'Products was successfully added to your cart.', 'yozi' ), $cart_url, esc_html__( 'View Cart', 'yozi' ) ),

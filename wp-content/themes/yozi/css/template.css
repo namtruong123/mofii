@@ -12679,14 +12679,26 @@ a.vc_single_image-wrapper:hover:after {
   background: #eceff6;
 }
 .apus-search-form .tt-menu h4 {
-  font-size: 14px;
-  margin: 0;
+  font-size: 15px;
+  margin: 0px 5px 2px 0px;
   color: #232530;
   font-weight: 400;
 }
 .apus-search-form .tt-menu h4 strong {
   font-weight: 700;
   color: #e23e1d;
+}
+.apus-search-form .tt-menu .product-sku {
+  font-size: 14px; /* Kích thước chữ của SKU giống h4 */
+  margin: 0; /* Khoảng cách ngoài giống h4 */
+  color: #232530; /* Màu chữ giống h4 */
+  font-weight: 400; /* Trọng số chữ giống h4 */
+}
+
+/* Định dạng strong trong product-sku nếu có */
+.apus-search-form .tt-menu .product-sku strong {
+  font-weight: 700; /* Trọng số chữ giống strong trong h4 */
+  color: #e23e1d; /* Màu chữ giống strong trong h4 */
 }
 .apus-search-form .tt-menu .price {
   display: none;

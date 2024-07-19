@@ -32,7 +32,7 @@ if ( !function_exists( 'yozi_autocomplete_suggestions' ) ) {
 
         global $post;
         foreach ($posts as $post): setup_postdata($post);
-            
+            $product = new WC_Product( get_the_ID() );
             $suggestion = array();
             $suggestion['title'] = esc_html($post->post_title);
             $suggestion['url'] = get_permalink($post);
@@ -43,9 +43,10 @@ if ( !function_exists( 'yozi_autocomplete_suggestions' ) ) {
                 $suggestion['image'] = '';
             }
 
-            $product = new WC_Product( get_the_ID() );
+            
             $suggestion['price'] = $product->get_price_html();
             $suggestion['id'] = $post->ID;
+            $suggestion['sku'] = $product->get_sku();
 
             $suggestions[] = $suggestion;
         endforeach;
