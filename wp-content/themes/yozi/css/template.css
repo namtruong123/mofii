@@ -5390,6 +5390,7 @@ body.home .apus-header .sticky-header .vertical-wrapper .content-vertical {
   position: absolute;
   top: 15px;
   right: 15px;
+  
 }
 .rtl .navbar-nav.megamenu .dropdown-menu li > a .caret {
   left: 15px;
