@@ -9131,6 +9131,7 @@ a.vc_single_image-wrapper:hover:after {
   margin: 0;
   padding: 10px 0;
   font-size: 16px;
+  font-family: "Roboto";
   font-weight: 400;
   color: #4c4c4c;
   background: transparent !important;
@@ -9142,8 +9143,8 @@ a.vc_single_image-wrapper:hover:after {
 }
 .nav-tabs.hierarchy > li.active > a {
   color: #191919;
-  font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-weight: 700;
+  font-family: "Roboto";
 }
 
 .nav-tabs.style_center {
