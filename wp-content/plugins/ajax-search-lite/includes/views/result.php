@@ -27,59 +27,62 @@ defined('ABSPATH') or die("You can't access this file directly.");
 ?>
 <div class='item<?php echo apply_filters('asl_result_css_class', $asl_res_css_class, $r->id, $r); ?>'>
 
-    <?php do_action('asl_res_vertical_begin_item'); ?>
+<?php do_action('asl_res_vertical_begin_item'); ?>
 
-    <div class='asl_content'>
+<div class='asl_content'>
 
+    <?php if (!empty($r->image)): ?>
 
-        <?php if (!empty($r->image)): ?>
+        <?php do_action('asl_res_vertical_before_image'); ?>
 
-            <?php do_action('asl_res_vertical_before_image'); ?>
+        <img class='asl_image' loading='lazy' src='<?php echo $r->image; ?>'>
 
-            <img class='asl_image' loading='lazy' src='<?php echo $r->image; ?>'>
+        <?php do_action('asl_res_vertical_after_image'); ?>
 
-            <?php do_action('asl_res_vertical_after_image'); ?>
+    <?php endif; ?>
 
-        <?php endif; ?>
+    <h3><a class="asl_res_url" href='<?php echo $r->link; ?>'<?php echo ($s_options['results_click_blank'])?" target='_blank'":""; ?>>
+            <?php echo $r->title; ?>
+            <?php if ($s_options['resultareaclickable'] == 1): ?>
+                <span class='overlap'></span>
+            <?php endif; ?>
+        </a></h3>
 
+    <?php if ( !empty($r->date) || !empty($r->author) ): ?>
 
+        <div class='etc'>
 
-        <h3><a class="asl_res_url" href='<?php echo $r->link; ?>'<?php echo ($s_options['results_click_blank'])?" target='_blank'":""; ?>>
-                <?php echo $r->title; ?>
-                <?php if ($s_options['resultareaclickable'] == 1): ?>
-                    <span class='overlap'></span>
-                <?php endif; ?>
-            </a></h3>
+            <?php if ( $s_options['showauthor'] == 1 && !empty($r->author) ): ?>
+                <span class='asl_author'><?php echo $r->author; ?></span>
+            <?php endif; ?>
 
+            <?php if ( $s_options['showdate'] == 1 && !empty($r->date) ): ?>
+                <span class='asl_date'><?php echo $r->date; ?></span>
+            <?php endif; ?>
 
-        <?php if ( !empty($r->date) || !empty($r->author) ): ?>
+        </div>
 
-            <div class='etc'>
+    <?php endif; ?>
 
-                <?php if ( $s_options['showauthor'] == 1 && !empty($r->author) ): ?>
-                    <span class='asl_author'><?php echo $r->author; ?></span>
-                <?php endif; ?>
+    <?php if ($s_options['showdescription'] == 1): ?>
+        <p class="asl_desc">
+        <?php echo $r->content; ?>
+        </p>
+    <?php endif; ?>
 
-                <?php if ( $s_options['showdate'] == 1 && !empty($r->date) ): ?>
-                    <span class='asl_date'><?php echo $r->date; ?></span>
-                <?php endif; ?>
+    <?php 
+    // Thêm mã để hiển thị SKU
+    $sku = get_post_meta($r->id, '_sku', true);
+    if ($sku): ?>
+        <div class='asl_sku'>SKU: <?php echo esc_html($sku); ?></div>
+    <?php endif; ?>
 
-            </div>
+</div>
 
-        <?php endif; ?>
+<?php do_action('asl_res_vertical_after_content'); ?>
 
-        <?php if ($s_options['showdescription'] == 1): ?>
-            <p class="asl_desc">
-            <?php echo $r->content; ?>
-            </p>
-        <?php endif; ?>
+<div class='clear'></div>
 
-    </div>
-
-    <?php do_action('asl_res_vertical_after_content'); ?>
-
-    <div class='clear'></div>
-
-    <?php do_action('asl_res_vertical_end_item'); ?>
+<?php do_action('asl_res_vertical_end_item'); ?>
 
 </div>
