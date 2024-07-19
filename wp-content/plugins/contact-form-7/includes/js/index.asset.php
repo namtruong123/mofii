@@ -1,6 +1,6 @@
 <?php
 
 return array(
-	'dependencies' => array( 'wp-i18n' ),
+	'dependencies' => array(),
 	'version' => WPCF7_VERSION,
 );
