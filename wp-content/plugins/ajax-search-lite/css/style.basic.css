@@ -513,7 +513,7 @@ div.asl_r.vertical .results .item:last-child:after {
 div.asl_r .results .item .asl_image {
     overflow: hidden;
     background: transparent;
-    margin: 2px 8px 0 0;
+    margin: 2px 12px 0 0;
     padding: 0;
     float: left;
     background-position: center;
@@ -536,7 +536,7 @@ div.asl_r .results .item .asl_content {
 div.asl_r .results .item .asl_content h3 {
     margin: 0;
     padding: 0;
-    display: inline;
+    /* display: inline; */
     line-height: inherit;
 }
 
