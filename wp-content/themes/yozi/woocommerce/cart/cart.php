@@ -59,10 +59,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<thead>
 				<tr>
 					<th class="product-thumbnail"><?php esc_html_e( 'Image', 'yozi' ); ?></th>
-					<th class="product-name"><?php esc_html_e( 'Product Name', 'yozi' ); ?></th>
-					<th class="product-price"><?php esc_html_e( 'Price', 'yozi' ); ?></th>
-					<th class="product-quantity"><?php esc_html_e( 'Quantity', 'yozi' ); ?></th>
-					<th class="product-subtotal"><?php esc_html_e( 'Total', 'yozi' ); ?></th>
+					<th class="product-name"><?php esc_html_e( 'Tên sản phẩm', 'yozi' ); ?></th>
+					<th class="product-price"><?php esc_html_e( 'Giá', 'yozi' ); ?></th>
+					<th class="product-quantity"><?php esc_html_e( 'Số lương', 'yozi' ); ?></th>
+					<th class="product-subtotal"><?php esc_html_e( 'Tổng', 'yozi' ); ?></th>
 					<th class="product-remove"><span class="remove"><i class="fa-times fa"></i></span></th>
 				</tr>
 			</thead>
