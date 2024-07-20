@@ -9108,8 +9108,8 @@ a.vc_single_image-wrapper:hover:after {
 }
 .tab-product.nav-tabs > li.active > a {
   color: #191919;
-  font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-weight: 800;
+  font-family: "Roboto";
 }
 .tab-product.nav-tabs > li.active > a:before {
   width: 100%;
@@ -9139,12 +9139,12 @@ a.vc_single_image-wrapper:hover:after {
   position: relative;
 }
 .nav-tabs.hierarchy > li:hover > a {
-  color: #191919;
+  color: #347bff;
 }
 .nav-tabs.hierarchy > li.active > a {
-  color: #191919;
-  font-weight: 400;
-  font-family: "Rubik-Medium";
+  color:red;
+  font-weight: 800;
+  font-family: "Roboto";
 }
 
 .nav-tabs.style_center {
