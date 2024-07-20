@@ -29,7 +29,7 @@ $product_id = $product->get_id();
 			    <?php if (yozi_get_config('show_quickview', true)) { ?>
 	                <div class="quick-view">
 	                    <a href="#" class="btn btn-dark btn-block radius-3x quickview" data-product_id="<?php echo esc_attr($product_id); ?>" data-toggle="modal" data-target="#apus-quickview-modal">	
-	                       <span><?php esc_html_e('Quick view','yozi'); ?></span>
+	                       <span><?php esc_html_e('Xem Nhanh','yozi'); ?></span>
 	                    </a>
 	                </div>
 	            <?php } ?> 
