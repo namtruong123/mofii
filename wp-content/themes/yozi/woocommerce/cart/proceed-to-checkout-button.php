@@ -23,5 +23,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <a href="<?php echo esc_url( wc_get_checkout_url() ) ;?>" class="btn btn-primary btn-outline btn-block alt wc-forward">
-	<?php echo esc_html__( 'Proceed to Checkout', 'yozi' ); ?>
+	<?php echo esc_html__( 'Tiếp tục thanh toán', 'yozi' ); ?>
 </a>

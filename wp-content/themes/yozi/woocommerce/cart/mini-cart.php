@@ -63,7 +63,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 								        sprintf(
 								            '<a href="%s" class="remove" title="%s"> <i class="ion-android-close"></i> </a>',
 								            esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-								            esc_html__( 'Remove this item', 'yozi' )
+								            esc_html__( 'Xóa sản phẩm', 'yozi' )
 								        ),
 								        $cart_item_key
 								    );
