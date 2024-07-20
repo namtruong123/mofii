@@ -11980,12 +11980,22 @@ a.vc_single_image-wrapper:hover:after {
 }
 .widget-categorybanner .title {
   color: #4c4c4c;
-  font-size: 15px;
-  margin: 0;
-  font-weight: 400;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.5; /* Đặt khoảng cách giữa các dòng */
+    height: 3em; /* Chiều cao tương ứng với 2 dòng văn bản (1.5 * 2 = 3em) */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá */
+    display: -webkit-box; /* Đối với trình duyệt Webkit (Chrome, Safari) */
+    -webkit-line-clamp: 2; /* Giới hạn số dòng hiển thị */
+    -webkit-box-orient: vertical; /* Hướng hiển thị của box */
+    text-align: center; /* Căn giữa chữ theo chiều ngang */
+    display: flex; /* Sử dụng flexbox */
+    justify-content: center; /* Căn giữa chữ theo chiều ngang */
+    align-items: center; /* Căn giữa chữ theo chiều dọc */
 }
 .widget-categorybanner .category-wrapper {
-  padding: 25px 20px;
+  padding: 10px 15px 0px 15px;
   text-align: center;
   background: #f0f2f9;
 }
