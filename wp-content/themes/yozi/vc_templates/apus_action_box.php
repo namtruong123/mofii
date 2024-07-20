@@ -23,7 +23,7 @@ if ( !empty($img) && isset($img[0]) ) $style = 'style="background:url('.esc_url_
             	<?php if(!empty($text_button)){ ?>
                 	<?php echo trim( $text_button ); ?>
                 <?php }else{ ?>
-                	<?php echo esc_html__('ORDER NOW','yozi') ?>
+                	<?php echo esc_html__('Mua ngay','yozi') ?>
                 <?php } ?>
             </a>
             <?php endif; ?>
@@ -54,7 +54,7 @@ if ( !empty($img) && isset($img[0]) ) $style = 'style="background:url('.esc_url_
                     <?php if(!empty($text_button)){ ?>
                         <?php echo trim( $text_button ); ?>
                     <?php }else{ ?>
-                        <?php echo esc_html__('ORDER NOW','yozi') ?>
+                        <?php echo esc_html__('Mua ngay','yozi') ?>
                     <?php } ?>
                 </a>
                 <?php endif; ?>
