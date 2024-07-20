@@ -4601,24 +4601,53 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   content: '';
 }
 
-.woocommerce div.product p.price, .woocommerce div.product span.price {
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
   color: #e23e1d;
   font-size: 16px;
   font-weight: 400;
   font-family: "Rubik-Medium";
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  align-items: flex-start; /* Căn trái theo chiều ngang */
+  height: 3em; /* Chiều cao tương ứng với 2 dòng văn bản */
+  line-height: 1.5; /* Đặt khoảng cách giữa các dòng */
+  overflow: hidden; /* Ẩn phần văn bản vượt quá */
+  text-align: left; /* Căn trái theo chiều ngang */
 }
-.woocommerce div.product p.price del, .woocommerce div.product span.price del {
+
+.woocommerce div.product p.price del,
+.woocommerce div.product span.price del {
   font-size: 14px;
   color: #b7b7b7;
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
-.woocommerce div.product p.price ins, .woocommerce div.product span.price ins {
+
+.woocommerce div.product p.price ins,
+.woocommerce div.product span.price ins {
   font-weight: 400;
   font-family: "Rubik-Medium";
 }
 
-.woocommerce div.product p.price del, .woocommerce div.product span.price del {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.woocommerce div.product span.price {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  align-items: flex-start; /* Căn trái theo chiều ngang */
+  height: 3em; /* Chiều cao tương ứng với 2 dòng văn bản (1.5 * 2) */
+  line-height: 1.5; /* Đặt khoảng cách giữa các dòng */
+  overflow: hidden; /* Ẩn phần văn bản vượt quá */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Giới hạn số dòng hiển thị */
+  white-space: normal; /* Đảm bảo văn bản ngắt dòng đúng cách */
+  text-overflow: ellipsis; /* Hiển thị dấu ... nếu vượt quá */
+  text-align: left; /* Căn trái theo chiều ngang */
 }
 
 .variations label {
@@ -5675,7 +5704,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 
 .shop-list-small {
   border: 1px solid #ebebeb;
-  padding: 20px;
+  padding: 15px;
   margin-bottom: 30px;
   -webkit-transition: all 0.2s ease-in-out 0s;
   -o-transition: all 0.2s ease-in-out 0s;
@@ -5683,7 +5712,8 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 }
 .shop-list-small .content-left {
   width: 140px;
-  padding-right: 20px;
+  padding-top: 15px;
+  padding-right: 10px;
   float: left;
 }
 .rtl .shop-list-small .content-left {
@@ -5698,6 +5728,14 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 }
 .shop-list-small .name {
   margin: 0 0 2px;
+  line-height: 1.5; /* Đặt khoảng cách giữa các dòng */
+    height: 3em; /* Chiều cao tương ứng với 2 dòng văn bản (1.5 * 2 = 3em) */
+    overflow: hidden; /* Ẩn phần văn bản vượt quá */
+    display: -webkit-box; /* Đối với trình duyệt Webkit (Chrome, Safari) */
+    -webkit-line-clamp: 2; /* Giới hạn số dòng hiển thị */
+    -webkit-box-orient: vertical; /* Hướng hiển thị của box */
+    text-overflow: ellipsis; /* Hiển thị dấu ... nếu văn bản vượt quá */
+    white-space: normal; /* Đảm bảo văn bản ngắt dòng đúng cách */
 }
 .shop-list-small .product-cats {
   margin: 0 0 10px;
