@@ -39,7 +39,7 @@ class WC_Product_Grouped extends WC_Product {
 	 * @return string
 	 */
 	public function add_to_cart_text() {
-		return apply_filters( 'woocommerce_product_add_to_cart_text', __( 'View products', 'woocommerce' ), $this );
+		return apply_filters( 'woocommerce_product_add_to_cart_text', __( 'Xem sản phẩm', 'woocommerce' ), $this );
 	}
 
 	/**
@@ -50,7 +50,7 @@ class WC_Product_Grouped extends WC_Product {
 	 */
 	public function add_to_cart_description() {
 		/* translators: %s: Product title */
-		return apply_filters( 'woocommerce_product_add_to_cart_description', sprintf( __( 'View products in the &ldquo;%s&rdquo; group', 'woocommerce' ), $this->get_name() ), $this );
+		return apply_filters( 'woocommerce_product_add_to_cart_description', sprintf( __( 'Xem sản phẩm trong nhóm', 'woocommerce' ), $this->get_name() ), $this );
 	}
 
 	/**
