@@ -17,10 +17,10 @@ $description = get_user_meta( $vendor_id, 'pv_shop_description', true );
 <div class="woocommerce-tabs">
 	<ul class="tab-product nav nav-tabs">
 		<?php if ($description != '') { ?>
-			<li class="active"><a data-toggle="tab" href="#tabs-list-about"><?php esc_html_e( 'About Shop', 'yozi' ); ?></a></li>
+			<li class="active"><a data-toggle="tab" href="#tabs-list-about"><?php esc_html_e( 'Về Mofii', 'yozi' ); ?></a></li>
 		<?php } ?>
 		<?php if (!$vendor_rating_page) { ?>
-			<li><a data-toggle="tab" href="#tabs-list-review"><?php esc_html_e( 'Review', 'yozi' ); ?></a></li>
+			<li><a data-toggle="tab" href="#tabs-list-review"><?php esc_html_e( 'Đánh giá', 'yozi' ); ?></a></li>
 		<?php } ?>
 		
 

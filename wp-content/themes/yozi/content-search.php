@@ -25,6 +25,6 @@
         <?php if (has_excerpt()) { ?>
             <div class="description"><?php the_excerpt(); ?></div>
         <?php } ?>
-        <a class="btn btn-theme" href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'yozi'); ?> <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+        <a class="btn btn-theme" href="<?php the_permalink(); ?>"><?php esc_html_e('Đọc tiếp', 'yozi'); ?> <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
     </div>
 </article>

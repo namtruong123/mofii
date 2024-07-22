@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', esc_html__( 'Product Description', 'yozi' ) ) );
+$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', esc_html__( 'Thông số sản phẩm', 'yozi' ) ) );
 
 ?>
 <h3 class="title"><?php echo trim($heading); ?></h3>

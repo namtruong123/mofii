@@ -190,7 +190,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
                     <?php if( $show_stock_status ) : ?>
                         <td class="product-stock-status">
-                            <?php echo $stock_status == 'out-of-stock' ? '<span class="wishlist-out-of-stock">' . apply_filters( 'yith_wcwl_out_of_stock_label', __( 'Out of stock', 'yozi' ) ) . '</span>' : '<span class="wishlist-in-stock">' . apply_filters( 'yith_wcwl_in_stock_label', __( 'In Stock', 'yozi' ) ) . '</span>'; ?>
+                            <?php echo $stock_status == 'out-of-stock' ? '<span class="wishlist-out-of-stock">' . apply_filters( 'yith_wcwl_out_of_stock_label', __( 'Hết hàng', 'yozi' ) ) . '</span>' : '<span class="wishlist-in-stock">' . apply_filters( 'yith_wcwl_in_stock_label', __( 'In Stock', 'yozi' ) ) . '</span>'; ?>
                         </td>
                     <?php endif ?>
 

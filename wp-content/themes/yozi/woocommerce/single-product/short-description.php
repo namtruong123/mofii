@@ -32,6 +32,6 @@ $layout = yozi_get_config('product_single_version', 'v1');
 	    <?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ); ?>
 	</div>
 	<?php if ( $layout == 'v2' ) { ?>
-		<a href="javascript:void(0);" class="view-more-desc view-more"><span><?php esc_html_e('View More', 'yozi'); ?></span> <i class="fa fa-angle-double-right"></i></a>
+		<a href="javascript:void(0);" class="view-more-desc view-more"><span><?php esc_html_e('Xem thêm', 'yozi'); ?></span> <i class="fa fa-angle-double-right"></i></a>
 	<?php } ?>
 </div>

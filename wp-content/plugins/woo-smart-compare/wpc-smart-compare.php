@@ -318,8 +318,8 @@ if ( ! function_exists( 'woosc_init' ) ) {
 							'remove_all'         => self::localization( 'bar_remove_all_confirmation', esc_html__( 'Do you want to remove all products from the compare?', 'woo-smart-compare' ) ),
 							'limit_notice'       => self::localization( 'limit', esc_html__( 'You can add a maximum of {limit} products to the comparison table.', 'woo-smart-compare' ) ),
 							'copied_text'        => self::localization( 'share_copied', /* translators: link */ esc_html__( 'Share link %s was copied to clipboard!', 'woo-smart-compare' ) ),
-							'button_text'        => apply_filters( 'woosc_button_text', self::localization( 'button', esc_html__( 'Compare', 'woo-smart-compare' ) ) ),
-							'button_text_added'  => apply_filters( 'woosc_button_text_added', self::localization( 'button_added', esc_html__( 'Compare', 'woo-smart-compare' ) ) ),
+							'button_text'        => apply_filters( 'woosc_button_text', self::localization( 'button', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ),
+							'button_text_added'  => apply_filters( 'woosc_button_text_added', self::localization( 'button_added', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ),
 							'button_normal_icon' => apply_filters( 'woosc_button_normal_icon', self::get_setting( 'button_normal_icon', 'woosc-icon-1' ) ),
 							'button_added_icon'  => apply_filters( 'woosc_button_added_icon', self::get_setting( 'button_added_icon', 'woosc-icon-74' ) ),
 						] )
@@ -2332,7 +2332,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 						$class = 'woosc-btn woosc-btn-' . esc_attr( $attrs['id'] ) . ' ' . self::get_setting( 'button_class' );
 
 						// button text
-						$text = self::localization( 'button', esc_html__( 'Compare', 'woo-smart-compare' ) );
+						$text = self::localization( 'button', esc_html__( 'So sánh', 'woo-smart-compare' ) );
 
 						if ( ( $button_icon = self::get_setting( 'button_icon', 'no' ) ) !== 'no' ) {
 							$class .= ' woosc-btn-has-icon';
@@ -2527,14 +2527,14 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                         <div class="woosc-bar-btn-icon-inner"><span></span><span></span><span></span>
                                         </div>
                                     </div>
-									<?php echo apply_filters( 'woosc_bar_btn_text', self::localization( 'bar_button', esc_html__( 'Compare', 'woo-smart-compare' ) ) ); ?>
+									<?php echo apply_filters( 'woosc_bar_btn_text', self::localization( 'bar_button', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ); ?>
                                 </div>
                             </div>
 
 							<?php if ( self::get_setting( 'button_action', 'show_table' ) === 'show_sidebar' || self::get_setting( 'menu_action', 'open_popup' ) === 'open_sidebar' || self::get_setting( 'open_button_action', 'open_popup' ) === 'open_sidebar' ) { ?>
                                 <div class="<?php echo esc_attr( 'woosc-sidebar woosc-sidebar-position-' . self::get_setting( 'sidebar_position', 'right' ) ); ?>">
                                     <div class="woosc-sidebar-top">
-                                        <span class="woosc-sidebar-heading"><?php echo self::localization( 'sidebar_heading', esc_html__( 'Compare', 'woo-smart-compare' ) ); ?></span>
+                                        <span class="woosc-sidebar-heading"><?php echo self::localization( 'sidebar_heading', esc_html__( 'So sánh', 'woo-smart-compare' ) ); ?></span>
                                         <span class="woosc-sidebar-count"></span>
                                         <span class="woosc-sidebar-close hint--left" role="button" aria-label="<?php echo esc_attr( self::localization( 'sidebar_close', esc_html__( 'Close', 'woo-smart-compare' ) ) ); ?>"> &times; </span>
                                     </div>
@@ -2616,7 +2616,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					}
 
 					if ( $selected ) {
-						$menu_item = '<li class="' . apply_filters( 'woosc_menu_item_class', 'menu-item woosc-menu-item menu-item-type-woosc' ) . '"><a href="' . self::get_page_url() . '"><span class="woosc-menu-item-inner" data-count="' . self::get_count() . '">' . apply_filters( 'woosc_menu_item_label', self::localization( 'menu', esc_html__( 'Compare', 'woo-smart-compare' ) ) ) . '</span></a></li>';
+						$menu_item = '<li class="' . apply_filters( 'woosc_menu_item_class', 'menu-item woosc-menu-item menu-item-type-woosc' ) . '"><a href="' . self::get_page_url() . '"><span class="woosc-menu-item-inner" data-count="' . self::get_count() . '">' . apply_filters( 'woosc_menu_item_label', self::localization( 'menu', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ) . '</span></a></li>';
 						$items     .= apply_filters( 'woosc_menu_item', $menu_item );
 					}
 
@@ -2632,7 +2632,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					}
 
 					if ( ! isset( $items['compare'] ) ) {
-						$items['compare'] = apply_filters( 'woosc_myaccount_compare_label', esc_html__( 'Compare', 'woo-smart-compare' ) );
+						$items['compare'] = apply_filters( 'woosc_myaccount_compare_label', esc_html__( 'So sánh', 'woo-smart-compare' ) );
 					}
 
 					if ( $logout ) {
