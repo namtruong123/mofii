@@ -14,10 +14,10 @@
 
         <?php if( !is_user_logged_in() ){ ?>
             <li>
-                <a class="login" href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="<?php esc_html_e('Sign in','yozi'); ?>"><?php esc_html_e('Login', 'yozi'); ?></a>
+                <a class="login" href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="<?php esc_html_e('Đăng nhập','yozi'); ?>"><?php esc_html_e('Đăng nhập', 'yozi'); ?></a>
             </li>
             <li>
-                <a class="register" href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="<?php esc_html_e('Register','yozi'); ?>"><?php esc_html_e('Register', 'yozi'); ?></a>
+                <a class="register" href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="<?php esc_html_e('Đăng ký','yozi'); ?>"><?php esc_html_e('Đăng ký', 'yozi'); ?></a>
             </li>
         <?php } else { ?>
             <?php if ( has_nav_menu( 'top-menu' ) ): ?>

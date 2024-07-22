@@ -7778,12 +7778,13 @@ ul.tabs:before {
   color: #e23e1d;
 }
 .product-categories li.current-cat-parent > a, .product-categories li.current-cat > a, .product-categories li:hover > a {
+  font-weight: 700;
   color: #e23e1d;
 }
 .product-categories li .count {
-  font-family: "Rubik", Helvetica, Arial, sans-serif;
+  font-family: "Roboto";
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 600;
   display: inline-block;
   float: right;
   margin-top: 3px;
@@ -9743,7 +9744,7 @@ table.wcv-table tr {
 .woocommerce ul.product_list_widget .product-title a {
   font-weight: 700;
   font-family: "Roboto";
-  color: #e23e1d;
+  color: #000;
 }
 .woocommerce ul.product_list_widget .woocommerce-Price-amount {
   font-size: 16px;
