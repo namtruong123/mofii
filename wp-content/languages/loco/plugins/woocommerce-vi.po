@@ -1,21 +1,21 @@
 # Copyright (C) 2024 Automattic
 # This file is distributed under the same license as the WooCommerce plugin.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCommerce 9.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: \n"
+"Language-Team: Tiếng Việt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-07-24 16:03+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-07-24 16:06+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Loco-Version: 2.6.11; wp-6.6"
 
 #. no need to translate it. It's a link.
 #: src/Admin/Features/LaunchYourStore.php:187
@@ -172,7 +172,6 @@ msgid_plural ""
 "%1$d errors found: %2$s when re-migrating orders. Please review the errors "
 "above."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %1$d is number of errors and %2$s is the formatted array of order IDs.
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:446
@@ -181,7 +180,6 @@ msgstr[1] ""
 msgid "%1$d error found: %2$s. Please review the error above."
 msgid_plural "%1$d errors found: %2$s. Please review the errors above."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %1$d is the number of migrated orders and %2$d is the execution time in seconds.
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:262
@@ -189,7 +187,6 @@ msgstr[1] ""
 msgid "%1$d order was synced in %2$d seconds."
 msgid_plural "%1$d orders were synced in %2$d seconds."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %1$d is the number of migrated orders and %2$d is time taken.
 #. %1$d is the number of migrated orders and %2$d is the execution time in seconds.
@@ -199,7 +196,6 @@ msgstr[1] ""
 msgid "%1$d order was verified in %2$d seconds."
 msgid_plural "%1$d orders were verified in %2$d seconds."
 msgstr[0] ""
-msgstr[1] ""
 
 #. 1: number representing a rating
 #: src/Internal/Admin/ProductReviews/ReviewsListTable.php:1225
@@ -388,7 +384,6 @@ msgstr ""
 msgid "%1$s for %2$s item"
 msgid_plural "%1$s for %2$s items"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %1$s: product name. %2$s product permalink
 #: includes/class-wc-cart-session.php:193
@@ -437,7 +432,6 @@ msgstr ""
 msgid "%1$s log file from source %2$s was deleted."
 msgid_plural "%1$s log files from source %2$s were deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. 1: total refunds 2: total refunded orders 3: refunded items
 #: includes/admin/reports/class-wc-report-sales-by-date.php:542
@@ -445,7 +439,6 @@ msgstr[1] ""
 msgid "%1$s refunded %2$d order (%3$d item)"
 msgid_plural "%1$s refunded %2$d orders (%3$d items)"
 msgstr[0] ""
-msgstr[1] ""
 
 #. Placeholders are class and method names
 #: src/StoreApi/Schemas/V1/BillingAddressSchema.php:145
@@ -460,7 +453,6 @@ msgstr ""
 msgid "%1$s review for %2$s"
 msgid_plural "%1$s reviews for %2$s"
 msgstr[0] ""
-msgstr[1] ""
 
 #. 1: total items sold 2: category name
 #: includes/admin/reports/class-wc-report-sales-by-category.php:100
@@ -587,49 +579,42 @@ msgstr ""
 msgid "%d action deleted."
 msgid_plural "%d actions deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: count
 #: includes/admin/class-wc-admin-api-keys.php:188
 msgid "%d API key permanently revoked."
 msgid_plural "%d API keys permanently revoked."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: count
 #: src/Internal/ProductDownloads/ApprovedDirectories/Admin/UI.php:403
 msgid "%d approved directory URL deleted."
 msgid_plural "%d approved directory URLs deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: count
 #: src/Internal/ProductDownloads/ApprovedDirectories/Admin/UI.php:419
 msgid "%d approved directory URL disabled."
 msgid_plural "%d approved directory URLs disabled."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: count
 #: src/Internal/ProductDownloads/ApprovedDirectories/Admin/UI.php:411
 msgid "%d approved directory URL enabled."
 msgid_plural "%d approved directory URLs enabled."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d refers to the total number of batches executed
 #: packages/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:169
 msgid "%d batch executed."
 msgid_plural "%d batches executed."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d refers to the total number of batches processed
 #: packages/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Clean_Command.php:88
 msgid "%d batch processed."
 msgid_plural "%d batches processed."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d is an order ID.
 #: src/Internal/DataStores/Orders/LegacyDataHandler.php:170
@@ -655,7 +640,6 @@ msgid_plural ""
 "%d items from your previous order are currently unavailable and could not be "
 "added to your cart."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d is number of items in stock for product
 #: src/Blocks/BlockTypes/ProductStockIndicator.php:58
@@ -677,14 +661,12 @@ msgstr ""
 msgid "%d product"
 msgid_plural "%d products"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d refers to the total number of tasks completed
 #: packages/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:205
 msgid "%d scheduled task completed."
 msgid_plural "%d scheduled tasks completed."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: amount of expired transients
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-tools-v2-controller.php:461
@@ -696,21 +678,18 @@ msgstr ""
 msgid "%d URL could not be updated."
 msgid_plural "%d URLs could not be updated."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d variation count.
 #: includes/admin/wc-admin-functions.php:532
 msgid "%d variation does not have a price."
 msgid_plural "%d variations do not have prices."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: count
 #: includes/admin/class-wc-admin-webhooks.php:249
 msgid "%d webhook permanently deleted."
 msgid_plural "%d webhooks permanently deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/class-wc-admin-assets.php:311
 msgid "%qty% variations"
@@ -769,7 +748,6 @@ msgstr ""
 msgid "%s and %d other region"
 msgid_plural "%s and %d other regions"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: Number of reviews.
 #: src/Internal/Admin/ProductReviews/ReviewsListTable.php:1451
@@ -777,7 +755,6 @@ msgstr[1] ""
 msgid "%s approved review"
 msgid_plural "%s approved reviews"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product names.
 #: src/StoreApi/Utilities/CartController.php:354
@@ -853,7 +830,6 @@ msgstr ""
 msgid "%s coupon moved to the Trash."
 msgid_plural "%s coupons moved to the Trash."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: coupon count
 #: includes/admin/class-wc-admin-post-types.php:247
@@ -861,7 +837,6 @@ msgstr[1] ""
 msgid "%s coupon not updated, somebody is editing it."
 msgid_plural "%s coupons not updated, somebody is editing them."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: coupon count
 #: includes/admin/class-wc-admin-post-types.php:249
@@ -869,7 +844,6 @@ msgstr[1] ""
 msgid "%s coupon permanently deleted."
 msgid_plural "%s coupons permanently deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: coupon count
 #: includes/admin/class-wc-admin-post-types.php:253
@@ -877,7 +851,6 @@ msgstr[1] ""
 msgid "%s coupon restored from the Trash."
 msgid_plural "%s coupons restored from the Trash."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: coupon count
 #: includes/admin/class-wc-admin-post-types.php:245
@@ -885,7 +858,6 @@ msgstr[1] ""
 msgid "%s coupon updated."
 msgid_plural "%s coupons updated."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: coupons amount
 #: includes/admin/reports/class-wc-report-coupon-usage.php:119
@@ -898,7 +870,6 @@ msgstr ""
 msgid "%s customer review"
 msgid_plural "%s customer reviews"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s order type name.
 #: src/Internal/Admin/Orders/Edit.php:78
@@ -914,7 +885,6 @@ msgstr ""
 msgid "%s day"
 msgid_plural "%s days"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: discount amount
 #: includes/admin/meta-boxes/views/html-order-item.php:108
@@ -940,7 +910,6 @@ msgstr ""
 msgid "%s download remaining"
 msgid_plural "%s downloads remaining"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is a number of log files.
 #: src/Internal/Admin/Logging/LogHandlerFileV2.php:283
@@ -948,7 +917,6 @@ msgstr[1] ""
 msgid "%s expired log file was deleted."
 msgid_plural "%s expired log files were deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: function name.
 #: includes/admin/views/html-admin-page-status-report.php:405
@@ -975,7 +943,6 @@ msgstr ""
 msgid "%s has been added to your cart."
 msgid_plural "%s have been added to your cart."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product name
 #: includes/class-wc-cart-session.php:178
@@ -997,7 +964,6 @@ msgstr ""
 msgid "%s hour"
 msgid_plural "%s hours"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product number.
 #: src/Blocks/BlockTypes/ProductButton.php:83
@@ -1019,7 +985,6 @@ msgstr ""
 msgid "%s is a required field"
 msgid_plural "%s are required fields"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: field name
 #. %s: Field name.
@@ -1035,7 +1000,6 @@ msgstr ""
 msgid "%s is an internal meta key. Use --props to set it."
 msgid_plural "%s are internal meta keys. Use --props to set them."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: parent theme latest version
 #: includes/admin/views/html-admin-page-status-report.php:975
@@ -1062,7 +1026,6 @@ msgstr ""
 msgid "%s is not a valid order property."
 msgid_plural "%s are not valid order properties."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is the name of an order type.
 #: src/Internal/Admin/Orders/PageController.php:523
@@ -1122,7 +1085,6 @@ msgstr ""
 msgid "%s item"
 msgid_plural "%s items"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: number
 #: includes/admin/settings/views/html-settings-tax.php:115
@@ -1142,7 +1104,6 @@ msgstr ""
 msgid "%s log file deleted."
 msgid_plural "%s log files deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: amount of time
 #: packages/action-scheduler/classes/ActionScheduler_ListTable.php:169
@@ -1150,7 +1111,6 @@ msgstr[1] ""
 msgid "%s minute"
 msgid_plural "%s minutes"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: amount of time
 #: packages/action-scheduler/classes/ActionScheduler_ListTable.php:149
@@ -1158,7 +1118,6 @@ msgstr[1] ""
 msgid "%s month"
 msgid_plural "%s months"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is the name of a function.
 #: src/Internal/Admin/Orders/PageController.php:508
@@ -1204,7 +1163,6 @@ msgstr ""
 msgid "%s order moved to the Trash."
 msgid_plural "%s orders moved to the Trash."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: order count
 #: includes/admin/class-wc-admin-post-types.php:234
@@ -1212,7 +1170,6 @@ msgstr[1] ""
 msgid "%s order not updated, somebody is editing it."
 msgid_plural "%s orders not updated, somebody is editing them."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: order count
 #. %s: orders count
@@ -1222,7 +1179,6 @@ msgstr[1] ""
 msgid "%s order permanently deleted."
 msgid_plural "%s orders permanently deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: order count
 #. %s: orders count
@@ -1232,7 +1188,6 @@ msgstr[1] ""
 msgid "%s order restored from the Trash."
 msgid_plural "%s orders restored from the Trash."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: orders count
 #. %s: orders count
@@ -1242,7 +1197,6 @@ msgstr[1] ""
 msgid "%s order status changed."
 msgid_plural "%s order statuses changed."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: order count
 #: includes/admin/class-wc-admin-post-types.php:232
@@ -1250,7 +1204,6 @@ msgstr[1] ""
 msgid "%s order updated."
 msgid_plural "%s orders updated."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: total orders
 #: includes/admin/reports/class-wc-report-sales-by-date.php:523
@@ -1276,7 +1229,6 @@ msgstr ""
 msgid "%s pending review"
 msgid_plural "%s pending reviews"
 msgstr[0] ""
-msgstr[1] ""
 
 #. single or plural number of orders
 #: includes/admin/reports/class-wc-report-customer-list.php:56
@@ -1284,7 +1236,6 @@ msgstr[1] ""
 msgid "%s previous order linked"
 msgid_plural "%s previous orders linked"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product count
 #: includes/widgets/class-wc-widget-product-tag-cloud.php:91
@@ -1293,7 +1244,6 @@ msgstr[1] ""
 msgid "%s product"
 msgid_plural "%s products"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: products count
 #: includes/admin/importers/views/html-csv-import-done.php:20
@@ -1301,7 +1251,6 @@ msgstr[1] ""
 msgid "%s product imported"
 msgid_plural "%s products imported"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product count
 #: includes/admin/class-wc-admin-post-types.php:225
@@ -1309,7 +1258,6 @@ msgstr[1] ""
 msgid "%s product moved to the Trash."
 msgid_plural "%s products moved to the Trash."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product count
 #: includes/admin/class-wc-admin-post-types.php:221
@@ -1317,7 +1265,6 @@ msgstr[1] ""
 msgid "%s product not updated, somebody is editing it."
 msgid_plural "%s products not updated, somebody is editing them."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product count
 #: includes/admin/class-wc-admin-post-types.php:223
@@ -1325,7 +1272,6 @@ msgstr[1] ""
 msgid "%s product permanently deleted."
 msgid_plural "%s products permanently deleted."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product count
 #: includes/admin/class-wc-admin-post-types.php:227
@@ -1333,7 +1279,6 @@ msgstr[1] ""
 msgid "%s product restored from the Trash."
 msgid_plural "%s products restored from the Trash."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: products count
 #: includes/admin/importers/views/html-csv-import-done.php:28
@@ -1341,7 +1286,6 @@ msgstr[1] ""
 msgid "%s product updated"
 msgid_plural "%s products updated"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product count
 #: includes/admin/class-wc-admin-post-types.php:219
@@ -1349,7 +1293,6 @@ msgstr[1] ""
 msgid "%s product updated."
 msgid_plural "%s products updated."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d: products count
 #: includes/admin/importers/views/html-csv-import-done.php:44
@@ -1357,7 +1300,6 @@ msgstr[1] ""
 msgid "%s product was skipped"
 msgid_plural "%s products were skipped"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: total items purchased
 #: includes/admin/reports/class-wc-report-sales-by-product.php:128
@@ -1390,7 +1332,6 @@ msgstr ""
 msgid "%s Review"
 msgid_plural "%s Reviews"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: Number of reviews.
 #: src/Internal/Admin/ProductReviews/ReviewsListTable.php:1445
@@ -1398,7 +1339,6 @@ msgstr[1] ""
 msgid "%s review"
 msgid_plural "%s reviews"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is an integer higher than 0 (1, 2, 3...)
 #: src/Internal/Admin/ProductReviews/Reviews.php:425
@@ -1406,7 +1346,6 @@ msgstr[1] ""
 msgid "%s review approved"
 msgid_plural "%s reviews approved"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: Number of reviews.
 #: src/Internal/Admin/ProductReviews/Reviews.php:367
@@ -1414,7 +1353,6 @@ msgstr[1] ""
 msgid "%s Review in moderation"
 msgid_plural "%s Reviews in moderation"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is an integer higher than 0 (1, 2, 3...)
 #: src/Internal/Admin/ProductReviews/Reviews.php:436
@@ -1422,7 +1360,6 @@ msgstr[1] ""
 msgid "%s review marked as spam."
 msgid_plural "%s reviews marked as spam."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is an integer higher than 0 (1, 2, 3...)
 #: src/Internal/Admin/ProductReviews/Reviews.php:447
@@ -1430,7 +1367,6 @@ msgstr[1] ""
 msgid "%s review moved to the Trash."
 msgid_plural "%s reviews moved to the Trash."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is an integer higher than 0 (1, 2, 3...)
 #: src/Internal/Admin/ProductReviews/Reviews.php:457
@@ -1438,7 +1374,6 @@ msgstr[1] ""
 msgid "%s review permanently deleted"
 msgid_plural "%s reviews permanently deleted"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is an integer higher than 0 (1, 2, 3...)
 #: src/Internal/Admin/ProductReviews/Reviews.php:441
@@ -1446,7 +1381,6 @@ msgstr[1] ""
 msgid "%s review restored from the spam"
 msgid_plural "%s reviews restored from the spam"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is an integer higher than 0 (1, 2, 3...)
 #: src/Internal/Admin/ProductReviews/Reviews.php:452
@@ -1454,7 +1388,6 @@ msgstr[1] ""
 msgid "%s review restored from the Trash"
 msgid_plural "%s reviews restored from the Trash"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is an integer higher than 0 (1, 2, 3...)
 #: src/Internal/Admin/ProductReviews/Reviews.php:430
@@ -1462,7 +1395,6 @@ msgstr[1] ""
 msgid "%s review unapproved"
 msgid_plural "%s reviews unapproved"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: total items sold
 #: includes/admin/reports/class-wc-report-sales-by-product.php:121
@@ -1476,7 +1408,6 @@ msgstr ""
 msgid "%s second"
 msgid_plural "%s seconds"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: signups amount
 #: includes/admin/reports/class-wc-report-customers.php:44
@@ -1515,7 +1446,6 @@ msgstr ""
 msgid "%s variations imported"
 msgid_plural "%s variations imported"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: amount of time
 #: packages/action-scheduler/classes/ActionScheduler_ListTable.php:154
@@ -1523,7 +1453,6 @@ msgstr[1] ""
 msgid "%s week"
 msgid_plural "%s weeks"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: total coupons
 #: includes/admin/reports/class-wc-report-sales-by-date.php:562
@@ -1544,7 +1473,6 @@ msgstr ""
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s function name.
 #: packages/action-scheduler/classes/abstracts/ActionScheduler.php:226
@@ -1604,7 +1532,6 @@ msgstr ""
 msgid "(%s customer review)"
 msgid_plural "(%s customer reviews)"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/wc-formatting-functions.php:1272
 msgid "(can be backordered)"
@@ -1763,7 +1690,6 @@ msgstr ""
 msgid "<strong>%s order</strong> awaiting processing"
 msgid_plural "<strong>%s orders</strong> awaiting processing"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: order count
 #: includes/admin/class-wc-admin-dashboard.php:253
@@ -1771,7 +1697,6 @@ msgstr[1] ""
 msgid "<strong>%s order</strong> on-hold"
 msgid_plural "<strong>%s orders</strong> on-hold"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: order count
 #: includes/admin/class-wc-admin-dashboard.php:351
@@ -1779,7 +1704,6 @@ msgstr[1] ""
 msgid "<strong>%s product</strong> low in stock"
 msgid_plural "<strong>%s products</strong> low in stock"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: order count
 #: includes/admin/class-wc-admin-dashboard.php:362
@@ -1787,7 +1711,6 @@ msgstr[1] ""
 msgid "<strong>%s product</strong> out of stock"
 msgid_plural "<strong>%s products</strong> out of stock"
 msgstr[0] ""
-msgstr[1] ""
 
 #. 1) is the number of affected actions, 2) is a link to an admin screen.
 #: packages/action-scheduler/classes/ActionScheduler_AdminView.php:196
@@ -1803,7 +1726,6 @@ msgid_plural ""
 "org/faq/#my-site-has-past-due-actions-what-can-i-do\" target=\"_blank\">Read "
 "documentation &raquo;</a>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: version number
 #: includes/admin/plugin-updates/class-wc-plugin-updates.php:115
@@ -1845,7 +1767,6 @@ msgstr ""
 msgid "[%1$s] %2$s: %3$s WooCommerce log message"
 msgid_plural "[%1$s] %2$s: %3$s WooCommerce log messages"
 msgstr[0] ""
-msgstr[1] ""
 
 #. Payment gateway enabled notification email subject. %s1: Site title, $s2: Gateway title.
 #: includes/class-wc-payment-gateways.php:256
@@ -2579,7 +2500,6 @@ msgstr ""
 msgid "Add %1$s and %2$d more product to my store"
 msgid_plural "Add %1$s and %2$d more products to my store"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %1$s: a purchaseable product name
 #: src/Admin/Features/OnboardingTasks/Tasks/Purchase.php:93
@@ -2985,7 +2905,6 @@ msgstr ""
 msgid "Address"
 msgid_plural "Addresses"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Blocks/Domain/Services/CheckoutFields.php:156
 msgid "Address (optional)"
@@ -4225,7 +4144,6 @@ msgctxt "Approved product download directory views"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is the count of disabled directory list entries.
 #: src/Internal/ProductDownloads/ApprovedDirectories/Admin/Table.php:110
@@ -4234,7 +4152,6 @@ msgctxt "Approved product download directory views"
 msgid "Disabled <span class=\"count\">(%s)</span>"
 msgid_plural "Disabled <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s is the count of enabled approved directory list entries.
 #: src/Internal/ProductDownloads/ApprovedDirectories/Admin/Table.php:96
@@ -4243,7 +4160,6 @@ msgctxt "Approved product download directory views"
 msgid "Enabled <span class=\"count\">(%s)</span>"
 msgid_plural "Enabled <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Internal/ProductDownloads/ApprovedDirectories/Synchronize.php:219
 msgctxt "Approved product download URLs migration"
@@ -7668,7 +7584,6 @@ msgstr ""
 msgid "Cancelled <span class=\"count\">(%s)</span>"
 msgid_plural "Cancelled <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/emails/class-wc-email-cancelled-order.php:31
 msgid "Cancelled order"
@@ -8041,7 +7956,6 @@ msgstr ""
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
-msgstr[1] ""
 
 #: i18n/states.php:351
 msgid "Cauca"
@@ -8800,14 +8714,12 @@ msgstr ""
 msgid "Cleanup completed for %d order."
 msgid_plural "Cleanup completed for %d orders."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d is the number of orders that were cleaned up.
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:1001
 msgid "Cleanup completed for %d order. Review errors above."
 msgid_plural "Cleanup completed for %d orders. Review errors above."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %d is an order ID.
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:971
@@ -9111,7 +9023,6 @@ msgstr ""
 msgid "Completed <span class=\"count\">(%s)</span>"
 msgid_plural "Completed <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/emails/class-wc-email-customer-completed-order.php:32
 msgid "Completed order"
@@ -12249,7 +12160,6 @@ msgstr ""
 msgid "Downloaded %s time"
 msgid_plural "Downloaded %s times"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/class-wc-query.php:143 includes/wc-account-functions.php:101
 #: src/Admin/ReportCSVEmail.php:57 templates/emails/email-downloads.php:22
@@ -12288,7 +12198,6 @@ msgstr ""
 msgid "Drafts <span class=\"count\">(%s)</span>"
 msgid_plural "Drafts <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:15
 msgid ""
@@ -13939,7 +13848,6 @@ msgstr ""
 msgid "Failed <span class=\"count\">(%s)</span>"
 msgid_plural "Failed <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/emails/class-wc-email-failed-order.php:31
 msgid "Failed order"
@@ -14023,7 +13931,6 @@ msgstr ""
 msgid "Failed to import %s product"
 msgid_plural "Failed to import %s products"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/integrations/maxmind-geolocation/class-wc-integration-maxmind-geolocation.php:172
 msgid ""
@@ -14714,7 +14621,6 @@ msgstr ""
 msgid "Found %d scheduled task"
 msgid_plural "Found %d scheduled tasks"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/class-wc-admin-help.php:64
 #: includes/admin/class-wc-admin-help.php:66
@@ -15933,7 +15839,6 @@ msgctxt "held stock note"
 msgid "- ...and %d more item."
 msgid_plural "- ... and %d more items."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %1$s is a time in minutes, %2$s is a list of products and quantities.
 #: src/Checkout/Helpers/ReserveStock.php:160
@@ -17271,7 +17176,6 @@ msgstr ""
 msgid "In-Progress <span class=\"count\">(%s)</span>"
 msgid_plural "In-Progress <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/helper/class-wc-helper.php:386
 #: includes/admin/helper/views/html-main.php:153
@@ -22126,7 +22030,6 @@ msgid_plural ""
 "Maximum simultaneous queues already in progress (%s queues). No additional "
 "queues will begin processing until the current queues are complete."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: maximum upload size
 #: includes/admin/importers/class-wc-tax-rate-importer.php:312
@@ -22504,7 +22407,6 @@ msgstr ""
 msgid "Migrating %d action"
 msgid_plural "Migrating %d actions"
 msgstr[0] ""
-msgstr[1] ""
 
 #: i18n/states.php:492
 msgid "Mila"
@@ -22611,7 +22513,6 @@ msgstr ""
 msgid "Missing OAuth parameter %s"
 msgid_plural "Missing OAuth parameters %s"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: parameter
 #: includes/class-wc-auth.php:172
@@ -24442,7 +24343,6 @@ msgid_plural ""
 "Note: You currently have <a href=\"%1$s\">%2$d paid extensions</a> which "
 "should be updated first before updating WooCommerce."
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/class-wc-privacy.php:95
 msgid ""
@@ -24916,7 +24816,6 @@ msgstr ""
 msgid "On hold <span class=\"count\">(%s)</span>"
 msgid_plural "On hold <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Admin/API/OnboardingTasks.php:534
 msgid "On Sale"
@@ -26902,7 +26801,6 @@ msgstr ""
 msgid "Pending payment <span class=\"count\">(%s)</span>"
 msgid_plural "Pending payment <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: i18n/states.php:2121
 msgid "Pennsylvania"
@@ -27936,7 +27834,6 @@ msgctxt "posts"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: tag name
 #: includes/class-wc-breadcrumb.php:283
@@ -28194,7 +28091,6 @@ msgstr ""
 msgid "Processing <span class=\"count\">(%s)</span>"
 msgid_plural "Processing <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/emails/class-wc-email-customer-processing-order.php:33
 msgid "Processing order"
@@ -28659,7 +28555,6 @@ msgctxt "product reviews"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: Number of reviews.
 #: src/Internal/Admin/ProductReviews/ReviewsListTable.php:767
@@ -28668,7 +28563,6 @@ msgctxt "product reviews"
 msgid "Approved <span class=\"count\">(%s)</span>"
 msgid_plural "Approved <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: Number of reviews.
 #: src/Internal/Admin/ProductReviews/ReviewsListTable.php:760
@@ -28677,7 +28571,6 @@ msgctxt "product reviews"
 msgid "Pending <span class=\"count\">(%s)</span>"
 msgid_plural "Pending <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: Number of reviews.
 #: src/Internal/Admin/ProductReviews/ReviewsListTable.php:774
@@ -28686,7 +28579,6 @@ msgctxt "product reviews"
 msgid "Spam <span class=\"count\">(%s)</span>"
 msgid_plural "Spam <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: Number of reviews.
 #: src/Internal/Admin/ProductReviews/ReviewsListTable.php:781
@@ -28695,7 +28587,6 @@ msgctxt "product reviews"
 msgid "Trash <span class=\"count\">(%s)</span>"
 msgid_plural "Trash <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Internal/Admin/ProductReviews/ReviewsCommentsOverrides.php:79
 msgid "Product reviews can now be managed from Products > Reviews."
@@ -29649,7 +29540,6 @@ msgstr ""
 msgid "Refunded <span class=\"count\">(%s)</span>"
 msgid_plural "Refunded <span class=\"count\">(%s)</span>"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/emails/class-wc-email-customer-refunded-order.php:46
 msgid "Refunded order"
@@ -29911,7 +29801,6 @@ msgstr ""
 msgid "Removed personal data from %s order."
 msgid_plural "Removed personal data from %s orders."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s Order number.
 #: includes/class-wc-privacy-erasers.php:143
@@ -30566,7 +30455,6 @@ msgstr ""
 msgid "Running %d action"
 msgid_plural "Running %d actions"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:857
 msgid "Running pre-disable checks..."
@@ -32769,7 +32657,6 @@ msgstr ""
 msgid "Showing all %d result"
 msgid_plural "Showing all %d results"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/reports/class-wc-report-sales-by-product.php:176
 msgid "Showing reports for:"
@@ -33212,7 +33099,6 @@ msgstr ""
 msgid "Sold %1$d item in the last %2$d days"
 msgid_plural "Sold %1$d items in the last %2$d days"
 msgstr[0] ""
-msgstr[1] ""
 
 #. 1: total income 2: days
 #: includes/admin/class-wc-admin-dashboard.php:581
@@ -34122,7 +34008,6 @@ msgstr ""
 msgid "Starting cleanup for %d order..."
 msgid_plural "Starting cleanup for %d orders..."
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/class-wc-countries.php:902 includes/class-wc-countries.php:1233
 #: includes/class-wc-countries.php:1382 includes/class-wc-countries.php:1583
@@ -34416,7 +34301,6 @@ msgstr ""
 msgid "Stopped the insanity for %d second"
 msgid_plural "Stopped the insanity for %d seconds"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/settings/class-wc-settings-general.php:46
 msgid "Store Address"
@@ -35012,7 +34896,6 @@ msgstr ""
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/export/class-wc-product-csv-exporter.php:141
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:542
@@ -36697,7 +36580,6 @@ msgstr ""
 msgid "The group \"%s\" does not exist."
 msgid_plural "The groups \"%s\" do not exist."
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Internal/Admin/Notes/PersonalizeStore.php:51
 msgid ""
@@ -37608,7 +37490,6 @@ msgstr ""
 msgid "There is %1$d order to be synced."
 msgid_plural "There are %1$d orders to be synced."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %1$d is the number of orders to be verified.
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:606
@@ -37616,7 +37497,6 @@ msgstr[1] ""
 msgid "There is %1$d order to be verified."
 msgid_plural "There are %1$d orders to be verified."
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Admin/API/Reports/Export/Controller.php:167
 msgid "There is no data to export for the given request."
@@ -37753,7 +37633,6 @@ msgid_plural ""
 "REST API, which has been removed from WooCommerce. These webhooks will fail "
 "to be sent."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: number of pending orders.
 #: src/Internal/DataStores/Orders/CustomOrdersTableController.php:606
@@ -37761,7 +37640,6 @@ msgstr[1] ""
 msgid "There's %s order pending sync."
 msgid_plural "There are %s orders pending sync."
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:149
 msgid ""
@@ -38538,7 +38416,6 @@ msgid_plural ""
 "install and activate <a href=\"%s\" target=\"_blank\">the WooCommerce Legacy "
 "REST API extension</a>."
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/class-wc-admin-webhooks-table-list.php:82
 msgid ""
@@ -40636,7 +40513,6 @@ msgctxt "user webhook count"
 msgid "User #%1$s %2$s has created %3$d WooCommerce webhook."
 msgid_plural "User #%1$s %2$s has created %3$d WooCommerce webhooks."
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/class-wc-privacy-exporters.php:138
 msgid "User&#8217;s WooCommerce access to purchased downloads data."
@@ -42204,7 +42080,6 @@ msgctxt "with first and last result"
 msgid "Showing %1$d&ndash;%2$d of %3$d result"
 msgid_plural "Showing %1$d&ndash;%2$d of %3$d results"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Internal/Admin/Notes/CustomizeStoreWithBlocks.php:73
 msgid ""
@@ -42827,7 +42702,6 @@ msgstr ""
 msgid "You added %1$s and %2$d other product"
 msgid_plural "You added %1$s and %2$d other products"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Admin/Features/OnboardingTasks/Tasks/StoreDetails.php:29
 msgid "You added store details"
@@ -42915,7 +42789,6 @@ msgid_plural ""
 "You can switch order data storage <strong>only when the posts and orders "
 "tables are in sync</strong>. There are currently %s orders out of sync. "
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product name
 #: includes/class-wc-cart.php:1193
@@ -42935,7 +42808,6 @@ msgid_plural ""
 "You cannot add a new payment method so soon after the previous one. Please "
 "wait for %d seconds."
 msgstr[0] ""
-msgstr[1] ""
 
 #. %s: product name
 #: includes/class-wc-cart.php:1161
@@ -43091,7 +42963,6 @@ msgstr ""
 msgid "You have received the following WooCommerce log message:"
 msgid_plural "You have received the following WooCommerce log messages:"
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/admin/helper/class-wc-helper.php:619
 msgid "You have successfully connected your store to WooCommerce.com"
@@ -43555,7 +43426,6 @@ msgid_plural ""
 "renewal. <a href=\"%s\">Add a payment method</a> to ensure you continue "
 "receiving updates and streamlined support."
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Admin/PluginsHelper.php:838
 msgid ""
@@ -43567,7 +43437,6 @@ msgid_plural ""
 "renewal. Add a payment method to ensure you continue receiving updates and "
 "streamlined support."
 msgstr[0] ""
-msgstr[1] ""
 
 #: includes/emails/class-wc-email-customer-new-account.php:83
 #: src/Blocks/Domain/Services/Email/CustomerNewAccount.php:74
@@ -43922,7 +43791,6 @@ msgid "⚠ Incompatible plugins detected (%1$s, %2$s and %3$d other)."
 msgid_plural ""
 "⚠ Incompatible plugins detected (%1$s and %2$s plugins and %3$d others)."
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/Internal/Features/FeaturesController.php:197
 msgid "⚠ This feature is compatible with WordPress version 6.2 or higher."

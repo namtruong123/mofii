@@ -24,11 +24,11 @@ if ( $max_value && $min_value === $max_value ) {
 	</div>
 	<?php
 } else {
-	$label = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'yozi' ), wp_strip_all_tags( $args['product_name'] ) ) : __( 'Quantity', 'yozi' );
+	$label = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'yozi' ), wp_strip_all_tags( $args['product_name'] ) ) : __( 'Số lượng', 'yozi' );
 	?>
 	<div class="quantity">
 		<?php do_action( 'woocommerce_before_quantity_input_field' ); ?>
-		<label class="reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity:', 'yozi' ); ?></label>
+		<label class="reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Số lượng:', 'yozi' ); ?></label>
 		<input
 			type="<?php echo esc_attr( $type ); ?>"
 			<?php echo $readonly ? 'readonly="readonly"' : ''; ?>

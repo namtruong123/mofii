@@ -46,7 +46,7 @@ if ( ! function_exists( 'yozi_entry_meta' ) ) :
  */
 function yozi_entry_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() ) {
-		printf( '<span class="sticky-post">%s</span>', esc_html__( 'Featured', 'yozi' ) );
+		printf( '<span class="sticky-post">%s</span>', esc_html__( 'Tính năng', 'yozi' ) );
 	}
 
 	$format = get_post_format();

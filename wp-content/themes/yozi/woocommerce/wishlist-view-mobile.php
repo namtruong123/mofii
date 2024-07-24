@@ -160,7 +160,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
                                         <?php if( $show_quantity ) : ?>
                                             <tr>
                                                 <td class="label">
-                                                    <?php _e( 'Quantity:', 'yozi' ) ?>
+                                                    <?php _e( 'Số lượng:', 'yozi' ) ?>
                                                 </td>
                                                 <td class="value">
                                                     <?php if( ! $no_interactions && $is_user_owner ): ?>

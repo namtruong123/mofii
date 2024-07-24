@@ -16,8 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<!-- wp:woocommerce/product-section {"title":"<?php esc_attr_e( 'Basic details', 'woocommerce' ); ?>"} -->
-<div data-block-name="woocommerce/product-section" class="wp-block-woocommerce-product-section" data-title="<?php esc_attr_e( 'Basic details', 'woocommerce' ); ?>">
+<!-- wp:woocommerce/product-section {"title":"<?php esc_attr_e( 'Thông tin cơ bản', 'woocommerce' ); ?>"} -->
+<div data-block-name="woocommerce/product-section" class="wp-block-woocommerce-product-section" data-title="<?php esc_attr_e( 'Thông tin cơ bản', 'woocommerce' ); ?>">
 	<div>
 		<!-- wp:woocommerce/product-regular-price-field -->
 		<div data-block-name="woocommerce/product-regular-price-field" class="wp-block-woocommerce-product-regular-price-field"></div>
