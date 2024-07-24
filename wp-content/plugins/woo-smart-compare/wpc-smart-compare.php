@@ -163,7 +163,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 						'stock'        => self::localization( 'field_stock', esc_html__( 'Stock', 'woo-smart-compare' ) ),
 						'availability' => self::localization( 'field_availability', esc_html__( 'Availability', 'woo-smart-compare' ) ),
 						'add_to_cart'  => self::localization( 'field_add_to_cart', esc_html__( 'Add to cart', 'woo-smart-compare' ) ),
-						'description'  => self::localization( 'field_description', esc_html__( 'Description', 'woo-smart-compare' ) ),
+						'description'  => self::localization( 'field_description', esc_html__( 'Thông số', 'woo-smart-compare' ) ),
 						'content'      => self::localization( 'field_content', esc_html__( 'Content', 'woo-smart-compare' ) ),
 						'weight'       => self::localization( 'field_weight', esc_html__( 'Weight', 'woo-smart-compare' ) ),
 						'dimensions'   => self::localization( 'field_dimensions', esc_html__( 'Dimensions', 'woo-smart-compare' ) ),
@@ -1658,7 +1658,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th><?php esc_html_e( 'Description', 'woo-smart-compare' ); ?></th>
+                                            <th><?php esc_html_e( 'Thông số', 'woo-smart-compare' ); ?></th>
                                             <td>
                                                 <label>
                                                     <input type="text" class="regular-text" name="woosc_localization[field_description]" value="<?php echo esc_attr( self::localization( 'field_description' ) ); ?>" placeholder="<?php esc_attr_e( 'Description', 'woo-smart-compare' ); ?>"/>
