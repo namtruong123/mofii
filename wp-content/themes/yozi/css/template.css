@@ -5009,8 +5009,22 @@ body.home .apus-header .sticky-header .vertical-wrapper .content-vertical {
   font-size: 14px;
   font-weight: 400;
 }
+.apus-footer p {
+  font-size: 20px;
+  font-weight: 600;
+}
+.apus-footer i{
+  width: 50px;
+    padding: 14px 0px 15px 16px;
+    font-size: 20px;
+    border: 0.5px solid #000;
+    border-radius: 15px;
+}
 .apus-footer a {
   color: #4c4c4c;
+}
+.apus-footer a{
+  padding-left: 5px;
 }
 .apus-footer a:hover, .apus-footer a:focus, .apus-footer a:active {
   color: #e23e1d;
@@ -15094,4 +15108,33 @@ a.vc_single_image-wrapper:hover:after {
 }
 .apus-footer-mobile .apus-search-form form .form-control {
   border: 1px solid #ebebeb;
+}
+
+
+/* footer */
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-info, .footer-contact, .footer-social-map {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 0;
+}
+
+.footer-social-map {
+  text-align: right;
+}
+
+.social-links a {
+  margin: 0 5px;
+  font-size: 20px;
+  color: #000;
+}
+
+.social-links a:hover {
+  color: #007bff;
 }
