@@ -219,3 +219,7 @@ rs-module-wrap{
   top: -16px;
   left: 100%;
 }
+
+.view-more-desc.view-less span {
+    content: "Thu gọn";
+}

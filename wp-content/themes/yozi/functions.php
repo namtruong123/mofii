@@ -170,6 +170,31 @@ function yozi_get_fonts_url() {
     return esc_url_raw( $fonts_url );
 }
 
+/*=================================================================================================================== */
+/*=================================================================================================================== */
+/*==========================                         CUSTOM              ============================================ */
+function my_custom_woocommerce_tab_titles( $tabs ) {
+    if ( isset( $tabs['description'] ) ) {
+        $tabs['description']['title'] = __( 'Mô tả', 'yozi' );
+    }
+    if ( isset( $tabs['reviews'] ) ) {
+        $tabs['reviews']['title'] = __( 'Đánh giá', 'yozi' );
+    }
+    return $tabs;
+}
+add_filter( 'woocommerce_product_tabs', 'my_custom_woocommerce_tab_titles' );
+
+function my_custom_woocommerce_tab_titles_gettext( $translated_text, $text, $domain ) {
+    if ( $translated_text == 'Features' ) {
+        $translated_text = __( 'Thông số', 'yozi' );
+    }
+    return $translated_text;
+}
+add_filter( 'gettext', 'my_custom_woocommerce_tab_titles_gettext', 20, 3 );
+
+/*=================================================================================================================== */
+/*=================================================================================================================== */
+
 function yozi_fonts_url() {
 	wp_enqueue_style( 'yozi-theme-fonts', yozi_get_fonts_url(), array(), null );
 }

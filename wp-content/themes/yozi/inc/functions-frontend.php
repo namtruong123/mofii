@@ -585,7 +585,7 @@ function yozi_display_sidebar_left( $sidebar_configs ) {
 	if ( isset($sidebar_configs['left']) ) : ?>
 		<div class="<?php echo esc_attr($sidebar_configs['left']['class']) ;?>">
 		  	<aside class="sidebar sidebar-left" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
-		  		<div class="close-sidebar-btn hidden-lg hidden-md"> <i class="fa fa-close"></i> <span><?php esc_html_e('Close', 'yozi'); ?></span></div>
+		  		<div class="close-sidebar-btn hidden-lg hidden-md"> <i class="fa fa-close"></i> <span><?php esc_html_e('Đóng', 'yozi'); ?></span></div>
 		   		<?php if ( is_active_sidebar( $sidebar_configs['left']['sidebar'] ) ): ?>
 		   			<?php dynamic_sidebar( $sidebar_configs['left']['sidebar'] ); ?>
 		   		<?php endif; ?>
@@ -598,7 +598,7 @@ function yozi_display_sidebar_right( $sidebar_configs ) {
 	if ( isset($sidebar_configs['right']) ) : ?>
 		<div class="<?php echo esc_attr($sidebar_configs['right']['class']) ;?>">
 		  	<aside class="sidebar sidebar-right" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
-		  		<div class="close-sidebar-btn hidden-lg hidden-md"><i class="fa fa-close"></i> <span><?php esc_html_e('Close', 'yozi'); ?></span></div>
+		  		<div class="close-sidebar-btn hidden-lg hidden-md"><i class="fa fa-close"></i> <span><?php esc_html_e('Đóng', 'yozi'); ?></span></div>
 		   		<?php if ( is_active_sidebar( $sidebar_configs['right']['sidebar'] ) ): ?>
 			   		<?php dynamic_sidebar( $sidebar_configs['right']['sidebar'] ); ?>
 			   	<?php endif; ?>
