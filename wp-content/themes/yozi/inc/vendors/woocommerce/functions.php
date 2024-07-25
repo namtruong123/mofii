@@ -375,8 +375,8 @@ if ( !function_exists('yozi_woocommerce_enqueue_styles') ) {
             'success'       => sprintf( '<div class="woocommerce-message">%s <a class="button btn btn-primary btn-inverse wc-forward" href="%s">%s</a></div>', esc_html__( 'Products was successfully added to your cart.', 'yozi' ), $cart_url, esc_html__( 'View Cart', 'yozi' ) ),
             'empty'         => sprintf( '<div class="woocommerce-error">%s</div>', esc_html__( 'No Products selected.', 'yozi' ) ),
             'nonce' => wp_create_nonce( 'ajax-nonce' ),
-            'view_more_text' => esc_html__('View More', 'yozi'),
-            'view_less_text' => esc_html__('View Less', 'yozi'),
+            'view_more_text' => esc_html__('Xem thêm', 'yozi'),
+            'view_less_text' => esc_html__('Thu gọn', 'yozi'),
         );
         wp_localize_script( 'yozi-woocommerce', 'yozi_woo_options', $options );
         wp_enqueue_script( 'yozi-woocommerce' );
