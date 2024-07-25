@@ -13,7 +13,7 @@ global $post;
             <?php } ?>
             <div class="entry-meta">
                 <span class="date-post"><?php the_time( get_option('date_format', 'd M, Y') ); ?></span>
-                <span class="comments"><?php comments_number( esc_html__('0 Comments', 'yozi'), esc_html__('1 Comment', 'yozi'), esc_html__('% Comments', 'yozi') ); ?></span>
+                <span class="comments"><?php comments_number( esc_html__('0 Đánh giá', 'yozi'), esc_html__('1 Đánh giá', 'yozi'), esc_html__('% Đánh giá', 'yozi') ); ?></span>
             </div>
         </div>
         <?php if( $post_format == 'link' ) {
@@ -42,11 +42,11 @@ global $post;
             </div><!-- /entry-content -->
     		<?php
     		wp_link_pages( array(
-    			'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'yozi' ) . '</span>',
+    			'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Trang:', 'yozi' ) . '</span>',
     			'after'       => '</div>',
     			'link_before' => '<span>',
     			'link_after'  => '</span>',
-    			'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'yozi' ) . ' </span>%',
+    			'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Trang', 'yozi' ) . ' </span>%',
     			'separator'   => '',
     		) );
     		?>

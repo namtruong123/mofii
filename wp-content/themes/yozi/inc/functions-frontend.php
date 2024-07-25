@@ -82,7 +82,7 @@ if ( ! function_exists( 'yozi_full_top_meta' ) ) {
 		if ( ! is_search() ) {
 			if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 				echo '<span class="entry-comments-link">';
-				comments_popup_link( esc_html__( '0 comments', 'yozi' ), esc_html__( '1 comment' , 'yozi' ), esc_html__( '% comments', 'yozi' ) );
+				comments_popup_link( esc_html__( '0 đánh giá', 'yozi' ), esc_html__( '1 đánh giá' , 'yozi' ), esc_html__( '% đánh giá', 'yozi' ) );
 				echo '</span>';
 			}
 		}
@@ -154,7 +154,7 @@ if ( !function_exists('yozi_get_page_title') ) {
 				if ( $posts_page_id ) {
 					$title = get_the_title( $posts_page_id );
 				} else {
-					$title = esc_html__( 'Blog', 'yozi' );
+					$title = esc_html__( 'Tin tức', 'yozi' );
 				}
 			} elseif (is_category()) {
 				global $wp_query;
@@ -205,7 +205,7 @@ if ( ! function_exists( 'yozi_breadcrumbs' ) ) {
 	function yozi_breadcrumbs() {
 
 		$delimiter = ' ';
-		$home = esc_html__('Home', 'yozi');
+		$home = esc_html__('Trang chủ', 'yozi');
 		$before = '<li><span class="active">';
 		$after = '</span></li>';
 		if ( !is_front_page() || is_paged()) {
