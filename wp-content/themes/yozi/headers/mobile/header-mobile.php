@@ -64,7 +64,7 @@
         </div>
         <?php if ( yozi_get_config('show_searchform') ): ?>
             <div class="clearfix search-mobile">
-                <?php get_template_part( 'template-parts/productsearchform_mobile' ); ?>
+            <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
             </div>
         <?php endif; ?>
 

@@ -869,7 +869,7 @@ switch ( $action ) {
 		login_header(
 			__( 'Lost Password' ),
 			wp_get_admin_notice(
-				__( 'Please enter your username or email address. You will receive an email message with instructions on how to reset your password.' ),
+				__( 'Vui lòng nhập username hoặc email của bạn. Bạn sẽ nhận được một email có hướng dẫn về cách đặt lại mật khẩu của mình.' ),
 				array(
 					'type'               => 'info',
 					'additional_classes' => array( 'message' ),
@@ -888,7 +888,7 @@ switch ( $action ) {
 
 		<form name="lostpasswordform" id="lostpasswordform" action="<?php echo esc_url( network_site_url( 'wp-login.php?action=lostpassword', 'login_post' ) ); ?>" method="post">
 			<p>
-				<label for="user_login"><?php _e( 'Username or Email Address' ); ?></label>
+				<label for="user_login"><?php _e( 'Username / Email ' ); ?></label>
 				<input type="text" name="user_login" id="user_login" class="input" value="<?php echo esc_attr( $user_login ); ?>" size="20" autocapitalize="off" autocomplete="username" required="required" />
 			</p>
 			<?php

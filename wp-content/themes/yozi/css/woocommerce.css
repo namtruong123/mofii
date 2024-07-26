@@ -3200,7 +3200,7 @@ fieldset[disabled] .groups-button .add-cart .active.added_to_cart,
   border: none;
   text-transform: capitalize;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 
 /* comment form
@@ -4253,7 +4253,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   font-size: 14px;
   cursor: pointer;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   display: inline;
 }
 #add_payment_method #payment ul.payment_methods li:last-child, .woocommerce-cart #payment ul.payment_methods li:last-child, .woocommerce-checkout #payment ul.payment_methods li:last-child {
@@ -4304,7 +4304,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .woocommerce table.shop_table td.product-price {
   color: #e23e1d;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   font-size: 16px;
 }
 .woocommerce table.shop_table td.product-price del {
@@ -4336,7 +4336,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   font-family: "Rubik", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   color: #e23e1d;
 }
 .woocommerce table.shop_table tbody .order-total .woocommerce-Price-amount {
@@ -4357,7 +4357,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   color: #191919;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 
 .woocommerce .cart_totals {
@@ -4366,7 +4366,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .woocommerce .cart_totals > h2 {
   margin: 0;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   font-size: 16px;
   position: relative;
   text-transform: uppercase;
@@ -4440,7 +4440,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .woocommerce #customer_details h3.form-row {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   text-transform: uppercase;
   text-align: center;
   margin: 0;
@@ -4515,7 +4515,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .woocommerce form .woocommerce-billing-fields > h3 {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   text-transform: uppercase;
   text-align: center;
   margin: 0;
@@ -4591,7 +4591,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   font-size: 30px;
   line-height: 36px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   margin: 0 0 25px;
   color: #e23e1d;
 }
@@ -4606,7 +4606,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   color: #e23e1d;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   display: flex;
   flex-direction: column;
   justify-content: center; /* Căn giữa theo chiều dọc */
@@ -4628,7 +4628,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .woocommerce div.product p.price ins,
 .woocommerce div.product span.price ins {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 
 .woocommerce div.product span.price {
@@ -4822,7 +4822,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   font-size: 14px;
   margin: 0 0 18px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 
 .product-block .sale-off {
@@ -4844,7 +4844,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .product-block .image .downsale {
   font-size: 12px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   display: inline-block;
   position: absolute;
   right: 0;
@@ -5225,7 +5225,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 }
 .product-block.grid-deal .times > div span {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   margin-bottom: 5px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -5246,7 +5246,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 .product-block.grid-deal .progress {
   height: 5px;
@@ -5666,7 +5666,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .product-block-list .price ins {
   font-size: 24px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 .product-block-list .avaibility-wrapper {
   margin-bottom: 20px;
@@ -5969,7 +5969,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 }
 .details-product .times > div span {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   margin-bottom: 5px;
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -6030,7 +6030,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .details-product .apus-woocommerce-product-gallery-wrapper .downsale {
   font-size: 12px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   display: inline-block;
   position: absolute;
   left: 0;
@@ -6495,7 +6495,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 }
 .details-product .product-free-gift .hightcolor {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   color: #e23e1d;
 }
 
@@ -6725,7 +6725,7 @@ p.demo_store {
 .woocommerce #reviews #comments ol.commentlist li .apus-author {
   display: block;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   font-size: 16px;
   color: #232530;
 }
@@ -6922,7 +6922,7 @@ p.demo_store {
 .form-row label {
   display: block;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 .form-row select {
   cursor: pointer;
@@ -7091,7 +7091,7 @@ ul.tabs:before {
 .total-minicart {
   color: #252525;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   font-size: 16px;
   margin-left: 5px;
   display: inline-block;
@@ -7632,7 +7632,7 @@ ul.tabs:before {
 .shopping_cart_content .cart_list .cart-item {
   margin: 0;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   font-size: 16px;
 }
 .shopping_cart_content .cart_list .media-body {
@@ -7674,14 +7674,14 @@ ul.tabs:before {
   position: relative;
   margin: 10px 0 0;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   text-transform: uppercase;
   padding: 25px 0;
 }
 .shopping_cart_content .total strong {
   font-size: 18px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 .shopping_cart_content .total .amount {
   font-size: 18px;
@@ -8241,7 +8241,7 @@ div.cart label {
 .woocommerce .order-review #order_review_heading {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   text-transform: uppercase;
   text-align: center;
   margin: 0;
@@ -8338,7 +8338,7 @@ div.cart label {
 .apus-checkout-step li {
   font-size: 20px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   color: #232530;
   line-height: 60px;
   overflow: hidden;
@@ -8474,7 +8474,7 @@ div.cart label {
 .woocommerce ul.order_details li strong {
   margin-top: 5px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 .woocommerce ul.order_details li.method strong {
   color: #d9534f;
@@ -8513,7 +8513,7 @@ div.cart label {
     color: #4c4c4c;
     font-size: 30px;
     font-weight: 400;
-    font-family: "Rubik-Medium";
+    font-family: "Roboto";
     margin: 0 0 20px;
   }
 
@@ -8551,7 +8551,7 @@ div.cart label {
 }
 .layout-detail-product #tabs-list-specifications td:first-child {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   text-transform: uppercase;
 }
 
@@ -9089,7 +9089,7 @@ div.cart label {
   color: #fff;
   font-size: 13px;
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
   display: inline-block;
   padding: 7px 30px;
   text-transform: capitalize;
@@ -9116,12 +9116,12 @@ div.cart label {
 }
 .wcv-grid strong {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 
 .wcv-grid h1, .wcv-grid h2, .wcv-grid h3, .wcv-grid h4, .wcv-grid h5, .wcv-grid h6 {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 
 table.wcv-table tr td, table.wcv-table tr th {
@@ -9211,7 +9211,7 @@ table.wcv-table tr {
 
 .dokan-single-store .profile-frame.profile-frame-no-banner .profile-layout-layout3 .profile-info-summery-wrapper .profile-info-summery .profile-info .store-name {
   font-weight: 400;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 
 .dokan-single-store .profile-info .dokan-store-info {
@@ -11061,7 +11061,7 @@ table.woosw-items .woosw-item--price{
   font-size: 16px;
   font-weight: 400;
   color: #e23e1d;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 table.woosw-items .woosw-item--price del{
   font-size: 14px;
@@ -11236,7 +11236,7 @@ table.woosc_table .tr-price td{
   font-size: 16px;
   font-weight: 400 !important;
   color: #e23e1d !important;
-  font-family: "Rubik-Medium";
+  font-family: "Roboto";
 }
 table.woosc_table .tr-price td del{
   font-size: 14px;

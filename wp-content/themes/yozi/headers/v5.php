@@ -61,24 +61,7 @@
                                         <?php get_template_part('template-parts/logo/logo-yellow'); ?>
                                     </div>
                                 </div>
-                                <?php if (has_nav_menu('primary')) : ?>
-                                    <div class="col-md-4 p-static">
-                                        <div class="main-menu">
-                                            <nav data-duration="400" class="hidden-xs hidden-sm apus-megamenu slide animate navbar p-static" role="navigation">
-                                                <?php $args = array(
-                                                    'theme_location' => 'primary',
-                                                    'container_class' => 'collapse navbar-collapse no-padding',
-                                                    'menu_class' => 'nav navbar-nav megamenu',
-                                                    'fallback_cb' => '',
-                                                    'menu_id' => 'primary-menu',
-                                                    'walker' => new Yozi_Nav_Menu()
-                                                );
-                                                wp_nav_menu($args);
-                                                ?>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                <?php endif; ?>
+                                <?php echo do_shortcode('[custom_menu]'); ?>
 
                                 <div class="wpb_column vc_column_container vc_col-sm-4">
                                 <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>

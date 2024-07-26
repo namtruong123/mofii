@@ -8,7 +8,7 @@
 		<li>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
 				<i class="text-theme ti-home"></i>
-	            <span><?php esc_html_e('Home', 'yozi'); ?></span>
+	            <span><?php esc_html_e('Trang chủ', 'yozi'); ?></span>
 	        </a>
         </li>
 
@@ -16,7 +16,7 @@
 	    	<li>
 	    		<a class="footer-search-btn" href="javascript:void(0)">
 	    			<i class="ti-search"></i>
-		            <span><?php esc_html_e('Search', 'yozi'); ?></span>
+		            <span><?php esc_html_e('Tìm kiếm', 'yozi'); ?></span>
 		        </a>
 	    	</li>
     	<?php } ?>

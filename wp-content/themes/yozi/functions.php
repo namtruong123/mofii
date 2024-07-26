@@ -170,6 +170,17 @@ function yozi_get_fonts_url() {
     return esc_url_raw( $fonts_url );
 }
 
+
+
+
+
+
+
+
+/*=================================================================================================================== */
+/*=================================================================================================================== */
+/*=================================================================================================================== */
+/*=================================================================================================================== */
 /*=================================================================================================================== */
 /*=================================================================================================================== */
 /*==========================                         CUSTOM              ============================================ */
@@ -192,8 +203,145 @@ function my_custom_woocommerce_tab_titles_gettext( $translated_text, $text, $dom
 }
 add_filter( 'gettext', 'my_custom_woocommerce_tab_titles_gettext', 20, 3 );
 
+function custom_menu_shortcode() {
+    ob_start();
+    ?>
+    <div class="col-lg-4 position-static">
+        <div class="site-main-nav">
+            <nav class="site-nav">
+                <ul id="menu1">
+                    <li><a id="line-menu" href="<?php echo home_url('/home-1'); ?>">Trang chủ</a></li>
+                    <li>
+                        <a id="line-menu" href="<?php echo home_url('/shop-2'); ?>">Sản phẩm <span class="new blinking">Mới</span></a>
+                        <ul class="mega-sub-menu">
+                            <li class="mega-dropdown">
+                                <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Danh mục</a>
+                                <ul class="mega-item">
+								<li><a href="<?php echo home_url('/product-category/ban-phim/'); ?>">Bàn phím</a></li>
+								<li><a href="<?php echo home_url('/product-category/ban-phim-so/'); ?>">Bàn phím số</a></li>
+								<li><a href="<?php echo home_url('/product-category/chuot/'); ?>">Chuột</a></li>
+								<li><a href="<?php echo home_url('/product-category/lot-chuot/'); ?>">Lót chuột</a></li>
+                                </ul>
+                            </li>
+							<li class="mega-dropdown">
+                                <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Nhu cầu</a>
+                                <ul class="mega-item">
+								<li><a href="<?php echo home_url('/product-category/mofii/'); ?>">Gaming</a></li>
+								<li><a href="<?php echo home_url('/product-category/geezer/'); ?>">Văn phòng</a></li>
+								<li><a href="<?php echo home_url('/product-category//'); ?>">Không dây</a></li>
+								<li><a href="<?php echo home_url('/product-category//'); ?>">Có dây</a></li>
+								<li><a href="<?php echo home_url('/product-category//'); ?>">Bluetooth</a></li>
+                                </ul>
+                            </li>
+                            <li class="mega-dropdown">
+                                <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Thương hiệu</a>
+                                <ul class="mega-item">
+								<li><a href="<?php echo home_url('/product-category/mofii/'); ?>">Mofii</a></li>
+								<li><a href="<?php echo home_url('/product-category/geezer/'); ?>">Geezer</a></li>
+                                </ul>
+                            </li>
+                            <li class="mega-dropdown">
+                                <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Danh Mục Khác</a>
+                                <ul class="mega-item">
+                                    <li><a href="<?php echo home_url('/product-category/san-pham-moi/'); ?>">Sản phẩm mới</a></li>
+                                    <li><a href="<?php echo home_url('/product-category/san-pham-yeu-thich/'); ?>">Sản phẩm yêu thích</a></li>
+                                    <li><a href="<?php echo home_url('/product-category/san-pham-sale/'); ?>">Sản phẩm đang SALE</a></li>
+									<li><a href="<?php echo home_url('/shop-2?show=all&sort_by=bestsellers'); ?>">Sản phẩm bán chạy</a></li>
+                                </ul>
+                            </li>
+                            <li class="mega-dropdown">
+                                <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Giá</a>
+                                <ul class="mega-item">
+                                    <li><a href="<?php echo home_url('/product-category/san-pham-moi/'); ?>">Dưới 500k</a></li>
+                                    <li><a href="<?php echo home_url('/product-category/san-pham-yeu-thich/'); ?>">500 ngàn - 1 Triệu</a></li>
+                                    <li><a href="<?php echo home_url('/product-category/san-pham-sale/'); ?>">1 Triệu - 2 Triệu</a></li>
+									<li><a href="<?php echo home_url('/shop-2?show=all&sort_by=bestsellers'); ?>">Trên 3 Triệu</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a id="line-menu" href="<?php echo home_url('/blog'); ?>">Tin tức</a></li>
+                </ul>
+            </nav>
+        </div>
+
+		<!-- Menu Mobile -->
+		<div class="header-mobile-menu d-lg-none">
+		<div class="site-main-nav">
+                <nav class="site-nav">
+                    <ul class="navbar-mobile-wrapper">
+                        <li><a href="{{ URL::to('/home') }}">Trang chủ</a></li>
+                        <li><a href="{{ URL::to('/store') }}">Cửa hàng</a></li>
+                        <li>
+                            <a href="#">Sản phẩm <span class="new">Mới</span></a>
+
+                            <ul class="mega-sub-menu">
+                                <li class="mega-dropdown">
+                                    <a class="mega-title" href="#">Danh mục</a>
+
+                                    <ul class="mega-item">
+                                        @foreach ($list_category as $key => $category)
+                                            <li><a
+                                                    href="{{ URL::to('/store?show=all&category=' . $category->idCategory . '&sort_by=new') }}">{{ $category->CategoryName }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="mega-dropdown">
+                                    <a class="mega-title" href="#">Thương hiệu</a>
+
+                                    <ul class="mega-item">
+                                        @foreach ($list_brand as $key => $brand)
+                                            <li><a
+                                                    href="{{ URL::to('/store?show=all&brand=' . $brand->idBrand . '&sort_by=new') }}">{{ $brand->BrandName }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                                <li class="mega-dropdown">
+                                    <a class="mega-title" href="#">Danh mục khác</a>
+
+                                    <ul class="mega-item">
+                                        <li><a href="{{ URL::to('/store?show=all&sort_by=new') }}">Sản phẩm mới</a>
+                                        </li>
+                                        <li><a href="{{ URL::to('/store?show=all&sort_by=bestsellers') }}">Sản phẩm
+                                                bán chạy</a></li>
+                                        <li><a href="{{ URL::to('/store?show=all&sort_by=featured') }}">Sản phẩm nổi
+                                                bật</a></li>
+                                        <li><a href="{{ URL::to('/store?show=all&sort_by=sale') }}">Sản phẩm đang
+                                                SALE</a></li>
+                                    </ul>
+                                </li>
+                                <!-- <li class="mega-dropdown">
+                                    <a class="menu-banner" href="#">
+                                        <img src="{{ asset('public/frontend/images/menu-banner.jpg') }}" alt="">
+                                    </a>
+                                </li> -->
+                            </ul>
+                        </li>
+                        <li><a href="{{ URL::to('/blog') }}">Tin tức</a></li>
+                        <li><a href="{{ URL::to('/about-us') }}">Về chúng tôi</a></li>
+                        <li><a href="{{ URL::to('/contact') }}">Liên hệ</a></li>
+                    </ul>
+                </nav>
+            </div>
+</div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('custom_menu', 'custom_menu_shortcode');
+
+
 /*=================================================================================================================== */
 /*=================================================================================================================== */
+/*=================================================================================================================== */
+/*=================================================================================================================== */
+/*=================================================================================================================== */
+/*=================================================================================================================== */
+
+
+
 
 function yozi_fonts_url() {
 	wp_enqueue_style( 'yozi-theme-fonts', yozi_get_fonts_url(), array(), null );
