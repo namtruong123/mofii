@@ -264,68 +264,6 @@ function custom_menu_shortcode() {
                 </ul>
             </nav>
         </div>
-
-		<!-- Menu Mobile -->
-		<div class="header-mobile-menu d-lg-none">
-		<div class="site-main-nav">
-                <nav class="site-nav">
-                    <ul class="navbar-mobile-wrapper">
-                        <li><a href="{{ URL::to('/home') }}">Trang chủ</a></li>
-                        <li><a href="{{ URL::to('/store') }}">Cửa hàng</a></li>
-                        <li>
-                            <a href="#">Sản phẩm <span class="new">Mới</span></a>
-
-                            <ul class="mega-sub-menu">
-                                <li class="mega-dropdown">
-                                    <a class="mega-title" href="#">Danh mục</a>
-
-                                    <ul class="mega-item">
-                                        @foreach ($list_category as $key => $category)
-                                            <li><a
-                                                    href="{{ URL::to('/store?show=all&category=' . $category->idCategory . '&sort_by=new') }}">{{ $category->CategoryName }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                                <li class="mega-dropdown">
-                                    <a class="mega-title" href="#">Thương hiệu</a>
-
-                                    <ul class="mega-item">
-                                        @foreach ($list_brand as $key => $brand)
-                                            <li><a
-                                                    href="{{ URL::to('/store?show=all&brand=' . $brand->idBrand . '&sort_by=new') }}">{{ $brand->BrandName }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                                <li class="mega-dropdown">
-                                    <a class="mega-title" href="#">Danh mục khác</a>
-
-                                    <ul class="mega-item">
-                                        <li><a href="{{ URL::to('/store?show=all&sort_by=new') }}">Sản phẩm mới</a>
-                                        </li>
-                                        <li><a href="{{ URL::to('/store?show=all&sort_by=bestsellers') }}">Sản phẩm
-                                                bán chạy</a></li>
-                                        <li><a href="{{ URL::to('/store?show=all&sort_by=featured') }}">Sản phẩm nổi
-                                                bật</a></li>
-                                        <li><a href="{{ URL::to('/store?show=all&sort_by=sale') }}">Sản phẩm đang
-                                                SALE</a></li>
-                                    </ul>
-                                </li>
-                                <!-- <li class="mega-dropdown">
-                                    <a class="menu-banner" href="#">
-                                        <img src="{{ asset('public/frontend/images/menu-banner.jpg') }}" alt="">
-                                    </a>
-                                </li> -->
-                            </ul>
-                        </li>
-                        <li><a href="{{ URL::to('/blog') }}">Tin tức</a></li>
-                        <li><a href="{{ URL::to('/about-us') }}">Về chúng tôi</a></li>
-                        <li><a href="{{ URL::to('/contact') }}">Liên hệ</a></li>
-                    </ul>
-                </nav>
-            </div>
-</div>
     </div>
     <?php
     return ob_get_clean();
