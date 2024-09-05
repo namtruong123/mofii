@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '01' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Shopping Cart','yozi'); ?>
+					<?php echo esc_html__('Giỏ hàng','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '02' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Checkout','yozi'); ?>
+					<?php echo esc_html__('Thanh toán','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '03' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Order Completed','yozi'); ?>
+					<?php echo esc_html__('Hoàn tất đơn hàng','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -84,7 +84,7 @@ if ( ! $checkout->enable_signup && ! $checkout->enable_guest_checkout && ! is_us
 	<div class="col-md-4 col-xs-12">
 		<div class="details-review">
 			<div class="order-review">
-				<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'yozi' ); ?></h3>
+				<h3 id="order_review_heading"><?php esc_html_e( 'Đơn hàng của bạn', 'yozi' ); ?></h3>
 				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
 				<div id="order_review" class="woocommerce-checkout-review-order">

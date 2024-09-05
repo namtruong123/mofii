@@ -41,7 +41,7 @@ if ( $products->have_posts() ) : ?>
 
 	<div class="viewedproducts products widget">
 		<div class="widget-content woocommerce carousel item-grid">
-			<h3 class="widget-title"><?php esc_html_e( 'Customers Who Viewed This Item Also Viewed', 'yozi' ); ?></h3>
+			<h3 class="widget-title"><?php esc_html_e( 'Những khách hàng khác cũng đã xem', 'yozi' ); ?></h3>
 			<?php wc_get_template( 'layout-products/carousel.php' , array( 'loop' => $products, 'columns' => $columns, 'rows' => $rows, 'product_item' => $item_style , 'show_pagination' => 1) ); ?>
 		</div>
 	</div>

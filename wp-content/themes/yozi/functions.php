@@ -210,14 +210,15 @@ function custom_menu_shortcode() {
         <div class="site-main-nav">
             <nav class="site-nav">
                 <ul id="menu1">
-                    <li><a id="line-menu" href="<?php echo home_url('/home-1'); ?>">Trang chủ</a></li>
+                    <li><a id="line-menu" href="<?php echo home_url('/'); ?>">Trang chủ</a></li>
                     <li>
-                        <a id="line-menu" href="<?php echo home_url('/shop-2'); ?>">Sản phẩm <span class="new blinking">Mới</span></a>
+                        <a id="line-menu" href="<?php echo home_url('/san-pham'); ?>">Sản phẩm <span class="new blinking">Mới</span></a>
                         <ul class="mega-sub-menu">
                             <li class="mega-dropdown">
-                                <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Danh mục</a>
+                                <a class="mega-title" href="<?php echo home_url('/san-pham'); ?>">Danh mục</a>
                                 <ul class="mega-item">
 								<li><a href="<?php echo home_url('/product-category/ban-phim/'); ?>">Bàn phím</a></li>
+								<li><a href="<?php echo home_url('/product-category/ban-phim/ban-phim-chuot'); ?>">Combo bàn phím chuột</a></li>
 								<li><a href="<?php echo home_url('/product-category/ban-phim-so/'); ?>">Bàn phím số</a></li>
 								<li><a href="<?php echo home_url('/product-category/chuot/'); ?>">Chuột</a></li>
 								<li><a href="<?php echo home_url('/product-category/lot-chuot/'); ?>">Lót chuột</a></li>
@@ -226,11 +227,11 @@ function custom_menu_shortcode() {
 							<li class="mega-dropdown">
                                 <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Nhu cầu</a>
                                 <ul class="mega-item">
-								<li><a href="<?php echo home_url('/product-category/mofii/'); ?>">Gaming</a></li>
-								<li><a href="<?php echo home_url('/product-category/geezer/'); ?>">Văn phòng</a></li>
-								<li><a href="<?php echo home_url('/product-category//'); ?>">Không dây</a></li>
-								<li><a href="<?php echo home_url('/product-category//'); ?>">Có dây</a></li>
-								<li><a href="<?php echo home_url('/product-category//'); ?>">Bluetooth</a></li>
+								<li><a href="<?php echo home_url('/product-category/gaming/'); ?>">Gaming</a></li>
+								<li><a href="<?php echo home_url('/product-category/van-phong/'); ?>">Văn phòng</a></li>
+								<li><a href="<?php echo home_url('/product-category/khong-day/'); ?>">Không dây</a></li>
+								<li><a href="<?php echo home_url('/product-category/co-day/'); ?>">Có dây</a></li>
+								<!--<li><a href="<?php echo home_url('/product-category/bluetooth/'); ?>">Bluetooth</a></li>-->
                                 </ul>
                             </li>
                             <li class="mega-dropdown">
@@ -249,15 +250,15 @@ function custom_menu_shortcode() {
 									<li><a href="<?php echo home_url('/shop-2?show=all&sort_by=bestsellers'); ?>">Sản phẩm bán chạy</a></li>
                                 </ul>
                             </li>
-                            <li class="mega-dropdown">
+                            <!--<li class="mega-dropdown">
                                 <a class="mega-title" href="<?php echo home_url('/shop-2'); ?>">Giá</a>
                                 <ul class="mega-item">
-                                    <li><a href="<?php echo home_url('/product-category/san-pham-moi/'); ?>">Dưới 500k</a></li>
+                                    <li><a href="<?php echo home_url('/product-category/san-pham-moi/'); ?>">Dưới 500 ngàn</a></li>
                                     <li><a href="<?php echo home_url('/product-category/san-pham-yeu-thich/'); ?>">500 ngàn - 1 Triệu</a></li>
                                     <li><a href="<?php echo home_url('/product-category/san-pham-sale/'); ?>">1 Triệu - 2 Triệu</a></li>
 									<li><a href="<?php echo home_url('/shop-2?show=all&sort_by=bestsellers'); ?>">Trên 3 Triệu</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                         </ul>
                     </li>
                     <li><a id="line-menu" href="<?php echo home_url('/blog'); ?>">Tin tức</a></li>

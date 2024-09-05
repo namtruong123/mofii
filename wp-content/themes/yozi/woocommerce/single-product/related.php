@@ -41,7 +41,7 @@ $woocommerce_loop['columns'] = yozi_get_config('releated_product_columns', 4);
 if ( $products->have_posts() ) : ?>
 	<div class="related products widget ">
 		<div class="widget-content woocommerce carousel item-grid">
-			<h3 class="widget-title"><?php esc_html_e( 'Related Products', 'yozi' ); ?></h3>
+			<h3 class="widget-title"><?php esc_html_e( 'Sản phẩm tương tự', 'yozi' ); ?></h3>
 			<?php wc_get_template( 'layout-products/carousel.php' , array( 'loop'=>$products,'columns'=>$woocommerce_loop['columns'],'posts_per_page'=>$products->post_count,'related'=>'related', 'show_pagination' => 1 ) ); ?>
 		</div>
 	</div>

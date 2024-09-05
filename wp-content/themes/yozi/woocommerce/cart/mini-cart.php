@@ -89,7 +89,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
 	<?php if ( ! WC()->cart->is_empty() ) : ?>
 
-		<p class="total text-theme"><strong><?php esc_html_e( 'Total', 'yozi' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+		<p class="total text-theme"><strong><?php esc_html_e( 'Tổng cộng', 'yozi' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
 
 		<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 

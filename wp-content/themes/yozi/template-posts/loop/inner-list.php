@@ -29,7 +29,7 @@ $thumb = yozi_display_post_thumb($thumbsize);
             <?php } else { ?>
                 <div class="description"><?php echo yozi_substring( get_the_excerpt(), 18, '...' ); ?></div>
             <?php } ?>
-            <a class="btn btn-theme" href="<?php the_permalink(); ?>"><?php esc_html_e('Read More', 'yozi'); ?> <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+            <a class="btn btn-theme" href="<?php the_permalink(); ?>"><?php esc_html_e('Đọc thêm', 'yozi'); ?> <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
         </div>
     </div>
 </article>

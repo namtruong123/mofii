@@ -2585,13 +2585,6 @@
 }
 
 /* 1. base */
-@font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/rubik/Roboto.eot");
-  src: url("../fonts/rubik/Roboto.otf") format("otf"), url("../fonts/rubik/Roboto.woff") format("woff"), url("../fonts/rubik/Roboto.ttf") format("truetype"), url("../fonts/rubik/Roboto.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
 .post-password-form input {
   height: 43px;
   padding: 5px 10px;
@@ -3551,7 +3544,7 @@ option {
 }
 .widget .widget-title, .widget .widgettitle, .widget .widget-heading {
   font-size: 18px;
-  margin: 0 0 30px;
+  margin: 10px 0px 30px 0;
   font-weight: 400;
   font-family: "Roboto";
   position: relative;
@@ -5015,10 +5008,10 @@ body.home .apus-header .sticky-header .vertical-wrapper .content-vertical {
 }
 .apus-footer i{
   width: 50px;
-  padding: 7px 0px 7px 15px;
+    padding: 14px 0px 15px 16px;
     font-size: 20px;
     border: 0.5px solid rgba(255, 255, 255, 0);
-    border-radius: 12px;
+    border-radius: 15px;
 }
 .apus-footer a {
   color: #4c4c4c;
@@ -11928,7 +11921,7 @@ a.vc_single_image-wrapper:hover:after {
   border-left: 4px solid #2e2d2d;
 }
 .widget_apus_vertical_menu .widget-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
   margin: 0px 0px 10px 15px;
   padding: 10px 0px 10px 0px;
@@ -16158,21 +16151,62 @@ a.vc_single_image-wrapper:hover:after {
   padding: 20px;
 }
 .footer-info, .footer-contact, .footer-new-branch, .footer-social-map {
-  width: 24%;
   padding: 10px;
   box-sizing: border-box;
 }
-.footer-info, .footer-contact, .footer-new-branch {
-  margin: 0px 0px 0px 16px;
+/* Mặc định cho các kích thước màn hình lớn */
+.footer-info {
+  width: 34%;
+  white-space: normal; /* Cho phép chữ xuống hàng */
+  word-wrap: break-word; /* Ngăn chữ bị cắt xuống hàng */
+}
+.footer-contact {
+  width: 24%;
+}
+.footer-new-branch {
+  width: 20%;
+}
+.footer-social-map {
+  width: 17%;
+}
+
+/* Ẩn .footer-social-map và mở rộng .footer-info cho màn hình nhỏ hơn 1400px */
+@media (max-width: 1400px) {
+  .footer-info {
+    width: calc(34% + 17%);
+  }
+}
+@media (max-width:1200px){
+	.footer-social-map {
+    display: none;
+  }
+}
+
+
+/* Điều chỉnh kiểu cho chế độ mobile */
+@media (max-width: 767px) {
+  .footer-info,
+  .footer-contact,
+  .footer-new-branch {
+    width: 100%;
+    white-space: normal; /* Cho phép chữ xuống hàng nếu cần thiết */
+  }
+}
+.footer-info {
+    margin: 17px 3px 0 16px;
+    float: left;
+}
+.footer-contact {
+  margin: 17px 0 0 16px;
+  float: left;
+}
+.footer-new-branch {
+  margin: 17px 0 0 0px;
   float: left;
 }
 .footer-social-map {
-  float: right;
-}
-.footer-map iframe {
-  width: 100%;
-  height: 200px;
-  border: 0;
+  margin: 0 0 0 16px;
+  float: left;
 }
 .footer-info p, .footer-contact p, .footer-new-branch p {
   font-weight: bold;
@@ -16194,8 +16228,12 @@ a.vc_single_image-wrapper:hover:after {
 .footer-social-map a:hover {
   color: #ddd;
 }
+.footer-map iframe {
+  width: 100%;
+  border: 0;
+}
 @media (max-width: 768px) {
-  .footer-info, .footer-contact, .footer-new-branch, .footer-social-map {
+  .footer-contact, .footer-new-branch, .footer-social-map {
     width: 100%;
     float: none;
     text-align: center;
@@ -16225,30 +16263,22 @@ a.vc_single_image-wrapper:hover:after {
 }
 .call1, .call2 {
   width: 38px;
-  padding: 6px 29px 7px 0px;
+  padding: 14px 29px 15px 0px;
   font-size: 20px;
   border: 0.5px solid #000;
   border-radius: 15px;
   background: red;
 }
-.call3{
-  padding: 6px 11px 7px 0px;
+.call3 {
+  padding: 14px 11px 15px 0px;
   width: 38px;
   font-size: 20px;
   border: 0.5px solid #000;
   border-radius: 15px;
   background: red;
 }
-.call4{
-  padding: 6px 37px 7px 0px;
-  width: 38px;
-  font-size: 20px;
-  border: 0.5px solid #000;
-  border-radius: 15px;
-  background: red;
-}
-.call5{
-  padding: 6px 108px 7px 0px;
+.call4 {
+  padding: 14px 37px 15px 0px;
   width: 38px;
   font-size: 20px;
   border: 0.5px solid #000;
@@ -16257,8 +16287,17 @@ a.vc_single_image-wrapper:hover:after {
 }
 .contentfooter {
   font-weight: 400;
-  display: inline;
-  font-size: 13px;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-right: 110px;
+}
+.contentfooter1 {
+  font-weight: 400;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-right: 110px;
 }
 .titlefooter {
   font-weight: 400;
@@ -16266,7 +16305,7 @@ a.vc_single_image-wrapper:hover:after {
   font-size: 15px;
 }
 .linefooter {
-  margin: 0 0px 12px;
+  margin: 8px 0px 15px 0px;
   border: 0;
   border-top: 3px solid #f50000;
   width: 237px;
@@ -16274,10 +16313,16 @@ a.vc_single_image-wrapper:hover:after {
 .linefooter1 {
   margin: 9px -2px 2px;
   border: 0;
-  border-top: 3px solid #e23e1d;
-  width: 165px;
+  border-top: 3px solid #f50000;
+  width: 240px;
 }
-.iconsocial1{
+.linefooter2 {
+  margin:8px 0px 15px 0px;
+  border: 0;
+  border-top: 3px solid #f50000;
+  width: 190px;
+}
+.iconsocial1 {
   font-size: 24px;
   margin-right: 10px;
   transition: color 0.3s;
@@ -16289,7 +16334,7 @@ a.vc_single_image-wrapper:hover:after {
 .iconsocial1:hover {
   color: red;
 }
-.iconsocial{
+.iconsocial {
   font-size: 24px;
   margin-right: 10px;
   transition: color 0.3s;
@@ -16301,8 +16346,7 @@ a.vc_single_image-wrapper:hover:after {
 .iconsocial:hover {
   color: red;
 }
-
-.iconmail{
+.iconmail {
   font-size: 29px;
   margin-right: 10px;
   transition: color 0.3s;
@@ -16311,16 +16355,41 @@ a.vc_single_image-wrapper:hover:after {
   border: 1px solid black;
   border-radius: 15px;
   padding: 7px 11px 6px 10px;
-  margin: 10px 4px 0px -3px;
+  margin: 10px 4px 0 -3px;
 }
 .iconmail:hover {
   color: red;
 }
+.callshowroom {
+  width: 38px;
+  padding: 14px 107px 15px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+}
+.callshowroom1{
+  width: 38px;
+  padding: 14px 107px 15px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+
+}
+.namekd{ 
+  margin: 10px 0px 0px 5px;
+}
+.HzV7m-b7CEbf .i4ewOd-pzNkMb-tJHJj {
+    padding: 11px 0 11px 20px;
+    display: none;
+}
+
 
 /* Menu Trai*/
 
 body { 
-  background: #EEE; 
+  background: #fff; 
   overflow-x: hidden;
 }
 .clearfix:before,
@@ -16372,8 +16441,293 @@ body {
       width: 320px;
       margin: 0 auto;
   }
+
+}
+@media only screen and (min-width: 1px) and (max-width: 390px) {
+  .linefooter, .linefooter1, .linefooter2 {
+    margin: 5px 0px 10px 0px;
+    border: 0;
+    border-top: 3px solid #f50000;
+      width: 100%;
+      white-space: normal;
+      text-align: center;
+}
+.callshowroom  {
+  padding: 14px 44px 15px 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.callshowroom1{ 
+  padding: 14px 62px 15px 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.footer-info, .footer-contact, .footer-new-branch {
+  width: 100%;
+  white-space: normal;
+  text-align: center;
+}
+  .contentfooter, .contentfooter1 {
+    margin-right: 10px!important;
+  }
+  .apus-footer i {
+    width: 50px;
+    padding: 12px 0px 15px 0px;
+    font-size: 20px;
+    border: 0.5px solid rgba(255, 255, 255, 0);
+    border-radius: 15px;
+}
+.call1, .call2,.call4 {
+width: 38px;
+padding: 12px 50px 14px 0px;
+font-size: 20px;
+border: 0.5px solid #000;
+border-radius: 15px;
+background: red;
+}
+.call3 {
+width: 38px;
+padding: 12px 30px 14px 0px;
+font-size: 20px;
+border: 0.5px solid #000;
+border-radius: 15px;
+background: red;
+}
+.namekd {
+margin: 10px 0px 2px 5px;
+}
+}
+@media only screen and (min-width: 391px) and (max-width: 500px) {
+  .callshowroom  {
+    padding: 14px 58px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .callshowroom1{ 
+    padding: 14px 74px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .footer-info, .footer-contact, .footer-new-branch {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .contentfooter, .contentfooter1 {
+      margin-right: 10px!important;
+    }
+    .apus-footer i {
+      width: 50px;
+      padding: 12px 0px 15px 0px;
+      font-size: 20px;
+      border: 0.5px solid rgba(255, 255, 255, 0);
+      border-radius: 15px;
+  }
+  .call1, .call2,.call4 {
+  width: 38px;
+  padding: 12px 50px 14px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+  }
+  .call3 {
+  width: 38px;
+  padding: 12px 30px 14px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+  }
+  .namekd {
+  margin: 10px 0px 2px 5px;
+  }
+  .linefooter, .linefooter1 {
+    margin: 5px 0px 10px 45px;
+    border: 0;
+    border-top: 3px solid #f50000;  
+    width: 237px;
+  }
+  .linefooter2{
+    margin: 5px 0px 10px 43px;
+    border: 0;
+    border-top: 3px solid #f50000;  
+    width: 237px;
+  }
+
 }
 
+@media only screen and (min-width: 501px) and (max-width: 768px) {
+
+  .callshowroom  {
+    padding: 14px 58px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .callshowroom1{ 
+    padding: 14px 74px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .footer-info, .footer-contact, .footer-new-branch {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .contentfooter, .contentfooter1 {
+      margin-right: 10px!important;
+    }
+    .apus-footer i {
+      width: 50px;
+      padding: 12px 0px 15px 0px;
+      font-size: 20px;
+      border: 0.5px solid rgba(255, 255, 255, 0);
+      border-radius: 15px;
+  }
+  .call1, .call2,.call4 {
+  width: 38px;
+  padding: 12px 50px 14px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+  }
+  .call3 {
+  width: 38px;
+  padding: 12px 30px 14px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+  }
+  .namekd {
+  margin: 10px 0px 2px 5px;
+  }
+  .linefooter, .linefooter1 {
+    margin: 5px 0px 10px 45px;
+    border: 0;
+    border-top: 3px solid #f50000;  
+    width: 237px;
+  }
+  .linefooter2{
+    margin: 5px 0px 10px 220px;
+    border: 0;
+    border-top: 3px solid #f50000;  
+    width: 237px;
+  }
+
+}
+
+
+@media only screen and (min-width: 769px) and (max-width: 969px) {
+
+  .callshowroom  {
+    padding: 14px 58px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .callshowroom1{ 
+    padding: 14px 74px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .footer-info, .footer-contact, .footer-new-branch {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+  .contentfooter, .contentfooter1 {
+      margin-right: 10px!important;
+    }
+    .apus-footer i {
+      width: 50px;
+      padding: 12px 0px 15px 0px;
+      font-size: 20px;
+      border: 0.5px solid rgba(255, 255, 255, 0);
+      border-radius: 15px;
+  }
+  .call1, .call2,.call4 {
+  width: 38px;
+  padding: 12px 50px 14px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+  }
+  .call3 {
+  width: 38px;
+  padding: 12px 30px 14px 0px;
+  font-size: 20px;
+  border: 0.5px solid #000;
+  border-radius: 15px;
+  background: red;
+  }
+  .namekd {
+  margin: 10px 0px 2px 5px;
+  }
+  .linefooter, .linefooter1 {
+    margin: 5px 0px 10px 75px;
+    border: 0;
+    border-top: 3px solid #f50000;  
+    width: 237px;
+  }
+  .linefooter2{
+    margin: 5px 0px 10px 246px;
+    border: 0;
+    border-top: 3px solid #f50000;  
+    width: 237px;
+  }
+
+}
+
+
+@media only screen and (min-width: 970px) and (max-width: 1155px) {
+  .callshowroom  {
+    padding: 14px 76px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .callshowroom1{ 
+    padding: 14px 76px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .contentfooter1 {
+      font-weight: 600;
+      display: inline-block;
+      font-size: 16px!important;
+      margin-top: 10px;
+      margin-right: 0;
+  }
+}
+@media only screen and (min-width: 1199px) and (max-width: 1400px) {
+
+  .callshowroom  {
+    padding: 14px 40px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .callshowroom1{ 
+    padding: 14px 56px 15px 0px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .contentfooter {
+    font-weight: 400;
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.contentfooter1 {
+  font-weight: 400;
+  display: inline-block;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-right: 0px;
+
+}
+}
 .mcd-menu {
   list-style: none;
   padding: 0;
@@ -16791,6 +17145,4 @@ visibility: visible;
 left: 250px;
 }
 }
-
-
 /* Menu Trai*/

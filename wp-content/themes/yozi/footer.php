@@ -33,39 +33,49 @@ $show_footer_mobile = yozi_get_config('show_footer_mobile', true);
 							<hr class="linefooter">
 							<div class="showroom">
 								<span class="callshowroom"><i class="fas fa-building icon5"></i>Showroom Chính</span><br/>
-								<p class="contentfooter">450 Nguyễn Tri Phương, Phường 4, Quận 10</p>
+								<p class="contentfooter">450 Nguyễn Tri Phương, Phường 4, Quận 10, Tp.HCM</p>
 							</div><br/>
 							<div class="showroom">
-								<span class="call1"><i class="fas fa-building icon5"></i>Showroom Vạn Hạnh Mall</span><br>
-								<p class="contentfooter">11 Sư Vạn Hạnh, Phường 12, Quận 10</p>
+								<span class="callshowroom1"><i class="fas fa-building icon5"></i>Vạn Hạnh Mall</span><br>
+								<p class="contentfooter">11 Sư Vạn Hạnh, Phường 12, Quận 10, Tp.HCM</p>
 							</div>
 							<hr class="linefooter1">
 						</div>
 							<div class="footer-contact pull-left">
 								<p class="titlefooter">Liên hệ</p>
 								<hr class="linefooter">
-								<span>Ms. Trang - Kinh doanh</span><br/>
+								<p class="namekd"><span>Ms. Trang - Kinh doanh</span><br/></p>
 								<span class="call1"><i class="fas fa-phone-alt icon1"></i> 0963 620 629</span><br/>
-								<span>Ms. Thúy - Kinh doanh</span><br/>
+								<p class="namekd"><span>Ms. Thúy - Kinh doanh</span><br/></p>
 								<span class="call2"><i class="fas fa-phone-alt icon2"></i> 0975 999 628</span><br/>
-								<span>Ms. Chi - Bảo hành</span><br/>
+								<p class="namekd"><span>Ms. Chi - Bảo hành</span><br/></p>
 								<span class="call3"><i class="fas fa-phone-alt icon3"></i>(028) 6683 0388</span><br/>
-								<span>Mr. Công - Kỹ thuật</span><br/>
+								<p class="namekd"><span>Mr. Công - Kỹ thuật</span><br/></p>
 								<span class="call4"><i class="fas fa-phone-alt icon4"></i>0934 358 278</span><br/>
 							</div>
 							<div class="footer-new-branch pull-left">
 								<p class="titlefooter">Các chính sách</p>
-								<hr class="linefooter">
-								<span><p class="contentfooter" style="font-size: 18px;font-weight:400;">Chính sách bảo hành</p></span><br/>
-								<span><p class="contentfooter" style="font-size: 18px;font-weight:400;">Chính sách giao hàng</p></span><br/>
-								<span><p class="contentfooter" style="font-size: 18px;font-weight:400;">Liên hệ</p></span><br/>
-								<span><p class="contentfooter" style="font-size: 18px;font-weight:400;">Giới thiếu</p></span>
+								<hr class="linefooter2">
+								<span><a href="<?php echo home_url('/gioi-thieu/');?>"><p class="contentfooter1" style="font-size: 18px;font-weight:400;">Chính sách bảo hành</p></a></span><br/>
+								<span><a href="<?php echo home_url('/gioi-thieu/');?>"><p class="contentfooter1" style="font-size: 18px;font-weight:400;">Chính sách giao hàng</p></a></span><br/>
+								<span><a href="<?php echo home_url('/gioi-thieu/');?>"><p class="contentfooter1" style="font-size: 18px;font-weight:400;">Giới thiệu</p></a></span>
 							</div>
 							<div class="footer-social-map pull-right">
 								<div class="footer-map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.5964630437334!2d106.66526507592503!3d10.765551089382575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ee6f12a0ddd%3A0x46422e72a1cd8a7e!2zNDUwIMSQLiBOZ3V54buFbiBUcmkgUGjGsMahbmcsIFBoxrDhu51uZyA0LCBRdeG6rW4gMTAsIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1722226139747!5m2!1svi!2s" width="500" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+									<div style="position: relative; width: 130%;padding-right: 120px;">
+									  <iframe 
+										src="https://www.google.com/maps/d/embed?mid=1Bym1VaYTcaTRhxELHN189dubnHAp43c&ehbc=2E312F&noprof=1" 
+										width="auto" 
+										height="250" 
+										style="border:0;" 
+										allowfullscreen="" 
+										loading="lazy" 
+										referrerpolicy="no-referrer-when-downgrade">
+									  </iframe>
+									  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 50px; background-color:#333"></div>
+									</div>
                                 
-                                </div>
+								</div>
 							</div>
 						</div>
 					</div>

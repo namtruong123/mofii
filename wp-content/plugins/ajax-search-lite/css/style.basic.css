@@ -617,7 +617,7 @@ div.asl_s.searchsettings {
 div.asl_s.searchsettings form {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 12px 0 !important;
+    margin: 8px 0px 12px 12px !important;
     padding: 0 !important;
 }
 

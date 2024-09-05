@@ -334,7 +334,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 						if ( $key === '#' ) {
 							$return['status']  = 0;
 							$return['notice']  = self::localization( 'login_message', esc_html__( 'Please log in to use the Wishlist!', 'woo-smart-wishlist' ) );
-							$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) );
+							$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) );
 						} else {
 							$products = self::get_ids( $key );
 
@@ -413,7 +413,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 								];
 
 								if ( empty( $products ) ) {
-									$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) ) . '</div>';
+									$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) ) . '</div>';
 								}
 							} else {
 								$return['notice'] = self::localization( 'not_exist_message', esc_html__( 'The product does not exist on the Wishlist!', 'woo-smart-wishlist' ) );
@@ -458,7 +458,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 						$return['status']  = 1;
 						$return['count']   = 0;
 						$return['notice']  = self::localization( 'empty_notice', esc_html__( 'All products have been removed from the Wishlist!', 'woo-smart-wishlist' ) );
-						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) );
+						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) );
 						$return['data']    = [
 							'key'       => self::get_key(),
 							'ids'       => self::get_ids(),
@@ -483,7 +483,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 
 					if ( $key === '#' ) {
 						$return['notice']  = self::localization( 'login_message', esc_html__( 'Please log in to use Wishlist!', 'woo-smart-wishlist' ) );
-						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) );
+						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) );
 					} else {
 						$products          = self::get_ids( $key );
 						$return['status']  = 1;
@@ -869,9 +869,10 @@ if ( ! function_exists( 'woosw_init' ) ) {
 
 					if ( self::get_setting( 'page_copy', 'yes' ) === 'yes' ) {
 						$copy_html = '<div class="woosw-copy">';
-						$copy_html .= '<span class="woosw-copy-label">' . esc_html__( 'Wishlist link:', 'woo-smart-wishlist' ) . '</span>';
+						$copy_html .= '<span class="woosw-copy-label">' . esc_html__( '
+Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 						$copy_html .= apply_filters( 'woosw_page_copy_url', '<span class="woosw-copy-url"><input id="woosw_copy_url" type="url" value="' . esc_attr( $share_url ) . '" readonly/></span>' );
-						$copy_html .= apply_filters( 'woosw_page_copy_btn', '<span class="woosw-copy-btn"><button id="woosw_copy_btn" type="button" class="button">' . esc_html__( 'Copy', 'woo-smart-wishlist' ) . '</button></span>' );
+						$copy_html .= apply_filters( 'woosw_page_copy_btn', '<span class="woosw-copy-btn"><button id="woosw_copy_btn" type="button" class="button">' . esc_html__( 'Sao chép', 'woo-smart-wishlist' ) . '</button></span>' );
 						$copy_html .= '</div><!-- /woosw-copy -->';
 
 						$return_html .= apply_filters( 'woosw_page_copy_html', $copy_html, $share_url );
@@ -1033,7 +1034,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 												<?php esc_html_e( 'Button', 'woo-smart-wishlist' ); ?>
                                             </th>
                                             <td>
-												<?php esc_html_e( 'Settings for "Thêm giỏ hàng" button.', 'woo-smart-wishlist' ); ?>
+												<?php esc_html_e( 'Settings for "Thêm yêu thích" button.', 'woo-smart-wishlist' ); ?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1097,7 +1098,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
                                                     <select name="woosw_settings[button_action]" class="woosw_button_action">
                                                         <option value="message" <?php selected( $button_action, 'message' ); ?>><?php esc_html_e( 'Show message', 'woo-smart-wishlist' ); ?></option>
                                                         <option value="list" <?php selected( $button_action, 'list' ); ?>><?php esc_html_e( 'Open wishlist popup', 'woo-smart-wishlist' ); ?></option>
-                                                        <option value="no" <?php selected( $button_action, 'no' ); ?>><?php esc_html_e( 'Thêm giỏ hàng solely', 'woo-smart-wishlist' ); ?></option>
+                                                        <option value="no" <?php selected( $button_action, 'no' ); ?>><?php esc_html_e( 'Thêm yêu thích solely', 'woo-smart-wishlist' ); ?></option>
                                                     </select> </label>
                                                 <span class="description"><?php esc_html_e( 'Action triggered by clicking on the wishlist button.', 'woo-smart-wishlist' ); ?></span>
                                             </td>
@@ -1503,7 +1504,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
                                             <th><?php esc_html_e( 'Button text', 'woo-smart-wishlist' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" class="regular-text" name="woosw_localization[button]" value="<?php echo esc_attr( self::localization( 'button' ) ); ?>" placeholder="<?php esc_attr_e( 'Thêm giỏ hàng', 'woo-smart-wishlist' ); ?>"/>
+                                                    <input type="text" class="regular-text" name="woosw_localization[button]" value="<?php echo esc_attr( self::localization( 'button' ) ); ?>" placeholder="<?php esc_attr_e( 'Thêm yêu thích', 'woo-smart-wishlist' ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -1703,7 +1704,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
                                             <th><?php esc_html_e( 'Empty wishlist', 'woo-smart-wishlist' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" class="regular-text" name="woosw_localization[empty_message]" value="<?php echo esc_attr( self::localization( 'empty_message' ) ); ?>" placeholder="<?php esc_attr_e( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ); ?>"/>
+                                                    <input type="text" class="regular-text" name="woosw_localization[empty_message]" value="<?php echo esc_attr( self::localization( 'empty_message' ) ); ?>" placeholder="<?php esc_attr_e( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -1854,7 +1855,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 							'delete_confirm'      => self::localization( 'delete_confirm', esc_html__( 'This action cannot be undone. Are you sure?', 'woo-smart-wishlist' ) ),
 							'copied_text'         => self::localization( 'copied', esc_html__( 'Copied the wishlist link:', 'woo-smart-wishlist' ) ),
 							'menu_text'           => apply_filters( 'woosw_menu_item_label', self::localization( 'menu_label', esc_html__( 'Wishlist', 'woo-smart-wishlist' ) ) ),
-							'button_text'         => apply_filters( 'woosw_button_text', self::localization( 'button', esc_html__( 'Thêm giỏ hàng', 'woo-smart-wishlist' ) ) ),
+							'button_text'         => apply_filters( 'woosw_button_text', self::localization( 'button', esc_html__( 'Thêm yêu thích', 'woo-smart-wishlist' ) ) ),
 							'button_text_added'   => apply_filters( 'woosw_button_text_added', self::localization( 'button_added', esc_html__( 'Browse wishlist', 'woo-smart-wishlist' ) ) ),
 							'button_normal_icon'  => apply_filters( 'woosw_button_normal_icon', self::get_setting( 'button_normal_icon', 'woosw-icon-5' ) ),
 							'button_added_icon'   => apply_filters( 'woosw_button_added_icon', self::get_setting( 'button_added_icon', 'woosw-icon-8' ) ),
@@ -2108,7 +2109,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 						do_action( 'woosw_wishlist_items_after', $key, $products );
 						echo '</' . $table_tag . '>';
 					} else {
-						echo '<div class="woosw-popup-content-mid-message">' . self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) . '</div>';
+						echo '<div class="woosw-popup-content-mid-message">' . self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) . '</div>';
 					}
 
 					do_action( 'woosw_after_items', $key, $products );

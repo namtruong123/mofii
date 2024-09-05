@@ -49,13 +49,13 @@ $action = isset($_COOKIE['yozi_login_register']) && in_array($_COOKIE['yozi_logi
 				<?php wp_nonce_field( 'woocommerce-login', 'woocommerce-login-nonce' ); ?>
 				<div class="form-group clearfix">
 					<span for="rememberme" class="inline pull-left">
-						<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php esc_html_e( 'Ghi nhớ tài khoản', 'yozi' ); ?>
+						<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php esc_html_e( 'Nhớ đăng nhập', 'yozi' ); ?>
 					</span>
 					<span class="lost_password pull-right">
 						<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Quên mật khẩu?', 'yozi' ); ?></a>
 					</span>
 				</div>
-				<input type="submit" class="btn btn-theme btn-block" name="login" value="<?php esc_html_e( 'sign in', 'yozi' ); ?>" />
+				<input type="submit" class="btn btn-theme btn-block" name="login" value="<?php esc_html_e( 'Đăng nhập', 'yozi' ); ?>" />
 			</div>
 
 			<?php do_action( 'woocommerce_login_form_end' ); ?>
@@ -65,9 +65,9 @@ $action = isset($_COOKIE['yozi_login_register']) && in_array($_COOKIE['yozi_logi
 		<?php if ( get_option( 'woocommerce_enable_myaccount_registration' ) === 'yes' ) : ?>
 			<div class="create text-center">
 				<div class="line-border center">
-					<span class="center-line"><?php echo esc_html__('or','yozi') ?></span>
+					<span class="center-line"><?php echo esc_html__('hoặc','yozi') ?></span>
 				</div>
-				<a class="creat-account register-login-action" href="#customer_register"><?php echo esc_html__('CREATE AN ACCOUNT','yozi'); ?></a>
+				<a class="creat-account register-login-action" href="#customer_register"><?php echo esc_html__('TẠO TÀI KHOẢN','yozi'); ?></a>
 			</div>
 		<?php endif; ?>
 
@@ -85,27 +85,27 @@ $action = isset($_COOKIE['yozi_login_register']) && in_array($_COOKIE['yozi_logi
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
 
 				<p class="form-group form-row form-row-wide">
-					<label for="reg_username"><?php esc_html_e( 'Username', 'yozi' ); ?> <span class="required">*</span></label>
+					<label for="reg_username"><?php esc_html_e( 'Tên đăng nhập', 'yozi' ); ?> <span class="required">*</span></label>
 					<input type="text" class="input-text form-control" name="username" id="reg_username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
 				</p>
 
 			<?php endif; ?>
 
 			<p class="form-group form-row form-row-wide">
-				<label for="reg_email"><?php esc_html_e( 'Email address', 'yozi' ); ?> <span class="required">*</span></label>
+				<label for="reg_email"><?php esc_html_e( 'Email', 'yozi' ); ?> <span class="required">*</span></label>
 				<input type="email" class="input-text form-control" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
 			</p>
 
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
 
 				<p class="form-group form-row form-row-wide">
-					<label for="reg_password"><?php esc_html_e( 'Password', 'yozi' ); ?> <span class="required">*</span></label>
+					<label for="reg_password"><?php esc_html_e( 'Mật khẩu', 'yozi' ); ?> <span class="required">*</span></label>
 					<input type="password" class="input-text form-control" name="password" id="reg_password" />
 				</p>
 
 			<?php else : ?>
 
-				<p><?php esc_html_e( 'A password will be sent to your email address.', 'yozi' ); ?></p>
+				<p><?php esc_html_e( 'Một mật khẩu sẽ được gửi đến địa chỉ email của bạn.', 'yozi' ); ?></p>
 
 			<?php endif; ?>
 
@@ -123,9 +123,9 @@ $action = isset($_COOKIE['yozi_login_register']) && in_array($_COOKIE['yozi_logi
 
 		<div class="create text-center">
 			<div class="line-border center">
-				<span class="center-line"><?php echo esc_html__('or','yozi') ?></span>
+				<span class="center-line"><?php echo esc_html__('hoặc','yozi') ?></span>
 			</div>
-			<a class="login-account register-login-action" href="#customer_login"><?php echo esc_html__('Đăng nhập','yozi'); ?></a>
+			<a class="login-account register-login-action" href="#customer_login"><?php echo esc_html__('ĐĂNG NHẬP','yozi'); ?></a>
 		</div>
 
 	</div>

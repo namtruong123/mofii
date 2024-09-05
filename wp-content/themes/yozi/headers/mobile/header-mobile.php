@@ -77,11 +77,6 @@
                         </div>
                     </div>
                 <?php endif; ?>
-                <div class="col-xs-9">
-                    <?php if ( has_nav_menu( 'vertical-menu' ) ): ?>
-                        <h4 class="text-title text-right mobile-vertical-menu-title"><span><?php echo esc_html__('All Departments','yozi') ?></span><i aria-hidden="true" class="fa fa-angle-down"></i></h4>
-                    <?php endif; ?>
-                </div>
             </div>
         </div>
     </div>

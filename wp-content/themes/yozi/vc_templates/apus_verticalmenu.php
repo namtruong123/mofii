@@ -154,6 +154,47 @@ $position_class = ($position=='left') ? 'menu-left' : 'menu-right';
             </nav>
         </div>
     </div>
+	<script>jQuery(document).ready(function($) {
+    // Xử lý sự kiện khi nhấp vào mini cart
+    $('.mini-cart').on('click', function(e) {
+        e.preventDefault(); // Ngăn chặn hành vi mặc định của liên kết
+
+        // Tìm phần tử chứa giỏ hàng và kiểm tra xem nó đã có lớp `open` chưa
+        var $cart = $(this).closest('.dropdown.version-1.cart');
+
+        // Thay đổi lớp `open` cho phần tử chứa giỏ hàng
+        if ($cart.hasClass('open')) {
+            $cart.removeClass('open');
+        } else {
+            $cart.addClass('open');
+        }
+    });
+
+    // Xử lý sự kiện khi nhấp ra ngoài để đóng giỏ hàng
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.dropdown.version-1.cart').length) {
+            $('.dropdown.version-1.cart').removeClass('open');
+        }
+    });
+});</script>
+	<script>
+    jQuery(document).ready(function($) {
+    $('.wrapper-topmenu .dropdown > a').on('click', function(e) {
+        e.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+        
+        var $dropdown = $(this).closest('.dropdown');
+        
+        // Kiểm tra nếu phần tử đã có class 'open'
+        if ($dropdown.hasClass('open')) {
+            // Nếu có, loại bỏ class 'open'
+            $dropdown.removeClass('open');
+        } else {
+            // Nếu không, thêm class 'open'
+            $dropdown.addClass('open');
+        }
+    });
+});
+</script>
     <script>
         // Lấy tất cả các phần tử a trong menu
         const menuItems = document.querySelectorAll('.mcd-menu li a');

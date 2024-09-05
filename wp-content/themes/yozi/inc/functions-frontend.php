@@ -609,7 +609,7 @@ function yozi_display_sidebar_right( $sidebar_configs ) {
 
 function yozi_before_content( $sidebar_configs ) {
 	if ( isset($sidebar_configs['left']) || isset($sidebar_configs['right']) ) : ?>
-		<a href="javascript:void(0)" class="mobile-sidebar-btn hidden-lg hidden-md"> <i class="fa fa-bars"></i> <?php echo esc_html__('Show Sidebar', 'yozi'); ?></a>
+		<a href="javascript:void(0)" class="mobile-sidebar-btn hidden-lg hidden-md"> <i class="fa fa-bars"></i> <?php echo esc_html__('Hiển thị thanh bên', 'yozi'); ?></a>
 		<div class="mobile-sidebar-panel-overlay"></div>
 	<?php endif;
 }

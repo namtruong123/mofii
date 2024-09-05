@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '01' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Shopping Cart','yozi'); ?>
+					<?php echo esc_html__('Giỏ hàng','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '02' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Checkout','yozi'); ?>
+					<?php echo esc_html__('Thanh toán','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -42,7 +42,7 @@ defined( 'ABSPATH' ) || exit;
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '03' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Order Completed','yozi'); ?>
+					<?php echo esc_html__('Hoàn tất đơn hàng','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -66,15 +66,15 @@ if ( $order ) : ?>
 
 	<?php else : ?>
 
-		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'yozi' ), $order ); ?></p>
+		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Cảm ơn bạn. Đơn đặt hàng của bạn đã được tiếp nhận.', 'yozi' ), $order ); ?></p>
 
 		<ul class="woocommerce-thankyou-order-details order_details">
 			<li class="order">
-				<?php esc_html_e( 'Order Number:', 'yozi' ); ?>
+				<?php esc_html_e( 'Mã đơn hàng:', 'yozi' ); ?>
 				<strong><?php echo trim($order->get_order_number()); ?></strong>
 			</li>
 			<li class="date">
-				<?php esc_html_e( 'Date:', 'yozi' ); ?>
+				<?php esc_html_e( 'Ngày:', 'yozi' ); ?>
 				<strong><?php echo wc_format_datetime( $order->get_date_created() ); ?></strong>
 			</li>
 			<?php if ( is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email() ) : ?>
@@ -84,12 +84,12 @@ if ( $order ) : ?>
 				</li>
 			<?php endif; ?>
 			<li class="total">
-				<?php esc_html_e( 'Total:', 'yozi' ); ?>
+				<?php esc_html_e( 'Tổng cộng:', 'yozi' ); ?>
 				<strong><?php echo trim($order->get_formatted_order_total()); ?></strong>
 			</li>
 			<?php if ( $order->get_payment_method_title() ) : ?>
 			<li class="method">
-				<?php esc_html_e( 'Payment Method:', 'yozi' ); ?>
+				<?php esc_html_e( 'Phương thức thanh toán:', 'yozi' ); ?>
 				<strong><?php echo trim($order->get_payment_method_title()); ?></strong>
 			</li>
 			<?php endif; ?>
@@ -104,6 +104,6 @@ if ( $order ) : ?>
 
 <?php else : ?>
 
-	<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Thank you. Your order has been received.', 'yozi' ), null ); ?></p>
+	<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Cảm ơn. Đơn đặt hàng của bạn đã được tiếp nhận.', 'yozi' ), null ); ?></p>
 
 <?php endif; ?>

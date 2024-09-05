@@ -8820,6 +8820,10 @@ button.close {
   bottom: -10px;
 }
 
+.carousel {
+    position: initial!important;
+}
+
 .carousel-wrapper {
   position: relative;
 }

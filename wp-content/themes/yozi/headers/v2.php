@@ -1,6 +1,6 @@
 <header id="apus-header" class="apus-header header-v2 hidden-sm hidden-xs" role="banner">
-<div id="apus-topbar" class="apus-topbar apus-topbar-v5 clearfix">
-        <div class="container">
+        <div id="apus-topbar" class="apus-topbar clearfix">
+            <div class="container">
             <?php if (is_active_sidebar('sidebar-topbar-left')) { ?>
                 <div class="pull-left">
                     <div class="topbar-left">

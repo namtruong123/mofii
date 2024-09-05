@@ -22,10 +22,10 @@ do_action( 'woocommerce_before_lost_password_form' );
 
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 
-    <p><?php echo apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'yozi' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>
+    <p><?php echo apply_filters( 'woocommerce_lost_password_message', esc_html__( 'Quên mật khẩu? Vui lòng nhập tên người dùng hoặc địa chỉ email của bạn. Bạn sẽ nhận được liên kết để tạo mật khẩu mới qua email.', 'yozi' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>
 
     <p class="form-group">
-        <label for="user_login"><?php esc_html_e( 'Username or email', 'yozi' ); ?></label>
+        <label for="user_login"><?php esc_html_e( 'Tên đăng nhập hoặc email', 'yozi' ); ?></label>
         <input class="input-text form-control" type="text" name="user_login" id="user_login" autocomplete="username" />
     </p>
 
@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_lost_password_form' );
 
     <p class="form-group">
         <input type="hidden" name="wc_reset_password" value="true" />
-        <button type="submit" class="button" value="<?php esc_attr_e( 'Reset password', 'yozi' ); ?>"><?php esc_html_e( 'Reset password', 'yozi' ); ?></button>
+        <button type="submit" class="button" value="<?php esc_attr_e( 'Reset password', 'yozi' ); ?>"><?php esc_html_e( 'Đặt lại mật khẩu', 'yozi' ); ?></button>
     </p>
 
     <?php wp_nonce_field( 'lost_password', 'woocommerce-lost-password-nonce' ); ?>
