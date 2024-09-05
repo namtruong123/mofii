@@ -1,4 +1,4 @@
-®ZÙf<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:3;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-16 07:07:30";s:13:"post_date_gmt";s:19:"2024-07-16 07:07:30";s:12:"post_content";s:5534:"<!-- wp:heading -->
+ÐxÙf<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:3;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-16 07:07:30";s:13:"post_date_gmt";s:19:"2024-07-16 07:07:30";s:12:"post_content";s:5534:"<!-- wp:heading -->
 <h2 class="wp-block-heading">Who we are</h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->

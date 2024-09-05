@@ -1,4 +1,4 @@
-�Z�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1608;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-24 15:41:43";s:13:"post_date_gmt";s:19:"2024-07-24 15:41:43";s:12:"post_content";s:0:"";s:10:"post_title";s:0:"";s:12:"post_excerpt";s:799:"<ul>
+�x�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1608;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-24 15:41:43";s:13:"post_date_gmt";s:19:"2024-07-24 15:41:43";s:12:"post_content";s:0:"";s:10:"post_title";s:0:"";s:12:"post_excerpt";s:799:"<ul>
  	<li>Combo Bàn Phím Và Chuột Không Dây MOFII Candy Mixed là sự lựa chọn hoàn hảo cho nhu cầu làm việc và giải trí của bạn.</li>
  	<li>Bộ sản phẩm bao gồm một bàn phím với 84 nút bấm và một chuột không dây.</li>
  	<li>Thiết kế nhỏ gọn, tiết kiệm không gian, màu sắc đa dạng và công nghệ in phủ cùng khắc laser giúp sản phẩm bền bỉ theo năm tháng sử dụng. Kết nối không dây 2.4Ghz hiệu suất cao, hỗ trợ phím bấm công nghệ mới của Mofii với tuổi thọ lâu.</li>

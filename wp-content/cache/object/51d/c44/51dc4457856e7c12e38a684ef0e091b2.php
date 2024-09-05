@@ -1,4 +1,4 @@
-�Z�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1092;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-17 04:29:48";s:13:"post_date_gmt";s:19:"2024-07-17 04:29:48";s:12:"post_content";s:609:"<ul>
+�x�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1092;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-17 04:29:48";s:13:"post_date_gmt";s:19:"2024-07-17 04:29:48";s:12:"post_content";s:609:"<ul>
  	<li><strong>Hãng:</strong> Geezer</li>
  	<li><strong>Kết nối:</strong> 3 chế độ (cắm dây, 2.4Ghz, Bluetooth)</li>
  	<li><strong>Trọng lượng bàn phím:</strong> 942g</li>

@@ -1,4 +1,4 @@
-�Z�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1310;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-18 10:55:15";s:13:"post_date_gmt";s:19:"2024-07-18 10:55:15";s:12:"post_content";s:678:"<ul>
+�x�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1310;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-18 10:55:15";s:13:"post_date_gmt";s:19:"2024-07-18 10:55:15";s:12:"post_content";s:678:"<ul>
  	<li><strong>Thiết kế</strong>: Ergonomic, giúp giảm mỏi tay khi sử dụng lâu.</li>
  	<li><strong>Độ phân giải</strong>: 1600 DPI, cho phép di chuyển con trỏ mượt mà và chính xác.</li>
  	<li><strong>Kết nối</strong>: Sử dụng cổng USB, tương thích với nhiều thiết bị.</li>

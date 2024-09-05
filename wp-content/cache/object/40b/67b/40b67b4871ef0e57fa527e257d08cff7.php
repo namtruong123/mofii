@@ -1,0 +1,1 @@
+îxÙf<?php exit; ?>a:1:{s:7:"content";s:75:"{{WP_CONTENT_DIR}}/themes/yozi/woocommerce/single-product/product-image.php";}

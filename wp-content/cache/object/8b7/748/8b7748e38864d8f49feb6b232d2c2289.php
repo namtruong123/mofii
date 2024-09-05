@@ -1,4 +1,4 @@
-�Z�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1519;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-24 09:03:54";s:13:"post_date_gmt";s:19:"2024-07-24 09:03:54";s:12:"post_content";s:0:"";s:10:"post_title";s:30:"Tấm Lót Chuột MP082 MOFII";s:12:"post_excerpt";s:607:"<ul>
+�x�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1519;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-24 09:03:54";s:13:"post_date_gmt";s:19:"2024-07-24 09:03:54";s:12:"post_content";s:0:"";s:10:"post_title";s:30:"Tấm Lót Chuột MP082 MOFII";s:12:"post_excerpt";s:607:"<ul>
  	<li>Tấm lót chuột MP082 của MOFII là sự lựa chọn lý tưởng cho không gian làm việc của bạn.</li>
  	<li>Với kích thước rộng 720 x 280 mm, sản phẩm cung cấp đủ không gian cho chuột và bàn phím, giúp bạn thao tác mượt mà và chính xác.</li>
  	<li>Chất liệu cao su kết hợp với vải mang lại độ bám tốt và cảm giác thoải mái khi sử dụng.</li>
