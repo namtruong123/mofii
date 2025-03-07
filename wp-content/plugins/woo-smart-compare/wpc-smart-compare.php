@@ -3,21 +3,23 @@
 Plugin Name: WPC Smart Compare for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: Smart products compare for WooCommerce.
-Version: 6.2.7
+Version: 6.4.3
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: woo-smart-compare
 Domain Path: /languages/
 Requires Plugins: woocommerce
 Requires at least: 4.0
-Tested up to: 6.5
+Tested up to: 6.7
 WC requires at least: 3.0
-WC tested up to: 9.1
+WC tested up to: 9.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOSC_VERSION' ) && define( 'WOOSC_VERSION', '6.2.7' );
+! defined( 'WOOSC_VERSION' ) && define( 'WOOSC_VERSION', '6.4.3' );
 ! defined( 'WOOSC_LITE' ) && define( 'WOOSC_LITE', __FILE__ );
 ! defined( 'WOOSC_FILE' ) && define( 'WOOSC_FILE', __FILE__ );
 ! defined( 'WOOSC_URI' ) && define( 'WOOSC_URI', plugin_dir_url( __FILE__ ) );
@@ -36,9 +38,6 @@ if ( ! function_exists( 'woosc_init' ) ) {
 	add_action( 'plugins_loaded', 'woosc_init', 11 );
 
 	function woosc_init() {
-		// load text-domain
-		load_plugin_textdomain( 'woo-smart-compare', false, basename( __DIR__ ) . '/languages/' );
-
 		if ( ! function_exists( 'WC' ) || ! version_compare( WC()->version, '3.0', '>=' ) ) {
 			add_action( 'admin_notices', 'woosc_notice_wc' );
 
@@ -78,17 +77,14 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					// update product
 					add_action( 'save_post', [ $this, 'save_post' ], 10, 2 );
 
-					// ajax search
-					add_action( 'wp_ajax_woosc_search', [ $this, 'ajax_search' ] );
-					add_action( 'wp_ajax_nopriv_woosc_search', [ $this, 'ajax_search' ] );
+					// frontend ajax search
+					add_action( 'wc_ajax_woosc_search', [ $this, 'ajax_search' ] );
 
-					// ajax share
-					add_action( 'wp_ajax_woosc_share', [ $this, 'ajax_share' ] );
-					add_action( 'wp_ajax_nopriv_woosc_share', [ $this, 'ajax_share' ] );
+					// frontend ajax share
+					add_action( 'wc_ajax_woosc_share', [ $this, 'ajax_share' ] );
 
-					// ajax load data
-					add_action( 'wp_ajax_woosc_load_data', [ $this, 'ajax_load_data' ] );
-					add_action( 'wp_ajax_nopriv_woosc_load_data', [ $this, 'ajax_load_data' ] );
+					// frontend ajax load
+					add_action( 'wc_ajax_woosc_load', [ $this, 'ajax_load' ] );
 
 					// add to compare
 					add_action( 'template_redirect', [ $this, 'add_by_link' ] );
@@ -97,7 +93,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					add_action( 'admin_init', [ $this, 'register_settings' ] );
 					add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 
-					// ajax add field
+					// backend ajax add field
 					add_action( 'wp_ajax_woosc_add_field', [ $this, 'ajax_add_field' ] );
 
 					// settings link
@@ -154,6 +150,9 @@ if ( ! function_exists( 'woosc_init' ) ) {
 				}
 
 				function init() {
+					// load text-domain
+					load_plugin_textdomain( 'woo-smart-compare', false, basename( WOOSC_DIR ) . '/languages/' );
+
 					// fields
 					self::$fields = apply_filters( 'woosc_fields', [
 						'image'        => self::localization( 'field_image', esc_html__( 'Image', 'woo-smart-compare' ) ),
@@ -163,7 +162,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 						'stock'        => self::localization( 'field_stock', esc_html__( 'Stock', 'woo-smart-compare' ) ),
 						'availability' => self::localization( 'field_availability', esc_html__( 'Availability', 'woo-smart-compare' ) ),
 						'add_to_cart'  => self::localization( 'field_add_to_cart', esc_html__( 'Add to cart', 'woo-smart-compare' ) ),
-						'description'  => self::localization( 'field_description', esc_html__( 'Thông số', 'woo-smart-compare' ) ),
+						'description'  => self::localization( 'field_description', esc_html__( 'Description', 'woo-smart-compare' ) ),
 						'content'      => self::localization( 'field_content', esc_html__( 'Content', 'woo-smart-compare' ) ),
 						'weight'       => self::localization( 'field_weight', esc_html__( 'Weight', 'woo-smart-compare' ) ),
 						'dimensions'   => self::localization( 'field_dimensions', esc_html__( 'Dimensions', 'woo-smart-compare' ) ),
@@ -188,6 +187,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					// shortcode
 					add_shortcode( 'woosc', [ $this, 'shortcode_btn' ] );
 					add_shortcode( 'woosc_btn', [ $this, 'shortcode_btn' ] );
+					add_shortcode( 'woosc_link', [ $this, 'shortcode_link' ] );
 					add_shortcode( 'woosc_list', [ $this, 'shortcode_list' ] );
 					add_shortcode( 'woosc_quick_table', [ $this, 'shortcode_quick_table' ] );
 
@@ -288,7 +288,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 						'jquery-ui-sortable'
 					], WOOSC_VERSION, true );
 					wp_localize_script( 'woosc-frontend', 'woosc_vars', apply_filters( 'woosc_vars', [
-							'ajax_url'           => admin_url( 'admin-ajax.php' ),
+							'wc_ajax_url'        => WC_AJAX::get_endpoint( '%%endpoint%%' ),
 							'nonce'              => wp_create_nonce( 'woosc-security' ),
 							'hash'               => self::get_setting( 'hash', '6' ),
 							'user_id'            => self::get_user_key(),
@@ -306,6 +306,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 							'message_removed'    => self::localization( 'message_removed', esc_html__( '{name} has been removed from the Compare list.', 'woo-smart-compare' ) ),
 							'message_exists'     => self::localization( 'message_exists', esc_html__( '{name} is already in the Compare list.', 'woo-smart-compare' ) ),
 							'open_bar'           => self::get_setting( 'open_bar_immediately', 'no' ),
+							'bar_filter'         => self::get_setting( 'bar_filter', 'no' ),
 							'bar_bubble'         => self::get_setting( 'bar_bubble', 'no' ),
 							'adding'             => self::get_setting( 'adding', 'prepend' ),
 							'click_again'        => self::get_setting( 'click_again', 'no' ),
@@ -318,10 +319,15 @@ if ( ! function_exists( 'woosc_init' ) ) {
 							'remove_all'         => self::localization( 'bar_remove_all_confirmation', esc_html__( 'Do you want to remove all products from the compare?', 'woo-smart-compare' ) ),
 							'limit_notice'       => self::localization( 'limit', esc_html__( 'You can add a maximum of {limit} products to the comparison table.', 'woo-smart-compare' ) ),
 							'copied_text'        => self::localization( 'share_copied', /* translators: link */ esc_html__( 'Share link %s was copied to clipboard!', 'woo-smart-compare' ) ),
-							'button_text'        => apply_filters( 'woosc_button_text', self::localization( 'button', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ),
-							'button_text_added'  => apply_filters( 'woosc_button_text_added', self::localization( 'button_added', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ),
+							'button_text'        => apply_filters( 'woosc_button_text', self::localization( 'button', esc_html__( 'Compare', 'woo-smart-compare' ) ) ),
+							'button_text_added'  => apply_filters( 'woosc_button_text_added', self::localization( 'button_added', esc_html__( 'Compare', 'woo-smart-compare' ) ) ),
 							'button_normal_icon' => apply_filters( 'woosc_button_normal_icon', self::get_setting( 'button_normal_icon', 'woosc-icon-1' ) ),
 							'button_added_icon'  => apply_filters( 'woosc_button_added_icon', self::get_setting( 'button_added_icon', 'woosc-icon-74' ) ),
+							'quick_table_fixed'  => apply_filters( 'woosc_quick_table_fixed', json_encode( apply_filters( 'woosc_quick_table_fixed_arr', [
+								'pc' => 2,
+								'ta' => 1,
+								'mo' => 0,
+							] ) ) ),
 						] )
 					);
 				}
@@ -453,6 +459,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 								$perfect_scrollbar       = self::get_setting( 'perfect_scrollbar', 'yes' );
 								$close_button            = self::get_setting( 'close_button', 'yes' );
 								$bar_bubble              = self::get_setting( 'bar_bubble', 'no' );
+								$bar_filter              = self::get_setting( 'bar_filter', 'no' );
 								$bar_print               = self::get_setting( 'bar_print', 'yes' );
 								$bar_share               = self::get_setting( 'bar_share', 'yes' );
 								$bar_add                 = self::get_setting( 'bar_add', 'yes' );
@@ -984,6 +991,22 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                                         <option value="no" <?php selected( $bar_bubble, 'no' ); ?>><?php esc_html_e( 'No', 'woo-smart-compare' ); ?></option>
                                                     </select> </label>
                                                 <span class="description"><?php esc_html_e( 'Use the bubble instead of a fully comparison bar.', 'woo-smart-compare' ); ?></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><?php esc_html_e( 'Smart filter', 'woo-smart-compare' ); ?></th>
+                                            <td>
+                                                <label> <select name="woosc_settings[bar_filter]">
+                                                        <option value="no" <?php selected( $bar_filter, 'no' ); ?>><?php esc_html_e( 'None (disable)', 'woo-smart-compare' ); ?></option>
+														<?php
+														$taxonomies = get_object_taxonomies( 'product', 'objects' ); //$taxonomies = get_taxonomies( [ 'object_type' => [ 'product' ] ], 'objects' );
+
+														foreach ( $taxonomies as $taxonomy ) {
+															echo '<option value="' . esc_attr( $taxonomy->name ) . '" ' . selected( $bar_filter, $taxonomy->name, false ) . '>' . esc_html( $taxonomy->label ) . '</option>';
+														}
+														?>
+                                                    </select> </label>
+                                                <span class="description"><?php esc_html_e( 'Enable smart filter by selected taxonomy.', 'woo-smart-compare' ); ?></span>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1577,6 +1600,30 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                                 </label>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Filter', 'woo-smart-compare' ); ?></th>
+                                            <td>
+                                                <label>
+                                                    <input type="text" class="regular-text" name="woosc_localization[bar_filter]" value="<?php echo esc_attr( self::localization( 'bar_filter' ) ); ?>" placeholder="<?php /* translators: count */
+													esc_attr_e( 'Filter', 'woo-smart-compare' ); ?>"/> </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Filter all', 'woo-smart-compare' ); ?></th>
+                                            <td>
+                                                <label>
+                                                    <input type="text" class="regular-text" name="woosc_localization[bar_filter_all]" value="<?php echo esc_attr( self::localization( 'bar_filter_all' ) ); ?>" placeholder="<?php /* translators: count */
+													esc_attr_e( 'All (%d)', 'woo-smart-compare' ); ?>"/> </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th><?php esc_html_e( 'Filter other', 'woo-smart-compare' ); ?></th>
+                                            <td>
+                                                <label>
+                                                    <input type="text" class="regular-text" name="woosc_localization[bar_filter_other]" value="<?php echo esc_attr( self::localization( 'bar_filter_other' ) ); ?>" placeholder="<?php /* translators: term & count */
+													esc_attr_e( '%1$s (%2$d)', 'woo-smart-compare' ); ?>"/> </label>
+                                            </td>
+                                        </tr>
                                         <tr class="heading">
                                             <th scope="row"><?php esc_html_e( 'Quick comparison table', 'woo-smart-compare' ); ?></th>
                                             <td></td>
@@ -1658,7 +1705,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th><?php esc_html_e( 'Thông số', 'woo-smart-compare' ); ?></th>
+                                            <th><?php esc_html_e( 'Description', 'woo-smart-compare' ); ?></th>
                                             <td>
                                                 <label>
                                                     <input type="text" class="regular-text" name="woosc_localization[field_description]" value="<?php echo esc_attr( self::localization( 'field_description' ) ); ?>" placeholder="<?php esc_attr_e( 'Description', 'woo-smart-compare' ); ?>"/>
@@ -1752,22 +1799,74 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					<?php
 				}
 
+				function get_filter() {
+					$filter = self::get_setting( 'bar_filter', 'no' );
+					$select = '';
+
+					if ( $filter !== 'no' ) {
+						$filter_terms = [];
+						$products     = self::get_products();
+
+						if ( ! empty( $products ) ) {
+							foreach ( $products as $product_id ) {
+								if ( $product_terms = get_the_terms( $product_id, $filter ) ) {
+									foreach ( $product_terms as $term ) {
+										if ( ! isset( $filter_terms[ $term->term_id ] ) ) {
+											$filter_terms[ $term->term_id ] = [
+												'term_id' => $term->term_id,
+												'name'    => $term->name,
+												'slug'    => $term->slug,
+												'count'   => 1,
+											];
+										} else {
+											$filter_terms[ $term->term_id ]['count'] ++;
+										}
+									}
+								}
+							}
+
+							if ( ! empty( $filter_terms ) ) {
+								$select   .= '<select id="woosc-filter">';
+								$select   .= '<option value="_all_">' . sprintf( /* translators: count */ self::localization( 'bar_filter_all', esc_html__( 'All (%d)', 'woo-smart-compare' ) ), count( $products ) ) . '</option>';
+								$selected = true;
+
+								foreach ( $filter_terms as $filter_term ) {
+									$select   .= '<option value="' . esc_attr( $filter_term['slug'] ) . '" ' . ( $selected ? 'selected' : '' ) . '>' . esc_html( sprintf( /* translators: term & count */ self::localization( 'bar_filter_other', esc_html__( '%1$s (%2$d)', 'woo-smart-compare' ) ), $filter_term['name'], $filter_term['count'] ) ) . '</option>';
+									$selected = false;
+								}
+
+								$select .= '</select>';
+							}
+						}
+					}
+
+					return apply_filters( 'woosc_get_filter', $select );
+				}
+
 				function get_bar() {
 					// get items
 					$bar      = '';
 					$products = self::get_products();
+					$filter   = self::get_setting( 'bar_filter', 'no' );
 
 					if ( ! empty( $products ) ) {
 						foreach ( $products as $product_id ) {
 							$product_obj = wc_get_product( $product_id );
 
-							if ( ! $product_obj || $product_obj->get_status() !== 'publish' ) {
+							if ( ! $product_obj || ! apply_filters( 'woosc_product_visible', $product_obj->is_visible(), $product_obj, 'bar' ) ) {
 								continue;
 							}
 
-							$product_name = apply_filters( 'woosc_product_name', $product_obj->get_name() );
+							$product_name  = apply_filters( 'woosc_product_name', $product_obj->get_name() );
+							$product_class = 'woosc-bar-item';
 
-							$bar .= '<div class="woosc-bar-item" data-id="' . esc_attr( $product_id ) . '">';
+							if ( ( $filter !== 'no' ) && ( $product_terms = get_the_terms( $product_id, $filter ) ) ) {
+								foreach ( $product_terms as $term ) {
+									$product_class .= ' woosc-bar-item-' . $term->slug;
+								}
+							}
+
+							$bar .= '<div class="' . esc_attr( apply_filters( 'woosc_bar_product_class', $product_class, $product_obj ) ) . '" data-id="' . esc_attr( $product_id ) . '">';
 							$bar .= '<span class="woosc-bar-item-img hint--top" role="button" aria-label="' . esc_attr( apply_filters( 'woosc_product_name', wp_strip_all_tags( $product_name ), $product_obj ) ) . '">' . $product_obj->get_image( 'woosc-small' ) . '</span>';
 							$bar .= '<span class="woosc-bar-item-remove hint--top" role="button" aria-label="' . esc_attr( self::localization( 'bar_remove', esc_html__( 'Remove', 'woo-smart-compare' ) ) ) . '" data-id="' . $product_id . '"></span></div>';
 						}
@@ -1786,7 +1885,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 						foreach ( $products as $product_id ) {
 							$product_obj = wc_get_product( $product_id );
 
-							if ( ! $product_obj || $product_obj->get_status() !== 'publish' ) {
+							if ( ! $product_obj || ! apply_filters( 'woosc_product_visible', $product_obj->is_visible(), $product_obj, 'sidebar' ) ) {
 								continue;
 							}
 
@@ -1850,6 +1949,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 						$remove         = apply_filters( 'woosc_page_product_remove', self::get_setting( 'remove', 'yes' ) === 'yes' );
 						$remove_all     = apply_filters( 'woosc_page_remove_all', self::get_setting( 'bar_remove', 'no' ) === 'yes' );
 						$table_settings = self::get_setting( 'table_settings', 'yes' ) === 'yes';
+						$filter         = self::get_setting( 'bar_filter', 'no' );
 
 						global $post;
 
@@ -1857,29 +1957,41 @@ if ( ! function_exists( 'woosc_init' ) ) {
 							$post = get_post( $product_id );
 							setup_postdata( $post );
 
-							$product        = wc_get_product( $product_id );
+							$product_obj    = wc_get_product( $product_id );
 							$parent_product = false;
 
-							if ( ! $product || $product->get_status() !== 'publish' ) {
+							if ( ! $product_obj || ! apply_filters( 'woosc_product_visible', $product_obj->is_visible(), $product_obj, 'table' ) ) {
 								continue;
 							}
 
-							if ( $product->is_type( 'variation' ) && ( $parent_product_id = $product->get_parent_id() ) ) {
+							if ( $product_obj->is_type( 'variation' ) && ( $parent_product_id = $product_obj->get_parent_id() ) ) {
 								$parent_product = wc_get_product( $parent_product_id );
 							}
 
 							$products_data[ $product_id ]['id'] = $product_id;
 
-							$product_name = apply_filters( 'woosc_product_name', $product->get_name() );
+							$product_name = apply_filters( 'woosc_product_name', $product_obj->get_name() );
 
 							if ( $link !== 'no' ) {
-								$products_data[ $product_id ]['name'] = apply_filters( 'woosc_product_name', '<a ' . ( $link === 'yes_popup' ? 'class="woosq-link" data-id="' . $product_id . '" data-context="woosc"' : '' ) . ' href="' . $product->get_permalink() . '" draggable="false" ' . ( $link === 'yes_blank' ? 'target="_blank"' : '' ) . '>' . wp_strip_all_tags( $product_name ) . '</a>', $product );
+								$products_data[ $product_id ]['name'] = apply_filters( 'woosc_product_name', '<a ' . ( $link === 'yes_popup' ? 'class="woosq-link" data-id="' . $product_id . '" data-context="woosc"' : '' ) . ' href="' . $product_obj->get_permalink() . '" draggable="false" ' . ( $link === 'yes_blank' ? 'target="_blank"' : '' ) . '>' . wp_strip_all_tags( $product_name ) . '</a>', $product_obj );
 							} else {
-								$products_data[ $product_id ]['name'] = apply_filters( 'woosc_product_name', wp_strip_all_tags( $product_name ), $product );
+								$products_data[ $product_id ]['name'] = apply_filters( 'woosc_product_name', wp_strip_all_tags( $product_name ), $product_obj );
 							}
 
 							if ( $remove && ! $is_share ) {
 								$products_data[ $product_id ]['name'] .= ' <span class="woosc-remove" data-id="' . $product_id . '">' . self::localization( 'table_remove', esc_html__( 'remove', 'woo-smart-compare' ) ) . '</span>';
+							}
+
+							if ( $filter !== 'no' ) {
+								$product_filter = [];
+
+								if ( $product_terms = get_the_terms( $product_id, $filter ) ) {
+									foreach ( $product_terms as $term ) {
+										$product_filter[] = $term->slug;
+									}
+								}
+
+								$products_data[ $product_id ]['filter'] = apply_filters( 'woosc_product_filter', $product_filter, $product_obj );
 							}
 
 							foreach ( $fields as $key => $field ) {
@@ -1895,79 +2007,79 @@ if ( ! function_exists( 'woosc_init' ) ) {
 									// default fields
 									switch ( $field_name ) {
 										case 'image':
-											$image = $product->get_image( self::get_setting( 'image_size', 'woosc-large' ), [
+											$image = $product_obj->get_image( self::get_setting( 'image_size', 'woosc-large' ), [
 												'draggable' => 'false',
 												'loading'   => self::get_setting( 'bar_print', 'yes' ) === 'yes' ? false : 'lazy'
 											] );
 
 											if ( $link !== 'no' ) {
-												$products_data[ $product_id ]['image'] = apply_filters( 'woosc_product_image', '<a ' . ( $link === 'yes_popup' ? 'class="woosq-link" data-id="' . $product_id . '" data-context="woosc"' : '' ) . ' href="' . $product->get_permalink() . '" draggable="false" ' . ( $link === 'yes_blank' ? 'target="_blank"' : '' ) . '>' . $image . '</a>', $product );
+												$products_data[ $product_id ]['image'] = apply_filters( 'woosc_product_image', '<a ' . ( $link === 'yes_popup' ? 'class="woosq-link" data-id="' . $product_id . '" data-context="woosc"' : '' ) . ' href="' . $product_obj->get_permalink() . '" draggable="false" ' . ( $link === 'yes_blank' ? 'target="_blank"' : '' ) . '>' . $image . '</a>', $product_obj );
 											} else {
-												$products_data[ $product_id ]['image'] = apply_filters( 'woosc_product_image', $image, $product );
+												$products_data[ $product_id ]['image'] = apply_filters( 'woosc_product_image', $image, $product_obj );
 											}
 
 											break;
 										case 'sku':
-											$products_data[ $product_id ]['sku'] = apply_filters( 'woosc_product_sku', $product->get_sku(), $product );
+											$products_data[ $product_id ]['sku'] = apply_filters( 'woosc_product_sku', $product_obj->get_sku(), $product_obj );
 											break;
 										case 'price':
-											$products_data[ $product_id ]['price'] = apply_filters( 'woosc_product_price', $product->get_price_html(), $product );
+											$products_data[ $product_id ]['price'] = apply_filters( 'woosc_product_price', $product_obj->get_price_html(), $product_obj );
 											break;
 										case 'stock':
-											$products_data[ $product_id ]['stock'] = apply_filters( 'woosc_product_stock', wc_get_stock_html( $product ), $product );
+											$products_data[ $product_id ]['stock'] = apply_filters( 'woosc_product_stock', wc_get_stock_html( $product_obj ), $product_obj );
 											break;
 										case 'add_to_cart':
-											$products_data[ $product_id ]['add_to_cart'] = apply_filters( 'woosc_product_add_to_cart', do_shortcode( '[add_to_cart style="" show_price="false" id="' . $product_id . '"]' ), $product );
+											$products_data[ $product_id ]['add_to_cart'] = apply_filters( 'woosc_product_add_to_cart', do_shortcode( '[add_to_cart style="" show_price="false" id="' . $product_id . '"]' ), $product_obj );
 											break;
 										case 'description':
-											$description = $product->get_short_description();
+											$description = $product_obj->get_short_description();
 
-											if ( $product->is_type( 'variation' ) ) {
-												$description = $product->get_description();
+											if ( $product_obj->is_type( 'variation' ) ) {
+												$description = $product_obj->get_description();
 
 												if ( empty( $description ) && $parent_product ) {
 													$description = $parent_product->get_short_description();
 												}
 											}
 
-											$products_data[ $product_id ]['description'] = apply_filters( 'woosc_product_description', $description, $product );
+											$products_data[ $product_id ]['description'] = apply_filters( 'woosc_product_description', $description, $product_obj );
 
 											break;
 										case 'content':
-											$content = $product->get_description();
+											$content = $product_obj->get_description();
 
 											if ( $parent_product ) {
 												$content = $parent_product->get_description();
 											}
 
-											$products_data[ $product_id ]['content'] = apply_filters( 'woosc_product_content', do_shortcode( $content ), $product );
+											$products_data[ $product_id ]['content'] = apply_filters( 'woosc_product_content', do_shortcode( $content ), $product_obj );
 
 											break;
 										case 'additional':
 											ob_start();
-											wc_display_product_attributes( $product );
+											wc_display_product_attributes( $product_obj );
 											$additional = ob_get_clean();
 
-											$products_data[ $product_id ]['additional'] = apply_filters( 'woosc_product_additional', $additional, $product );
+											$products_data[ $product_id ]['additional'] = apply_filters( 'woosc_product_additional', $additional, $product_obj );
 											break;
 										case 'weight':
-											$products_data[ $product_id ]['weight'] = apply_filters( 'woosc_product_weight', wc_format_weight( $product->get_weight() ), $product );
+											$products_data[ $product_id ]['weight'] = apply_filters( 'woosc_product_weight', wc_format_weight( $product_obj->get_weight() ), $product_obj );
 											break;
 										case 'dimensions':
-											$products_data[ $product_id ]['dimensions'] = apply_filters( 'woosc_product_dimensions', wc_format_dimensions( $product->get_dimensions( false ) ), $product );
+											$products_data[ $product_id ]['dimensions'] = apply_filters( 'woosc_product_dimensions', wc_format_dimensions( $product_obj->get_dimensions( false ) ), $product_obj );
 											break;
 										case 'rating':
-											$products_data[ $product_id ]['rating'] = apply_filters( 'woosc_product_rating', wc_get_rating_html( $product->get_average_rating() ), $product );
+											$products_data[ $product_id ]['rating'] = apply_filters( 'woosc_product_rating', wc_get_rating_html( $product_obj->get_average_rating() ), $product_obj );
 											break;
 										case 'availability':
-											$product_availability                         = $product->get_availability();
-											$products_data[ $product_id ]['availability'] = apply_filters( 'woosc_product_availability', $product_availability['availability'], $product );
+											$product_availability                         = $product_obj->get_availability();
+											$products_data[ $product_id ]['availability'] = apply_filters( 'woosc_product_availability', $product_availability['availability'], $product_obj );
 											break;
 									}
 								}
 
 								if ( $field_type === 'shortcode' ) {
-									$products_data[ $product_id ][ 'sc_' . $key ] = apply_filters( 'woosc_product_sc_' . $key, do_shortcode( str_replace( '{product_id}', $product_id, $field_name ) ), $product );
+									$products_data[ $product_id ][ 'sc_' . $key ] = apply_filters( 'woosc_product_sc_' . $key, do_shortcode( str_replace( '{product_id}', $product_id, $field_name ) ), $product_obj );
 								}
 							}
 						}
@@ -2002,7 +2114,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 
 						foreach ( $products_data as $product_data ) {
 							if ( $product_data['name'] !== '' ) {
-								$table .= '<th>' . $product_data['name'] . '</th>';
+								$table .= '<th class="' . esc_attr( ! empty( $product_data['filter'] ) ? 'col col-' . implode( ' col-', $product_data['filter'] ) : 'col' ) . '">' . $product_data['name'] . '</th>';
 							} else {
 								$table .= '<th class="th-placeholder"></th>';
 							}
@@ -2024,7 +2136,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 
 							foreach ( $products_data as $product_data ) {
 								if ( $product_data['name'] !== '' ) {
-									$table .= '<td>' . $product_data['name'] . '</td>';
+									$table .= '<td class="' . esc_attr( ! empty( $product_data['filter'] ) ? 'col col-' . implode( ' col-', $product_data['filter'] ) : 'col' ) . '">' . $product_data['name'] . '</td>';
 								} else {
 									$table .= '<td class="td-placeholder"></td>';
 								}
@@ -2080,7 +2192,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 										$field_value = '';
 									}
 
-									$row .= '<td>' . apply_filters( 'woosc_field_value', $field_value, $field_key, $product_id, $product_data ) . '</td>';
+									$row .= '<td class="' . esc_attr( ! empty( $product_data['filter'] ) ? 'col col-' . implode( ' col-', $product_data['filter'] ) : 'col' ) . '">' . apply_filters( 'woosc_field_value', $field_value, $field_key, $product_id, $product_data ) . '</td>';
 								} else {
 									$row .= '<td class="td-placeholder"></td>';
 								}
@@ -2260,7 +2372,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					wp_die();
 				}
 
-				function ajax_load_data() {
+				function ajax_load() {
 					if ( ! apply_filters( 'woosc_disable_security_check', false, 'load_data' ) ) {
 						if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'woosc-security' ) ) {
 							die( 'Permissions check failed!' );
@@ -2270,16 +2382,19 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					$data = [];
 
 					if ( isset( $_REQUEST['get_data'] ) && ( sanitize_key( $_REQUEST['get_data'] ) === 'bar' ) ) {
-						$data['bar'] = self::get_bar();
+						$data['bar']    = self::get_bar();
+						$data['filter'] = self::get_filter();
 					}
 
 					if ( isset( $_REQUEST['get_data'] ) && ( sanitize_key( $_REQUEST['get_data'] ) === 'table' ) ) {
-						$data['bar']   = self::get_bar();
-						$data['table'] = self::get_table( true, null, 'table' );
+						$data['bar']    = self::get_bar();
+						$data['table']  = self::get_table( true, null, 'table' );
+						$data['filter'] = self::get_filter();
 					}
 
 					if ( isset( $_REQUEST['get_data'] ) && ( sanitize_key( $_REQUEST['get_data'] ) === 'sidebar' ) ) {
 						$data['sidebar'] = self::get_sidebar();
+						$data['filter']  = self::get_filter();
 					}
 
 					if ( isset( $_REQUEST['get_data'] ) && ( sanitize_key( $_REQUEST['get_data'] ) === 'count' ) ) {
@@ -2332,7 +2447,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 						$class = 'woosc-btn woosc-btn-' . esc_attr( $attrs['id'] ) . ' ' . self::get_setting( 'button_class' );
 
 						// button text
-						$text = self::localization( 'button', esc_html__( 'So sánh', 'woo-smart-compare' ) );
+						$text = self::localization( 'button', esc_html__( 'Compare', 'woo-smart-compare' ) );
 
 						if ( ( $button_icon = self::get_setting( 'button_icon', 'no' ) ) !== 'no' ) {
 							$class .= ' woosc-btn-has-icon';
@@ -2358,6 +2473,12 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					}
 
 					return apply_filters( 'woosc_button_html', $output, $attrs['id'] );
+				}
+
+				function shortcode_link() {
+					$output = '<span class="woosc-link"><a href="' . esc_url( self::get_url() ) . '"><span class="woosc-link-inner" data-count="' . esc_attr( self::get_count() ) . '">' . esc_html( self::localization( 'link_label', esc_html__( 'Compare', 'woo-smart-compare' ) ) ) . '</span></a></span>';
+
+					return apply_filters( 'woosc_link_html', $output );
 				}
 
 				function shortcode_list( $attrs ) {
@@ -2516,6 +2637,10 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                     <a href="#search" class="woosc-bar-search hint--top" aria-label="<?php echo esc_attr( self::localization( 'bar_add', esc_html__( 'Add product', 'woo-smart-compare' ) ) ); ?>"></a>
 								<?php }
 
+								if ( self::get_setting( 'bar_filter', 'no' ) !== 'no' ) {
+									echo '<span class="woosc-bar-filter hint--top" aria-label="' . esc_attr( self::localization( 'bar_filter', esc_html__( 'Filter', 'woo-smart-compare' ) ) ) . '">' . self::get_filter() . '</span>';
+								}
+
 								echo '<div class="woosc-bar-items"></div>';
 
 								if ( self::get_setting( 'bar_remove', 'no' ) === 'yes' ) { ?>
@@ -2527,14 +2652,14 @@ if ( ! function_exists( 'woosc_init' ) ) {
                                         <div class="woosc-bar-btn-icon-inner"><span></span><span></span><span></span>
                                         </div>
                                     </div>
-									<?php echo apply_filters( 'woosc_bar_btn_text', self::localization( 'bar_button', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ); ?>
+									<?php echo apply_filters( 'woosc_bar_btn_text', self::localization( 'bar_button', esc_html__( 'Compare', 'woo-smart-compare' ) ) ); ?>
                                 </div>
                             </div>
 
 							<?php if ( self::get_setting( 'button_action', 'show_table' ) === 'show_sidebar' || self::get_setting( 'menu_action', 'open_popup' ) === 'open_sidebar' || self::get_setting( 'open_button_action', 'open_popup' ) === 'open_sidebar' ) { ?>
                                 <div class="<?php echo esc_attr( 'woosc-sidebar woosc-sidebar-position-' . self::get_setting( 'sidebar_position', 'right' ) ); ?>">
                                     <div class="woosc-sidebar-top">
-                                        <span class="woosc-sidebar-heading"><?php echo self::localization( 'sidebar_heading', esc_html__( 'So sánh', 'woo-smart-compare' ) ); ?></span>
+                                        <span class="woosc-sidebar-heading"><?php echo self::localization( 'sidebar_heading', esc_html__( 'Compare', 'woo-smart-compare' ) ); ?></span>
                                         <span class="woosc-sidebar-count"></span>
                                         <span class="woosc-sidebar-close hint--left" role="button" aria-label="<?php echo esc_attr( self::localization( 'sidebar_close', esc_html__( 'Close', 'woo-smart-compare' ) ) ); ?>"> &times; </span>
                                     </div>
@@ -2616,7 +2741,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					}
 
 					if ( $selected ) {
-						$menu_item = '<li class="' . apply_filters( 'woosc_menu_item_class', 'menu-item woosc-menu-item menu-item-type-woosc' ) . '"><a href="' . self::get_page_url() . '"><span class="woosc-menu-item-inner" data-count="' . self::get_count() . '">' . apply_filters( 'woosc_menu_item_label', self::localization( 'menu', esc_html__( 'So sánh', 'woo-smart-compare' ) ) ) . '</span></a></li>';
+						$menu_item = '<li class="' . apply_filters( 'woosc_menu_item_class', 'menu-item woosc-menu-item menu-item-type-woosc' ) . '"><a href="' . self::get_page_url() . '"><span class="woosc-menu-item-inner" data-count="' . self::get_count() . '">' . apply_filters( 'woosc_menu_item_label', self::localization( 'menu', esc_html__( 'Compare', 'woo-smart-compare' ) ) ) . '</span></a></li>';
 						$items     .= apply_filters( 'woosc_menu_item', $menu_item );
 					}
 
@@ -2632,7 +2757,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 					}
 
 					if ( ! isset( $items['compare'] ) ) {
-						$items['compare'] = apply_filters( 'woosc_myaccount_compare_label', esc_html__( 'So sánh', 'woo-smart-compare' ) );
+						$items['compare'] = apply_filters( 'woosc_myaccount_compare_label', esc_html__( 'Compare', 'woo-smart-compare' ) );
 					}
 
 					if ( $logout ) {
@@ -2688,7 +2813,7 @@ if ( ! function_exists( 'woosc_init' ) ) {
 				}
 
 				function wcml_multi_currency( $ajax_actions ) {
-					$ajax_actions[] = 'woosc_load_data';
+					$ajax_actions[] = 'woosc_load';
 
 					return $ajax_actions;
 				}

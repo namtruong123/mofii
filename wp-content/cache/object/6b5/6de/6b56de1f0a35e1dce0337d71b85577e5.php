@@ -1,1 +1,0 @@
-îxÙf<?php exit; ?>a:1:{s:7:"content";s:87:"C:\xampp\htdocs\mofii\wp-content\plugins\woocommerce/templates/single-product/title.php";}

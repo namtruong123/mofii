@@ -94,7 +94,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 		<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
 		<p class="buttons clearfix">
-			<a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-primary wc-forward"><?php esc_html_e( 'View Cart', 'yozi' ); ?></a>
+			<a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-primary wc-forward"><?php esc_html_e( 'Xem giỏ hàng', 'yozi' ); ?></a>
 			<a href="<?php echo wc_get_checkout_url(); ?>" class="btn btn-theme checkout wc-forward"><?php esc_html_e( 'Checkout', 'yozi' ); ?></a>
 		</p>
 

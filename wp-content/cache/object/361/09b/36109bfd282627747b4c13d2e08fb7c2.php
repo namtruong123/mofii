@@ -1,0 +1,1 @@
+o¿Êg<?php exit; ?>a:1:{s:7:"content";a:3:{s:5:"color";i:10;s:7:"mau-sac";i:9;s:4:"size";i:11;}}

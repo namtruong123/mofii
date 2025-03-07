@@ -1,5 +1,5 @@
 <?php exit; ?>{
-    "version": "2.7.5",
+    "version": "2.8.0",
     "cluster.messagebus.debug": false,
     "cluster.messagebus.enabled": false,
     "cluster.messagebus.sns.region": "",
@@ -577,6 +577,11 @@
     "cdn.azure.container": "",
     "cdn.azure.cname": [],
     "cdn.azure.ssl": "auto",
+    "cdn.azuremi.user": "",
+    "cdn.azuremi.clientid": "",
+    "cdn.azuremi.container": "",
+    "cdn.azuremi.cname": [],
+    "cdn.azuremi.ssl": "auto",
     "cdn.mirror.domain": [],
     "cdn.mirror.ssl": "auto",
     "cdn.limelight.short_name": "",
@@ -1033,10 +1038,12 @@
     "common.instance_id": 1950613822,
     "common.force_master": true,
     "extensions.active": {
-        "imageservice": "w3-total-cache\/Extension_ImageService_Plugin.php"
+        "imageservice": "w3-total-cache\/Extension_ImageService_Plugin.php",
+        "wordpress-seo": "w3-total-cache\/Extension_WordPressSeo_Plugin.php"
     },
     "extensions.active_frontend": {
-        "imageservice": "*"
+        "imageservice": "*",
+        "wordpress-seo": "*"
     },
     "extensions.active_dropin": [],
     "plugin.license_key": "",
@@ -1065,5 +1072,9 @@
     "extension.user-experience-preload-requests": "0",
     "extension.user-experience-oembed": "0",
     "file_locking": "0",
-    "file_nfs": "0"
+    "file_nfs": "0",
+    "pgcache.bad_behavior_path": "",
+    "newrelic": {
+        "monitoring_type": "apm"
+    }
 }

@@ -3,21 +3,23 @@
 Plugin Name: WPC Smart Wishlist for WooCommerce
 Plugin URI: https://wpclever.net/
 Description: WPC Smart Wishlist is a simple but powerful tool that can help your customer save products for buy later.
-Version: 4.8.8
+Version: 4.9.8
 Author: WPClever
 Author URI: https://wpclever.net
 Text Domain: woo-smart-wishlist
 Domain Path: /languages/
 Requires Plugins: woocommerce
 Requires at least: 4.0
-Tested up to: 6.5
+Tested up to: 6.7
 WC requires at least: 3.0
-WC tested up to: 9.1
+WC tested up to: 9.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
 
-! defined( 'WOOSW_VERSION' ) && define( 'WOOSW_VERSION', '4.8.8' );
+! defined( 'WOOSW_VERSION' ) && define( 'WOOSW_VERSION', '4.9.8' );
 ! defined( 'WOOSW_LITE' ) && define( 'WOOSW_LITE', __FILE__ );
 ! defined( 'WOOSW_FILE' ) && define( 'WOOSW_FILE', __FILE__ );
 ! defined( 'WOOSW_URI' ) && define( 'WOOSW_URI', plugin_dir_url( __FILE__ ) );
@@ -40,9 +42,6 @@ if ( ! function_exists( 'woosw_init' ) ) {
 	add_action( 'plugins_loaded', 'woosw_init', 11 );
 
 	function woosw_init() {
-		// load text-domain
-		load_plugin_textdomain( 'woo-smart-wishlist', false, basename( __DIR__ ) . '/languages/' );
-
 		if ( ! function_exists( 'WC' ) || ! version_compare( WC()->version, '3.0', '>=' ) ) {
 			add_action( 'admin_notices', 'woosw_notice_wc' );
 
@@ -77,7 +76,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					add_action( 'admin_menu', [ $this, 'admin_menu' ] );
 
 					// my account
-					if ( self::get_setting( 'page_myaccount', 'yes' ) === 'yes' ) {
+					if ( self::get_setting( 'page_myaccount', 'yes' ) !== 'no' ) {
 						add_filter( 'woocommerce_account_menu_items', [ $this, 'account_items' ], 99 );
 						add_action( 'woocommerce_account_wishlist_endpoint', [ $this, 'account_endpoint' ], 99 );
 					}
@@ -88,7 +87,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					// backend scripts
 					add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
 
-					// Thêm giỏ hàng
+					// add to wishlist
 					add_action( 'template_redirect', [ $this, 'wishlist_add_by_link' ] );
 
 					// added to cart
@@ -97,28 +96,22 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					}
 
 					// add
-					add_action( 'wp_ajax_wishlist_add', [ $this, 'ajax_wishlist_add' ] );
-					add_action( 'wp_ajax_nopriv_wishlist_add', [ $this, 'ajax_wishlist_add' ] );
+					add_action( 'wc_ajax_woosw_add', [ $this, 'ajax_add' ] );
 
 					// remove
-					add_action( 'wp_ajax_wishlist_remove', [ $this, 'ajax_wishlist_remove' ] );
-					add_action( 'wp_ajax_nopriv_wishlist_remove', [ $this, 'ajax_wishlist_remove' ] );
+					add_action( 'wc_ajax_woosw_remove', [ $this, 'ajax_remove' ] );
 
 					// empty
-					add_action( 'wp_ajax_wishlist_empty', [ $this, 'ajax_wishlist_empty' ] );
-					add_action( 'wp_ajax_nopriv_wishlist_empty', [ $this, 'ajax_wishlist_empty' ] );
+					add_action( 'wc_ajax_woosw_empty', [ $this, 'ajax_empty' ] );
 
 					// load
-					add_action( 'wp_ajax_wishlist_load', [ $this, 'ajax_wishlist_load' ] );
-					add_action( 'wp_ajax_nopriv_wishlist_load', [ $this, 'ajax_wishlist_load' ] );
+					add_action( 'wc_ajax_woosw_load', [ $this, 'ajax_load' ] );
 
 					// load count
-					add_action( 'wp_ajax_wishlist_load_count', [ $this, 'ajax_wishlist_load_count' ] );
-					add_action( 'wp_ajax_nopriv_wishlist_load_count', [ $this, 'ajax_wishlist_load_count' ] );
+					add_action( 'wc_ajax_woosw_load_count', [ $this, 'ajax_load_count' ] );
 
 					// fragments
-					add_action( 'wp_ajax_woosw_get_data', [ $this, 'ajax_get_data' ] );
-					add_action( 'wp_ajax_nopriv_woosw_get_data', [ $this, 'ajax_get_data' ] );
+					add_action( 'wc_ajax_woosw_get_data', [ $this, 'ajax_get_data' ] );
 
 					// link
 					add_filter( 'plugin_action_links', [ $this, 'action_links' ], 10, 2 );
@@ -167,6 +160,9 @@ if ( ! function_exists( 'woosw_init' ) ) {
 				}
 
 				function init() {
+					// load text-domain
+					load_plugin_textdomain( 'woo-smart-wishlist', false, basename( WOOSW_DIR ) . '/languages/' );
+
 					// get key
 					$key = sanitize_text_field( $_COOKIE['woosw_key'] ?? '#' );
 
@@ -184,13 +180,14 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					}
 
 					// my account page
-					if ( self::get_setting( 'page_myaccount', 'yes' ) === 'yes' ) {
+					if ( self::get_setting( 'page_myaccount', 'yes' ) !== 'no' ) {
 						add_rewrite_endpoint( 'wishlist', EP_PAGES );
 					}
 
 					// shortcode
 					add_shortcode( 'woosw', [ $this, 'shortcode_btn' ] );
 					add_shortcode( 'woosw_btn', [ $this, 'shortcode_btn' ] );
+					add_shortcode( 'woosw_link', [ $this, 'shortcode_link' ] );
 					add_shortcode( 'woosw_list', [ $this, 'shortcode_list' ] );
 
 					// add button for archive
@@ -320,7 +317,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					return null;
 				}
 
-				function ajax_wishlist_add() {
+				function ajax_add() {
 					if ( ! apply_filters( 'woosw_disable_security_check', false, 'add_product' ) ) {
 						if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'woosw-security' ) ) {
 							die( 'Permissions check failed!' );
@@ -334,7 +331,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 						if ( $key === '#' ) {
 							$return['status']  = 0;
 							$return['notice']  = self::localization( 'login_message', esc_html__( 'Please log in to use the Wishlist!', 'woo-smart-wishlist' ) );
-							$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) );
+							$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) );
 						} else {
 							$products = self::get_ids( $key );
 
@@ -379,7 +376,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					wp_send_json( $return );
 				}
 
-				function ajax_wishlist_remove() {
+				function ajax_remove() {
 					if ( ! apply_filters( 'woosw_disable_security_check', false, 'remove_product' ) ) {
 						if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'woosw-security' ) ) {
 							die( 'Permissions check failed!' );
@@ -413,7 +410,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 								];
 
 								if ( empty( $products ) ) {
-									$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) ) . '</div>';
+									$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) ) . '</div>';
 								}
 							} else {
 								$return['notice'] = self::localization( 'not_exist_message', esc_html__( 'The product does not exist on the Wishlist!', 'woo-smart-wishlist' ) );
@@ -429,7 +426,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					wp_send_json( $return );
 				}
 
-				function ajax_wishlist_empty() {
+				function ajax_empty() {
 					if ( ! apply_filters( 'woosw_disable_security_check', false, 'wishlist_empty' ) ) {
 						if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'woosw-security' ) ) {
 							die( 'Permissions check failed!' );
@@ -458,7 +455,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 						$return['status']  = 1;
 						$return['count']   = 0;
 						$return['notice']  = self::localization( 'empty_notice', esc_html__( 'All products have been removed from the Wishlist!', 'woo-smart-wishlist' ) );
-						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) );
+						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) );
 						$return['data']    = [
 							'key'       => self::get_key(),
 							'ids'       => self::get_ids(),
@@ -471,7 +468,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					wp_send_json( $return );
 				}
 
-				function ajax_wishlist_load() {
+				function ajax_load() {
 					if ( ! apply_filters( 'woosw_disable_security_check', false, 'wishlist_load' ) ) {
 						if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'woosw-security' ) ) {
 							die( 'Permissions check failed!' );
@@ -483,7 +480,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 
 					if ( $key === '#' ) {
 						$return['notice']  = self::localization( 'login_message', esc_html__( 'Please log in to use Wishlist!', 'woo-smart-wishlist' ) );
-						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) );
+						$return['content'] = self::wishlist_content( $key, self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) );
 					} else {
 						$products          = self::get_ids( $key );
 						$return['status']  = 1;
@@ -501,7 +498,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					wp_send_json( $return );
 				}
 
-				function ajax_wishlist_load_count() {
+				function ajax_load_count() {
 					if ( ! apply_filters( 'woosw_disable_security_check', false, 'wishlist_load_count' ) ) {
 						if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'woosw-security' ) ) {
 							die( 'Permissions check failed!' );
@@ -753,7 +750,7 @@ if ( ! function_exists( 'woosw_init' ) ) {
 							$text  = apply_filters( 'woosw_button_text_added', self::localization( 'button_added', esc_html__( 'Browse wishlist', 'woo-smart-wishlist' ) ) );
 						} else {
 							$icon = apply_filters( 'woosw_button_normal_icon', self::get_setting( 'button_normal_icon', 'woosw-icon-5' ) );
-							$text = apply_filters( 'woosw_button_text', self::localization( 'button', esc_html__( 'Thêm vào yêu thích', 'woo-smart-wishlist' ) ) );
+							$text = apply_filters( 'woosw_button_text', self::localization( 'button', esc_html__( 'Add to wishlist', 'woo-smart-wishlist' ) ) );
 						}
 
 						if ( self::get_setting( 'button_class', '' ) !== '' ) {
@@ -787,6 +784,17 @@ if ( ! function_exists( 'woosw_init' ) ) {
 					}
 
 					return wp_kses_post( apply_filters( 'woosw_button_html', $output, $attrs['id'], $attrs ) );
+				}
+
+				function shortcode_link( $attrs ) {
+					$attrs = shortcode_atts( [
+						'type'  => 'auto',
+						'label' => self::localization( 'link_label', esc_html__( 'Wishlist', 'woo-smart-wishlist' ) )
+					], $attrs, 'woosw_link' );
+
+					$output = '<span class="' . esc_attr( 'woosw-link woosw-link-' . $attrs['type'] ) . '"><a href="' . esc_url( self::get_url() ) . '"><span class="woosw-link-inner" data-count="' . esc_attr( self::get_count() ) . '">' . esc_html( $attrs['label'] ) . '</span></a></span>';
+
+					return apply_filters( 'woosw_link_html', $output, $attrs );
 				}
 
 				function shortcode_list( $attrs ) {
@@ -837,51 +845,53 @@ if ( ! function_exists( 'woosw_init' ) ) {
 
 					$return_html .= self::get_items( $key, 'table' );
 
-					$return_html .= '<div class="woosw-actions">';
+					if ( apply_filters( 'woosw_show_actions_for_empty_wishlist', false ) || self::get_count( $key ) ) {
+						$return_html .= '<div class="woosw-actions">';
 
-					if ( self::get_setting( 'page_share', 'yes' ) === 'yes' ) {
-						$facebook  = esc_html__( 'Facebook', 'woo-smart-wishlist' );
-						$twitter   = esc_html__( 'Twitter', 'woo-smart-wishlist' );
-						$pinterest = esc_html__( 'Pinterest', 'woo-smart-wishlist' );
-						$mail      = esc_html__( 'Mail', 'woo-smart-wishlist' );
+						if ( self::get_setting( 'page_share', 'yes' ) === 'yes' ) {
+							$facebook  = esc_html__( 'Facebook', 'woo-smart-wishlist' );
+							$twitter   = esc_html__( 'Twitter', 'woo-smart-wishlist' );
+							$pinterest = esc_html__( 'Pinterest', 'woo-smart-wishlist' );
+							$mail      = esc_html__( 'Mail', 'woo-smart-wishlist' );
 
-						if ( self::get_setting( 'page_icon', 'yes' ) === 'yes' ) {
-							$facebook = $twitter = $pinterest = $mail = "<i class='woosw-icon'></i>";
+							if ( self::get_setting( 'page_icon', 'yes' ) === 'yes' ) {
+								$facebook = $twitter = $pinterest = $mail = "<i class='woosw-icon'></i>";
+							}
+
+							$share_html  = '';
+							$share_items = self::get_setting( 'page_items' );
+
+							if ( ! empty( $share_items ) ) {
+								$share_url_e = urlencode( $share_url );
+
+								$share_html .= '<div class="woosw-share">';
+								$share_html .= '<span class="woosw-share-label">' . esc_html__( 'Share on:', 'woo-smart-wishlist' ) . '</span>';
+								$share_html .= ( in_array( 'facebook', $share_items ) ) ? '<a class="woosw-share-facebook" href="https://www.facebook.com/sharer.php?u=' . $share_url_e . '" target="_blank">' . $facebook . '</a>' : '';
+								$share_html .= ( in_array( 'twitter', $share_items ) ) ? '<a class="woosw-share-twitter" href="https://twitter.com/share?url=' . $share_url_e . '" target="_blank">' . $twitter . '</a>' : '';
+								$share_html .= ( in_array( 'pinterest', $share_items ) ) ? '<a class="woosw-share-pinterest" href="https://pinterest.com/pin/create/button/?url=' . $share_url_e . '" target="_blank">' . $pinterest . '</a>' : '';
+								$share_html .= ( in_array( 'mail', $share_items ) ) ? '<a class="woosw-share-mail" href="mailto:?body=' . $share_url_e . '" target="_blank">' . $mail . '</a>' : '';
+								$share_html .= '</div><!-- /woosw-share -->';
+							}
+
+							$return_html .= apply_filters( 'woosw_page_share_html', $share_html, $share_items, $share_url );
 						}
 
-						$share_html  = '';
-						$share_items = self::get_setting( 'page_items' );
+						if ( self::get_setting( 'page_copy', 'yes' ) === 'yes' ) {
+							$copy_html = '<div class="woosw-copy">';
+							$copy_html .= '<span class="woosw-copy-label">' . esc_html__( 'Wishlist link:', 'woo-smart-wishlist' ) . '</span>';
+							$copy_html .= apply_filters( 'woosw_page_copy_url', '<span class="woosw-copy-url"><input id="woosw_copy_url" type="url" value="' . esc_attr( $share_url ) . '" readonly/></span>' );
+							$copy_html .= apply_filters( 'woosw_page_copy_btn', '<span class="woosw-copy-btn"><button id="woosw_copy_btn" type="button" class="button">' . esc_html__( 'Copy', 'woo-smart-wishlist' ) . '</button></span>' );
+							$copy_html .= '</div><!-- /woosw-copy -->';
 
-						if ( ! empty( $share_items ) ) {
-							$share_url_e = urlencode( $share_url );
-
-							$share_html .= '<div class="woosw-share">';
-							$share_html .= '<span class="woosw-share-label">' . esc_html__( 'Share on:', 'woo-smart-wishlist' ) . '</span>';
-							$share_html .= ( in_array( 'facebook', $share_items ) ) ? '<a class="woosw-share-facebook" href="https://www.facebook.com/sharer.php?u=' . $share_url_e . '" target="_blank">' . $facebook . '</a>' : '';
-							$share_html .= ( in_array( 'twitter', $share_items ) ) ? '<a class="woosw-share-twitter" href="https://twitter.com/share?url=' . $share_url_e . '" target="_blank">' . $twitter . '</a>' : '';
-							$share_html .= ( in_array( 'pinterest', $share_items ) ) ? '<a class="woosw-share-pinterest" href="https://pinterest.com/pin/create/button/?url=' . $share_url_e . '" target="_blank">' . $pinterest . '</a>' : '';
-							$share_html .= ( in_array( 'mail', $share_items ) ) ? '<a class="woosw-share-mail" href="mailto:?body=' . $share_url_e . '" target="_blank">' . $mail . '</a>' : '';
-							$share_html .= '</div><!-- /woosw-share -->';
+							$return_html .= apply_filters( 'woosw_page_copy_html', $copy_html, $share_url );
 						}
 
-						$return_html .= apply_filters( 'woosw_page_share_html', $share_html, $share_items, $share_url );
+						$return_html .= '</div><!-- /woosw-actions -->';
 					}
 
-					if ( self::get_setting( 'page_copy', 'yes' ) === 'yes' ) {
-						$copy_html = '<div class="woosw-copy">';
-						$copy_html .= '<span class="woosw-copy-label">' . esc_html__( '
-Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
-						$copy_html .= apply_filters( 'woosw_page_copy_url', '<span class="woosw-copy-url"><input id="woosw_copy_url" type="url" value="' . esc_attr( $share_url ) . '" readonly/></span>' );
-						$copy_html .= apply_filters( 'woosw_page_copy_btn', '<span class="woosw-copy-btn"><button id="woosw_copy_btn" type="button" class="button">' . esc_html__( 'Sao chép', 'woo-smart-wishlist' ) . '</button></span>' );
-						$copy_html .= '</div><!-- /woosw-copy -->';
-
-						$return_html .= apply_filters( 'woosw_page_copy_html', $copy_html, $share_url );
-					}
-
-					$return_html .= '</div><!-- /woosw-actions -->';
 					$return_html .= '</div><!-- /woosw-list -->';
 
-					return $return_html;
+					return apply_filters( 'woosw_list_html', $return_html, $attrs );
 				}
 
 				function register_settings() {
@@ -1034,7 +1044,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 												<?php esc_html_e( 'Button', 'woo-smart-wishlist' ); ?>
                                             </th>
                                             <td>
-												<?php esc_html_e( 'Settings for "Thêm yêu thích" button.', 'woo-smart-wishlist' ); ?>
+												<?php esc_html_e( 'Settings for "Add to wishlist" button.', 'woo-smart-wishlist' ); ?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1098,7 +1108,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
                                                     <select name="woosw_settings[button_action]" class="woosw_button_action">
                                                         <option value="message" <?php selected( $button_action, 'message' ); ?>><?php esc_html_e( 'Show message', 'woo-smart-wishlist' ); ?></option>
                                                         <option value="list" <?php selected( $button_action, 'list' ); ?>><?php esc_html_e( 'Open wishlist popup', 'woo-smart-wishlist' ); ?></option>
-                                                        <option value="no" <?php selected( $button_action, 'no' ); ?>><?php esc_html_e( 'Thêm yêu thích solely', 'woo-smart-wishlist' ); ?></option>
+                                                        <option value="no" <?php selected( $button_action, 'no' ); ?>><?php esc_html_e( 'Add to wishlist solely', 'woo-smart-wishlist' ); ?></option>
                                                     </select> </label>
                                                 <span class="description"><?php esc_html_e( 'Action triggered by clicking on the wishlist button.', 'woo-smart-wishlist' ); ?></span>
                                             </td>
@@ -1122,8 +1132,9 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
                                                 <label> <select name="woosw_settings[button_action_added]">
                                                         <option value="popup" <?php selected( $button_action_added, 'popup' ); ?>><?php esc_html_e( 'Open wishlist popup', 'woo-smart-wishlist' ); ?></option>
                                                         <option value="page" <?php selected( $button_action_added, 'page' ); ?>><?php esc_html_e( 'Open wishlist page', 'woo-smart-wishlist' ); ?></option>
+                                                        <option value="remove" <?php selected( $button_action_added, 'remove' ); ?>><?php esc_html_e( 'Remove from wishlist', 'woo-smart-wishlist' ); ?></option>
                                                     </select> </label>
-                                                <p class="description"><?php esc_html_e( 'Action triggered by clicking on the wishlist button after adding an item to the wishlist.', 'woo-smart-wishlist' ); ?></p>
+                                                <p class="description"><?php esc_html_e( 'Action triggered by clicking on the wishlist button of a product that was added to wishlist.', 'woo-smart-wishlist' ); ?></p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -1432,10 +1443,11 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row"><?php esc_html_e( 'Add Wishlist page to My Account', 'woo-smart-wishlist' ); ?></th>
+                                            <th scope="row"><?php esc_html_e( 'Add Wishlist link to My Account', 'woo-smart-wishlist' ); ?></th>
                                             <td>
                                                 <label> <select name="woosw_settings[page_myaccount]">
-                                                        <option value="yes" <?php selected( $page_myaccount, 'yes' ); ?>><?php esc_html_e( 'Yes', 'woo-smart-wishlist' ); ?></option>
+                                                        <option value="yes" <?php selected( $page_myaccount, 'yes' ); ?>><?php esc_html_e( 'Yes, open wishlist page', 'woo-smart-wishlist' ); ?></option>
+                                                        <option value="yes_popup" <?php selected( $page_myaccount, 'yes_popup' ); ?>><?php esc_html_e( 'Yes, open wishlist popup', 'woo-smart-wishlist' ); ?></option>
                                                         <option value="no" <?php selected( $page_myaccount, 'no' ); ?>><?php esc_html_e( 'No', 'woo-smart-wishlist' ); ?></option>
                                                     </select> </label>
                                             </td>
@@ -1504,7 +1516,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
                                             <th><?php esc_html_e( 'Button text', 'woo-smart-wishlist' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" class="regular-text" name="woosw_localization[button]" value="<?php echo esc_attr( self::localization( 'button' ) ); ?>" placeholder="<?php esc_attr_e( 'Thêm yêu thích', 'woo-smart-wishlist' ); ?>"/>
+                                                    <input type="text" class="regular-text" name="woosw_localization[button]" value="<?php echo esc_attr( self::localization( 'button' ) ); ?>" placeholder="<?php esc_attr_e( 'Add to wishlist', 'woo-smart-wishlist' ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -1704,7 +1716,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
                                             <th><?php esc_html_e( 'Empty wishlist', 'woo-smart-wishlist' ); ?></th>
                                             <td>
                                                 <label>
-                                                    <input type="text" class="regular-text" name="woosw_localization[empty_message]" value="<?php echo esc_attr( self::localization( 'empty_message' ) ); ?>" placeholder="<?php esc_attr_e( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ); ?>"/>
+                                                    <input type="text" class="regular-text" name="woosw_localization[empty_message]" value="<?php echo esc_attr( self::localization( 'empty_message' ) ); ?>" placeholder="<?php esc_attr_e( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ); ?>"/>
                                                 </label>
                                             </td>
                                         </tr>
@@ -1840,10 +1852,31 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 						'js-cookie'
 					], WOOSW_VERSION, true );
 
+					$added_to_cart = 'no';
+					$requests      = apply_filters( 'woosw_added_to_cart_requests', [
+						'add-to-cart',
+						'product_added_to_cart',
+						'added_to_cart',
+						'set_cart',
+						'fill_cart'
+					] );
+
+					if ( is_array( $requests ) && ! empty( $requests ) ) {
+						foreach ( $requests as $request ) {
+							if ( isset( $_REQUEST[ $request ] ) ) {
+								$added_to_cart = 'yes';
+								break;
+							}
+						}
+					}
+
 					// localize
 					wp_localize_script( 'woosw-frontend', 'woosw_vars', [
-							'ajax_url'            => admin_url( 'admin-ajax.php' ),
+							'wc_ajax_url'         => WC_AJAX::get_endpoint( '%%endpoint%%' ),
 							'nonce'               => wp_create_nonce( 'woosw-security' ),
+							'added_to_cart'       => apply_filters( 'woosw_added_to_cart', $added_to_cart ),
+							'auto_remove'         => self::get_setting( 'auto_remove', 'no' ),
+							'page_myaccount'      => self::get_setting( 'page_myaccount', 'yes' ),
 							'menu_action'         => self::get_setting( 'menu_action', 'open_page' ),
 							'reload_count'        => self::get_setting( 'reload_count', 'no' ),
 							'perfect_scrollbar'   => self::get_setting( 'perfect_scrollbar', 'yes' ),
@@ -1855,7 +1888,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 							'delete_confirm'      => self::localization( 'delete_confirm', esc_html__( 'This action cannot be undone. Are you sure?', 'woo-smart-wishlist' ) ),
 							'copied_text'         => self::localization( 'copied', esc_html__( 'Copied the wishlist link:', 'woo-smart-wishlist' ) ),
 							'menu_text'           => apply_filters( 'woosw_menu_item_label', self::localization( 'menu_label', esc_html__( 'Wishlist', 'woo-smart-wishlist' ) ) ),
-							'button_text'         => apply_filters( 'woosw_button_text', self::localization( 'button', esc_html__( 'Thêm yêu thích', 'woo-smart-wishlist' ) ) ),
+							'button_text'         => apply_filters( 'woosw_button_text', self::localization( 'button', esc_html__( 'Add to wishlist', 'woo-smart-wishlist' ) ) ),
 							'button_text_added'   => apply_filters( 'woosw_button_text_added', self::localization( 'button_added', esc_html__( 'Browse wishlist', 'woo-smart-wishlist' ) ) ),
 							'button_normal_icon'  => apply_filters( 'woosw_button_normal_icon', self::get_setting( 'button_normal_icon', 'woosw-icon-5' ) ),
 							'button_added_icon'   => apply_filters( 'woosw_button_added_icon', self::get_setting( 'button_added_icon', 'woosw-icon-8' ) ),
@@ -1926,7 +1959,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 					// store $global_product
 					global $product;
 					$global_product     = $product;
-					$products           = self::get_ids( $key );
+					$products           = apply_filters( 'woosw_get_items', self::get_ids( $key ), $key );
 					$link               = self::get_setting( 'link', 'yes' );
 					$table_tag          = $tr_tag = $td_tag = 'div';
 					$count              = count( $products ); // count saved products
@@ -2014,31 +2047,45 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 
 							if ( self::get_setting( 'show_price_change', 'no' ) !== 'no' ) {
 								if ( isset( $product_data['price'] ) ) {
-									$price = $product->get_price();
+									$product_price = (float) $product_data['price'];
+									$price         = (float) $product->get_price();
 
-									if ( $price != $product_data['price'] ) {
+									if ( $price != $product_price ) {
 										// has price change
-										if ( $price > $product_data['price'] ) {
-											// increase
-											$percentage    = 100 * ( $price - $product_data['price'] ) / $product_data['price'];
-											$percentage    = apply_filters( 'woosw_price_increase_percentage', round( $percentage ) . '%', $percentage, $product_data );
-											$increase      = self::localization( 'price_increase', esc_html__( 'Increase {percentage} since added', 'woo-smart-wishlist' ) );
-											$increase_mess = str_replace( '{percentage}', $percentage, $increase );
+										if ( $product_price != 0 ) {
+											if ( $price > $product_price ) {
+												// increase
+												$percentage    = 100 * ( $price - $product_price ) / $product_price;
+												$percentage    = apply_filters( 'woosw_price_increase_percentage', round( $percentage ) . '%', $percentage, $product_data );
+												$increase      = self::localization( 'price_increase', esc_html__( 'Increase {percentage} since added', 'woo-smart-wishlist' ) );
+												$increase_mess = str_replace( '{percentage}', $percentage, $increase );
 
-											if ( self::get_setting( 'show_price_change', 'no' ) === 'both' || self::get_setting( 'show_price_change', 'no' ) === 'increase' ) {
-												echo '<div class="woosw-item--price-change woosw-item--price-increase">' . apply_filters( 'woosw_price_increase_message', $increase_mess, $percentage, $product_data ) . '</div>';
+												if ( self::get_setting( 'show_price_change', 'no' ) === 'both' || self::get_setting( 'show_price_change', 'no' ) === 'increase' ) {
+													echo '<div class="woosw-item--price-change woosw-item--price-increase">' . apply_filters( 'woosw_price_increase_message', $increase_mess, $percentage, $product_data ) . '</div>';
+												}
 											}
-										}
 
-										if ( $price < $product_data['price'] ) {
-											// decrease
-											$percentage    = 100 * ( $product_data['price'] - $price ) / $product_data['price'];
-											$percentage    = apply_filters( 'woosw_price_decrease_percentage', round( $percentage ) . '%', $percentage, $product_data );
-											$decrease      = self::localization( 'price_decrease', esc_html__( 'Decrease {percentage} since added', 'woo-smart-wishlist' ) );
-											$decrease_mess = str_replace( '{percentage}', $percentage, $decrease );
+											if ( $price < $product_price ) {
+												// decrease
+												$percentage    = 100 * ( $product_price - $price ) / $product_price;
+												$percentage    = apply_filters( 'woosw_price_decrease_percentage', round( $percentage ) . '%', $percentage, $product_data );
+												$decrease      = self::localization( 'price_decrease', esc_html__( 'Decrease {percentage} since added', 'woo-smart-wishlist' ) );
+												$decrease_mess = str_replace( '{percentage}', $percentage, $decrease );
 
-											if ( self::get_setting( 'show_price_change', 'no' ) === 'both' || self::get_setting( 'show_price_change', 'no' ) === 'decrease' ) {
-												echo '<div class="woosw-item--price-change woosw-item--price-decrease">' . apply_filters( 'woosw_price_decrease_message', $decrease_mess, $percentage, $product_data ) . '</div>';
+												if ( self::get_setting( 'show_price_change', 'no' ) === 'both' || self::get_setting( 'show_price_change', 'no' ) === 'decrease' ) {
+													echo '<div class="woosw-item--price-change woosw-item--price-decrease">' . apply_filters( 'woosw_price_decrease_message', $decrease_mess, $percentage, $product_data ) . '</div>';
+												}
+											}
+										} else {
+											if ( $price > $product_price ) {
+												$percentage    = 100;
+												$percentage    = apply_filters( 'woosw_price_increase_percentage', round( $percentage ) . '%', $percentage, $product_data );
+												$increase      = self::localization( 'price_increase', esc_html__( 'Increase {percentage} since added', 'woo-smart-wishlist' ) );
+												$increase_mess = str_replace( '{percentage}', $percentage, $increase );
+
+												if ( self::get_setting( 'show_price_change', 'no' ) === 'both' || self::get_setting( 'show_price_change', 'no' ) === 'increase' ) {
+													echo '<div class="woosw-item--price-change woosw-item--price-increase">' . apply_filters( 'woosw_price_increase_message', $increase_mess, $percentage, $product_data ) . '</div>';
+												}
 											}
 										}
 									}
@@ -2109,7 +2156,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 						do_action( 'woosw_wishlist_items_after', $key, $products );
 						echo '</' . $table_tag . '>';
 					} else {
-						echo '<div class="woosw-popup-content-mid-message">' . self::localization( 'empty_message', esc_html__( 'Không có sản phẩm nào trong Danh sách yêu thích!', 'woo-smart-wishlist' ) ) . '</div>';
+						echo '<div class="woosw-popup-content-mid-message">' . self::localization( 'empty_message', esc_html__( 'There are no products on the Wishlist!', 'woo-smart-wishlist' ) ) . '</div>';
 					}
 
 					do_action( 'woosw_after_items', $key, $products );
@@ -2491,7 +2538,7 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 						$key = self::get_key();
 					}
 
-					return (array) get_option( 'woosw_list_' . $key, [] );
+					return (array) apply_filters( 'woosw_get_ids', get_option( 'woosw_list_' . $key, [] ), $key );
 				}
 
 				public static function get_products() {
@@ -2843,6 +2890,10 @@ Liên kết yêu thích:', 'woo-smart-wishlist' ) . '</span>';
 					$ajax_actions[] = 'wishlist_add';
 					$ajax_actions[] = 'wishlist_remove';
 					$ajax_actions[] = 'wishlist_load';
+					$ajax_actions[] = 'woosw_view_wishlist';
+					$ajax_actions[] = 'woosw_add';
+					$ajax_actions[] = 'woosw_remove';
+					$ajax_actions[] = 'woosw_load';
 					$ajax_actions[] = 'woosw_get_data';
 
 					return $ajax_actions;

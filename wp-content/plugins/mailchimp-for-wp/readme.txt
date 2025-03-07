@@ -3,11 +3,11 @@ Contributors: Ibericode, DvanKooten, hchouhan, lapzor
 Donate link: https://www.mc4wp.com/contribute/#utm_source=wp-plugin-repo&utm_medium=mailchimp-for-wp&utm_campaign=donate-link
 Tags: mailchimp, subscribe, email, newsletter, form
 Requires at least: 4.6
-Tested up to: 6.5
-Stable tag: 4.9.13
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Requires PHP: 5.3
+Tested up to: 6.7
+Stable tag: 4.10.1
+License: GPL-3.0-or-later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Requires PHP: 7.4
 
 The #1 Mailchimp plugin for WordPress. Allows you to add a multitude of newsletter sign-up methods to your site.
 
@@ -26,36 +26,36 @@ This plugins helps you grow your email list in Mailchimp. You can use it to crea
 - Sign-up forms which are good looking, user-friendly and mobile optimized. You have complete control over the form fields and can build your forms using native HTML.
 
 - Seamless integration with the following plugins:
-    - Default WordPress Comment Form
-    - Default WordPress Registration Form
-    - Contact Form 7
-    - WooCommerce
-    - Gravity Forms
-    - Ninja Forms 3
-    - WPForms
-    - BuddyPress
-    - MemberPress
-    - Events Manager
-    - Easy Digital Downloads
-    - Give
-    - UltimateMember
-    - HTML Forms
-    - AffiliateWP
+  - WordPress Comment Form
+  - WordPress Registration Form
+  - Contact Form 7
+  - WooCommerce
+  - Gravity Forms
+  - Ninja Forms 3
+  - WPForms
+  - BuddyPress
+  - MemberPress
+  - Events Manager
+  - Easy Digital Downloads
+  - Give
+  - UltimateMember
+  - HTML Forms
+  - AffiliateWP
 
 - Is the plugin you want to integrate with not listed above? You can probably still use our [custom integration](https://www.mc4wp.com/kb/add-subscribe-checkbox-custom-form/) feature. Alternatively, the plugin comes with a PHP API to programmatically add a new subscriber to Mailchimp.
 
-- Send your WooCommerce orders to Mailchimp so you can see exactly what each subscriber purchased and how much revenue your email campaigns are generating.
+- [Mailchimp for WordPress Premium](https://www.mc4wp.com/): Send your WooCommerce orders to Mailchimp so you can see exactly what each subscriber purchased and how much revenue your email campaigns are generating.
 
 - A multitude of available add-on plugins and integrations:
-	- [Mailchimp for WordPress Premium](https://www.mc4wp.com/#utm_source=wp-plugin-repo&utm_medium=mailchimp-for-wp&utm_campaign=add-on-list)
-	- [Mailchimp Top Bar](https://wordpress.org/plugins/mailchimp-top-bar/)
-	- [Boxzilla Pop-ups](https://wordpress.org/plugins/boxzilla/)
+  - [Mailchimp for WordPress Premium](https://www.mc4wp.com/)
+  - [Mailchimp Top Bar](https://wordpress.org/plugins/mailchimp-top-bar/)
+  - [Boxzilla Pop-ups](https://wordpress.org/plugins/boxzilla/)
 
 - Well documented through our [knowledge base](https://www.mc4wp.com/kb/).
 
-- Developer friendly. For some inspiration, check out our [repository of example code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/master/sample-code-snippets).
+- Developer friendly. For some inspiration, check out our [repository of example code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/main/sample-code-snippets).
 
-- Ready for PHP 8.3, but backwards-compatible all the way down to PHP 5.6.
+- Ready for PHP 8.4, but backwards-compatible all the way down to PHP 7.4.
 
 #### What is Mailchimp?
 
@@ -172,7 +172,7 @@ This plugin is being developed on GitHub. If you want to collaborate, please loo
 
 #### Customizing the plugin
 
-The plugin provides various filter and action hooks that allow you to modify or extend the default behavior. We're also maintaining a [collection of sample code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/master/sample-code-snippets).
+The plugin provides various filter and action hooks that allow you to modify or extend the default behavior. We're also maintaining a [collection of sample code snippets](https://github.com/ibericode/mailchimp-for-wordpress/tree/main/sample-code-snippets).
 
 == Screenshots ==
 
@@ -184,8 +184,82 @@ The plugin provides various filter and action hooks that allow you to modify or 
 6. Settings page to configure an integration.
 7. Page where you edit your sign-up forms.
 8. Page where you modify your form messages.
+9. Settings page for e-commerce integration with Mailchimp. Requires [Mailchimp for WordPress Premium](https://www.mc4wp.com/).
 
 == Changelog ==
+
+
+#### 4.10.1 - Feb 06, 2025
+
+- Fix JS error breaking Ninja Forms edit form page when not connected to a Mailchimp account or account has no audiences.
+- Remove `sprintf` usage in hot path.
+- Lazy load `MC4WP_API_V3` class to save some memory and parse time.
+- Save a tiny bit of memory in autoloader implementation by not repeatedly storing plugin directory.
+- Remove unused setting key from default options.
+
+
+#### 4.10.0 - Jan 23, 2025
+
+- Bump required PHP version to 7.4 or higher.
+- Obfuscate API key the same way as in the Mailchimp.com interface.
+- Delete all plugin data when plugin is uninstalled / deleted via WP Admin.
+- Fix several PHP 8.4 deprecation warnings.
+- Address warning about translations being loaded too early if using Ninja Forms integration.
+- Run stored setting values related to user-facing textual messages through i18n functions to allow translating them through plugins like Loco Translate or WPML.
+
+
+#### 4.9.21 - Jan 08, 2025
+
+- [Forms] Rename "list choice" to "audience choice" in available form fields.
+- [Ninja Forms] Fix gettext being called too early warning in Ninja Forms base class.
+- [WooCommerce] Allow pre-checking of sign-up checkbox in Checkout Block.
+
+
+#### 4.9.20 - Dec 18, 2024
+
+- Fix Ninja Forms integration field no longer showing up.
+- Fix "link is expired" message because of missing nonce on button to dismiss API key notice.
+- [WPML] Added text_no_lists_selected to the config file so it can be translated. Thanks [Diego Pereira](https://github.com/diiegopereira)!
+
+
+#### 4.9.19 - Nov 11, 2024
+
+- Add integration with [Prosopo](https://prosopo.io/), a GDPR compliant anti-spam solution for protecting your sign-up forms against bot sign-ups. Thanks [Maxim Akimov](https://github.com/light-source)!
+
+
+#### 4.9.18 - Oct 21, 2024
+
+- Bump required PHP version to 7.2.
+- Prevent non-functional checkbox from showing up on WooCommerce my account page if WooCommerce checkout integration is enabled.
+- Update default form content to include a "for" attribute on the label element.
+- Minor performance optimizations to `MC4WP_Form::get_subscriber_tags()`
+- Begrudgingly rename Mailchimp lists to Mailchimp audiences throughout the plugin's admin interfaces.
+
+
+#### 4.9.17 - Sep 17, 2024
+
+- Fix compatibility with WooCommerce versions 8.5 to 8.8 because of private method that was later made public.
+- Fix potential reflected XSS by stripping and escaping all HTML from `{email}` tag replacements. Thanks to kauenavarro for responsibly disclosing.
+- Fix potential stored XSS for attackers with both administrator access and Mailchimp account access by escaping HTML from interest group name. Thanks to Jorge Diaz (ddiax) for responsibly disclosing.
+
+
+#### 4.9.16 - Sep 11, 2024
+
+- Add support for WooCommerce Checkout Block in sign-up checkbox integration.
+
+
+#### 4.9.15 - Aug 13, 2024
+
+- Improved anti-spam measures on the [custom form integration](https://www.mc4wp.com/kb/subscribe-mailchimp-custom-html-form/). If you are using the custom form integration (using the `mc4wp-subscribe` checkbox), please test your forms after upgrading and report any issues to us.
+- Improved anti-spam measures on all sign-up forms.
+- Remove unsupported filter hook from Gravity Forms integration. 
+
+
+#### 4.9.14 - Jul 17, 2024
+
+- Very minor code-size improvements to public forms related JavaScript.
+- Update third-party JS dependencies.
+- Bump tested WordPress version to 6.6.
 
 
 #### 4.9.13 - Apr 25, 2024
@@ -261,7 +335,7 @@ This drops support for some very old browsers, but results in smaller bundle siz
 
 #### 4.9.2 - Mar 21, 2023
 
-- Add support for a field named `MARKETING_PERMISSIONS` to enable GDPR fields configured in Mailchimp. A [sample code snippet can be found here](https://github.com/ibericode/mailchimp-for-wordpress/blob/master/sample-code-snippets/forms/gdpr-marketing-permissions.md).
+- Add support for a field named `MARKETING_PERMISSIONS` to enable GDPR fields configured in Mailchimp. A [sample code snippet can be found here](https://github.com/ibericode/mailchimp-for-wordpress/blob/main/sample-code-snippets/forms/gdpr-marketing-permissions.md).
 - Remove Google reCaptcha feature. This was already disabled if you were not already using it.
 
 
@@ -1086,133 +1160,7 @@ This release updates the plugin to version 3 of the Mailchimp API. Please [read 
 **Improvements**
 
 - The plugin now communicates with the latest & greatest Mailchimp API.
-- Previously unsubscribed subscribers can now be re-added without errors.
-- Add `User-Agent` header to all API requests.
-- Available fields in form editor are now split-up by category.
-- Birthday fields now accept a broader range of values and delimiters.
-
-**Fixes**
-
-- Issue with only 10 Mailchimp lists / fields / interests being returned.
-- Incorrect form message showing when double opt-in is disabled.
-- Error in upgrade routine when API request fails.
-- List fields not fetched when list has just 1 non-default merge field.
-
-
-#### 3.1.12 - July 28, 2016
-
-**Improvements**
-
-- Smarter scrolling after submitting form & reloading page.
-- Format output of `{subscriber_count}` tag.
-- You can now use `<img>` in your form messages.
-- Add Mailchimp API error code to debug log lines.
-- Add plugin name + version to User-Agent header for all Mailchimp API requests.
-- Make sure value of MC_LANGUAGE field is limited to 2 characters.
-
-
-#### 3.1.11 - July 5, 2016
-
-**Improvements**
-
-- Update JavaScript dependencies for admin screens.
-- Test debug log & show notice when it's not writable.
-
-**Additions**
-
-- Add "placeholder" option for dropdown fields.
-
-
-#### 3.1.10 - June 21, 2016
-
-**Fixes**
-
-- Styles Builder in Premium not building because of incorrect flag in core plugin.
-
-**Improvements**
-
-- Don't show position option for WooCommerce integration when sign-up is implicit.
-- Improvements to form previewer logic.
-- Make sure admin notifications are always shown exactly one time.
-
-#### 3.1.9 - June 7, 2016
-
-**Fixes**
-
-- Placeholder polyfill wasn't loaded (only in IE8 and below).
-
-**Improvements**
-
-- Don't write to debug log if it is not writable.
-- Reset some CSS properties for commonly used class names in Form Editor & Debug Log.
-- Do not unnecessarily register styles which are then immediately enqueued.
-
-**Additions**
-
-- Add "is required field" option for dropdown & radio fields in Field Helper.
-- Link to [Boxzilla plugin](https://boxzillaplugin.com/) from admin sidebar.
-
-
-#### 3.1.8 - May 23, 2016
-
-**Fixes**
-
-- Form Preview mode replaced all titles on that page with "Form Preview".
-- API class fix for [eCommerce360 functionality](https://www.mc4wp.com/kb/what-is-ecommerce/).
-
-**Improvements**
-
-- Show dismissible notice when API key is not set.
-- Show empty API key errors in plugin log.
-- Friendlier error message for re-subscribe failures.
-
-**Additions**
-
-- Add `form.reset()` method to JS API.
-
-#### 3.1.7 - May 9, 2016
-
-**Fixes**
-
-- Shortcode wasn't accepting `element_id` as a valid attribute.
-- Take array style fields into account when checking if a form contains a given field.
-
-
-**Improvements**
-
-- Nested fields will now be properly validated when they're marked as required.
-- If plugin is installed using Composer, autoloader won't be loaded (again).
-
-
-
-#### 3.1.6 - April 12, 2016
-
-**Fixes**
-
-- Form event for starting a form was named `start` where it should have been `started`.
-
-**Improvements**
-
-- Some preparations for the upcoming migration to the new Mailchimp API (version 3).
-- Consistent hook parameters for `mc4wp_form_subscribed` action.
-- Improved logic for rendering form response.
-
-**Additions**
-
-- New checkbox position for WooCommerce checkout integration.
-
-
-#### 3.1.5 - March 22, 2016
-
-**Fixes**
-
-- Response message was shown for unsubmitted forms when using `{response}` in the form mark-up with multiple forms on the same page.
-
-**Improvements**
-
-- Scroll to form after form submission now uses native browser method `scrollIntoView()`.
-- Various improvements for right-to-left (RTL) sites.
-- The ...
+- Previously unsubscribed subscribers can ...
 
 == Upgrade Notice ==
 

@@ -73,7 +73,7 @@
                 <?php if ( has_nav_menu( 'vertical-menu' ) ): ?>
                     <div class="col-xs-3">
                         <div class="box-left">
-                            <a href="#navbar-offcanvas" class="btn btn-showmenu"><i class="fa fa-bars"></i></a>
+                            <a href="#navbar-offcanvas" class="btn btn-showmenu"><i class="fa fa-bars"></i> Menu</a>
                         </div>
                     </div>
                 <?php endif; ?>

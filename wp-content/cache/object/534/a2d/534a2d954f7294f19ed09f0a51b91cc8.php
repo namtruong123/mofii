@@ -1,0 +1,1 @@
+q¿Êg<?php exit; ?>a:1:{s:7:"content";s:59:"http://localhost/mofii/wp-includes/images/media/default.svg";}

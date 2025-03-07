@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-27 13:11:58+0000\n"
+"PO-Revision-Date: 2024-09-11 07:25:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,9 +11,361 @@ msgstr ""
 "Language: vi_VN\n"
 "Project-Id-Version: Plugins - Yoast SEO - Stable (latest release)\n"
 
-#: src/integrations/admin/background-indexing-integration.php:244
+#: src/user-meta/framework/custom-meta/noindex-author.php:108
+msgid "Do not allow search engines to show this author's archives in search results."
+msgstr "Không cho phép các công cụ tìm kiếm hiển thị lưu trữ của tác giả này trong kết quả tìm kiếm."
+
+#: admin/menu/class-base-menu.php:260 admin/menu/class-base-menu.php:264
+msgid "Upgrades"
+msgstr "Nâng cấp"
+
+#: blocks/dynamic-blocks/breadcrumbs/block.json
+msgctxt "block keyword"
+msgid "site structure"
+msgstr "cấu trúc trang web"
+
+#: blocks/dynamic-blocks/breadcrumbs/block.json
+msgctxt "block keyword"
+msgid "internal linking"
+msgstr "liên kết nội bộ"
+
+#: blocks/dynamic-blocks/breadcrumbs/block.json
+msgctxt "block keyword"
+msgid "breadcrumbs"
+msgstr "điều hướng trang"
+
+#: blocks/dynamic-blocks/breadcrumbs/block.json
+msgctxt "block description"
+msgid "Adds the Yoast SEO breadcrumbs to your template or content."
+msgstr "Thêm điều hướng trang Yoast SEO vào mẫu hoặc nội dung của bạn."
+
+#: blocks/dynamic-blocks/breadcrumbs/block.json
+msgctxt "block title"
+msgid "Yoast Breadcrumbs"
+msgstr "Điều hướng trang Yoast"
+
+#: blocks/structured-data-blocks/how-to/block.json
+msgctxt "block keyword"
+msgid "How to"
+msgstr "Cách thực hiện"
+
+#: blocks/structured-data-blocks/how-to/block.json
+msgctxt "block keyword"
+msgid "How-to"
+msgstr "Hướng dẫn"
+
+#: blocks/structured-data-blocks/how-to/block.json
+msgctxt "block title"
+msgid "Yoast How-to"
+msgstr "Hướng dẫn Yoast"
+
+#: blocks/structured-data-blocks/faq/block.json
+#: blocks/structured-data-blocks/how-to/block.json
+msgctxt "block keyword"
+msgid "Structured Data"
+msgstr "Dữ liệu có cấu trúc"
+
+#: blocks/dynamic-blocks/breadcrumbs/block.json
+#: blocks/structured-data-blocks/faq/block.json
+#: blocks/structured-data-blocks/how-to/block.json
+msgctxt "block keyword"
+msgid "SEO"
+msgstr "SEO"
+
+#: blocks/structured-data-blocks/faq/block.json
+#: blocks/structured-data-blocks/how-to/block.json
+msgctxt "block keyword"
+msgid "Schema"
+msgstr "Schema"
+
+#: blocks/structured-data-blocks/faq/block.json
+msgctxt "block keyword"
+msgid "Frequently Asked Questions"
+msgstr "Câu hỏi thường gặp"
+
+#: blocks/structured-data-blocks/faq/block.json
+msgctxt "block keyword"
+msgid "FAQ"
+msgstr "FAQ"
+
+#: blocks/structured-data-blocks/faq/block.json
+msgctxt "block description"
+msgid "List your Frequently Asked Questions in an SEO-friendly way."
+msgstr "Liệt kê Câu hỏi thường gặp của bạn theo cách thân thiện với SEO."
+
+#: blocks/structured-data-blocks/faq/block.json
+msgctxt "block title"
+msgid "Yoast FAQ"
+msgstr "Câu hỏi thường gặp Yoast"
+
+#: admin/class-admin.php:322
+#: src/user-meta/framework/additional-contactmethods/x.php:28
+msgid "X username (without @)"
+msgstr "Tên người dùng X (không có @)"
+
+#: src/presenters/admin/sidebar-presenter.php:96 js/dist/elementor.js:8
+#: js/dist/externals-components.js:245 js/dist/introductions.js:8
+#: js/dist/new-settings.js:33 js/dist/post-edit.js:8 js/dist/support.js:10
+#: js/dist/term-edit.js:8
+msgid "30-day money back guarantee."
+msgstr "Đảm bảo hoàn tiền trong 30 ngày."
+
+#: src/presenters/admin/sidebar-presenter.php:92 js/dist/elementor.js:8
+#: js/dist/externals-components.js:245 js/dist/introductions.js:8
+#: js/dist/new-settings.js:33 js/dist/post-edit.js:8 js/dist/support.js:10
+#: js/dist/term-edit.js:8
+msgid "Only $/€/£99 per year (ex VAT)"
+msgstr "Chỉ $/€/£99 mỗi năm (chưa bao gồm VAT)"
+
+#: admin/views/licenses.php:378
+msgid "Only $/€/£229 per year (ex VAT). Save over 40% with this subscription!"
+msgstr "Chỉ $/€/£229 mỗi năm (chưa bao gồm VAT). Tiết kiệm hơn 40% với gói đăng ký này!"
+
+#. translators: 1: PHP class name, 2: PHP variable name
+#: inc/class-yoast-dynamic-rewrites.php:67
+msgid "The %1$s class must not be instantiated before the %2$s global is set."
+msgstr "Lớp %1$s không được khởi tạo trước khi đặt biến toàn cục %2$s."
+
+#. translators: %1$s expands to a span opening tag, %2$s expands to a span
+#. closing tag, %3$s expands to Yoast SEO
+#: admin/views/licenses.php:296
+msgid "%1$sOutrank your competitors even further%2$s with these %3$s plugins"
+msgstr "%1$sVượt qua đối thủ cạnh tranh của bạn hơn nữa%2$s với các plugin %3$s này"
+
+#: admin/views/licenses.php:276 admin/views/licenses.php:383
+msgid "Explore now"
+msgstr "Khám phá ngay"
+
+#: admin/views/licenses.php:155
+msgid "Rank higher in search results"
+msgstr "Xếp hạng cao hơn trong kết quả tìm kiếm"
+
+#: admin/views/licenses.php:90
+msgid "Turn more visitors into customers!"
+msgstr "Biến nhiều khách truy cập thành khách hàng!"
+
+#: admin/views/licenses.php:86
+msgid "Increase Google clicks with rich results"
+msgstr "Tăng lượt nhấp chuột của Google bằng kết quả phong phú"
+
+#: admin/views/licenses.php:85
+msgid "Write product pages that rank using the SEO analysis"
+msgstr "Viết các trang sản phẩm được xếp hạng bằng cách sử dụng phân tích SEO"
+
+#: admin/views/licenses.php:69
+msgid "Get XML sitemaps"
+msgstr "Nhận sơ đồ trang web XML"
+
+#: admin/views/licenses.php:55
+msgid "Optimize your video previews & thumbnails"
+msgstr "Tối ưu hóa bản xem trước và hình thu nhỏ video của bạn"
+
+#: admin/views/licenses.php:53
+msgid "Make sure your videos load quickly for users"
+msgstr "Đảm bảo video của bạn tải nhanh cho người dùng"
+
+#: admin/views/licenses.php:52
+msgid "Automatically get technical SEO best practices for video content"
+msgstr "Tự động nhận các phương pháp hay nhất về SEO kỹ thuật cho nội dung video"
+
+#: admin/views/licenses.php:48 admin/views/licenses.php:113
+msgid "Drive more views to your videos"
+msgstr "Thúc đẩy nhiều lượt xem hơn cho video của bạn"
+
+#: admin/views/licenses.php:34
+msgid "Stand out for local searches"
+msgstr "Nổi bật cho tìm kiếm địa phương"
+
+#. translators: %s expands to Yoast SEO Premium
+#. translators: %s expands to "Yoast SEO" Premium
+#: admin/class-premium-upsell-admin-block.php:100 js/dist/new-settings.js:345
+msgid "Explore %s now!"
+msgstr "Khám phá %s ngay!"
+
+#. translators: %1$s expands to a strong opening tag, %2$s expands to a strong
+#. closing tag.
+#: admin/class-premium-upsell-admin-block.php:88 admin/views/licenses.php:216
+#: js/dist/block-editor.js:231 js/dist/classic-editor.js:216
+#: js/dist/editor-modules.js:180 js/dist/elementor.js:24
+#: js/dist/externals-components.js:148 js/dist/new-settings.js:344
+msgid "%1$s24/7 support%2$s: Also on evenings and weekends."
+msgstr "%1$sHỗ trợ 24/7%2$s: Cả buổi tối và cuối tuần."
+
+#. translators: %1$s expands to a strong opening tag, %2$s expands to a strong
+#. closing tag.
+#: admin/class-premium-upsell-admin-block.php:82 admin/views/licenses.php:206
+#: js/dist/block-editor.js:230 js/dist/classic-editor.js:215
+#: js/dist/editor-modules.js:179 js/dist/elementor.js:23
+#: js/dist/externals-components.js:147 js/dist/new-settings.js:343
+msgid "%1$sAppealing social previews%2$s people actually want to click on."
+msgstr "%1$sBản xem trước mạng xã hội hấp dẫn%2$s mà mọi người thực sự muốn nhấp vào."
+
+#. translators: %1$s expands to a strong opening tag, %2$s expands to a strong
+#. closing tag.
+#: admin/class-premium-upsell-admin-block.php:76 admin/views/licenses.php:196
+#: js/dist/block-editor.js:229 js/dist/classic-editor.js:214
+#: js/dist/editor-modules.js:178 js/dist/elementor.js:22
+#: js/dist/externals-components.js:146 js/dist/new-settings.js:342
+msgid "%1$sNo more broken links%2$s: Automatic redirect manager."
+msgstr "%1$sKhông còn liên kết bị hỏng%2$s: Trình quản lý chuyển hướng tự động."
+
+#. translators: %1$s expands to a strong opening tag, %2$s expands to a strong
+#. closing tag.
+#: admin/class-premium-upsell-admin-block.php:70 admin/views/licenses.php:186
+#: js/dist/block-editor.js:228 js/dist/classic-editor.js:213
+#: js/dist/editor-modules.js:177 js/dist/elementor.js:21
+#: js/dist/externals-components.js:145 js/dist/new-settings.js:341
+msgid "%1$sSuper fast%2$s internal linking suggestions."
+msgstr "%1$sSiêu nhanh%2$s đề xuất liên kết nội bộ."
+
+#. translators: %1$s expands to a strong opening tag, %2$s expands to a strong
+#. closing tag.
+#: admin/class-premium-upsell-admin-block.php:64 admin/views/licenses.php:176
+#: js/dist/block-editor.js:227 js/dist/classic-editor.js:212
+#: js/dist/editor-modules.js:176 js/dist/elementor.js:20
+#: js/dist/externals-components.js:144 js/dist/new-settings.js:340
+msgid "%1$sMultiple keywords%2$s: Rank higher for more searches."
+msgstr "%1$sNhiều từ khóa%2$s: Xếp hạng cao hơn cho nhiều tìm kiếm hơn."
+
+#. translators: %1$s expands to a strong opening tag, %2$s expands to a strong
+#. closing tag.
+#: admin/class-premium-upsell-admin-block.php:58 admin/views/licenses.php:166
+#: js/dist/block-editor.js:226 js/dist/classic-editor.js:211
+#: js/dist/editor-modules.js:175 js/dist/elementor.js:19
+#: js/dist/externals-components.js:143 js/dist/new-settings.js:339
+msgid "%1$sAI%2$s: Better SEO titles and meta descriptions, faster."
+msgstr "%1$sAI%2$s: Tiêu đề SEO và mô tả meta tốt hơn, nhanh hơn."
+
+#: admin/watchers/class-slug-change-watcher.php:68
+msgid "Search engines and other websites can still send traffic to your trashed content."
+msgstr "Các công cụ tìm kiếm và các trang web khác vẫn có thể gửi lưu lượng truy cập đến nội dung rác của bạn."
+
+#. translators: 1: Yoast SEO, 2: Link start tag to the Learn more link, 3: Link
+#. closing tag.
+#: src/presenters/admin/woocommerce-beta-editor-presenter.php:53
+msgid "The %1$s interface is currently unavailable in the beta WooCommerce product editor. To resolve any issues, please disable the beta editor. %2$sLearn how to disable the beta WooCommerce product editor.%3$s"
+msgstr "Giao diện %1$s hiện không khả dụng trong trình chỉnh sửa sản phẩm WooCommerce beta. Để giải quyết mọi sự cố, vui lòng tắt trình chỉnh sửa beta. %2$sTìm hiểu cách tắt trình chỉnh sửa sản phẩm WooCommerce beta.%3$s"
+
+#: src/presenters/admin/woocommerce-beta-editor-presenter.php:50
+msgid "Compatibility issue: Yoast SEO is incompatible with the beta WooCommerce product editor."
+msgstr "Sự cố tương thích: Yoast SEO không tương thích với trình chỉnh sửa sản phẩm WooCommerce beta."
+
+#. translators: %1$s expands to an opening strong tag, %2$s expands to a
+#. closing strong tag
+#: src/presenters/admin/sidebar-presenter.php:71
+msgid "%1$s SAVE 30%% %2$s on your 12 month subscription"
+msgstr "%1$s TIẾT KIỆM 30%% %2$s cho gói đăng ký 12 tháng của bạn"
+
+#: src/presenters/admin/sidebar-presenter.php:63 js/dist/elementor.js:6
+#: js/dist/externals-components.js:243 js/dist/introductions.js:6
+#: js/dist/new-settings.js:31 js/dist/post-edit.js:6 js/dist/support.js:8
+#: js/dist/term-edit.js:6
+msgid "Use AI to generate titles and meta descriptions, automatically redirect deleted pages, get 24/7 support, and much, much more!"
+msgstr "Sử dụng AI để tạo tiêu đề và mô tả meta, tự động chuyển hướng các trang đã xóa, nhận hỗ trợ 24/7 và nhiều hơn nữa!"
+
+#: inc/class-wpseo-admin-bar-menu.php:593
+msgid "-30%"
+msgstr "-30%"
+
+#. translators: %1$s is a <br> tag.
+#: inc/class-addon-manager.php:411
+msgid "%1$s Now with 30%% Black Friday Discount!"
+msgstr "%1$s Giờ đây với Giảm giá 30%% vào Thứ Sáu Đen!"
+
+#. translators: %1$s expands to opening span, %2$s expands to closing span
+#: admin/views/licenses.php:138
+msgid "%1$sSALE 30%% OFF!%2$s"
+msgstr "%1$sGIẢM GIÁ 30%%!%2$s"
+
+#: admin/class-premium-upsell-admin-block.php:116
+#: admin/menu/class-base-menu.php:264 js/dist/block-editor.js:269
+#: js/dist/classic-editor.js:254 js/dist/editor-modules.js:173
+#: js/dist/elementor.js:62 js/dist/externals-components.js:186
+#: js/dist/new-settings.js:337
+msgid "30% OFF"
+msgstr "GIẢM GIÁ 30%"
+
+#: admin/class-premium-upsell-admin-block.php:115 js/dist/block-editor.js:269
+#: js/dist/classic-editor.js:254 js/dist/editor-modules.js:173
+#: js/dist/elementor.js:62 js/dist/externals-components.js:186
+#: js/dist/new-settings.js:337
+msgid "BLACK FRIDAY"
+msgstr "THỨ SÁU ĐEN"
+
+#. translators: %s expands to Yoast SEO Premium
+#: admin/class-premium-upsell-admin-block.php:100
+#: src/presenters/admin/sidebar-presenter.php:80 js/dist/elementor.js:8
+#: js/dist/externals-components.js:245 js/dist/introductions.js:8
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:344
+#: js/dist/post-edit.js:8 js/dist/support.js:10 js/dist/term-edit.js:8
+msgid "Claim your 30% off now!"
+msgstr "Yêu cầu giảm giá 30% của bạn ngay bây giờ!"
+
+#: admin/views/class-yoast-feature-toggles.php:209
+msgid "Use the power of Yoast AI to automatically generate compelling titles and descriptions for your posts and pages."
+msgstr "Sử dụng sức mạnh của Yoast AI để tự động tạo tiêu đề và mô tả hấp dẫn cho bài viết và trang của bạn."
+
+#: admin/views/class-yoast-feature-toggles.php:206 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
+msgid "AI title & description generator"
+msgstr "Trình tạo tiêu đề & mô tả AI"
+
+#. translators: %s expands to a unit of time (e.g. 1 day).
+#: src/integrations/blocks/structured-data-blocks.php:181
+msgid "%1$s, %2$s and %3$s"
+msgstr "%1$s, %2$s và %3$s"
+
+#. translators: %s expands to a unit of time (e.g. 1 day).
+#: src/integrations/blocks/structured-data-blocks.php:175
+msgid "%1$s and %2$s"
+msgstr "%1$s và %2$s"
+
+#. translators: 1: Opening tag of the link to the Search appearance settings
+#. page, 2: Link closing tag.
+#: src/content-type-visibility/application/content-type-visibility-watcher-actions.php:157
+msgid "You've added a new type of content. We recommend that you review the corresponding %1$sSearch appearance settings%2$s."
+msgstr "Bạn đã thêm một loại nội dung mới. Chúng tôi khuyên bạn nên xem lại %1$scài đặt Giao diện tìm kiếm%2$s tương ứng."
+
+#: src/content-type-visibility/application/content-type-visibility-dismiss-notifications.php:73
+msgid "Error: Taxonomy was not removed from new_taxonomies list."
+msgstr "Lỗi: Phân loại không bị xóa khỏi danh sách new_taxonomies."
+
+#: src/content-type-visibility/application/content-type-visibility-dismiss-notifications.php:73
+msgid "Taxonomy is no longer new."
+msgstr "Phân loại không còn mới nữa."
+
+#: src/content-type-visibility/application/content-type-visibility-dismiss-notifications.php:66
+msgid "Taxonomy is not new."
+msgstr "Phân loại không phải là mới."
+
+#: src/content-type-visibility/application/content-type-visibility-dismiss-notifications.php:43
+msgid "Error: Post type was not removed from new_post_types list."
+msgstr "Lỗi: Loại nội dung không bị xóa khỏi danh sách new_post_types."
+
+#: src/content-type-visibility/application/content-type-visibility-dismiss-notifications.php:43
+msgid "Post type is no longer new."
+msgstr "Loại nội dung không còn mới nữa."
+
+#: src/content-type-visibility/application/content-type-visibility-dismiss-notifications.php:37
+msgid "Post type is not new."
+msgstr "Loại nội dung không phải là mới."
+
+#: src/integrations/support-integration.php:108 js/dist/support.js:16
+msgid "Support"
+msgstr "Hỗ trợ"
+
+#: src/integrations/admin/crawl-settings-integration.php:163
+#: js/dist/new-settings.js:16 js/dist/new-settings.js:171
+msgid "Prevent Google AdsBot from crawling"
+msgstr "Ngăn Google AdsBot thu thập dữ liệu"
+
+#: src/integrations/admin/background-indexing-integration.php:186
 msgid "Every fifteen minutes"
 msgstr "15 phút một lần"
+
+#: src/commands/index-command.php:174
+msgid "Your WordPress environment is running on a non-production site. Indexables can only be created on production environments. Please check your `WP_ENVIRONMENT_TYPE` settings."
+msgstr "Môi trường WordPress của bạn đang chạy trên một trang web không phải sản xuất. Chỉ có thể tạo chỉ mục trên môi trường sản xuất. Vui lòng kiểm tra cài đặt `WP_ENVIRONMENT_TYPE` của bạn."
 
 #. translators: %s expands to the inclusive language score
 #: inc/class-wpseo-rank.php:234 inc/class-wpseo-rank.php:239
@@ -29,34 +381,345 @@ msgstr "%1$s / %2$s: Các cụm từ khóa hàng đầu"
 #. translators: %s: expands to the post type
 #: src/exceptions/indexable/post-type-not-built-exception.php:20
 msgid "The post type %s could not be indexed because it does not meet indexing requirements."
-msgstr "Không thể lập chỉ mục loại bài đăng %s vì nó không đáp ứng các yêu cầu lập chỉ mục."
+msgstr "Không thể lập chỉ mục loại nội dung %s vì nó không đáp ứng các yêu cầu lập chỉ mục."
 
-#: admin/views/class-yoast-feature-toggles.php:210 js/dist/new-settings.js:2
+#: src/integrations/academy-integration.php:111 js/dist/academy.js:2
+msgid "Academy"
+msgstr "Học viện"
+
+#. translators: %1$s expands to a strong tag, %2$s expands to the product name,
+#. %3$s expands to a closing strong tag, %4$s expands to an a tag. %5$s expands
+#. to MyYoast, %6$s expands to a closing a tag,  %7$s expands to the product
+#. name
+#: inc/class-addon-manager.php:520
+msgid "%1$s %2$s isn't working as expected %3$s and you are not receiving updates or support! Make sure to %4$s activate your product subscription in %5$s%6$s to unlock all the features of %7$s."
+msgstr "%1$s %2$s không hoạt động như mong đợi %3$s và bạn không nhận được bản cập nhật hoặc hỗ trợ! Hãy đảm bảo %4$s kích hoạt đăng ký sản phẩm của bạn trong %5$s%6$s để mở khóa tất cả các tính năng của %7$s."
+
+#. translators: %1$s is the plugin name, %2$s and %3$s are a link.
+#: inc/class-addon-manager.php:419
+msgid "%1$s can't be updated because your product subscription is expired. %2$sRenew your product subscription%3$s to get updates again and use all the features of %1$s."
+msgstr "Không thể cập nhật %1$s vì đăng ký sản phẩm của bạn đã hết hạn. %2$sGia hạn đăng ký sản phẩm của bạn%3$s để nhận bản cập nhật một lần nữa và sử dụng tất cả các tính năng của %1$s."
+
+#: src/integrations/admin/crawl-settings-integration.php:292
+msgid "This feature is disabled when your site is not using pretty permalinks."
+msgstr "Tính năng này bị tắt khi trang web của bạn không sử dụng permalink đẹp."
+
+#. translators: 1: Link start tag to the Permalinks settings page, 2: Link
+#. closing tag.
+#: src/integrations/admin/crawl-settings-integration.php:286
+msgid "This feature is disabled when your site is not using %1$spretty permalinks%2$s."
+msgstr "Tính năng này bị tắt khi trang web của bạn không sử dụng %1$spermalink đẹp%2$s."
+
+#. translators: %1$s: Yoast SEO
+#: src/helpers/crawl-cleanup-helper.php:271
+msgid "%1$s: unregistered URL parameter removed. See %2$s"
+msgstr "%1$s: tham số URL chưa đăng ký đã bị xóa. Xem %2$s"
+
+#. translators: %1$s: Yoast SEO
+#: src/initializers/crawl-cleanup-permalinks.php:144
+msgid "%1$s: redirect utm variables to #"
+msgstr "%1$s: chuyển hướng các biến utm đến #"
+
+#: admin/views/licenses.php:41
+msgid "Optimize your business for multiple locations"
+msgstr "Tối ưu hóa doanh nghiệp của bạn cho nhiều địa điểm"
+
+#: admin/views/licenses.php:40
+msgid "Easily add maps, address finders, and opening hours to your content"
+msgstr "Dễ dàng thêm bản đồ, công cụ tìm địa chỉ và giờ mở cửa vào nội dung của bạn"
+
+#: admin/views/licenses.php:39
+msgid "Automatically get technical SEO best practices for local businesses"
+msgstr "Tự động nhận các phương pháp hay nhất về SEO kỹ thuật cho doanh nghiệp địa phương"
+
+#: admin/views/licenses.php:38
+msgid "Attract more customers to your site and physical store"
+msgstr "Thu hút nhiều khách hàng hơn đến trang web và cửa hàng thực của bạn"
+
+#: src/presenters/admin/indexing-notification-presenter.php:93
+msgid "It looks like you've enabled media pages. We recommend that you help us to re-analyze your site by running the SEO data optimization. "
+msgstr "Có vẻ như bạn đã bật các trang phương tiện. Chúng tôi khuyên bạn nên giúp chúng tôi phân tích lại trang web của bạn bằng cách chạy tối ưu hóa dữ liệu SEO. "
+
+#: admin/formatter/class-metabox-formatter.php:153 inc/class-wpseo-rank.php:156
+#: inc/class-wpseo-rank.php:240 js/dist/block-editor.js:563
+#: js/dist/editor-modules.js:324 js/dist/elementor.js:93
+#: js/dist/externals-components.js:188 js/dist/externals-components.js:277
+#: js/dist/frontend-inspector-resources.js:1 js/dist/post-edit.js:17
+#: js/dist/term-edit.js:1
+msgid "Potentially non-inclusive"
+msgstr "Có khả năng không bao gồm"
+
+#. translators: CTA to finish the first time configuration. %s: Either
+#. first-time SEO configuration or SEO configuration.
+#: admin/class-admin.php:243
+msgid "Finish your %s"
+msgstr "Hoàn thành %s của bạn"
+
+#. translators: %1$s and %2$s expand to a span wrap to avoid linebreaks. %3$s
+#. expands to "Yoast SEO Premium".
+#: src/presenters/admin/sidebar-presenter.php:58 js/dist/elementor.js:7
+#: js/dist/externals-components.js:244 js/dist/introductions.js:7
+#: js/dist/new-settings.js:32 js/dist/post-edit.js:7 js/dist/support.js:9
+#: js/dist/term-edit.js:7
+msgid "%1$sGet%2$s %3$s"
+msgstr "%1$sNhận%2$s %3$s"
+
+#. translators: 1: Link tag to WordPress Hosts page on Yoast.com; 2: Link
+#. closing tag
+#: src/integrations/admin/unsupported-php-version-notice.php:89
+msgid "Upgrading your PHP version is something your hosting provider can help you out with. If they can’t upgrade your PHP version, we advise you to consider %1$sswitching to a hosting provider%2$s that can provide the security and features a modern host should provide."
+msgstr "Nâng cấp phiên bản PHP của bạn là điều mà nhà cung cấp dịch vụ lưu trữ của bạn có thể giúp bạn. Nếu họ không thể nâng cấp phiên bản PHP của bạn, chúng tôi khuyên bạn nên cân nhắc %1$schuyển sang nhà cung cấp dịch vụ lưu trữ%2$s có thể cung cấp bảo mật và các tính năng mà máy chủ hiện đại nên cung cấp."
+
+#: src/integrations/admin/unsupported-php-version-notice.php:85
+msgid "Can’t upgrade yourself? Ask your host!"
+msgstr "Không thể tự nâng cấp? Hãy hỏi máy chủ của bạn!"
+
+#. translators: 1: Yoast SEO, 2: Yoast SEO Premium
+#: src/integrations/admin/unsupported-php-version-notice.php:77
+msgid "By November 1st, 2024, we’ll update the minimum PHP requirement for %1$s, %2$s and all our add-ons to PHP 7.4. This, to ensure we can keep delivering state of the art features."
+msgstr "Trước ngày 1 tháng 11 năm 2024, chúng tôi sẽ cập nhật yêu cầu PHP tối thiểu cho %1$s, %2$s và tất cả các tiện ích bổ sung của chúng tôi lên PHP 7.4. Điều này, để đảm bảo chúng tôi có thể tiếp tục cung cấp các tính năng hiện đại."
+
+#: src/integrations/admin/unsupported-php-version-notice.php:73
+msgid "Upgrade your PHP version"
+msgstr "Nâng cấp phiên bản PHP của bạn"
+
+#: inc/class-wpseo-admin-bar-menu.php:568
+msgid "WordPress.org support forums"
+msgstr "Diễn đàn hỗ trợ WordPress.org"
+
+#: inc/class-wpseo-admin-bar-menu.php:563
+msgid "Yoast Premium support"
+msgstr "Hỗ trợ Yoast Premium"
+
+#: inc/class-wpseo-admin-bar-menu.php:558
+msgid "Yoast.com help section"
+msgstr "Phần trợ giúp Yoast.com"
+
+#: inc/class-wpseo-admin-bar-menu.php:543
+msgid "Help"
+msgstr "Trợ giúp"
+
+#: inc/class-wpseo-admin-bar-menu.php:524
+msgid "Write better content"
+msgstr "Viết nội dung tốt hơn"
+
+#: inc/class-wpseo-admin-bar-menu.php:519
+msgid "Improve your blog post"
+msgstr "Cải thiện bài viết trên blog của bạn"
+
+#: inc/class-wpseo-admin-bar-menu.php:514
+#: inc/class-wpseo-admin-bar-menu.php:573
+msgid "Learn more SEO"
+msgstr "Tìm hiểu thêm về SEO"
+
+#: inc/class-wpseo-admin-bar-menu.php:469
+msgid "SEO Tools"
+msgstr "Công cụ SEO"
+
+#: inc/class-wpseo-admin-bar-menu.php:236
+msgid "Focus keyphrase: "
+msgstr "Cụm từ khóa trọng tâm: "
+
+#: inc/class-wpseo-admin-bar-menu.php:230
+msgid "not set"
+msgstr "chưa được đặt"
+
+#: admin/views/licenses.php:284
+msgid "With a 30-day money-back guarantee. No questions asked."
+msgstr "Với đảm bảo hoàn tiền trong 30 ngày. Không cần giải thích."
+
+#: admin/views/licenses.php:112
+msgid "Reach new customers who live near your business"
+msgstr "Tiếp cận khách hàng mới sống gần doanh nghiệp của bạn"
+
+#: admin/views/licenses.php:111
+msgid "Get all 5 Yoast plugins for WordPress at a big discount"
+msgstr "Nhận tất cả 5 plugin Yoast dành cho WordPress với mức chiết khấu lớn"
+
+#: admin/views/licenses.php:107
+msgid "Cover all your SEO bases"
+msgstr "Bao gồm tất cả các cơ sở SEO của bạn"
+
+#. translators: used in phrases such as "More information about all the Yoast
+#. plugins"
+#. translators: used in phrases such as "Buy all the Yoast plugins"
+#: admin/views/licenses.php:106 admin/views/licenses.php:119
+msgid "all the Yoast plugins"
+msgstr "tất cả các plugin Yoast"
+
+#: admin/views/licenses.php:87
+msgid "Add global identifiers for variable products"
+msgstr "Thêm mã định danh toàn cầu cho các sản phẩm biến thể"
+
+#: admin/views/licenses.php:80 admin/views/licenses.php:115
+msgid "Drive more traffic to your online store"
+msgstr "Thúc đẩy nhiều lưu lượng truy cập hơn đến cửa hàng trực tuyến của bạn"
+
+#: admin/views/licenses.php:68
+msgid "Add all necessary schema.org markup"
+msgstr "Thêm tất cả các đánh dấu schema.org cần thiết"
+
+#: admin/views/licenses.php:67
+msgid "Ping Google on the publication of a new post"
+msgstr "Ping Google khi xuất bản bài viết mới"
+
+#: admin/views/licenses.php:62 admin/views/licenses.php:114
+msgid "Rank higher in Google's news carousel"
+msgstr "Xếp hạng cao hơn trong băng chuyền tin tức của Google"
+
+#: admin/views/licenses.php:54
+msgid "Make your videos responsive for all screen sizes"
+msgstr "Làm cho video của bạn phản hồi với mọi kích thước màn hình"
+
+#: src/presenters/admin/indexing-notification-presenter.php:90
+msgid "We need to re-analyze some of your SEO data because of a change in the visibility of your taxonomies. Please help us do that by running the SEO data optimization. "
+msgstr "Chúng tôi cần phân tích lại một số dữ liệu SEO của bạn do thay đổi về khả năng hiển thị của phân loại của bạn. Vui lòng giúp chúng tôi thực hiện điều đó bằng cách chạy tối ưu hóa dữ liệu SEO. "
+
+#: src/presenters/admin/indexing-notification-presenter.php:87
+msgid "We need to re-analyze some of your SEO data because of a change in the visibility of your post types. Please help us do that by running the SEO data optimization. "
+msgstr "Chúng tôi cần phân tích lại một số dữ liệu SEO của bạn do thay đổi về khả năng hiển thị của các loại nội dung của bạn. Vui lòng giúp chúng tôi thực hiện điều đó bằng cách chạy tối ưu hóa dữ liệu SEO. "
+
+#. translators: %s: expands to the term id
+#: src/exceptions/indexable/term-not-built-exception.php:20
+msgid "The term %s could not be built because it's not indexable."
+msgstr "Không thể xây dựng thuật ngữ %s vì nó không thể lập chỉ mục."
+
+#. translators: %s: expands to the post id
+#: src/exceptions/indexable/post-not-built-exception.php:32
+msgid "The post %s could not be indexed because it's post type is excluded from indexing."
+msgstr "Không thể lập chỉ mục bài viết %s vì loại nội dung của nó bị loại trừ khỏi lập chỉ mục."
+
+#. translators: %s: expands to the post id
+#: src/exceptions/indexable/post-not-built-exception.php:20
+msgid "The post %s could not be indexed because it does not meet indexing requirements."
+msgstr "Không thể lập chỉ mục bài viết %s vì nó không đáp ứng các yêu cầu lập chỉ mục."
+
+#. translators: %1$d is the number of records that were removed. %2$s is the
+#. site url.
+#: src/commands/cleanup-command.php:183
+msgid "Cleaned up %1$d record from %2$s."
+msgid_plural "Cleaned up %1$d records from %2$s."
+msgstr[0] "Đã dọn dẹp %1$d bản ghi từ %2$s."
+
+#. translators: %1$s is the site url of the site that is cleaned up. %2$s is
+#. the name of the cleanup task that is currently running.
+#: src/commands/cleanup-command.php:159
+msgid "Cleaning up %1$s [%2$s]"
+msgstr "Đang dọn dẹp %1$s [%2$s]"
+
+#. translators: %1$s is the site url of the site that is skipped. %2$s is Yoast
+#. SEO.
+#: src/commands/cleanup-command.php:146
+msgid "Skipping %1$s. %2$s is not active on this site."
+msgstr "Bỏ qua %1$s. %2$s không hoạt động trên trang web này."
+
+#. translators: %1$d is the number of records that are removed.
+#: src/commands/cleanup-command.php:97
+msgid "Cleaned up %1$d record."
+msgid_plural "Cleaned up %1$d records."
+msgstr[0] "Đã dọn dẹp %1$d bản ghi."
+
+#: src/commands/cleanup-command.php:84
+msgid "The value for 'batch-size' must be a positive integer higher than equal to 1."
+msgstr "Giá trị cho 'batch-size' phải là một số nguyên dương lớn hơn hoặc bằng 1."
+
+#: src/commands/cleanup-command.php:81
+msgid "The value for 'interval' must be a positive integer."
+msgstr "Giá trị cho 'interval' phải là một số nguyên dương."
+
+#: src/presenters/admin/sidebar-presenter.php:20 js/dist/elementor.js:8
+#: js/dist/externals-components.js:245 js/dist/introductions.js:8
+#: js/dist/new-settings.js:33 js/dist/post-edit.js:8 js/dist/support.js:10
+#: js/dist/term-edit.js:8
+msgid "BLACK FRIDAY - 30% OFF"
+msgstr "THỨ SÁU ĐEN - GIẢM GIÁ 30%"
+
+#: admin/views/class-yoast-feature-toggles.php:210 js/dist/new-settings.js:302
+#: js/dist/post-edit.js:20
 msgid "Learn more"
 msgstr "Tìm hiểu thêm"
 
-#: admin/class-yoast-form.php:950
+#: src/integrations/admin/crawl-settings-integration.php:157
+msgid "Redirect pretty URLs for search pages to raw format"
+msgstr "Chuyển hướng URL đẹp cho các trang tìm kiếm sang định dạng thô"
+
+#. Translators: %1$s expands to an opening anchor tag for a link leading to the
+#. Yoast SEO page of the Permalink Cleanup features, %2$s expands to a closing
+#. anchor tag.
+#: src/integrations/admin/crawl-settings-integration.php:204
+msgid "These are expert features, so make sure you know what you're doing before removing the parameters. %1$sRead more about how your site can be affected%2$s."
+msgstr "Đây là những tính năng dành cho chuyên gia, vì vậy hãy đảm bảo bạn biết mình đang làm gì trước khi xóa các tham số. %1$sĐọc thêm về cách trang web của bạn có thể bị ảnh hưởng%2$s."
+
+#: src/presenters/admin/sidebar-presenter.php:103 js/dist/elementor.js:8
+#: js/dist/externals-components.js:245 js/dist/introductions.js:8
+#: js/dist/new-settings.js:33 js/dist/post-edit.js:8 js/dist/support.js:10
+#: js/dist/term-edit.js:8
+msgid "Read reviews from real users"
+msgstr "Đọc đánh giá từ người dùng thực"
+
+#. translators: %1$s expands to Yoast SEO, %2$s expands to the name of the
+#. class that could not be found.
+#: src/loader.php:258
+msgid "%1$s attempted to load the class %2$s but it could not be found."
+msgstr "%1$s đã cố gắng tải lớp %2$s nhưng không thể tìm thấy."
+
+#: src/integrations/admin/crawl-settings-integration.php:189
+#: js/dist/new-settings.js:171
+msgid "Remove unused resources"
+msgstr "Xóa tài nguyên không sử dụng"
+
+#: src/integrations/admin/crawl-settings-integration.php:162
+msgid "Prevent search engines from crawling /wp-json/"
+msgstr "Ngăn các công cụ tìm kiếm thu thập dữ liệu /wp-json/"
+
+#: src/integrations/admin/crawl-settings-integration.php:156
+msgid "Prevent search engines from crawling site search URLs"
+msgstr "Ngăn các công cụ tìm kiếm thu thập dữ liệu URL tìm kiếm trang web"
+
+#: admin/views/user-profile.php:74
+#: src/user-meta/framework/custom-meta/inclusive-language-analysis-disable.php:115
+msgid "Removes the inclusive language analysis section from the metabox and disables all inclusive language-related suggestions."
+msgstr "Xóa phần phân tích ngôn ngữ bao gồm khỏi hộp meta và tắt tất cả các đề xuất liên quan đến ngôn ngữ bao gồm."
+
+#: admin/views/user-profile.php:71
+#: src/user-meta/framework/custom-meta/inclusive-language-analysis-disable.php:109
+msgid "Disable inclusive language analysis"
+msgstr "Tắt phân tích ngôn ngữ bao gồm"
+
+#: admin/views/class-yoast-feature-toggles.php:95
+msgid "Discover why inclusive language is important for SEO."
+msgstr "Khám phá lý do tại sao ngôn ngữ bao gồm lại quan trọng đối với SEO."
+
+#: admin/views/class-yoast-feature-toggles.php:94
+msgid "The inclusive language analysis offers suggestions to write more inclusive copy."
+msgstr "Phân tích ngôn ngữ bao gồm cung cấp các đề xuất để viết bản sao bao gồm hơn."
+
+#: admin/views/class-yoast-feature-toggles.php:91 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
+msgid "Inclusive language analysis"
+msgstr "Phân tích ngôn ngữ bao gồm"
+
+#: admin/metabox/class-metabox-section-inclusive-language.php:30
+#: js/dist/externals-components.js:279
+msgid "Inclusive language"
+msgstr "Ngôn ngữ bao gồm"
+
+#. translators: %1$s expands to the opening anchor tag, %2$s to the closing
+#. anchor tag, %3$s to the inclusive language score.
+#: admin/formatter/class-metabox-formatter.php:136
+#: admin/formatter/class-metabox-formatter.php:143
+#: admin/formatter/class-metabox-formatter.php:150
+#: admin/formatter/class-metabox-formatter.php:157
+msgid "%1$sInclusive language%2$s: %3$s"
+msgstr "%1$sNgôn ngữ bao gồm%2$s: %3$s"
+
+#: inc/class-wpseo-admin-bar-menu.php:269
+msgid "Front-end SEO inspector"
+msgstr "Trình kiểm tra SEO giao diện người dùng"
+
+#: admin/class-yoast-form.php:944
 msgid "Unlock with Premium!"
 msgstr "Mở khóa với Premium!"
-
-#. translators: %s expands to the post type name.
-#: admin/metabox/class-metabox.php:212 js/dist/block-editor.js:213
-#: js/dist/classic-editor.js:198 js/dist/elementor.js:327
-msgid "Timestamp this %s"
-msgstr "Dấu thời gian %s này"
-
-#. translators: %s expands to WordProof.
-#: vendor_prefixed/wordproof/wordpress-sdk/app/Translations/DefaultTranslations.php:53
-msgid "Contact %s support."
-msgstr "Liên hệ với bộ phận hỗ trợ %s."
-
-#: vendor_prefixed/wordproof/wordpress-sdk/app/Controllers/PostEditorTimestampController.php:133
-msgid "WordProof Timestamp"
-msgstr "Dấu thời gian WordProof"
-
-#: vendor_prefixed/wordproof/wordpress-sdk/app/Config/OptionsConfig.php:14
-msgid "View this content's Timestamp certificate"
-msgstr "Xem chứng chỉ Dấu thời gian của nội dung này"
 
 #. translators: 1: Yoast SEO Premium
 #: src/integrations/admin/deactivated-premium-integration.php:99
@@ -69,26 +732,26 @@ msgstr "Kích hoạt %1$s!"
 msgid "You've installed %1$s but it's not activated yet. %2$sActivate %1$s now!%3$s"
 msgstr "Bạn đã cài đặt %1$s nhưng nó chưa được kích hoạt. %2$s Kích hoạt %1$s ngay bây giờ! %3$s"
 
-#: src/integrations/admin/crawl-settings-integration.php:227
+#: src/integrations/admin/crawl-settings-integration.php:212
 msgid "Permalink cleanup settings"
 msgstr "Cài đặt dọn dẹp liên kết vĩnh viễn"
 
-#: src/integrations/admin/crawl-settings-integration.php:213
+#: src/integrations/admin/crawl-settings-integration.php:198
 msgid "Search cleanup settings"
 msgstr "Cài đặt dọn dẹp tìm kiếm"
 
 #: src/integrations/admin/crawl-settings-integration.php:155
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:16 js/dist/new-settings.js:172
 msgid "Filter searches with common spam patterns"
 msgstr "Lọc các tìm kiếm với các mẫu spam phổ biến"
 
 #: src/integrations/admin/crawl-settings-integration.php:154
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:16 js/dist/new-settings.js:172
 msgid "Filter searches with emojis and other special characters"
 msgstr "Lọc tìm kiếm bằng biểu tượng cảm xúc và các ký tự đặc biệt khác"
 
 #: src/integrations/admin/crawl-settings-integration.php:153
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:16 js/dist/new-settings.js:172
 msgid "Filter search terms"
 msgstr "Lọc cụm từ tìm kiếm"
 
@@ -100,7 +763,7 @@ msgstr "Tham số URL chưa đăng ký"
 msgid "Campaign tracking URL parameters"
 msgstr "Thông số URL theo dõi chiến dịch"
 
-#: src/config/wordproof-translations.php:88
+#: src/deprecated/src/config/wordproof-translations.php:129
 msgid "Contact WordProof support"
 msgstr "Liên hệ với bộ phận hỗ trợ WordProof"
 
@@ -108,13 +771,14 @@ msgstr "Liên hệ với bộ phận hỗ trợ WordProof"
 msgid "Find out how IndexNow can help your site."
 msgstr "Tìm hiểu cách IndexNow có thể trợ giúp trang web của bạn."
 
-#: admin/views/class-yoast-feature-toggles.php:198 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:198 js/dist/new-settings.js:306
 msgid "Automatically ping search engines like Bing and Yandex whenever you publish, update or delete a post."
-msgstr "Tự động ping các công cụ tìm kiếm như Bing và Yandex bất cứ khi nào bạn xuất bản, cập nhật hoặc xóa một bài đăng."
+msgstr "Tự động ping các công cụ tìm kiếm như Bing và Yandex bất cứ khi nào bạn xuất bản, cập nhật hoặc xóa một bài viết."
 
-#: admin/views/class-yoast-feature-toggles.php:195 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:195 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:306
 msgid "IndexNow"
-msgstr "Chỉ sốNow"
+msgstr "IndexNow"
 
 #. translators: 1: Link start tag to the first-time configuration, 2: Link
 #. closing tag.
@@ -122,15 +786,15 @@ msgstr "Chỉ sốNow"
 msgid "We noticed that you haven't fully configured Yoast SEO yet. Optimize your SEO settings even further by using our improved %1$s First-time configuration%2$s."
 msgstr "Chúng tôi nhận thấy rằng bạn chưa định cấu hình đầy đủ Yoast SEO. Tối ưu hóa cài đặt SEO của bạn hơn nữa bằng cách sử dụng cấu hình %1$s lần đầu tiên được cải tiến của chúng tôi%2$s."
 
-#: src/helpers/first-time-configuration-notice-helper.php:68
+#: src/helpers/first-time-configuration-notice-helper.php:67
 msgid "SEO configuration"
 msgstr "Cấu hình SEO"
 
-#: src/integrations/admin/crawl-settings-integration.php:203
+#: src/integrations/admin/crawl-settings-integration.php:188
 msgid "Feed crawl settings"
 msgstr "Cài đặt thu thập thông tin nguồn cấp dữ liệu"
 
-#: src/integrations/admin/crawl-settings-integration.php:201
+#: src/integrations/admin/crawl-settings-integration.php:186
 msgid "Basic crawl settings"
 msgstr "Cài đặt thu thập thông tin cơ bản"
 
@@ -139,7 +803,7 @@ msgid "Powered by HTTP header"
 msgstr "Cung cấp bởi HTTP header"
 
 #: src/integrations/admin/crawl-settings-integration.php:143
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:16 js/dist/new-settings.js:171
 msgid "Pingback HTTP header"
 msgstr "Tiêu đề HTTP Pingback"
 
@@ -189,7 +853,7 @@ msgstr "Nguồn cấp dữ liệu danh mục"
 
 #: src/integrations/admin/crawl-settings-integration.php:129
 msgid "Post type feeds"
-msgstr "Nguồn cấp dữ liệu loại bài đăng"
+msgstr "Nguồn cấp dữ liệu loại nội dung"
 
 #: src/integrations/admin/crawl-settings-integration.php:128
 msgid "Post authors feeds"
@@ -205,7 +869,7 @@ msgstr "Thức ăn toàn cầu"
 
 #: src/integrations/admin/crawl-settings-integration.php:127
 msgid "Post comments feeds"
-msgstr "Bình luận bài đăng"
+msgstr "Bình luận bài viết"
 
 #. translators: %1$s opens the link to the Yoast.com article about Crawl
 #. settings, %2$s closes the link,
@@ -298,10 +962,47 @@ msgstr "Việc nhập khẩu AIOSEO đã bị hủy bỏ vì một số dữ li�
 msgid "The validation of the AIOSEO data structure has failed."
 msgstr "Việc xác nhận cấu trúc dữ liệu AIOSEO đã thất bại."
 
+#: src/deprecated/src/integrations/third-party/wordproof-integration-toggle.php:122
+msgid "The WordProof Timestamp plugin needs to be disabled before you can activate this integration."
+msgstr "Cần tắt plugin Dấu thời gian WordProof trước khi bạn có thể kích hoạt tích hợp này."
+
 #. translators: %s expands to WordProof
 #: src/deprecated/src/integrations/third-party/wordproof-integration-toggle.php:116
 msgid "Currently, the %s integration is not available for multisites."
 msgstr "Hiện tại, %s tích hợp không có sẵn cho nhiều trang web."
+
+#: src/deprecated/src/config/wordproof-translations.php:115
+msgid "Open settings"
+msgstr "Mở cài đặt"
+
+#: src/deprecated/src/config/wordproof-translations.php:101
+msgid "Open authentication"
+msgstr "Mở xác thực"
+
+#. translators: %s expands to WordProof.
+#: src/deprecated/src/config/wordproof-translations.php:87
+msgid "The timestamp is not created because you need to authenticate with %s first."
+msgstr "Dấu thời gian không được tạo vì bạn cần xác thực với %s trước."
+
+#. translators: %s expands to WordProof.
+#: src/deprecated/src/config/wordproof-translations.php:72
+msgid "The timestamp is not retrieved by your site. Please try again or contact %1$s support."
+msgstr "Trang web của bạn không truy xuất được dấu thời gian. Vui lòng thử lại hoặc liên hệ với bộ phận hỗ trợ %1$s."
+
+#. translators: %s expands to WordProof.
+#: src/deprecated/src/config/wordproof-translations.php:57
+msgid "%1$s failed to timestamp this page. Please check if you're correctly authenticated with %1$s and try to save this page again."
+msgstr "%1$s không thể đóng dấu thời gian cho trang này. Vui lòng kiểm tra xem bạn đã xác thực chính xác với %1$s và thử lưu trang này lại."
+
+#. translators: %s expands to WordProof.
+#: src/deprecated/src/config/wordproof-translations.php:42
+msgid "%s has successfully timestamped this page."
+msgstr "%s đã đóng dấu thời gian thành công cho trang này."
+
+#. translators: %s expands to WordProof.
+#: src/deprecated/src/config/wordproof-translations.php:27
+msgid "You are out of timestamps. Please upgrade your account by opening the %s settings."
+msgstr "Bạn đã hết dấu thời gian. Vui lòng nâng cấp tài khoản của bạn bằng cách mở cài đặt %s."
 
 #: src/integrations/admin/import-integration.php:236
 msgid "Cleanup failed with the following error:"
@@ -319,7 +1020,7 @@ msgstr "Lưu ý: Siêu dữ liệu này sẽ chỉ được nhập nếu chưa c
 #: src/integrations/admin/import-integration.php:115
 #: src/integrations/admin/import-integration.php:125
 msgid "Post metadata (SEO titles, descriptions, etc.)"
-msgstr "Siêu dữ liệu bài đăng (tiêu đề SEO, mô tả, v.v.)"
+msgstr "Siêu dữ liệu bài viết (tiêu đề SEO, mô tả, v.v.)"
 
 #. translators: %s: expands to the name of the plugin that is selected to be
 #. imported
@@ -380,8 +1081,9 @@ msgid "Blog Post"
 msgstr "Bài viết trên blog"
 
 #. translators: %s: expands to 'Yoast SEO Premium'.
+#. translators: 1: Yoast WooCommerce SEO
 #: src/integrations/admin/workouts-integration.php:314
-#: js/dist/integrations-page.js:1
+#: js/dist/integrations-page.js:11
 msgid "Activate %s"
 msgstr "Kích hoạt %s"
 
@@ -451,7 +1153,7 @@ msgstr "Tiêu đề danh mục"
 
 #: inc/class-wpseo-replace-vars.php:1498
 msgid "Replaced with the post content"
-msgstr "Thay thế bằng nội dung bài đăng"
+msgstr "Thay thế bằng nội dung bài viết"
 
 #: inc/class-wpseo-replace-vars.php:1498
 msgid "Post Content"
@@ -479,7 +1181,7 @@ msgstr "Tên tác giả"
 
 #: inc/class-wpseo-replace-vars.php:1494
 msgid "Replaced with the day the post was published"
-msgstr "Thay thế bằng ngày bài đăng được xuất bản"
+msgstr "Thay thế bằng ngày bài viết được xuất bản"
 
 #: inc/class-wpseo-replace-vars.php:1494
 msgid "Post day"
@@ -487,7 +1189,7 @@ msgstr "Ngày đăng"
 
 #: inc/class-wpseo-replace-vars.php:1493
 msgid "Replaced with the month the post was published"
-msgstr "Thay thế bằng tháng bài đăng được xuất bản"
+msgstr "Thay thế bằng tháng bài viết được xuất bản"
 
 #: inc/class-wpseo-replace-vars.php:1493
 msgid "Post month"
@@ -495,7 +1197,7 @@ msgstr "Tháng đăng"
 
 #: inc/class-wpseo-replace-vars.php:1492
 msgid "Replaced with the year the post was published"
-msgstr "Thay thế bằng năm bài đăng được xuất bản"
+msgstr "Thay thế bằng năm bài viết được xuất bản"
 
 #: inc/class-wpseo-replace-vars.php:1492
 msgid "Post year"
@@ -532,7 +1234,7 @@ msgstr "Workouts"
 
 #: admin/views/class-yoast-integration-toggles.php:81
 msgid "Improve the quality of your site search! Automatically helps your users find your cornerstone and most important content in your internal search results. It also removes noindexed posts & pages from your site’s search results."
-msgstr "Cải thiện chất lượng tìm kiếm trang web của bạn! Tự động giúp người dùng tìm thấy nền tảng và nội dung quan trọng nhất trong kết quả tìm kiếm nội bộ của bạn. Nó cũng loại bỏ các bài đăng và trang không đượcdexed khỏi kết quả tìm kiếm của trang web của bạn."
+msgstr "Cải thiện chất lượng tìm kiếm trang web của bạn! Tự động giúp người dùng tìm thấy nền tảng và nội dung quan trọng nhất trong kết quả tìm kiếm nội bộ của bạn. Nó cũng loại bỏ các bài viết và trang không đượcdexed khỏi kết quả tìm kiếm của trang web của bạn."
 
 #. translators: %s: Algolia.
 #: admin/views/class-yoast-integration-toggles.php:83
@@ -543,7 +1245,12 @@ msgstr "Tìm hiểu thêm về sự hội nhập %s của chúng tôi."
 msgid "Read more about how internal linking can improve your site structure."
 msgstr "Đọc thêm về cách liên kết nội bộ có thể cải thiện cấu trúc trang web của bạn."
 
-#: admin/views/class-yoast-feature-toggles.php:125 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:128
+msgid "Get relevant internal linking suggestions — while you’re writing! The link suggestions metabox shows a list of posts on your blog with similar content that might be interesting to link to. "
+msgstr "Nhận gợi ý liên kết nội bộ phù hợp - ngay khi bạn đang viết! Hộp meta gợi ý liên kết hiển thị danh sách các bài viết trên blog của bạn với nội dung tương tự mà bạn có thể muốn liên kết đến. "
+
+#: admin/views/class-yoast-feature-toggles.php:125 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
 msgid "Link suggestions"
 msgstr "Đề xuất nối kết"
 
@@ -555,9 +1262,10 @@ msgstr "Tìm hiểu cách Insights có thể giúp bạn cải thiện nội dun
 msgid "Find relevant data about your content right in the Insights section in the Yoast SEO metabox. You’ll see what words you use most often and if they’re a match with your keywords! "
 msgstr "Tìm dữ liệu có liên quan về nội dung của bạn ngay trong phần Thông tin chi tiết trong metabox SEO Yoast. Bạn sẽ thấy những từ nào bạn sử dụng thường xuyên nhất và nếu chúng phù hợp với từ khóa của bạn! "
 
-#: admin/views/class-yoast-feature-toggles.php:116 js/dist/block-editor.js:175
-#: js/dist/block-editor.js:475 js/dist/classic-editor.js:160
-#: js/dist/elementor.js:68 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:116 js/dist/block-editor.js:225
+#: js/dist/block-editor.js:572 js/dist/classic-editor.js:210
+#: js/dist/elementor.js:120 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
 msgid "Insights"
 msgstr "Thống kê"
 
@@ -570,46 +1278,10 @@ msgstr "Thống kê"
 msgid "Oops, something has gone wrong and we couldn't complete the optimization of your SEO data. Please make sure to activate your subscription in MyYoast by completing %1$sthese steps%2$s."
 msgstr "Oops, có điều gì đó không ổn và chúng tôi không thể hoàn thành việc tối ưu hóa dữ liệu SEO của bạn. Vui lòng đảm bảo kích hoạt đăng ký của bạn trong MyYoast bằng cách hoàn thành các bước %1$s%2$s."
 
-#. translators: 1: link open tag; 2: link close tag.
-#: src/deprecated/admin/views/class-view-utils.php:162
-msgid "The social appearance settings for archives require Open Graph metadata (which is currently disabled). You can enable this in the %1$s‘Social’ settings under the ‘Facebook’ tab%2$s."
-msgstr "Các thiết đặt xuất hiện xã hội cho kho lưu trữ yêu cầu siêu dữ liệu Open Graph (hiện đang bị vô hiệu hóa). Bạn có thể bật điều này trong cài đặt %1$s 'Xã hội' dưới tab 'Facebook'%2$s."
-
-#. translators: 1: link open tag; 2: link close tag.
-#: src/deprecated/admin/views/class-view-utils.php:150
-msgid "The social appearance settings for taxonomies require Open Graph metadata (which is currently disabled). You can enable this in the %1$s‘Social’ settings under the ‘Facebook’ tab%2$s."
-msgstr "Các thiết đặt xuất hiện xã hội cho phân loại yêu cầu siêu dữ liệu Open Graph (hiện đang bị vô hiệu hóa). Bạn có thể bật điều này trong cài đặt %1$s 'Xã hội' dưới tab 'Facebook'%2$s."
-
-#. translators: 1: link open tag; 2: link close tag.
-#: src/deprecated/admin/views/class-view-utils.php:138
-msgid "The social appearance settings for content types require Open Graph metadata (which is currently disabled). You can enable this in the %1$s‘Social’ settings under the ‘Facebook’ tab%2$s."
-msgstr "Các thiết đặt xuất hiện xã hội cho các loại nội dung yêu cầu siêu dữ liệu Open Graph (hiện đang bị vô hiệu hóa). Bạn có thể bật điều này trong cài đặt %1$s 'Xã hội' dưới tab 'Facebook'%2$s."
-
-#. translators: 1: link open tag; 2: link close tag.
-#: src/deprecated/admin/views/class-view-utils.php:122
-msgid "The social appearance settings for your homepage require Open Graph metadata (which is currently disabled). You can enable this in the %1$s‘Social’ settings under the ‘Facebook’ tab%2$s."
-msgstr "Các thiết đặt xuất hiện xã hội cho trang chủ của bạn yêu cầu siêu dữ liệu Open Graph (hiện đang bị vô hiệu hóa). Bạn có thể bật điều này trong cài đặt %1$s 'Xã hội' dưới tab 'Facebook'%2$s."
-
-#: admin/views/redirects.php:22
-#: src/deprecated/src/integrations/admin/social-templates-integration.php:294
-#: js/dist/integrations-page.js:1
+#: admin/views/redirects.php:22 js/dist/integrations-page.js:4
+#: js/dist/integrations-page.js:7 js/dist/integrations-page.js:19
 msgid "Unlock with Premium"
 msgstr "Mở khóa với Premium"
-
-#. translators: %s expands to 'Yoast SEO Premium'.
-#: src/deprecated/src/integrations/admin/social-templates-integration.php:281
-msgid "To unlock this feature please update %s to the latest version."
-msgstr "Để mở khóa tính năng này, vui lòng cập nhật %s lên phiên bản mới nhất."
-
-#: src/deprecated/src/integrations/admin/social-templates-integration.php:269
-#: js/dist/externals/socialMetadataForms.js:23 js/dist/new-settings.js:2
-msgid "Social description"
-msgstr "Mô tả xã hội"
-
-#: src/deprecated/src/integrations/admin/social-templates-integration.php:268
-#: js/dist/externals/socialMetadataForms.js:23 js/dist/new-settings.js:2
-msgid "Social title"
-msgstr "Tiêu đề xã hội"
 
 #. translators: %1$s expands to Yoast SEO
 #: src/integrations/admin/addon-installation/dialog-integration.php:94
@@ -671,8 +1343,9 @@ msgstr "Tự động cập nhật được bật dựa trên cài đặt này ch
 
 #: src/presenters/admin/badge-presenter.php:80
 #: src/presenters/admin/badge-presenter.php:87
-#: js/dist/externals/componentsNew.js:1064 js/dist/integrations-page.js:1
-#: js/dist/new-settings.js:2
+#: js/dist/externals/componentsNew.js:1080 js/dist/integrations-page.js:3
+#: js/dist/integrations-page.js:6 js/dist/integrations-page.js:18
+#: js/dist/new-settings.js:337
 msgid "New"
 msgstr "Mới"
 
@@ -689,9 +1362,15 @@ msgstr "Thuật ngữ này được coi là không hợp lệ. Lý do sau đây 
 msgid "The term could not be found."
 msgstr "Thuật ngữ này không thể tìm thấy."
 
-#: admin/class-yoast-form.php:1085 js/dist/first-time-configuration.js:2
+#: admin/class-yoast-form.php:1079 js/dist/first-time-configuration.js:15
 msgid "This feature has been disabled since subsites never send tracking data."
 msgstr "Đặc tính này đã bị vô hiệu hóa vì các trang con không bao giờ giữ dữ liệu theo dõi."
+
+#. translators: %1$s expands to an opening anchor tag, %2$s expands to an
+#. closing anchor tag.
+#: src/integrations/third-party/wpml-wpseo-notification.php:110
+msgid "We notice that you have installed WPML. To make sure your canonical URLs are set correctly, %1$sinstall and activate the WPML SEO add-on%2$s as well!"
+msgstr "Chúng tôi nhận thấy bạn đã cài đặt WPML. Để đảm bảo URL chính tắc (canonical) của bạn được đặt chính xác, hãy %1$scài đặt và kích hoạt tiện ích bổ sung WPML SEO%2$s!"
 
 #: src/presenters/admin/indexing-notification-presenter.php:81
 msgid "Because of a change in your category base setting, some of your SEO data needs to be reprocessed."
@@ -701,7 +1380,7 @@ msgstr "Do sự thay đổi trong cài đặt cơ sở danh mục của bạn, m
 msgid "Find out how a rich snippet can improve visibility and click-through-rate."
 msgstr "Tìm hiểu cách một đoạn mã chi tiết có thể cải thiện khả năng hiển thị và tỷ lệ nhấp."
 
-#: admin/views/class-yoast-feature-toggles.php:189 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:189 js/dist/new-settings.js:302
 msgid "This adds an author byline and reading time estimate to the article’s snippet when shared on Slack."
 msgstr "Điều này bổ sung thêm ước tính của tác giả và thời gian đọc vào đoạn trích của bài viết khi được chia sẻ trên Slack."
 
@@ -764,7 +1443,7 @@ msgid "You can speed up your site and get insight into your internal linking str
 msgstr "Bạn có thể tăng tốc trang web của mình và hiểu sâu hơn về cấu trúc liên kết nội bộ của mình bằng cách cho phép chúng tôi thực hiện một số tối ưu hóa cách lưu trữ dữ liệu SEO. "
 
 #: src/presenters/admin/indexing-notification-presenter.php:59
-#: js/dist/first-time-configuration.js:2 js/dist/indexation.js:8
+#: js/dist/first-time-configuration.js:9 js/dist/indexation.js:8
 msgid "Start SEO data optimization"
 msgstr "Bắt đầu tối ưu hóa dữ liệu SEO"
 
@@ -815,7 +1494,7 @@ msgstr "Việc tắt các sơ đồ trang XML của Yoast SEO sẽ không vô hi
 #. translators: 1: Yoast SEO, 2: translated version of "Off"
 #: admin/views/class-yoast-feature-toggles.php:158
 msgid "The advanced section of the %1$s meta box allows a user to remove posts from the search results or change the canonical. The settings in the schema tab allows a user to change schema meta data for a post. These are things you might not want any author to do. That's why, by default, only editors and administrators can do this. Setting to \"%2$s\" allows all users to change these settings."
-msgstr "Phần nâng cao của hộp meta %1$s cho phép người dùng xóa các bài đăng khỏi thanh công cụ tìm kiếm hoặc thay đổi của canonical. Cài đặt trong tab schema cho phép một người dùng thay đổi dữ liệu thẻ schema của bài đăng. Điều này có thể là những điều mà bạn không muốn bất kỳ tác giả nào làm. Đó là lý do tại sao, trong mặc định, chỉ duy nhất biên tập viên và quản trị viên mới có thể thực hiện điều này. Cài đặt thành \"%2$s\" cho phép tất cả người dùng có thể thay đổi những cài đặt này."
+msgstr "Phần nâng cao của hộp meta %1$s cho phép người dùng xóa các bài viết khỏi thanh công cụ tìm kiếm hoặc thay đổi của URL chính tắc (canonical). Cài đặt trong tab schema cho phép một người dùng thay đổi dữ liệu thẻ schema của bài viết. Điều này có thể là những điều mà bạn không muốn bất kỳ tác giả nào làm. Đó là lý do tại sao, trong mặc định, chỉ duy nhất biên tập viên và quản trị viên mới có thể thực hiện điều này. Cài đặt thành \"%2$s\" cho phép tất cả người dùng có thể thay đổi những cài đặt này."
 
 #: admin/views/class-yoast-feature-toggles.php:154
 msgid "Security: no advanced or schema settings for authors"
@@ -863,7 +1542,7 @@ msgstr "Danh sách bất động sản"
 
 #: src/config/schema-types.php:96
 msgid "Checkout Page"
-msgstr "Trang Thanh toán"
+msgstr "Trang thanh toán"
 
 #: src/config/schema-types.php:92
 msgid "Collection Page"
@@ -893,8 +1572,8 @@ msgstr "Trang hỗ trợ"
 msgid "About Page"
 msgstr "Trang giới thiệu"
 
-#: src/config/schema-types.php:64 js/dist/block-editor.js:441
-#: js/dist/classic-editor.js:426 js/dist/elementor.js:327
+#: src/config/schema-types.php:64 js/dist/block-editor.js:511
+#: js/dist/classic-editor.js:496 js/dist/elementor.js:386
 msgid "Item Page"
 msgstr "Trang sản phẩm"
 
@@ -908,7 +1587,8 @@ msgid "Allow us to track some data about your site to improve our plugin."
 msgstr "Cho phép chúng tôi theo dõi một số dữ liệu về trang web của bạn để cải thiện plugin của chúng tôi."
 
 #: admin/views/class-yoast-feature-toggles.php:165
-#: admin/views/class-yoast-feature-toggles.php:166 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:166 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:299
 msgid "Usage tracking"
 msgstr "Theo dõi quá trình sử dụng"
 
@@ -1095,35 +1775,37 @@ msgstr "%1$s Điều này đã được báo cáo bởi %3$s plugin thứ %2$s"
 msgid "%1$sGo to the Discussion Settings page%2$s"
 msgstr "%1$s Chuyển đến trang Cài đặt Thảo luận %2$s"
 
-#: admin/metabox/class-metabox.php:195
+#: admin/metabox/class-metabox.php:193
 msgid "If you want to apply advanced <code>meta</code> robots settings for this page, please define them in the following field."
 msgstr "Nếu bạn muốn áp dụng cài đặt rô bốt <code> meta </code> nâng cao cho trang này, vui lòng xác định chúng trong trường sau."
 
 #. translators: 1: Link start tag to the Firefox website, 2: Link start tag to
 #. the Chrome website, 3: Link start tag to the Edge website, 4: Link closing
 #. tag.
-#: admin/metabox/class-metabox.php:156 admin/taxonomy/class-taxonomy.php:113
+#: admin/metabox/class-metabox.php:154 admin/taxonomy/class-taxonomy.php:113
 msgid "The browser you are currently using is unfortunately rather dated. Since we strive to give you the best experience possible, we no longer support this browser. Instead, please use %1$sFirefox%4$s, %2$sChrome%4$s or %3$sMicrosoft Edge%4$s."
 msgstr "Rất tiếc, trình duyệt bạn đang sử dụng đã quá cũ. Vì chúng tôi cố gắng mang đến cho bạn trải nghiệm tốt nhất có thể nên chúng tôi không còn hỗ trợ trình duyệt này nữa. Thay vào đó, hãy sử dụng %1$s Firefox %4$s, %2$s Chrome %4$s hoặc %3$s Microsoft Edge %4$s."
 
 #. translators: %1$s expands to Yoast SEO academy
-#: src/presenters/admin/sidebar-presenter.php:139 js/dist/new-settings.js:2
-#: js/dist/support.js:2
+#. translators: %1$s expands to "Yoast SEO academy".
+#: src/presenters/admin/sidebar-presenter.php:139 js/dist/new-settings.js:26
+#: js/dist/support.js:3
 msgid "Check out %1$s"
-msgstr "Thanh toán %1$s"
+msgstr "Xem %1$s ngay"
 
-#: src/presenters/admin/sidebar-presenter.php:132 js/dist/new-settings.js:2
+#: src/presenters/admin/sidebar-presenter.php:132 js/dist/new-settings.js:25
 #: js/dist/support.js:2
 msgid "We have both free and premium online courses to learn everything you need to know about SEO."
 msgstr "Chúng tôi có các khóa học để giúp bạn hiểu hơn về SEO."
 
 #. translators: %1$s expands to Yoast SEO academy, which is a clickable link.
-#: src/presenters/admin/sidebar-presenter.php:130 js/dist/new-settings.js:2
+#. translators: %1$s expands to "Yoast SEO" academy, which is a clickable link.
+#: src/presenters/admin/sidebar-presenter.php:130 js/dist/new-settings.js:25
 #: js/dist/support.js:2
 msgid "Want to learn SEO from Team Yoast? Check out our %1$s!"
-msgstr "Bạn muốn học SEO từ Team Yoast? Chỉ với  %1$s!"
+msgstr "Muốn học SEO từ đội ngũ Yoast? Hãy xem %1$s của chúng tôi!"
 
-#: src/presenters/admin/sidebar-presenter.php:122 js/dist/new-settings.js:2
+#: src/presenters/admin/sidebar-presenter.php:122 js/dist/new-settings.js:25
 #: js/dist/support.js:2
 msgid "Learn SEO"
 msgstr "Học SEO"
@@ -1143,85 +1825,16 @@ msgstr "Tải dữ liệu vào từ %1$s cài đặt khác bằng cách dán nó
 msgid "Your %1$s settings:"
 msgstr "Bạn đã cài đặt %1$s :"
 
-#: admin/metabox/class-metabox.php:439 js/dist/block-editor.js:499
-#: js/dist/elementor.js:466 js/dist/new-settings.js:2
-#: js/dist/structured-data-blocks.js:5
+#: admin/metabox/class-metabox.php:426 js/dist/block-editor.js:597
+#: js/dist/elementor.js:576 js/dist/new-settings.js:11
+#: js/dist/new-settings.js:16 js/dist/new-settings.js:20
+#: js/dist/new-settings.js:61 js/dist/new-settings.js:244
 msgid "Schema"
-msgstr "Sơ đồ"
+msgstr "Dữ liệu có cấu trúc"
 
 #: admin/admin-settings-changed-listener.php:85
 msgid "Settings saved."
 msgstr "Đã lưu cài đặt."
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:169
-msgid "Please check the format of the YouTube URL you entered. %s"
-msgstr "Vui lòng kiểm tra định dạng URL YouTube mà bạn đã nhập. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:159
-msgid "Please check the format of the Wikipedia URL you entered. %s"
-msgstr "Vui lòng kiểm tra định dạng của URL Wikipedia bạn đã nhập. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:144
-msgid "Please check the format of the Pinterest URL you entered. %s"
-msgstr "Vui lòng kiểm tra định dạng của URL Pinterest bạn đã nhập. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:139
-msgid "Please check the format of the MySpace URL you entered. %s"
-msgstr "Vui lòng kiểm tra định dạng của URL MySpace bạn đã nhập. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:129
-msgid "Please check the format of the LinkedIn URL you entered. %s"
-msgstr "Vui lòng kiểm tra định dạng của URL LinkedIn mà bạn đã nhập. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:124
-msgid "Please check the format of the Instagram URL you entered. %s"
-msgstr "Vui lòng kiểm tra định dạng của URL Instagram bạn đã nhập. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:114
-msgid "Please check the format of the Facebook Page URL you entered. %s"
-msgstr "Vui lòng kiểm tra định dạng của URL Trang Facebook bạn đã nhập. %s"
-
-#. translators: %s: form value as submitted.
-#: admin/class-yoast-input-validation.php:321
-msgid "The submitted value was: %s"
-msgstr "Giá trị được gửi là: %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:164
-msgid "Yandex confirmation codes can only contain letters from A to F, numbers, hyphens, and underscores. %s"
-msgstr "Mã xác minh của Yandex chỉ chứa ký tự từ A đến F, số, dấu gạch nối, và dấu gạch dưới. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:154
-msgid "Twitter usernames can only contain letters, numbers, and underscores. %s"
-msgstr "Tên người dùng của Twitter chỉ chứa ký tự, số, dấu gạch nối, và dấu gạch dưới. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:149
-msgid "Pinterest confirmation codes can only contain letters from A to F, numbers, hyphens, and underscores. %s"
-msgstr "Mã xác minh của Pinterest chỉ chứa ký tự từ A đến F, số, dấu gạch nối, và dấu gạch dưới. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:134
-msgid "Bing confirmation codes can only contain letters from A to F, numbers, hyphens, and underscores. %s"
-msgstr "Mã xác minh của Bing chỉ chứa ký tự từ A đến F, số, dấu gạch nối, và dấu gạch dưới. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:119
-msgid "Google verification codes can only contain letters, numbers, hyphens, and underscores. %s"
-msgstr "Mã xác minh của Google chỉ chứa ký tự, số, dấu gạch nối, và dấu gạch dưới. %s"
-
-#. translators: %s: additional message with the submitted invalid value
-#: admin/class-yoast-input-validation.php:109
-msgid "Baidu verification codes can only contain letters, numbers, hyphens, and underscores. %s"
-msgstr "Mã xác minh của Baidu chỉ chứa ký tự, số, dấu gạch nối, và dấu gạch dưới. %s"
 
 #. translators: Hidden accessibility text.
 #: admin/views/partial-notifications-template.php:47
@@ -1245,6 +1858,10 @@ msgid "You have %d hidden notification:"
 msgid_plural "You have %d hidden notifications:"
 msgstr[0] "Bạn có %d thông báo ẩn:"
 
+#: src/helpers/score-icon-helper.php:84
+msgid "Focus keyphrase not set"
+msgstr "Cụm từ khóa trọng tâm chưa được đặt"
+
 #. translators: %1$s: amount of errors, %2$s: the admin page title
 #: admin/class-yoast-input-validation.php:65
 msgid "The form contains %1$s error. %2$s"
@@ -1256,25 +1873,21 @@ msgstr[0] "Biểu mẫu chứa %1$s lỗi. %2$s"
 msgid "Activate %s for your site on MyYoast"
 msgstr "Kích hoạt %s cho trang web của bạn trên MyYoast"
 
-#: admin/class-customizer.php:115 js/dist/new-settings.js:2
-msgid "Show blog page in breadcrumbs"
-msgstr "Hiển thị trang blog trong breadcrumbs"
-
 #. translators: %1$s expands to the opening anchor tag, %2$s to the closing
 #. anchor tag, %3$s to the SEO score.
-#: admin/formatter/class-metabox-formatter.php:99
-#: admin/formatter/class-metabox-formatter.php:106
-#: admin/formatter/class-metabox-formatter.php:113
-#: admin/formatter/class-metabox-formatter.php:120
+#: admin/formatter/class-metabox-formatter.php:76
+#: admin/formatter/class-metabox-formatter.php:83
+#: admin/formatter/class-metabox-formatter.php:90
+#: admin/formatter/class-metabox-formatter.php:97
 msgid "%1$sSEO%2$s: %3$s"
 msgstr "%1$sSEO%2$s: %3$s"
 
 #. translators: %1$s expands to the opening anchor tag, %2$s to the closing
 #. anchor tag, %3$s to the readability score.
-#: admin/formatter/class-metabox-formatter.php:129
-#: admin/formatter/class-metabox-formatter.php:136
-#: admin/formatter/class-metabox-formatter.php:143
-#: admin/formatter/class-metabox-formatter.php:150
+#: admin/formatter/class-metabox-formatter.php:106
+#: admin/formatter/class-metabox-formatter.php:113
+#: admin/formatter/class-metabox-formatter.php:120
+#: admin/formatter/class-metabox-formatter.php:127
 msgid "%1$sReadability%2$s: %3$s"
 msgstr "%1$sTính dễ đọc%2$s: %3$s"
 
@@ -1319,7 +1932,7 @@ msgstr "Google đã ngừng chạy API Crawl Error. Vì thế, nếu có lỗi t
 
 #: src/integrations/admin/first-time-configuration-integration.php:480
 #: src/integrations/admin/first-time-configuration-integration.php:493
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:314
 msgid "Organization"
 msgstr "Tổ chức"
 
@@ -1392,9 +2005,9 @@ msgstr "Số đường dẫn nội bộ nhận được"
 msgid "Outgoing internal links"
 msgstr "Số đường dẫn nội bộ liên kết tới"
 
-#: admin/class-meta-columns.php:121 js/dist/block-editor.js:129
-#: js/dist/classic-editor.js:114 js/dist/editor-modules.js:259
-#: js/dist/elementor.js:445 js/dist/wincher-dashboard-widget.js:90
+#: admin/class-meta-columns.php:121 js/dist/block-editor.js:150
+#: js/dist/classic-editor.js:135 js/dist/editor-modules.js:300
+#: js/dist/elementor.js:546 js/dist/wincher-dashboard-widget.js:118
 msgid "Keyphrase"
 msgstr "Cụm từ khóa"
 
@@ -1456,7 +2069,8 @@ msgid "You do not have the required rights to export settings."
 msgstr "Bạn không có quyền cần thiết để xuất cài đặt ."
 
 #. translators: %s expands to Yoast SEO Premium
-#: admin/class-premium-upsell-admin-block.php:125 js/dist/new-settings.js:2
+#. translators: %s expands to "Yoast SEO" Premium
+#: admin/class-premium-upsell-admin-block.php:125 js/dist/new-settings.js:338
 msgid "Upgrade to %s"
 msgstr "Nâng cấp lên %s"
 
@@ -1476,13 +2090,13 @@ msgstr "CẢNH BÁO:"
 
 #: admin/views/tabs/network/features.php:95
 #: admin/views/tabs/network/integrations.php:82
-#: src/integrations/admin/crawl-settings-integration.php:266
+#: src/integrations/admin/crawl-settings-integration.php:251
 msgid "Disable"
 msgstr "Vô hiệu hóa"
 
 #: admin/views/tabs/network/features.php:94
 #: admin/views/tabs/network/integrations.php:81
-#: src/integrations/admin/crawl-settings-integration.php:264
+#: src/integrations/admin/crawl-settings-integration.php:249
 msgid "Allow Control"
 msgstr "Cho phép Điều khiển"
 
@@ -1497,19 +2111,11 @@ msgstr "Tab này giúp bạn có thể lựa chọn tắt %s tính năng cho t�
 msgid "%s is a required feature toggle argument."
 msgstr "%s là một tính năng bắt buộc."
 
-#: admin/formatter/class-metabox-formatter.php:70
-msgid "Remove keyphrase"
-msgstr "Xóa từ khóa"
-
-#: admin/formatter/class-metabox-formatter.php:69
-msgid "Keyphrase:"
-msgstr "Từ khóa:"
-
-#: admin/class-yoast-form.php:1081 js/dist/first-time-configuration.js:2
+#: admin/class-yoast-form.php:1075 js/dist/first-time-configuration.js:15
 msgid "This feature has been disabled by the network admin."
 msgstr "Tính năng này đã bị tắt bởi quản trị mạng."
 
-#: admin/class-yoast-form.php:781 admin/metabox/class-metabox.php:661
+#: admin/class-yoast-form.php:775 admin/metabox/class-metabox.php:648
 #: admin/taxonomy/class-taxonomy-fields-presenter.php:133
 msgid "Clear Image"
 msgstr "Xóa hình"
@@ -1530,7 +2136,7 @@ msgid "There is a new notification."
 msgid_plural "There are new notifications."
 msgstr[0] "Có thông báo mới."
 
-#: inc/options/class-wpseo-option-titles.php:989
+#: inc/options/class-wpseo-option-titles.php:949
 msgid "Colon"
 msgstr "Dấu hai chấm"
 
@@ -1541,35 +2147,41 @@ msgid "Both %1$s and %2$s manage the SEO of your site. Running two SEO plugins a
 msgstr "Cả %1$s và %2$s quản lí SEO trang web của bạn. Chạy 2 plugin SEO cùng lúc sẽ gây hại."
 
 #. translators: %d expands to the number of minute/minutes.
-#: src/integrations/blocks/structured-data-blocks.php:209
-#: js/dist/structured-data-blocks.js:5
+#: src/integrations/blocks/structured-data-blocks.php:149
+#: js/dist/how-to-block.js:5 js/dist/how-to-block.js:8
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d phút"
 
 #. translators: %d expands to the number of hour/hours.
-#: src/integrations/blocks/structured-data-blocks.php:202
-#: js/dist/structured-data-blocks.js:5
+#: src/integrations/blocks/structured-data-blocks.php:142
+#: js/dist/how-to-block.js:5 js/dist/how-to-block.js:8
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d giờ"
 
 #. translators: %d expands to the number of day/days.
-#: src/integrations/blocks/structured-data-blocks.php:195
-#: js/dist/block-editor.js:108 js/dist/classic-editor.js:93
-#: js/dist/editor-modules.js:238 js/dist/elementor.js:424
-#: js/dist/structured-data-blocks.js:5 js/dist/wincher-dashboard-widget.js:42
+#: src/integrations/blocks/structured-data-blocks.php:135
+#: js/dist/block-editor.js:129 js/dist/classic-editor.js:114
+#: js/dist/editor-modules.js:279 js/dist/elementor.js:525
+#: js/dist/how-to-block.js:5 js/dist/how-to-block.js:8
+#: js/dist/wincher-dashboard-widget.js:43
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d ngày"
+
+#: blocks/structured-data-blocks/how-to/block.json
+msgctxt "block description"
+msgid "Create a How-to guide in an SEO-friendly way. You can only use one How-to block per post."
+msgstr "Tạo hướng dẫn Cách thực hiện thân thiện với SEO. Bạn chỉ có thể sử dụng một khối Cách thực hiện cho mỗi bài viết."
 
 #. translators: %1$s expands to Yoast.
 #: src/integrations/blocks/block-categories.php:37
 msgid "%1$s Structured Data Blocks"
 msgstr "%1$s Khối Dữ liệu Cấu trúc"
 
-#: src/integrations/blocks/structured-data-blocks.php:260
-#: js/dist/structured-data-blocks.js:5
+#: src/integrations/blocks/structured-data-blocks.php:200
+#: js/dist/how-to-block.js:5 js/dist/how-to-block.js:10
 msgid "Time needed:"
 msgstr "Thời gian cần thiết:"
 
@@ -1577,7 +2189,7 @@ msgstr "Thời gian cần thiết:"
 msgid "Check links to this URL"
 msgstr "Kiểm tra các liên kết đến URL này"
 
-#: inc/class-wpseo-admin-bar-menu.php:506 js/dist/structured-data-blocks.js:5
+#: inc/class-wpseo-admin-bar-menu.php:506
 msgid "How to"
 msgstr "Làm thế nào để"
 
@@ -1634,9 +2246,9 @@ msgid "Current year"
 msgstr "Năm hiện tại"
 
 #: inc/class-wpseo-replace-vars.php:1475 js/dist/externals-redux.js:1
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:16 js/dist/new-settings.js:296
 msgid "Tagline"
-msgstr "Chủ đề"
+msgstr "Mô tả"
 
 #: inc/class-wpseo-replace-vars.php:1520 js/dist/externals-redux.js:1
 msgid "Page"
@@ -1684,14 +2296,14 @@ msgstr "Đã chỉnh sửa"
 
 #: inc/class-wpseo-replace-vars.php:1515
 msgid "Post type (plural)"
-msgstr "Dạng bài viết (số nhiều)"
+msgstr "Loại nội dung (số nhiều)"
 
 #: inc/class-wpseo-replace-vars.php:1514
 msgid "Post type (singular)"
-msgstr "Dạng bài viết (số ít)"
+msgstr "Loại nội dung (số ít)"
 
 #: inc/class-wpseo-replace-vars.php:1487 js/dist/externals-redux.js:1
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:16
 msgid "Separator"
 msgstr "Dấu phân tách"
 
@@ -1753,11 +2365,16 @@ msgstr "Ngày"
 
 #: inc/class-wpseo-admin-bar-menu.php:604
 msgid "Get Yoast SEO Premium"
-msgstr "Nâng cấp lên Yoast SEO Premium"
+msgstr "Nhận Yoast SEO Premium"
 
 #: admin/watchers/class-slug-change-watcher.php:224
 msgid "You should create a redirect to ensure your visitors do not get a 404 error when they click on the no longer working URL."
 msgstr "Bạn nên tạo chuyển hướng để đảm bảo khách viếng thăm của bạn không nhận lỗi 404 khi họ nhấp chuột vào URL không còn hoạt động."
+
+#: admin/watchers/class-slug-change-watcher.php:90
+#: admin/watchers/class-slug-change-watcher.php:113
+msgid "Search engines and other websites can still send traffic to your deleted content."
+msgstr "Công cụ tìm kiếm và các trang web khác vẫn có thể gửi lưu lượng truy cập đến nội dung đã xóa của bạn."
 
 #: admin/watchers/class-slug-change-watcher.php:220
 msgid "Make sure you don't miss out on traffic!"
@@ -1816,7 +2433,7 @@ msgstr "Bước 5: Làm sạch"
 
 #: admin/views/tabs/tool/import-seo.php:95
 msgid "Please check your posts and pages and see if the metadata was successfully imported."
-msgstr "Vui lòng kiểm tra các bài đăng và trang của bạn và xem nếu metadata đã được nhập thành công hay chưa."
+msgstr "Vui lòng kiểm tra các bài viết và trang của bạn và xem nếu metadata đã được nhập thành công hay chưa."
 
 #: admin/views/tabs/tool/import-seo.php:93
 msgid "Step 3: Check your data"
@@ -1880,17 +2497,17 @@ msgstr "%s đã nhập dữ liệu thành công."
 msgid "%s data not found."
 msgstr "dữ liệu %s không tìm thấy."
 
-#: admin/views/user-profile.php:15
+#: admin/views/user-profile.php:17
 msgid "this author's archives"
 msgstr "lưu trữ của tác giả này"
 
 #. translators: %s expands to "this author's archives".
-#: admin/views/user-profile.php:14
+#: admin/views/user-profile.php:16
 msgid "Do not allow search engines to show %s in search results."
 msgstr "Không cho phép các công cụ tìm kiếm hiển thị %s trong kết quả tìm kiếm."
 
-#: admin/class-yoast-form.php:977 admin/class-yoast-form.php:1017
-#: admin/metabox/class-metabox.php:215 js/dist/externals/componentsNew.js:754
+#: admin/class-yoast-form.php:971 admin/class-yoast-form.php:1011
+#: js/dist/externals/componentsNew.js:767
 msgid "On"
 msgstr "Bật"
 
@@ -1901,10 +2518,9 @@ msgstr "Bật"
 msgid "Help on: %s"
 msgstr "Giúp về: %s"
 
-#: admin/class-yoast-form.php:978 admin/class-yoast-form.php:1018
-#: admin/metabox/class-metabox.php:214
+#: admin/class-yoast-form.php:972 admin/class-yoast-form.php:1012
 #: admin/views/class-yoast-feature-toggles.php:160
-#: js/dist/externals/componentsNew.js:754
+#: js/dist/externals/componentsNew.js:767
 msgid "Off"
 msgstr "Tắt"
 
@@ -1926,42 +2542,24 @@ msgstr "Xem XML Sitemap."
 msgid "See who contributed to %1$s."
 msgstr "Xem người đóng góp vào %1$s."
 
-#: src/deprecated/admin/views/class-view-utils.php:66
-msgid "Help on this search results setting"
-msgstr "Hỗ trợ cài đặt này cho những kết quả tìm kiếm"
-
-#. translators: 1: expands to an indexable object's name, like a post type or
-#. taxonomy; 2: expands to <code>noindex</code>; 3: link open tag; 4: link
-#. close tag.
-#: src/deprecated/admin/views/class-view-utils.php:60
-msgid "Not showing the archive for %1$s in the search results technically means those will have a %2$s robots meta and will be excluded from XML sitemaps. %3$sMore info on the search results settings%4$s."
-msgstr "Không hiển thị lưu trữ cho %1$s trong các kết quả tìm kiếm dưới góc độ kỹ thuật có nghĩa là những lưu trữ này có chứa %2$s robots meta và sẽ được loại trừ khỏi XML sitemaps. %3$sThông tin chi tiết về cấu hình các kết quả tìm kiếm%4$s."
-
-#. translators: 1: expands to an indexable object's name, like a post type or
-#. taxonomy; 2: expands to <code>noindex</code>; 3: link open tag; 4: link
-#. close tag.
-#: src/deprecated/admin/views/class-view-utils.php:56
-msgid "Not showing %1$s in the search results technically means those will have a %2$s robots meta and will be excluded from XML sitemaps. %3$sMore info on the search results settings%4$s."
-msgstr "Không hiển thị %1$s trong các kết quả tìm kiếm dưới góc độ kỹ thuật có nghĩa là những lưu trữ này có chứa %2$s robots meta và sẽ được loại trừ khỏi XML sitemaps. %3$sThông tin chi tiết về cấu hình các kết quả tìm kiếm%4$s."
-
 #. translators: %1$s expands to the post type name.
-#: admin/metabox/class-metabox.php:190
+#: admin/metabox/class-metabox.php:188
 msgid "Should search engines follow links on this %1$s?"
 msgstr "Công cụ tìm kiếm nên theo dõi liên kết trên %1$s?"
 
 #. translators: %1$s expands to Yes or No,  %2$s expands to the post type name.
-#: admin/metabox/class-metabox.php:185
+#: admin/metabox/class-metabox.php:183
 msgid "Default for %2$s, currently: %1$s"
 msgstr "Mặc định là %2$s, hiện tại: %1$s"
 
 #. translators: %s expands to the post type name.
-#: admin/metabox/class-metabox.php:180
+#: admin/metabox/class-metabox.php:178
 msgid "Allow search engines to show this %s in search results?"
 msgstr "Cho phép máy tìm kiếm hiển thị %s này trong kết quả tìm kiếm?"
 
 #. translators: %s expands to an indexable object's name, like a post type or
 #. taxonomy
-#: admin/class-yoast-form.php:988
+#: admin/class-yoast-form.php:982
 msgid "Show %s in search results?"
 msgstr "Hiển thị %s trong kết quả tìm kiếm?"
 
@@ -1997,7 +2595,7 @@ msgstr "Tính năng nội dung chủ đạo cho phép bạn đánh dấu và l�
 msgid "Discover why readability is important for SEO."
 msgstr "Khám phá tại sao tính dễ đọc lại quan trọng cho SEO."
 
-#: admin/views/class-yoast-feature-toggles.php:85 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:85 js/dist/new-settings.js:302
 msgid "The readability analysis offers suggestions to improve the structure and style of your text."
 msgstr "Phân tích khả năng dễ đọc mang lại các gợi ý để cải thiện cấu trúc và phong cách viết."
 
@@ -2010,15 +2608,10 @@ msgid "The SEO analysis offers suggestions to improve the SEO of your text."
 msgstr "Phân tích SEO giúp gợi ý những đề xuất cải thiện SEO cho văn bản của bạn."
 
 #: admin/views/class-yoast-feature-toggles.php:75
-#: js/dist/externals-components.js:222 js/dist/new-settings.js:2
+#: js/dist/externals-components.js:259 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
 msgid "SEO analysis"
 msgstr "Phân tích SEO"
-
-#: admin/formatter/class-metabox-formatter.php:230
-#: js/dist/editor-modules.js:171 js/dist/externals-components.js:178
-#: js/dist/externals/analysisReport.js:33
-msgid "Good results"
-msgstr "Kết quả tốt"
 
 #. Author URI of the plugin
 #: wp-seo.php
@@ -2035,36 +2628,14 @@ msgstr "https://yoa.st/1uj"
 msgid "Latest blog posts on %1$s"
 msgstr "Các bài viết mới nhất trên %1$s"
 
-#: admin/formatter/class-metabox-formatter.php:232
-#: js/dist/externals/analysisReport.js:18
-msgid "Remove highlight from the text"
-msgstr "Xóa đánh dấu khỏi văn bản"
-
-#: src/helpers/first-time-configuration-notice-helper.php:68
+#: src/helpers/first-time-configuration-notice-helper.php:67
 msgid "First-time SEO configuration"
 msgstr "Cấu hình SEO lần đầu tiên"
-
-#: admin/formatter/class-metabox-formatter.php:231
-#: js/dist/externals/analysisReport.js:18
-msgid "Highlight this result in the text"
-msgstr "Đánh dấu kết quả này trong văn bản"
-
-#: admin/formatter/class-metabox-formatter.php:229
-#: js/dist/editor-modules.js:171 js/dist/externals-components.js:178
-#: js/dist/externals/analysisReport.js:33
-msgid "Considerations"
-msgstr "Xem xét"
-
-#: admin/formatter/class-metabox-formatter.php:226
-#: js/dist/editor-modules.js:171 js/dist/externals-components.js:178
-#: js/dist/externals/analysisReport.js:33
-msgid "Errors"
-msgstr "Lỗi"
 
 #. translators: %s expands to ".htaccess".
 #: admin/views/tool-file-editor.php:186
 msgid "%s file"
-msgstr "file %s"
+msgstr "Tệp %s"
 
 #. translators: %s expands to robots.txt.
 #. translators: %s expands to ".htaccess".
@@ -2081,7 +2652,7 @@ msgstr "Chỉnh sửa nội dung của %s:"
 #. translators: %s expands to robots.txt.
 #: admin/views/tool-file-editor.php:125
 msgid "Create %s file"
-msgstr "Tạo file %s"
+msgstr "Tạo tệp %s"
 
 #. translators: %s expands to robots.txt.
 #: admin/views/tool-file-editor.php:65
@@ -2104,10 +2675,14 @@ msgstr "Bạn không thể tạo file %s."
 msgid "More information about %1$s"
 msgstr "Thông tin thêm về %1$s"
 
+#: src/integrations/admin/old-configuration-integration.php:38
+msgid "Old Configuration Wizard"
+msgstr "Trình hướng dẫn cấu hình cũ"
+
 #. translators: %s expands to the extension title
 #: admin/views/licenses.php:236 admin/views/licenses.php:339
 msgid "Manage your %s subscription on MyYoast"
-msgstr "Quản lý %s gói tài khoản của bạn trên My Yoast"
+msgstr "Quản lý đăng ký %s của bạn trên MyYoast"
 
 #. translators: %1$s expands to the posttype label, %2$s expands anchor to blog
 #. post about cornerstone content, %3$s expands to </a>
@@ -2118,17 +2693,27 @@ msgstr "Đánh dấu mức quan trọng nhất của %1$s như 'Nội dung Chủ
 #. translators: Hidden accessibility text.
 #: admin/class-admin-utils.php:79 admin/class-premium-popup.php:83
 #: admin/class-premium-upsell-admin-block.php:102
-#: admin/class-yoast-form.php:952
-#: admin/formatter/class-metabox-formatter.php:235 admin/views/licenses.php:130
+#: admin/class-yoast-form.php:946 admin/views/licenses.php:130
 #: admin/watchers/class-slug-change-watcher.php:232
 #: src/integrations/admin/workouts-integration.php:214
 #: src/integrations/admin/workouts-integration.php:244
-#: src/presenters/admin/help-link-presenter.php:76 js/dist/academy.js:1
-#: js/dist/block-editor.js:471 js/dist/elementor.js:2
-#: js/dist/externals-components.js:44 js/dist/externals/componentsNew.js:1027
-#: js/dist/externals/helpers.js:5 js/dist/integrations-page.js:1
-#: js/dist/introductions.js:1 js/dist/new-settings.js:2 js/dist/post-edit.js:1
-#: js/dist/support.js:2 js/dist/term-edit.js:1
+#: src/presenters/admin/help-link-presenter.php:76 js/dist/academy.js:9
+#: js/dist/block-editor.js:564 js/dist/block-editor.js:565
+#: js/dist/elementor.js:4 js/dist/elementor.js:6 js/dist/elementor.js:12
+#: js/dist/externals-components.js:45 js/dist/externals-components.js:241
+#: js/dist/externals-components.js:243 js/dist/externals-components.js:249
+#: js/dist/externals/componentsNew.js:1043 js/dist/externals/helpers.js:6
+#: js/dist/integrations-page.js:3 js/dist/integrations-page.js:4
+#: js/dist/integrations-page.js:5 js/dist/integrations-page.js:6
+#: js/dist/integrations-page.js:7 js/dist/integrations-page.js:8
+#: js/dist/integrations-page.js:13 js/dist/integrations-page.js:18
+#: js/dist/integrations-page.js:19 js/dist/integrations-page.js:20
+#: js/dist/introductions.js:4 js/dist/introductions.js:6
+#: js/dist/introductions.js:12 js/dist/new-settings.js:29
+#: js/dist/new-settings.js:31 js/dist/new-settings.js:37 js/dist/post-edit.js:4
+#: js/dist/post-edit.js:6 js/dist/post-edit.js:12 js/dist/support.js:6
+#: js/dist/support.js:8 js/dist/support.js:14 js/dist/support.js:16
+#: js/dist/term-edit.js:4 js/dist/term-edit.js:6 js/dist/term-edit.js:12
 msgid "(Opens in a new browser tab)"
 msgstr "(Mở trong cửa số mới)"
 
@@ -2144,7 +2729,7 @@ msgstr "Chúc mừng! SEO của bạn đang chạy rất tốt. Hãy kiểm tra 
 
 #: admin/statistics/class-statistics-service.php:73
 msgid "You don't have any published posts, your SEO scores will appear here once you make your first post!"
-msgstr "Bạn không có bất kỳ bài đăng nào đã xuất bản, điểm SEO của bạn sẽ xuất hiện ở đây khi bạn đăng bài đầu tiên!"
+msgstr "Bạn không có bất kỳ bài viết nào đã xuất bản, điểm SEO của bạn sẽ xuất hiện ở đây khi bạn đăng bài đầu tiên!"
 
 #: admin/class-yoast-dashboard-widget.php:133
 msgid "Read more like this on our SEO blog"
@@ -2187,13 +2772,14 @@ msgstr "Nhắc lại sau 4 tuần nữa."
 msgid "Request method %1$s is not valid."
 msgstr "Phương thức yêu cầu %1$s là không hợp lệ."
 
-#: admin/views/class-yoast-feature-toggles.php:108 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:108 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
 msgid "Text link counter"
 msgstr "Bộ đếm các liên kết"
 
 #: src/integrations/admin/link-count-columns-integration.php:147
 msgid "Number of internal links linking to this post. See \"Yoast Columns\" text in the help tab for more info."
-msgstr "Số liên kết nội bộ đến bài đăng này. Xem thêm về cột này tại mục \"Cột Yoast\" trong thẻ \"Trợ Giúp\"."
+msgstr "Số liên kết nội bộ đến bài viết này. Xem thêm về cột này tại mục \"Cột Yoast\" trong thẻ \"Trợ Giúp\"."
 
 #: src/integrations/admin/link-count-columns-integration.php:139
 msgid "Number of outgoing internal links in this post. See \"Yoast Columns\" text in the help tab for more info."
@@ -2212,19 +2798,21 @@ msgstr "Điểm dễ đọc"
 
 #: admin/filters/class-cornerstone-filter.php:87
 #: admin/views/class-yoast-feature-toggles.php:100
-#: js/dist/externals-components.js:20 js/dist/new-settings.js:2
+#: js/dist/externals-components.js:20 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
 msgid "Cornerstone content"
 msgstr "Nội dung quan trọng"
 
 #: admin/class-yoast-form.php:147 admin/class-yoast-form.php:152
-#: js/dist/first-time-configuration.js:2 js/dist/new-settings.js:2
+#: js/dist/first-time-configuration.js:9 js/dist/new-settings.js:1
 msgid "Save changes"
 msgstr "Lưu thay đổi"
 
-#: admin/class-premium-popup.php:89 js/dist/block-editor.js:213
-#: js/dist/block-editor.js:471 js/dist/classic-editor.js:198
-#: js/dist/classic-editor.js:456 js/dist/elementor.js:64
-#: js/dist/elementor.js:466 js/dist/externals-components.js:206
+#: admin/class-premium-popup.php:89 js/dist/block-editor.js:272
+#: js/dist/block-editor.js:558 js/dist/classic-editor.js:257
+#: js/dist/classic-editor.js:543 js/dist/elementor.js:89
+#: js/dist/elementor.js:576 js/dist/externals-components.js:225
+#: js/dist/externals-components.js:227
 msgid "1 year free support and updates included!"
 msgstr "Hỗ trợ và cập nhật miễn phí trong 1 năm!"
 
@@ -2265,12 +2853,7 @@ msgstr "Lưu"
 msgid "%1$s, Author at %2$s"
 msgstr "%1$s, Tác giả tại %2$s"
 
-#: admin/formatter/class-metabox-formatter.php:233
-#: js/dist/externals/analysis.js:2 js/dist/externals/analysisReport.js:18
-msgid "Marks are disabled in current view"
-msgstr "Các đánh dấu đã bị ngưng kích hoạt trong giao diện hiện tại"
-
-#: inc/class-wpseo-replace-vars.php:1518 js/dist/first-time-configuration.js:2
+#: inc/class-wpseo-replace-vars.php:1518 js/dist/first-time-configuration.js:9
 msgid "Name"
 msgstr "Tên"
 
@@ -2316,7 +2899,8 @@ msgstr "(không tiêu đề)"
 msgid "The %1$s admin bar menu contains useful links to third-party tools for analyzing pages and makes it easy to see if you have new notifications."
 msgstr "Menu bar %1$s bao gồm các liên kết hữu ích từ các công cụ bên khác giúp phân tích trang và làm nó dễ nhìn hơn nếu bạn có thông báo mới."
 
-#: admin/views/class-yoast-feature-toggles.php:147 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:147 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302 js/dist/new-settings.js:304
 msgid "Admin bar menu"
 msgstr "Danh mục thanh quản trị"
 
@@ -2324,73 +2908,80 @@ msgstr "Danh mục thanh quản trị"
 msgid "Features"
 msgstr "Tính năng"
 
-#: admin/metabox/class-metabox.php:176 js/dist/externals/analysis.js:2
-#: js/dist/externals/replacementVariableEditor.js:27
-#: js/dist/externals/searchMetadataPreviews.js:62 js/dist/new-settings.js:2
+#: admin/metabox/class-metabox.php:174 js/dist/externals/analysis.js:150
+#: js/dist/externals/analysis.js:275
+#: js/dist/externals/replacementVariableEditor.js:26
+#: js/dist/externals/searchMetadataPreviews.js:62 js/dist/new-settings.js:9
+#: js/dist/new-settings.js:13 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:20 js/dist/new-settings.js:58
+#: js/dist/new-settings.js:72 js/dist/new-settings.js:102
+#: js/dist/new-settings.js:131 js/dist/new-settings.js:196
+#: js/dist/new-settings.js:213 js/dist/new-settings.js:222
+#: js/dist/new-settings.js:244
 msgid "SEO title"
 msgstr "Tiêu đề SEO"
 
-#: inc/options/class-wpseo-option-titles.php:1029
+#: inc/options/class-wpseo-option-titles.php:989
 msgid "Greater than sign"
 msgstr "Dấu lớn hơn"
 
-#: inc/options/class-wpseo-option-titles.php:1025
+#: inc/options/class-wpseo-option-titles.php:985
 msgid "Less than sign"
 msgstr "Dấu nhỏ hơn"
 
-#: inc/options/class-wpseo-option-titles.php:1021
+#: inc/options/class-wpseo-option-titles.php:981
 msgid "Right angle quotation mark"
 msgstr "Dấu >>"
 
-#: inc/options/class-wpseo-option-titles.php:1017
+#: inc/options/class-wpseo-option-titles.php:977
 msgid "Left angle quotation mark"
 msgstr "Dấu <<"
 
-#: inc/options/class-wpseo-option-titles.php:1013
+#: inc/options/class-wpseo-option-titles.php:973
 msgid "Small tilde"
 msgstr "Dấu ngã nhỏ"
 
-#: inc/options/class-wpseo-option-titles.php:1009
+#: inc/options/class-wpseo-option-titles.php:969
 msgid "Vertical bar"
 msgstr "Dấu gạch đứng"
 
-#: inc/options/class-wpseo-option-titles.php:1005
+#: inc/options/class-wpseo-option-titles.php:965
 msgid "Low asterisk"
 msgstr "Dấu hoa thị thấp"
 
-#: inc/options/class-wpseo-option-titles.php:1001
+#: inc/options/class-wpseo-option-titles.php:961
 msgid "Asterisk"
 msgstr "Dấu hoa thị"
 
-#: inc/options/class-wpseo-option-titles.php:997
+#: inc/options/class-wpseo-option-titles.php:957
 msgid "Bullet"
 msgstr "Dấu đầu dòng"
 
-#: inc/options/class-wpseo-option-titles.php:993
+#: inc/options/class-wpseo-option-titles.php:953
 msgid "Middle dot"
 msgstr "Chấm giữa"
 
-#: inc/options/class-wpseo-option-titles.php:985
+#: inc/options/class-wpseo-option-titles.php:945
 msgid "Em dash"
 msgstr "Dấu gạch ngang dài"
 
-#: inc/options/class-wpseo-option-titles.php:981
+#: inc/options/class-wpseo-option-titles.php:941
 msgid "En dash"
 msgstr "Dấu gạch ngang ngắn"
 
-#: inc/options/class-wpseo-option-titles.php:977
+#: inc/options/class-wpseo-option-titles.php:937
 msgid "Dash"
 msgstr "Dấu gạch ngang"
 
-#: admin/metabox/class-metabox.php:187 admin/metabox/class-metabox.php:192
-#: js/dist/block-editor.js:213 js/dist/classic-editor.js:198
-#: js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:185 admin/metabox/class-metabox.php:190
+#: js/dist/block-editor.js:272 js/dist/classic-editor.js:257
+#: js/dist/elementor.js:390
 msgid "No"
 msgstr "Không"
 
-#: admin/metabox/class-metabox.php:186 admin/metabox/class-metabox.php:191
-#: js/dist/block-editor.js:213 js/dist/classic-editor.js:198
-#: js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:184 admin/metabox/class-metabox.php:189
+#: js/dist/block-editor.js:272 js/dist/classic-editor.js:257
+#: js/dist/elementor.js:390
 msgid "Yes"
 msgstr "Có"
 
@@ -2410,6 +3001,11 @@ msgstr "Lọc danh sách bài viết"
 msgid "Installed"
 msgstr "Đã cài đặt"
 
+#. translators: %1$s expands to Yoast SEO, %2$s expands to WooCommerce
+#: admin/views/licenses.php:89
+msgid "Seamless integration between %1$s and %2$s"
+msgstr "Tích hợp liền mạch giữa %1$s và %2$s"
+
 #: admin/views/licenses.php:66
 msgid "Optimize your site for Google News"
 msgstr "Tối ưu trang của bạn cho Google News"
@@ -2419,25 +3015,26 @@ msgstr "Tối ưu trang của bạn cho Google News"
 msgid "Edit &#8220;%s&#8221;"
 msgstr "Chỉnh sửa %s;"
 
-#: admin/menu/class-base-menu.php:260 admin/menu/class-base-menu.php:264
-#: src/integrations/admin/menu-badge-integration.php:35 js/dist/academy.js:1
+#: src/integrations/admin/menu-badge-integration.php:35 js/dist/academy.js:8
 msgid "Premium"
 msgstr "Gói cao cấp"
 
 #: admin/class-admin.php:273
 msgid "Get Premium"
-msgstr "Lấy bản nâng cấp"
+msgstr "Nâng cấp lên Premium"
 
 #: admin/views/partial-notifications-warnings.php:20
 #: inc/class-wpseo-admin-bar-menu.php:396
 msgid "Notifications"
 msgstr "Thông báo"
 
-#: admin/views/user-profile.php:48
+#: admin/views/user-profile.php:50
+#: src/user-meta/framework/custom-meta/keyword-analysis-disable.php:115
 msgid "Removes the focus keyphrase section from the metabox and disables all SEO-related suggestions."
 msgstr "Gõ bỏ phần cụm từ khóa chính khỏi metabox và hủy kích hoạt tất cả các đề xuất liên quan đến SEO."
 
-#: admin/views/user-profile.php:45
+#: admin/views/user-profile.php:47
+#: src/user-meta/framework/custom-meta/keyword-analysis-disable.php:109
 msgid "Disable SEO analysis"
 msgstr "Tắt thống kê SEO"
 
@@ -2451,43 +3048,39 @@ msgid "%s notification"
 msgid_plural "%s notifications"
 msgstr[0] "%s thông báo"
 
-#: admin/views/user-profile.php:57
+#: admin/views/user-profile.php:59
+#: src/user-meta/framework/custom-meta/content-analysis-disable.php:109
 msgid "Disable readability analysis"
 msgstr "Tắt phân tích khả năng dễ đọc"
 
-#: admin/views/user-profile.php:60
+#: admin/views/user-profile.php:62
+#: src/user-meta/framework/custom-meta/content-analysis-disable.php:115
 msgid "Removes the readability analysis section from the metabox and disables all readability-related suggestions."
 msgstr "Xóa phần phân tích tính dễ đọc khỏi metabox và tắt kích hoạt các đề xuất liên quan đến tính dễ đọc."
 
 #: admin/views/class-yoast-feature-toggles.php:83
-#: js/dist/externals-components.js:187 js/dist/new-settings.js:2
+#: js/dist/externals-components.js:201 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:302
 msgid "Readability analysis"
 msgstr "Phân tích khả năng dễ đọc"
 
-#: admin/formatter/class-metabox-formatter.php:109
-#: admin/formatter/class-metabox-formatter.php:139
-#: admin/formatter/class-metabox-formatter.php:169
+#: admin/formatter/class-metabox-formatter.php:86
+#: admin/formatter/class-metabox-formatter.php:116
+#: admin/formatter/class-metabox-formatter.php:146
 #: admin/statistics/class-statistics-service.php:217
 #: inc/class-wpseo-rank.php:140 inc/class-wpseo-rank.php:176
 #: inc/class-wpseo-rank.php:208 inc/class-wpseo-rank.php:235
-#: js/dist/block-editor.js:471 js/dist/editor-modules.js:276
-#: js/dist/elementor.js:64 js/dist/externals-components.js:178
-#: js/dist/externals/analysis.js:2 js/dist/frontend-inspector-resources.js:1
-#: js/dist/post-edit.js:1 js/dist/term-edit.js:1
+#: js/dist/block-editor.js:563 js/dist/editor-modules.js:324
+#: js/dist/elementor.js:93 js/dist/externals-components.js:188
+#: js/dist/externals/analysis.js:11 js/dist/frontend-inspector-resources.js:1
+#: js/dist/post-edit.js:17 js/dist/term-edit.js:1
 msgid "Needs improvement"
 msgstr "Cần cải thiện"
 
-#: admin/formatter/class-metabox-formatter.php:68
 #: admin/metabox/class-metabox-section-readability.php:30
 #: inc/class-wpseo-admin-bar-menu.php:256
 msgid "Readability"
 msgstr "Tính dễ đọc"
-
-#: admin/formatter/class-metabox-formatter.php:228
-#: js/dist/editor-modules.js:171 js/dist/externals-components.js:178
-#: js/dist/externals/analysisReport.js:33
-msgid "Improvements"
-msgstr "Các cải tiến"
 
 #: admin/views/partial-notifications-errors.php:22
 msgid "Good job! We could detect no serious SEO problems."
@@ -2497,20 +3090,15 @@ msgstr "Chúc mừng! Không có vấn đề gì nghiêm trọng với quá trì
 msgid "We have detected the following issues that affect the SEO of your site."
 msgstr "Chúng tôi đã phát hiện những vấn đề có thể ảnh hưởng đến SEO trang web của bạn."
 
-#: admin/formatter/class-metabox-formatter.php:227
 #: admin/views/partial-notifications-errors.php:20
-#: js/dist/editor-modules.js:171 js/dist/externals-components.js:178
-#: js/dist/externals/analysisReport.js:33
+#: js/dist/editor-modules.js:181 js/dist/externals-components.js:188
+#: js/dist/externals/analysisReport.js:41
 msgid "Problems"
 msgstr "Các vấn đề"
 
-#: admin/formatter/class-metabox-formatter.php:195
-msgid "Analysis"
-msgstr "Phân tích"
-
-#: admin/formatter/class-metabox-formatter.php:102
-#: admin/formatter/class-metabox-formatter.php:132
-#: admin/formatter/class-metabox-formatter.php:162 inc/class-wpseo-rank.php:138
+#: admin/formatter/class-metabox-formatter.php:79
+#: admin/formatter/class-metabox-formatter.php:109
+#: admin/formatter/class-metabox-formatter.php:139 inc/class-wpseo-rank.php:138
 msgid "Not available"
 msgstr "Không có sẵn"
 
@@ -2526,7 +3114,7 @@ msgstr "Chưa có thẻ mô tả."
 
 #: admin/menu/class-admin-menu.php:56 admin/pages/dashboard.php:32
 msgid "Dashboard"
-msgstr "Bảng điều khiển"
+msgstr "Bảng tổng quan"
 
 #. translators: %1$s is a link start tag to the permalink settings page, %2$s
 #. is the link closing tag.
@@ -2541,8 +3129,9 @@ msgstr "Đã được thay thế bằng chuyên mục chính của bài viết/t
 #. translators: $s expands to Yoast SEO Premium
 #. translators: %s expands to the product name, e.g. "News SEO" or "all the
 #. Yoast Plugins"
+#. translators: 1: Yoast WooCommerce SEO
 #: admin/views/licenses.php:265 admin/views/licenses.php:367
-#: js/dist/integrations-page.js:1
+#: js/dist/integrations-page.js:12
 msgid "Buy %s"
 msgstr "Mua %s"
 
@@ -2569,11 +3158,11 @@ msgstr "Đang cố xây dựng sitemap cache key, nhưng sự kết hợp tiền
 msgid "Redirects"
 msgstr "Chuyển hướng truy cập"
 
-#: src/integrations/admin/crawl-settings-integration.php:257
+#: src/integrations/admin/crawl-settings-integration.php:242
 msgid "Remove"
 msgstr "Xoá"
 
-#: src/integrations/admin/crawl-settings-integration.php:256
+#: src/integrations/admin/crawl-settings-integration.php:241
 msgid "Keep"
 msgstr "Để nguyên"
 
@@ -2593,8 +3182,8 @@ msgid "Make %1$s primary %2$s"
 msgstr "Đổi %1$s thành chính %2$s"
 
 #: admin/pages/network.php:20 admin/views/tabs/network/integrations.php:22
-#: src/integrations/admin/integrations-page.php:80
-#: js/dist/integrations-page.js:1
+#: src/integrations/admin/integrations-page.php:90
+#: js/dist/integrations-page.js:41
 msgid "Integrations"
 msgstr "Những tích hợp"
 
@@ -2602,12 +3191,12 @@ msgstr "Những tích hợp"
 msgid "Term is set to noindex."
 msgstr "Thuật ngữ được thiết lập thành noindex."
 
-#: src/integrations/admin/crawl-settings-integration.php:210
+#: src/integrations/admin/crawl-settings-integration.php:195
 #: src/presenters/admin/light-switch-presenter.php:120
 msgid "Enabled"
 msgstr "Bật"
 
-#: src/integrations/admin/crawl-settings-integration.php:209
+#: src/integrations/admin/crawl-settings-integration.php:194
 #: src/presenters/admin/light-switch-presenter.php:120
 msgid "Disabled"
 msgstr "Vô hiệu hóa"
@@ -2640,26 +3229,22 @@ msgstr "Giải pháp SEO tất cả trong một đầu tiên cho WordPress, bao 
 
 #. Plugin Name of the plugin
 #: wp-seo.php admin/capabilities/class-capability-manager-integration.php:74
-#: src/presenters/meta-description-presenter.php:36 js/dist/block-editor.js:499
+#: src/presenters/meta-description-presenter.php:36 js/dist/block-editor.js:599
 msgid "Yoast SEO"
 msgstr "Yoast SEO"
 
-#: wp-seo-main.php:575
+#: wp-seo-main.php:567
 msgid "Activation failed:"
 msgstr "Kích hoạt thất bại:"
-
-#: wp-seo-main.php:562
-msgid "The filter extension seem to be unavailable. Please ask your web host to enable it."
-msgstr "Phần mở rộng bộ lọc dường như không có sẵn. Hãy yêu cầu nhà cung cấp máy chủ của bạn bật tính năng này."
 
 #. translators: %1$s expands to Yoast SEO, %2$s / %3$s: links to the
 #. installation manual in the Readme for the Yoast SEO code repository on
 #. GitHub
-#: wp-seo-main.php:536
+#: wp-seo-main.php:528
 msgid "The %1$s plugin installation is incomplete. Please refer to %2$sinstallation instructions%3$s."
 msgstr "Cài đặt phần mở rộng %1$s không hoàn thành. Vui lòng tham khảo %2$scác hướng dẫn cài đặt%3$s."
 
-#: wp-seo-main.php:512
+#: wp-seo-main.php:504
 msgid "The Standard PHP Library (SPL) extension seem to be unavailable. Please ask your web host to enable it."
 msgstr "Phần mở rộng thư viện PHP tiêu chuẩn (SPL) dường như không có sẵn. Hãy yêu cầu nhà cung cấp máy chủ bổ sung."
 
@@ -2680,16 +3265,6 @@ msgstr "Công cụ tìm lỗi Facebook"
 msgid "Analyze this page"
 msgstr "Phân tích trang này"
 
-#. translators: %s expands to an invalid URL.
-#: inc/options/class-wpseo-option.php:392
-msgid "%s does not seem to be a valid url. Please correct."
-msgstr "%s có vẻ không phải là đường dẫn hợp lệ. Vui lòng sửa lại."
-
-#. translators: 1: Verification string from user input; 2: Service name.
-#: inc/options/class-wpseo-option.php:354
-msgid "%1$s does not seem to be a valid %2$s verification string. Please correct."
-msgstr "%1$s có vẻ không phải là chuỗi xác thực hợp lệ cho %2$s. Vui lòng sửa lại."
-
 #. translators: %s expands to the name of a post type (plural).
 #: inc/class-upgrade.php:1539 inc/options/class-wpseo-option-titles.php:309
 msgid "%s Archive"
@@ -2700,11 +3275,6 @@ msgstr "Lưu trữ %s"
 msgid "You searched for %s"
 msgstr "Bạn đã tìm %s"
 
-#. translators: %s expands to a twitter user name.
-#: inc/options/class-wpseo-option-social.php:184
-msgid "%s does not seem to be a valid Twitter Username. Please correct."
-msgstr "%s có vẻ không phải tên người dùng Twitter hợp lệ. Vui lòng thử lại."
-
 #: inc/options/class-wpseo-option-social.php:110
 msgid "Summary with large image"
 msgstr "Tóm tắt với ảnh lớn"
@@ -2714,34 +3284,34 @@ msgstr "Tóm tắt với ảnh lớn"
 msgid "The post %1$s appeared first on %2$s."
 msgstr "Bài viết %1$s đã xuất hiện đầu tiên vào ngày %2$s."
 
-#: inc/options/class-wpseo-option-ms.php:245
+#: inc/options/class-wpseo-option-ms.php:243
 msgid "No numeric value was received."
 msgstr "Không có giá trị số học nào đã được nhận."
 
 #. translators: %s is the ID number of a blog.
-#: inc/options/class-wpseo-option-ms.php:233
+#: inc/options/class-wpseo-option-ms.php:231
 msgid "This must be an existing blog. Blog %s does not exist or has been marked as deleted."
 msgstr "Đây phải là blog đang tồn tại. Blog %s không tồn tại hoặc đã bị đánh dấu là đã xóa."
 
-#: inc/options/class-wpseo-option-ms.php:229
-#: inc/options/class-wpseo-option-ms.php:245
+#: inc/options/class-wpseo-option-ms.php:227
+#: inc/options/class-wpseo-option-ms.php:243
 msgid "The default blog setting must be the numeric blog id of the blog you want to use as default."
 msgstr "Thiết lập blog mặc định phải là blog id dạng số của blog mà bạn muốn sử dụng làm mặc định."
 
 #. translators: %1$s expands to the option name and %2$sexpands to Yoast SEO
-#: inc/options/class-wpseo-option-ms.php:210
+#: inc/options/class-wpseo-option-ms.php:208
 msgid "%1$s is not a valid choice for who should be allowed access to the %2$s settings. Value reset to the default."
 msgstr "%1$s không phải là lựa chọn hợp lệ cho những người nên được cho phép truy cập vào các thiết lập %2$s. Giá trị được đặt về mặc định."
 
 #. translators: %s expands to a taxonomy slug.
 #: inc/options/class-wpseo-option-titles.php:583
 msgid "Please select a valid post type for taxonomy \"%s\""
-msgstr "Vui lòng chọn kiểu bài viết hợp lệ cho taxonomy \"%s\""
+msgstr "Vui lòng chọn loại nội dung hợp lệ cho phân loại \"%s\""
 
 #. translators: %s expands to a post type.
 #: inc/options/class-wpseo-option-titles.php:545
 msgid "Please select a valid taxonomy for post type \"%s\""
-msgstr "Vui lòng chọn taxonomy hợp lệ cho kiểu bài viết \"%s\""
+msgstr "Vui lòng chọn phân loại hợp lệ cho loại nội dung \"%s\""
 
 #: inc/options/class-wpseo-option-titles.php:282
 msgid "You searched for"
@@ -2759,16 +3329,16 @@ msgstr "Lưu trữ cho"
 msgid "Error 404: Page not found"
 msgstr "Lỗi 404: Không tìm thấy trang"
 
-#: admin/formatter/class-metabox-formatter.php:123
-#: admin/formatter/class-metabox-formatter.php:153
-#: admin/formatter/class-metabox-formatter.php:183
+#: admin/formatter/class-metabox-formatter.php:100
+#: admin/formatter/class-metabox-formatter.php:130
+#: admin/formatter/class-metabox-formatter.php:160
 #: admin/statistics/class-statistics-service.php:227
 #: inc/class-wpseo-rank.php:142 inc/class-wpseo-rank.php:186
 #: inc/class-wpseo-rank.php:218 inc/class-wpseo-rank.php:245
-#: js/dist/block-editor.js:471 js/dist/editor-modules.js:276
-#: js/dist/elementor.js:64 js/dist/externals-components.js:178
-#: js/dist/externals/analysis.js:2 js/dist/frontend-inspector-resources.js:1
-#: js/dist/post-edit.js:1 js/dist/term-edit.js:1
+#: js/dist/block-editor.js:563 js/dist/editor-modules.js:324
+#: js/dist/elementor.js:93 js/dist/externals-components.js:188
+#: js/dist/externals/analysis.js:11 js/dist/frontend-inspector-resources.js:1
+#: js/dist/post-edit.js:17 js/dist/term-edit.js:1
 msgid "Good"
 msgstr "Tốt"
 
@@ -2932,21 +3502,24 @@ msgid "Page not found"
 msgstr "Không tìm thấy trang"
 
 #. translators: %s expands to the variable used for term title.
-#: admin/formatter/class-term-metabox-formatter.php:162
 #: inc/class-upgrade.php:1542 inc/options/class-wpseo-option-titles.php:345
+#: src/editors/framework/seo/terms/title-data-provider.php:26
 msgid "%s Archives"
 msgstr "Lưu trữ %s"
 
-#: admin/views/user-profile.php:28
+#: admin/views/user-profile.php:30
+#: src/user-meta/framework/custom-meta/author-metadesc.php:97
 msgid "Meta description to use for Author page"
 msgstr "Thẻ mô tả cho trang Tác giả"
 
-#: admin/views/user-profile.php:24
+#: admin/views/user-profile.php:26
+#: src/user-meta/framework/custom-meta/author-title.php:97
 msgid "Title to use for Author page"
 msgstr "Tiêu đề cho trang Tác giả"
 
 #. translators: %1$s expands to Yoast SEO
-#: admin/views/user-profile.php:11
+#: admin/views/user-profile.php:13
+#: src/user-meta/user-interface/custom-meta-integration.php:100
 msgid "%1$s settings"
 msgstr "thiết lập %1$s"
 
@@ -2994,7 +3567,7 @@ msgstr "Dưới đây là điểm SEO cho các bài viêt đã đăng. Bây gi�
 
 #: admin/views/tabs/dashboard/dashboard.php:40
 msgid "Credits"
-msgstr "Những người thực hiện"
+msgstr "Tín dụng"
 
 #: admin/pages/tools.php:77
 msgid "&laquo; Back to Tools page"
@@ -3033,7 +3606,7 @@ msgstr "Soạn thảo hàng loạt"
 msgid "Default settings"
 msgstr "Cài đặt mặc định"
 
-#: admin/views/tool-bulk-editor.php:113 js/dist/new-settings.js:2
+#: admin/views/tool-bulk-editor.php:113 js/dist/new-settings.js:246
 msgid "Description"
 msgstr "Mô tả"
 
@@ -3052,7 +3625,7 @@ msgstr "Sử dụng biểu mẫu này, bạn có thể phục hồi website về
 
 #: admin/views/tabs/network/general.php:54
 msgid "Privacy sensitive (FB admins and such), theme specific (title rewrite) and a few very site specific settings will not be imported to new sites."
-msgstr "Các cài đặt nhạy cảm về tính riêng tư (FB admins và tương tự), theo theme (viết lại tiêu đề) và một vài cài đặt chi tiết cho trang sẽ không được nhập vào các trang mới."
+msgstr "Cài đặt nhạy cảm về quyền riêng tư (quản trị viên FB, v.v.), dành riêng cho chủ đề (viết lại tiêu đề) và một số cài đặt rất đặc thù cho trang web sẽ không được nhập vào các trang web mới."
 
 #. translators: 1: link open tag; 2: link close tag.
 #: admin/views/tabs/network/general.php:47
@@ -3143,17 +3716,13 @@ msgid "The premium version of %1$s with more features & support."
 msgstr "Phiên bản trả phí của %1$s với nhiều tính năng và hỗ trợ hơn."
 
 #: src/integrations/admin/first-time-configuration-integration.php:485
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:314
 msgid "Person"
 msgstr "Cá nhân"
 
 #: inc/class-wpseo-replace-vars.php:1497
 msgid "Permalink"
 msgstr "Đường dẫn tĩnh"
-
-#: vendor_prefixed/wordproof/wordpress-sdk/app/Translations/DefaultTranslations.php:43
-msgid "Authenticate"
-msgstr "Xác thực"
 
 #. Translators: %1$s: expands to 'Yoast SEO Premium', %2$s: links to Yoast SEO
 #. Premium plugin page.
@@ -3185,7 +3754,7 @@ msgstr "Ngưng hoạt động %s"
 msgid "The %1$s plugin might cause issues when used in conjunction with %2$s."
 msgstr "Gói mở rộng %1$s này có thể gây ra những vấn đề khi được dùng kết hợp với %2$s."
 
-#: admin/class-yoast-form.php:773 admin/metabox/class-metabox.php:656
+#: admin/class-yoast-form.php:767 admin/metabox/class-metabox.php:643
 #: admin/taxonomy/class-taxonomy-fields-presenter.php:127
 msgid "Upload Image"
 msgstr "Tải ảnh"
@@ -3195,15 +3764,15 @@ msgstr "Tải ảnh"
 msgid "%s Posts Overview"
 msgstr "Tổng quan %s Bài viết"
 
-#: src/deprecated/src/integrations/admin/social-templates-integration.php:233
-msgid "Social settings"
-msgstr "Thiết đặt xã hội"
-
 #: admin/google_search_console/views/gsc-redirect-nopremium.php:27
-#: js/dist/elementor.js:2 js/dist/externals-components.js:217
-#: js/dist/externals/componentsNew.js:776 js/dist/introductions.js:1
-#: js/dist/new-settings.js:2 js/dist/post-edit.js:1 js/dist/support.js:2
-#: js/dist/term-edit.js:1
+#: js/dist/elementor.js:4 js/dist/elementor.js:12
+#: js/dist/externals-components.js:238 js/dist/externals-components.js:241
+#: js/dist/externals-components.js:249 js/dist/externals/componentsNew.js:789
+#: js/dist/introductions.js:4 js/dist/introductions.js:12
+#: js/dist/new-settings.js:1 js/dist/new-settings.js:23
+#: js/dist/new-settings.js:29 js/dist/new-settings.js:37 js/dist/post-edit.js:4
+#: js/dist/post-edit.js:12 js/dist/support.js:6 js/dist/support.js:14
+#: js/dist/term-edit.js:4 js/dist/term-edit.js:12
 msgid "Close"
 msgstr "Đóng"
 
@@ -3218,14 +3787,20 @@ msgstr "Cả %1$s và %2$s đề có thể tạo XML sitemaps. Nhưng có 2 XML 
 msgid "Configure %1$s's Open Graph settings"
 msgstr "Cài đặt cấu hình Open Graph %1$s"
 
-#: admin/formatter/class-metabox-formatter.php:116
-#: admin/formatter/class-metabox-formatter.php:146
+#. translators: %1$s expands to Yoast SEO, %2$s: 'Facebook' plugin name of
+#. possibly conflicting plugin with regard to creating OpenGraph output.
+#: admin/class-plugin-conflict.php:67
+msgid "Both %1$s and %2$s create Open Graph output, which might make Facebook, X, LinkedIn and other social networks use the wrong texts and images when your pages are being shared."
+msgstr "Cả %1$s và %2$s đều tạo ra Open Graph, điều này có thể khiến Facebook, X, LinkedIn và các mạng xã hội khác sử dụng sai văn bản và hình ảnh khi các trang của bạn được chia sẻ."
+
+#: admin/formatter/class-metabox-formatter.php:93
+#: admin/formatter/class-metabox-formatter.php:123
 #: admin/statistics/class-statistics-service.php:222
 #: inc/class-wpseo-rank.php:141 inc/class-wpseo-rank.php:181
-#: inc/class-wpseo-rank.php:213 js/dist/block-editor.js:471
-#: js/dist/editor-modules.js:276 js/dist/elementor.js:64
-#: js/dist/externals-components.js:178 js/dist/externals/analysis.js:2
-#: js/dist/frontend-inspector-resources.js:1 js/dist/post-edit.js:1
+#: inc/class-wpseo-rank.php:213 js/dist/block-editor.js:563
+#: js/dist/editor-modules.js:324 js/dist/elementor.js:93
+#: js/dist/externals-components.js:188 js/dist/externals/analysis.js:11
+#: js/dist/frontend-inspector-resources.js:1 js/dist/post-edit.js:17
 #: js/dist/term-edit.js:1
 msgid "OK"
 msgstr "OK"
@@ -3238,14 +3813,14 @@ msgstr "Thẻ mô tả."
 msgid "All SEO Scores"
 msgstr "Tất cả các Điểm SEO"
 
-#: admin/metabox/class-metabox.php:958
-#: src/integrations/third-party/elementor.php:488
+#: admin/metabox/class-metabox.php:946
+#: src/integrations/third-party/elementor.php:448
 msgid "SEO issue: The featured image should be at least 200 by 200 pixels to be picked up by Facebook and other social media sites."
 msgstr "Vấn đề SEO: Hình ảnh nổi bật nên có độ phân giải ít nhất 200 x 200 pixel để được chọn bởi Facebook và các trang mạng xã hội khác."
 
-#: admin/metabox/class-metabox.php:896 admin/taxonomy/class-taxonomy.php:168
-#: admin/taxonomy/class-taxonomy.php:311
-#: src/integrations/third-party/elementor.php:435
+#: admin/metabox/class-metabox.php:884 admin/taxonomy/class-taxonomy.php:168
+#: admin/taxonomy/class-taxonomy.php:319
+#: src/integrations/third-party/elementor.php:391
 msgid "(no parent)"
 msgstr "(Không có phân cấp trên)"
 
@@ -3253,65 +3828,72 @@ msgstr "(Không có phân cấp trên)"
 msgid "Post is set to noindex."
 msgstr "Bài viết được thiết lập thành không có chỉ mục."
 
-#: admin/metabox/class-metabox.php:219
+#: admin/metabox/class-metabox.php:211
 msgid "The URL that this page should redirect to."
 msgstr "Liên kết URL mà trang này nên chuyển hướng đến."
 
-#: admin/metabox/class-metabox.php:218
+#: admin/metabox/class-metabox.php:210
 msgid "301 Redirect"
 msgstr "Chuyển hướng 301"
 
 #. translators: 1: link open tag; 2: link close tag.
-#: admin/metabox/class-metabox.php:207
+#: admin/metabox/class-metabox.php:205
 msgid "The canonical URL that this page should point to. Leave empty to default to permalink. %1$sCross domain canonical%2$s supported too."
-msgstr "Canonical URL mà trang này nên trỏ tới, để trống là mặc định cho đường dẫn tĩnh. %1$sCanonical nhiều tên miền%2$s cũng được hỗ trợ."
+msgstr "URL chính tắc (canonical) mà trang này nên trỏ tới, để trống là mặc định cho đường dẫn tĩnh. %1$sCanonical nhiều tên miền%2$s cũng được hỗ trợ."
 
-#: admin/metabox/class-metabox.php:203 js/dist/block-editor.js:213
-#: js/dist/classic-editor.js:198 js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:201 js/dist/block-editor.js:278
+#: js/dist/classic-editor.js:263 js/dist/elementor.js:396
 msgid "Canonical URL"
-msgstr "Canonical URL"
+msgstr "URL chính tắc (canonical)"
 
-#: admin/metabox/class-metabox.php:201
+#: admin/metabox/class-metabox.php:199
 msgid "Title to use for this page in breadcrumb paths"
-msgstr "Tiêu đề của trang được dùng trong đường dẫn"
+msgstr "Tiêu đề của trang được dùng trong điều hướng trang"
 
-#: admin/metabox/class-metabox.php:200 js/dist/block-editor.js:213
-#: js/dist/classic-editor.js:198 js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:198 js/dist/block-editor.js:277
+#: js/dist/classic-editor.js:262 js/dist/elementor.js:395
 msgid "Breadcrumbs Title"
-msgstr "Tiêu đề đường dẫn"
+msgstr "Tiêu đề điều hướng trang"
 
-#: admin/metabox/class-metabox.php:198 js/dist/block-editor.js:213
-#: js/dist/classic-editor.js:198 js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:196 js/dist/block-editor.js:276
+#: js/dist/classic-editor.js:261 js/dist/elementor.js:394
 msgid "No Snippet"
 msgstr "Không có đoạn trích ngắn"
 
-#: admin/metabox/class-metabox.php:197 js/dist/block-editor.js:213
-#: js/dist/classic-editor.js:198 js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:195 js/dist/block-editor.js:276
+#: js/dist/classic-editor.js:261 js/dist/elementor.js:394
 msgid "No Archive"
 msgstr "Không có lưu trữ"
 
-#: admin/metabox/class-metabox.php:196 js/dist/block-editor.js:213
-#: js/dist/classic-editor.js:198 js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:194 js/dist/block-editor.js:276
+#: js/dist/classic-editor.js:261 js/dist/elementor.js:394
 msgid "No Image Index"
 msgstr "Không có chỉ mục hình ảnh"
 
 #: admin/class-yoast-network-admin.php:43 src/config/schema-types.php:163
-#: src/integrations/settings-integration.php:573 js/dist/new-settings.js:2
+#: src/integrations/settings-integration.php:579 js/dist/new-settings.js:1
+#: js/dist/new-settings.js:347
 msgid "None"
 msgstr "Không mục nào"
 
-#: admin/metabox/class-metabox.php:194 js/dist/block-editor.js:213
-#: js/dist/classic-editor.js:198 js/dist/elementor.js:327
+#: admin/metabox/class-metabox.php:192 js/dist/block-editor.js:276
+#: js/dist/classic-editor.js:261 js/dist/elementor.js:394
 msgid "Meta robots advanced"
 msgstr "Robots meta nâng cao"
 
-#: admin/metabox/class-metabox.php:182
+#: admin/metabox/class-metabox.php:180
 msgid "Warning: even though you can set the meta robots setting here, the entire site is set to noindex in the sitewide privacy settings, so these settings won't have an effect."
 msgstr "Cảnh báo: Dù bạn thiết lập robots meta ở đây, nhưng trong thiết lập riêng tư cho toàn trang được cài là noindex, thì những thiết lập này sẽ không có tác dụng."
 
-#: admin/metabox/class-metabox.php:177 js/dist/externals/analysis.js:2
-#: js/dist/externals/replacementVariableEditor.js:27
-#: js/dist/externals/searchMetadataPreviews.js:62 js/dist/new-settings.js:2
+#: admin/metabox/class-metabox.php:175
+#: js/dist/externals/replacementVariableEditor.js:26
+#: js/dist/externals/searchMetadataPreviews.js:62 js/dist/new-settings.js:9
+#: js/dist/new-settings.js:13 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:20 js/dist/new-settings.js:58
+#: js/dist/new-settings.js:72 js/dist/new-settings.js:102
+#: js/dist/new-settings.js:131 js/dist/new-settings.js:196
+#: js/dist/new-settings.js:213 js/dist/new-settings.js:222
+#: js/dist/new-settings.js:244
 msgid "Meta description"
 msgstr "Thẻ mô tả"
 
@@ -3331,38 +3913,9 @@ msgstr "Các thiết lập được nhập thành công."
 msgid "Settings could not be imported:"
 msgstr "Cài đặt không thể nhập:"
 
-#: admin/class-customizer.php:211
-msgid "Breadcrumb for 404 pages:"
-msgstr "Đường dẫn cho trang không tìm thấy 404:"
-
-#: admin/class-customizer.php:197
-msgid "Prefix for search result pages:"
-msgstr "Tiền tố cho các trang kết quả tìm kiếm:"
-
-#: admin/class-customizer.php:183
-msgid "Prefix for archive pages:"
-msgstr "Tiền tố cho các trang lưu trữ:"
-
-#: admin/class-customizer.php:169
-msgid "Prefix for breadcrumbs:"
-msgstr "Prefix cho đường dẫn:"
-
-#: admin/class-customizer.php:155
-msgid "Anchor text for the homepage:"
-msgstr "Tên trang chủ trong đường dẫn:"
-
-#: admin/class-customizer.php:140
-msgid "Breadcrumbs separator:"
-msgstr "Dấu ngăn cách đường dẫn:"
-
-#. translators: %s is the name of the plugin
-#: admin/class-customizer.php:90
-msgid "%s Breadcrumbs"
-msgstr "%s đường dẫn"
-
-#: admin/class-config.php:116 admin/metabox/class-metabox.php:926
+#: admin/class-config.php:116 admin/metabox/class-metabox.php:911
 #: admin/taxonomy/class-taxonomy.php:187
-#: src/integrations/third-party/elementor.php:462
+#: src/integrations/third-party/elementor.php:417
 msgid "Use Image"
 msgstr "Sử dụng ảnh"
 
@@ -3386,10 +3939,10 @@ msgstr "Trạng thái bài viết"
 msgid "WP Page Title"
 msgstr "Tiêu đề trang WP"
 
-#: admin/class-bulk-editor-list-table.php:866 js/dist/block-editor.js:108
-#: js/dist/classic-editor.js:93 js/dist/editor-modules.js:238
-#: js/dist/elementor.js:424 js/dist/wincher-dashboard-widget.js:42
-#: js/dist/wincher-dashboard-widget.js:90
+#: admin/class-bulk-editor-list-table.php:866 js/dist/block-editor.js:129
+#: js/dist/classic-editor.js:114 js/dist/editor-modules.js:279
+#: js/dist/elementor.js:525 js/dist/wincher-dashboard-widget.js:43
+#: js/dist/wincher-dashboard-widget.js:112
 msgid "View"
 msgstr "Xem"
 
@@ -3408,7 +3961,7 @@ msgid "Preview &#8220;%s&#8221;"
 msgstr "Xem trước &#8220;%s&#8221;"
 
 #: admin/class-bulk-editor-list-table.php:844
-#: js/dist/first-time-configuration.js:2
+#: js/dist/first-time-configuration.js:9 js/dist/first-time-configuration.js:18
 msgid "Edit"
 msgstr "Edit"
 
@@ -3443,14 +3996,13 @@ msgstr "Thẻ mô tả Yoast hiện tại"
 msgid "Facebook profile URL"
 msgstr "Địa chỉ URL hồ sơ Facebook"
 
-#: admin/class-admin.php:237 js/dist/structured-data-blocks.js:5
+#: admin/class-admin.php:237
 msgid "FAQ"
 msgstr "FAQ"
 
 #: admin/class-admin.php:232 admin/views/redirects.php:42
-#: src/integrations/settings-integration.php:317
-#: src/presenters/meta-description-presenter.php:37
-#: js/dist/structured-data-blocks.js:5
+#: src/integrations/settings-integration.php:324
+#: src/presenters/meta-description-presenter.php:37 js/dist/how-to-block.js:8
 msgid "Settings"
 msgstr "Thiết lập"
 
@@ -3464,13 +4016,13 @@ msgstr "Bài viết"
 
 #: admin/menu/class-network-admin-menu.php:63
 msgid "Edit Files"
-msgstr "Sửa file"
+msgstr "Sửa tệp tin"
 
 #: admin/menu/class-admin-menu.php:91
 #: admin/menu/class-network-admin-menu.php:56 admin/pages/network.php:18
-#: js/dist/new-settings.js:2
+#: js/dist/new-settings.js:337
 msgid "General"
-msgstr "Chung"
+msgstr "Tổng quan"
 
 #: admin/menu/class-network-admin-menu.php:66
 msgid "Extensions"
@@ -3480,24 +4032,24 @@ msgstr "Phần mở rộng"
 msgid "Search Console"
 msgstr "Search Console"
 
-#: admin/menu/class-admin-menu.php:97 js/dist/new-settings.js:2
+#: admin/menu/class-admin-menu.php:97 js/dist/new-settings.js:302
 msgid "Tools"
 msgstr "Công cụ"
 
-#: admin/views/class-yoast-feature-toggles.php:136 js/dist/new-settings.js:2
+#: admin/views/class-yoast-feature-toggles.php:136 js/dist/new-settings.js:16
+#: js/dist/new-settings.js:304 js/dist/new-settings.js:306
 msgid "XML sitemaps"
 msgstr "Sơ đồ trang XML"
 
-#: admin/metabox/class-metabox.php:447
-#: admin/taxonomy/class-taxonomy-metabox.php:160 js/dist/new-settings.js:2
+#: admin/metabox/class-metabox.php:434
+#: admin/taxonomy/class-taxonomy-metabox.php:160 js/dist/new-settings.js:20
 msgid "Social"
 msgstr "Mạng xã hội"
 
-#: admin/metabox/class-metabox.php:422
+#: admin/metabox/class-metabox.php:409
 #: admin/taxonomy/class-taxonomy-metabox.php:142
 #: inc/class-wpseo-admin-bar-menu.php:711
 #: src/services/health-check/report-builder.php:168
-#: js/dist/structured-data-blocks.js:5
 msgid "SEO"
 msgstr "SEO"
 
@@ -3528,7 +4080,7 @@ msgstr "Bạn không thể sửa %s."
 #. translators: %s expands to post type.
 #: admin/ajax.php:173
 msgid "Post has an invalid Content Type: %s."
-msgstr "Bài viết sai Post Type: %s."
+msgstr "Bài viết sai loại nội dung: %s."
 
 #: admin/ajax.php:162
 msgid "Post doesn't exist."

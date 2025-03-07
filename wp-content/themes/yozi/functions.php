@@ -247,7 +247,7 @@ function custom_menu_shortcode() {
                                     <li><a href="<?php echo home_url('/product-category/san-pham-moi/'); ?>">Sản phẩm mới</a></li>
                                     <li><a href="<?php echo home_url('/product-category/san-pham-yeu-thich/'); ?>">Sản phẩm yêu thích</a></li>
                                     <li><a href="<?php echo home_url('/product-category/san-pham-sale/'); ?>">Sản phẩm đang SALE</a></li>
-									<li><a href="<?php echo home_url('/shop-2?show=all&sort_by=bestsellers'); ?>">Sản phẩm bán chạy</a></li>
+									<!--<li><a href="<?php echo home_url('/shop-2?show=all&sort_by=bestsellers'); ?>">Sản phẩm bán chạy</a></li>-->
                                 </ul>
                             </li>
                             <!--<li class="mega-dropdown">
@@ -686,3 +686,197 @@ require get_template_directory() . '/inc/customizer.php';
  *
  */
 require get_template_directory() . '/inc/custom-styles.php';
+
+
+
+
+add_action('woocommerce_after_checkout_billing_form', 'devvn_xuat_hoa_don_vat');
+function devvn_xuat_hoa_don_vat(){
+    ?>
+    <style>
+        .devvn_xuat_hoa_don_do {
+            background: #eee;
+            padding: 10px;
+            border-radius: 3px;
+            clear: both;
+        }
+        .devvn_xuat_vat_wrap {
+            display: none;
+        }
+        label.devvn_xuat_vat_input_label {
+            display: block;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        .devvn_xuat_vat_wrap fieldset {
+            margin: 10px 0;
+            padding: 10px;
+            background: transparent;
+            border: 1px solid #b0aeae;
+        }
+        .devvn_xuat_vat_wrap fieldset legend {
+            background: transparent;
+            padding: 0 5px;
+            margin: 0 0 0 10px;
+            font-size: 14px;
+            display: inline;
+            width: inherit;
+            border: 0;
+            text-transform: none;
+            color: #000;
+        }
+        .devvn_xuat_vat_wrap fieldset p {
+            margin-bottom: 10px;
+        }
+        .devvn_xuat_vat_wrap fieldset p:last-child {
+            margin-bottom: 0;
+        }
+        .vat_active .devvn_xuat_vat_wrap {
+            display: block;
+        }
+    </style>
+    <div class="devvn_xuat_hoa_don_do">
+        <label class="devvn_xuat_vat_input_label">
+            <input class="devvn_xuat_vat_input" type="checkbox" name="devvn_xuat_vat_input" value="1">
+            Xuất hóa đơn VAT
+        </label>
+        <div class="devvn_xuat_vat_wrap">
+            <fieldset>
+                <legend>Thông tin xuất hóa đơn:</legend>
+                <p class="form-row form-row-first" id="billing_vat_company_field">
+                    <label for="billing_vat_company" class="">Tên công ty <abbr class="required" title="bắt buộc">*</abbr></label>
+                    <input type="text" class="input-text " name="billing_vat_company" id="billing_vat_company" placeholder="Tên công ty" value="">
+                </p>
+                <p class="form-row form-row-last" id="billing_vat_mst_field">
+                    <label for="billing_vat_mst" class="">Mã số thuế <abbr class="required" title="bắt buộc">*</abbr></label>
+                    <input type="text" class="input-text " name="billing_vat_mst" id="billing_vat_mst" placeholder="Mã số thuế" value="">
+                </p>
+                <p class="form-row form-row-wide" id="billing_vat_companyaddress_field">
+                    <label for="billing_vat_companyaddress" class="">Địa chỉ công ty <abbr class="required" title="bắt buộc">*</abbr></label>
+                    <input type="text" class="input-text" name="billing_vat_companyaddress" id="billing_vat_companyaddress" placeholder="Địa chỉ công ty" value="">
+                </p>
+                <p class="form-row form-row-wide" id="billing_vat_email_field">
+                    <label for="billing_vat_email" class="">Email nhận hóa đơn <abbr class="required" title="bắt buộc">*</abbr></label>
+                    <input type="email" class="input-text" name="billing_vat_email" id="billing_vat_email" placeholder="Email nhận hóa đơn" value="">
+                </p>
+                <p class="form-row form-row-wide" id="billing_vat_display_name_field">
+                    <label for="billing_vat_display_name" class="">
+                        <input type="checkbox" name="billing_vat_display_name" id="billing_vat_display_name" value="1">
+                        Hiển thị tên người mua trên hóa đơn
+                    </label>
+                </p>
+            </fieldset>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                function check_vat(){
+                    var parentVAT = $('input.devvn_xuat_vat_input').closest('.devvn_xuat_hoa_don_do');
+                    if($('input.devvn_xuat_vat_input').is(":checked")){
+                        parentVAT.addClass('vat_active');
+                    }else{
+                        parentVAT.removeClass('vat_active');
+                    }
+                }
+                check_vat();
+                $('input.devvn_xuat_vat_input').on('change', function () {
+                    check_vat();
+                });
+            });
+        })(jQuery);
+    </script>
+    <?php
+}
+
+add_action('woocommerce_checkout_process', 'vat_checkout_field_process');
+function vat_checkout_field_process() {
+    if (isset($_POST['devvn_xuat_vat_input']) && !empty($_POST['devvn_xuat_vat_input'])) {
+        if (empty($_POST['billing_vat_company'])) {
+            wc_add_notice(__('Hãy nhập tên công ty'), 'error');
+        }
+        if (empty($_POST['billing_vat_mst'])) {
+            wc_add_notice(__('Hãy nhập mã số thuế'), 'error');
+        }
+        if (empty($_POST['billing_vat_companyaddress'])) {
+            wc_add_notice(__('Hãy nhập địa chỉ công ty'), 'error');
+        }
+        if (empty($_POST['billing_vat_email'])) {
+            wc_add_notice(__('Hãy nhập email nhận hóa đơn'), 'error');
+        }
+    }
+}
+
+add_action('woocommerce_checkout_update_order_meta', 'vat_checkout_field_update_order_meta');
+function vat_checkout_field_update_order_meta($order_id) {
+    $order = wc_get_order($order_id);
+    if ($order && !is_wp_error($order) && isset($_POST['devvn_xuat_vat_input']) && !empty($_POST['devvn_xuat_vat_input'])) {
+        $order->update_meta_data('devvn_xuat_vat_input', intval($_POST['devvn_xuat_vat_input']));
+        $order->update_meta_data('billing_vat_company', sanitize_text_field($_POST['billing_vat_company']));
+        $order->update_meta_data('billing_vat_mst', sanitize_text_field($_POST['billing_vat_mst']));
+        $order->update_meta_data('billing_vat_companyaddress', sanitize_text_field($_POST['billing_vat_companyaddress']));
+        $order->update_meta_data('billing_vat_email', sanitize_email($_POST['billing_vat_email']));
+
+        if (isset($_POST['billing_vat_display_name']) && !empty($_POST['billing_vat_display_name'])) {
+            $order->update_meta_data('billing_vat_display_name', 1);
+        } else {
+            $order->update_meta_data('billing_vat_display_name', 0);
+        }
+
+        $order->save();
+    }
+}
+
+add_action('woocommerce_admin_order_data_after_shipping_address', 'devvn_after_shipping_address_vat', 99);
+function devvn_after_shipping_address_vat($order) {
+    $devvn_xuat_vat_input = $order->get_meta('devvn_xuat_vat_input');
+    $billing_vat_company = $order->get_meta('billing_vat_company');
+    $billing_vat_mst = $order->get_meta('billing_vat_mst');
+    $billing_vat_companyaddress = $order->get_meta('billing_vat_companyaddress');
+    $billing_vat_email = $order->get_meta('billing_vat_email');
+    $billing_vat_display_name = $order->get_meta('billing_vat_display_name');
+    
+    ?>
+    <p><strong>Xuất hóa đơn:</strong> <?php echo ($devvn_xuat_vat_input) ? 'Có' : 'Không'; ?></p>
+    <?php
+    if ($devvn_xuat_vat_input):
+        ?>
+        <p>
+            <strong>Thông tin xuất hóa đơn:</strong><br>
+            Tên công ty: <?php echo $billing_vat_company; ?><br>
+            Mã số thuế: <?php echo $billing_vat_mst; ?><br>
+            Địa chỉ: <?php echo $billing_vat_companyaddress; ?><br>
+            Email: <?php echo $billing_vat_email; ?><br>
+            <?php if($billing_vat_display_name): ?>
+                Hiển thị tên người mua trên hóa đơn: Có<br>
+            <?php else: ?>
+                Hiển thị tên người mua trên hóa đơn: Không<br>
+            <?php endif; ?>
+        </p>
+    <?php
+    endif;
+	//tiết kiệm bao nhiêu tiền woo
+add_filter('woocommerce_sale_flash', 'woocommerce_custom_sale_savings', 10, 3);
+function woocommerce_custom_sale_savings() {
+   global $product;
+   if ( ! $product->is_on_sale() ) return;
+   if ( $product->is_type( 'simple' ) ) {
+      $max_percentage = ( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() ) * 100;
+	  $price_reduce = $product->get_regular_price() - $product->get_sale_price();
+   } elseif ( $product->is_type( 'variable' ) ) {
+      $max_percentage = 0;
+      foreach ( $product->get_children() as $child_id ) {
+         $variation = wc_get_product( $child_id );
+         $price = $variation->get_regular_price();
+         $sale = $variation->get_sale_price();
+         if ( $price != 0 && ! empty( $sale ) ) $percentage = ( $price - $sale ) / $price * 100;
+         if ( $percentage > $max_percentage ) {
+            $max_percentage = $percentage;
+         }
+      }
+   }
+   if ( $max_percentage > 0 ) {
+     return  '<span class="onsale">-' . $price_reduce/1000 . 'k (' . round($max_percentage) . '%)</span>';
+   } 
+ }
+}

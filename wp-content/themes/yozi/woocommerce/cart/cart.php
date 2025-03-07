@@ -27,7 +27,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '01' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Shopping Cart','yozi'); ?>
+					<?php echo esc_html__('Giỏ hàng','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -35,7 +35,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<div class="inner">
 				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '02' ); ?>
 				<span class="inner-step">
-					<?php echo esc_html__('Checkout','yozi'); ?>
+					<?php echo esc_html__('Thanh toán','yozi'); ?>
 				</span>
 				</div>
 			</li>
@@ -167,7 +167,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							</div>
 						<?php } ?>
 
-						<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'yozi' ); ?>" />
+						<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Cập nhật giỏ hàng', 'yozi' ); ?>" />
 
 						<?php do_action( 'woocommerce_cart_actions' ); ?>
 

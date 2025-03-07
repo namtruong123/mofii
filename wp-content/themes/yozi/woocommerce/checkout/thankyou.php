@@ -17,93 +17,101 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
+
 <!-- header -->
 <div class="apus-checkout-header">
-	
-	<div class="apus-checkout-step">
-		<ul class="clearfix">
-			<li>
-				<div class="inner">
-				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '01' ); ?>
-				<span class="inner-step">
-					<?php echo esc_html__('Giỏ hàng','yozi'); ?>
-				</span>
-				</div>
-			</li>
-			<li>
-				<div class="inner">
-				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '02' ); ?>
-				<span class="inner-step">
-					<?php echo esc_html__('Thanh toán','yozi'); ?>
-				</span>
-				</div>
-			</li>
-			<li class="active">
-				<div class="inner">
-				<?php printf(__( '<span class="step">%s</span>', 'yozi' ), '03' ); ?>
-				<span class="inner-step">
-					<?php echo esc_html__('Hoàn tất đơn hàng','yozi'); ?>
-				</span>
-				</div>
-			</li>
-		</ul>
-	</div>
+    <div class="apus-checkout-step">
+        <ul class="clearfix">
+            <li>
+                <div class="inner">
+                <?php printf(__( '<span class="step">%s</span>', 'yozi' ), '01' ); ?>
+                <span class="inner-step">
+                    <?php echo esc_html__('Giỏ hàng','yozi'); ?>
+                </span>
+                </div>
+            </li>
+            <li>
+                <div class="inner">
+                <?php printf(__( '<span class="step">%s</span>', 'yozi' ), '02' ); ?>
+                <span class="inner-step">
+                    <?php echo esc_html__('Thanh toán','yozi'); ?>
+                </span>
+                </div>
+            </li>
+            <li class="active">
+                <div class="inner">
+                <?php printf(__( '<span class="step">%s</span>', 'yozi' ), '03' ); ?>
+                <span class="inner-step">
+                    <?php echo esc_html__('Đơn hàng đã hoàn thành','yozi'); ?>
+                </span>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
-<?php
 
-if ( $order ) : ?>
+<?php if ( $order ) : ?>
 
-	<?php if ( $order->has_status( 'failed' ) ) : ?>
+    <?php if ( $order->has_status( 'failed' ) ) : ?>
+        <p class="woocommerce-thankyou-order-failed"><?php esc_html_e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'yozi' ); ?></p>
+    <?php else : ?>
+        <p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Cảm ơn. Đơn đặt hàng của bạn đã được tiếp nhận.', 'yozi' ), $order ); ?></p>
 
-		<p class="woocommerce-thankyou-order-failed"><?php esc_html_e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'yozi' ); ?></p>
+        <ul class="woocommerce-thankyou-order-details order_details">
+            <li class="order">
+                <?php esc_html_e( 'Mã đơn hàng:', 'yozi' ); ?>
+                <strong><?php echo trim($order->get_order_number()); ?></strong>
+            </li>
+            <li class="date">
+                <?php esc_html_e( 'Ngày đặt:', 'yozi' ); ?>
+                <strong><?php echo wc_format_datetime( $order->get_date_created() ); ?></strong>
+            </li>
+            <li class="total">
+                <?php esc_html_e( 'Tổng cộng:', 'yozi' ); ?>
+                <strong><?php echo trim($order->get_formatted_order_total()); ?></strong>
+            </li>
+            <li class="method">
+                <?php esc_html_e( 'Phương thức thanh toán:', 'yozi' ); ?>
+                <strong><?php echo trim($order->get_payment_method_title()); ?></strong>
+            </li>
+        </ul>
 
-		<p class="woocommerce-thankyou-order-failed-actions">
-			<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="button pay"><?php esc_html_e( 'Pay', 'yozi' ) ?></a>
-			<?php if ( is_user_logged_in() ) : ?>
-				<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="button pay"><?php esc_html_e( 'My Account', 'yozi' ); ?></a>
-			<?php endif; ?>
-		</p>
+    <?php endif; ?>
 
-	<?php else : ?>
+    <div class="woo-pay-perfect text-theme">
+        <?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+    </div>
 
-		<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Cảm ơn bạn. Đơn đặt hàng của bạn đã được tiếp nhận.', 'yozi' ), $order ); ?></p>
-
-		<ul class="woocommerce-thankyou-order-details order_details">
-			<li class="order">
-				<?php esc_html_e( 'Mã đơn hàng:', 'yozi' ); ?>
-				<strong><?php echo trim($order->get_order_number()); ?></strong>
-			</li>
-			<li class="date">
-				<?php esc_html_e( 'Ngày:', 'yozi' ); ?>
-				<strong><?php echo wc_format_datetime( $order->get_date_created() ); ?></strong>
-			</li>
-			<?php if ( is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email() ) : ?>
-				<li class="woocommerce-order-overview__email email">
-					<?php esc_html_e( 'Email:', 'yozi' ); ?>
-					<strong><?php echo trim($order->get_billing_email()); ?></strong>
-				</li>
-			<?php endif; ?>
-			<li class="total">
-				<?php esc_html_e( 'Tổng cộng:', 'yozi' ); ?>
-				<strong><?php echo trim($order->get_formatted_order_total()); ?></strong>
-			</li>
-			<?php if ( $order->get_payment_method_title() ) : ?>
-			<li class="method">
-				<?php esc_html_e( 'Phương thức thanh toán:', 'yozi' ); ?>
-				<strong><?php echo trim($order->get_payment_method_title()); ?></strong>
-			</li>
-			<?php endif; ?>
-		</ul>
-		<div class="clear"></div>
-
-	<?php endif; ?>
-	<div class="woo-pay-perfect text-theme">
-		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
-	</div>
-	<?php //do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
+    <!-- Nút nhận hàng tại cửa hàng -->
+    <button id="store-pickup-btn" class="button"><?php esc_html_e( 'Nhận hàng tại cửa hàng', 'yozi' ); ?></button>
+    
+    <!-- Địa chỉ cửa hàng -->
+<div id="store-addresses" style="display: none;">
+    <div class="row">
+        <div class="col">
+            <h4><?php esc_html_e( 'Showroom Chính', 'yozi' ); ?></h4>
+            <p>450 Nguyễn Tri Phương, Phường 4, Quận 10, Tp.HCM</p>
+        </div>
+        <div class="col">
+            <h4><?php esc_html_e( 'Vạn Hạnh Mall', 'yozi' ); ?></h4>
+            <p>11 Sư Vạn Hạnh, Phường 12, Quận 10, Tp.HCM</p>
+        </div>
+    </div>
+</div>
 
 <?php else : ?>
 
-	<p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Cảm ơn. Đơn đặt hàng của bạn đã được tiếp nhận.', 'yozi' ), null ); ?></p>
+    <p class="woocommerce-thankyou-order-received"><?php echo apply_filters( 'woocommerce_thankyou_order_received_text', esc_html__( 'Cảm ơn. Đơn đặt hàng của bạn đã được tiếp nhận.', 'yozi' ), null ); ?></p>
 
 <?php endif; ?>
+
+<script type="text/javascript">
+    document.getElementById('store-pickup-btn').addEventListener('click', function() {
+        var storeAddresses = document.getElementById('store-addresses');
+        if (storeAddresses.style.display === 'none') {
+            storeAddresses.style.display = 'block';
+        } else {
+            storeAddresses.style.display = 'none';
+        }
+    });
+</script>

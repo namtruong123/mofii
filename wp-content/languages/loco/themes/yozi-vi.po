@@ -10,11 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: \n"
 "Language-Team: Tiếng Việt\n"
-"PO-Revision-Date: 2024-07-25 09:36+0000\n"
+"PO-Revision-Date: 2024-12-09 10:32+0000\n"
 "Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.11; wp-6.6.1"
+"X-Loco-Version: 2.6.14; wp-6.7.1"
 
 #: inc/vendors/visualcomposer/vc-map-posts2.php:6
 #: inc/vendors/woocommerce/functions.php:218
@@ -115,7 +115,7 @@ msgstr ""
 #: woocommerce/item-product/inner-list-v1.php:107
 #: woocommerce/item-product/inner-list.php:114
 msgid "+ Add To Compare"
-msgstr ""
+msgstr "Thêm so sánh"
 
 #: wc-vendors/store/tabs-review.php:79
 msgid "-"
@@ -1025,7 +1025,7 @@ msgstr ""
 #: woocommerce/item-product/inner-v3.php:52
 #: woocommerce/item-product/inner.php:87
 msgid "compare"
-msgstr ""
+msgstr "So sánh"
 
 #: woocommerce/myaccount/form-edit-account.php:47
 msgid "Confirm New Password"

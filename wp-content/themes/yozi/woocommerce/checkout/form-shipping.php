@@ -56,6 +56,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
 
 			<h3><?php esc_html_e( 'Thông tin bổ sung', 'yozi' ); ?></h3>
+			<h4><?php esc_html_e( 'Lưu ý: Nếu bạn muốn lấy hàng trực tiếp tại cửa hàng vui lòng ghi chú bên dưới', 'yozi' ); ?></h4>
 
 		<?php endif; ?>
 

@@ -1,0 +1,1 @@
+n¿Êg<?php exit; ?>a:1:{s:7:"content";a:2:{s:19:"xts-term-158-status";a:1:{i:0;s:7:"invalid";}s:21:"_woodmart_blog_design";a:1:{i:0;s:7:"inherit";}}}

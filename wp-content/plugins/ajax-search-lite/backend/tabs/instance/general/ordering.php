@@ -43,6 +43,8 @@
 				array('option' => __('Title ascending', 'ajax-search-lite'), 'value' => 'post_title ASC'),
 				array('option' => __('Date descending', 'ajax-search-lite'), 'value' => 'post_date DESC'),
 				array('option' => __('Date ascending', 'ajax-search-lite'), 'value' => 'post_date ASC'),
+				array('option' => __('Menu order descending', 'ajax-search-lite'), 'value' => 'menu_order DESC'),
+				array('option' => __('Menu order ascending', 'ajax-search-lite'), 'value' => 'menu_order ASC'),
 				array('option' => __('Random', 'ajax-search-lite'), 'value' => 'RAND()'),
 				array('option' => __('Custom Field descending', 'ajax-search-lite'), 'value' => 'customfs DESC'),
 				array('option' => __('Custom Field ascending', 'ajax-search-lite'), 'value' => 'customfs ASC')

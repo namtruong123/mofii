@@ -4543,7 +4543,7 @@ table.variations .tawcvs-swatches .swatch.swatch-label.selected {
 .woocommerce form .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper > * > select,
 .woocommerce form .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper > * > input {
   overflow: hidden;
-  width: calc(100% - 200px) !important;
+  width: calc(100% - 200px) ;
   border-width: 0 0 1px;
   border-style: solid;
   border-color: #ebebeb;
@@ -8264,6 +8264,7 @@ div.cart label {
   border-width: 0 0 1px;
   border-style: solid;
   border-color: #ebebeb;
+  padding-left: 15px;
 }
 #order_review .cart_item {
   margin: 0;

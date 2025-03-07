@@ -1,0 +1,1 @@
+n¿Êg<?php exit; ?>a:1:{s:7:"content";a:2:{s:17:"_wp_attached_file";a:1:{i:0;s:25:"2023/01/Smartphones-1.svg";}s:23:"_wp_attachment_metadata";a:1:{i:0;s:28:"a:1:{s:8:"filesize";i:2885;}";}}}

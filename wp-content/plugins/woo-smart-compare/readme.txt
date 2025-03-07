@@ -2,10 +2,9 @@
 Contributors: wpclever
 Donate link: https://wpclever.net
 Tags: woocommerce, wpc, compare, comparison
-Requires at least: 4.0
-Tested up to: 6.5
-Version: 6.2.7
-Stable tag: 6.2.7
+Tested up to: 6.7
+Version: 6.4.3
+Stable tag: 6.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +35,7 @@ Curious about how WPC Smart Compare works? Visit our [live demo 01](https://demo
 - Using custom shortcodes to add buttons to specific pages
 - Unlimited choice of bar background color and button color
 - Hide/show fields for a clearer view in comparison table
+- Smart filter by a selected taxonomy (category, color, size, etc.)
 - WPML compatible for building multilingual sites
 - Compare button advanced settings: type, text, visibility, categories, product removal
 - Comparison table advanced settings: fields, attributes, sticky column & row
@@ -85,6 +85,30 @@ Example:
 `echo do_shortcode('[woosc id="99"]');`
 
 == Changelog ==
+
+= 6.4.3 =
+* Updated: Optimized the code
+* Updated: Compatible with WP 6.7 & Woo 9.5
+
+= 6.4.2 =
+* Updated: Compatible with WP 6.7 & Woo 9.4
+
+= 6.4.1 =
+* Fixed: Minor CSS/JS issues
+
+= 6.4.0 =
+* Added: Smart filter by a selected taxonomy (category, color, size, etc.)
+
+= 6.3.0 =
+* Fixed: Show private products for logged-in users
+* Added: Filter hook 'woosc_product_visible'
+
+= 6.2.9 =
+* Updated: Optimized the code
+* Updated: Compatible with WP 6.6 & Woo 9.3
+
+= 6.2.8 =
+* Updated: Use WC_AJAX for frontend
 
 = 6.2.7 =
 * Added: Option to reload the count

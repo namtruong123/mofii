@@ -100,7 +100,10 @@ if (!class_exists("WD_ASL_Search_Shortcode")) {
 				endforeach;
 				?>
 				<style>
-					<?php echo $styles['inline']; ?>
+					<?php
+					// prevent any XSS
+					echo str_replace(array('</style', '</', '<'), '',$styles['inline']);
+					?>
 				</style>
 				<?php
 				$out = ob_get_clean();

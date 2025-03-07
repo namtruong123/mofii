@@ -1,8 +1,0 @@
-�x�f<?php exit; ?>a:1:{s:7:"content";O:8:"stdClass":24:{s:2:"ID";i:1310;s:11:"post_author";s:1:"1";s:9:"post_date";s:19:"2024-07-18 10:55:15";s:13:"post_date_gmt";s:19:"2024-07-18 10:55:15";s:12:"post_content";s:678:"<ul>
- 	<li><strong>Thiết kế</strong>: Ergonomic, giúp giảm mỏi tay khi sử dụng lâu.</li>
- 	<li><strong>Độ phân giải</strong>: 1600 DPI, cho phép di chuyển con trỏ mượt mà và chính xác.</li>
- 	<li><strong>Kết nối</strong>: Sử dụng cổng USB, tương thích với nhiều thiết bị.</li>
- 	<li><strong>Độ bền</strong>: Các phím bấm có tuổi thọ cao, chịu được nhiều lần nhấn.</li>
- 	<li><strong>Chiều dài dây</strong>: Khoảng 1.5 mét, đủ dài để sử dụng thoải mái.</li>
- 	<li><strong>Tương thích</strong>: Hỗ trợ Windows, macOS, và nhiều hệ điều hành khác.</li>
-</ul>";s:10:"post_title";s:58:"Chuột máy tính có dây MOFII M5 dùng cho văn phòng";s:12:"post_excerpt";s:0:"";s:11:"post_status";s:7:"publish";s:14:"comment_status";s:4:"open";s:11:"ping_status";s:6:"closed";s:13:"post_password";s:0:"";s:9:"post_name";s:49:"chuot-may-tinh-co-day-mofii-m5-dung-cho-van-phong";s:7:"to_ping";s:0:"";s:6:"pinged";s:0:"";s:13:"post_modified";s:19:"2024-07-19 02:33:21";s:17:"post_modified_gmt";s:19:"2024-07-19 02:33:21";s:21:"post_content_filtered";s:0:"";s:11:"post_parent";i:0;s:4:"guid";s:53:"http://localhost/mofii/?post_type=product&#038;p=1310";s:10:"menu_order";i:0;s:9:"post_type";s:7:"product";s:14:"post_mime_type";s:0:"";s:13:"comment_count";s:1:"0";s:6:"filter";s:3:"raw";}}
