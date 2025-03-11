@@ -2,15 +2,12 @@
 
 namespace Yoast\WP\SEO\Editors\Framework;
 
-use Yoast\WP\SEO\Editors\Domain\Analysis_Features\Analysis_Feature_Interface;
 use Yoast\WP\SEO\Helpers\Language_Helper;
 
 /**
  * Describes if the word for recognition analysis is enabled
  */
 class Word_Form_Recognition implements Analysis_Feature_Interface {
-
-	public const NAME = 'wordFormRecognition';
 
 	/**
 	 * The language helper.
@@ -43,7 +40,7 @@ class Word_Form_Recognition implements Analysis_Feature_Interface {
 	 * @return string
 	 */
 	public function get_name(): string {
-		return self::NAME;
+		return 'wordFormRecognition';
 	}
 
 	/**

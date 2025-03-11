@@ -144,7 +144,6 @@ class Workouts_Integration implements Integration_Interface {
 		$this->admin_asset_manager->enqueue_style( 'workouts' );
 
 		$workouts_option = $this->get_workouts_option();
-		$ftc_url         = \esc_url( \admin_url( 'admin.php?page=wpseo_dashboard#/first-time-configuration' ) );
 
 		$this->admin_asset_manager->enqueue_script( 'workouts' );
 		$this->admin_asset_manager->localize_script(
@@ -156,7 +155,7 @@ class Workouts_Integration implements Integration_Interface {
 				'pluginUrl'                 => \esc_url( \plugins_url( '', \WPSEO_FILE ) ),
 				'toolsPageUrl'              => \esc_url( \admin_url( 'admin.php?page=wpseo_tools' ) ),
 				'usersPageUrl'              => \esc_url( \admin_url( 'users.php' ) ),
-				'firstTimeConfigurationUrl' => $ftc_url,
+				'firstTimeConfigurationUrl' => \esc_url( \admin_url( 'admin.php?page=wpseo_dashboard#top#first-time-configuration' ) ),
 				'isPremium'                 => $this->product_helper->is_premium(),
 				'upsellText'                => $this->get_upsell_text(),
 				'upsellLink'                => $this->get_upsell_link(),

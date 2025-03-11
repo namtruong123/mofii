@@ -51,9 +51,7 @@ class WPSEO_Post_Type {
 	 * @return array The filtered array.
 	 */
 	public static function filter_attachment_post_type( array $post_types ) {
-		if ( WPSEO_Options::get( 'disable-attachment' ) === true ) {
-			unset( $post_types['attachment'] );
-		}
+		unset( $post_types['attachment'] );
 
 		return $post_types;
 	}

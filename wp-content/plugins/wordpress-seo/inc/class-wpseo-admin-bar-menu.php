@@ -359,7 +359,6 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		$settings_url       = '';
 		$counter            = '';
 		$notification_popup = '';
-		$notification_count = 0;
 
 		$post = $this->get_singular_post();
 		if ( $post ) {
@@ -378,10 +377,7 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		}
 
 		if ( empty( $score ) && ! is_network_admin() && $can_manage_options ) {
-			$notification_center = Yoast_Notification_Center::get();
-			$notification_count  = $notification_center->get_notification_count();
-
-			$counter            = $this->get_notification_counter( $notification_count );
+			$counter            = $this->get_notification_counter();
 			$notification_popup = $this->get_notification_popup();
 		}
 
@@ -393,12 +389,12 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 		];
 		$wp_admin_bar->add_menu( $admin_bar_menu_args );
 
-		if ( $notification_count > 0 ) {
+		if ( ! empty( $counter ) ) {
 			$admin_bar_menu_args = [
 				'parent' => self::MENU_IDENTIFIER,
 				'id'     => 'wpseo-notifications',
 				'title'  => __( 'Notifications', 'wordpress-seo' ) . $counter,
-				'href'   => empty( $settings_url ) ? '' : $settings_url . '#/alert-center',
+				'href'   => $settings_url,
 				'meta'   => [ 'tabindex' => ! empty( $settings_url ) ? false : '0' ],
 			];
 			$wp_admin_bar->add_menu( $admin_bar_menu_args );
@@ -591,10 +587,10 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 	 */
 	protected function add_premium_link( WP_Admin_Bar $wp_admin_bar ) {
 		$sale_percentage = '';
-		if ( YoastSEO()->classes->get( Promotion_Manager::class )->is( 'black-friday-2024-promotion' ) ) {
+		if ( YoastSEO()->classes->get( Promotion_Manager::class )->is( 'black-friday-2023-promotion' ) ) {
 			$sale_percentage = sprintf(
 				'<span class="admin-bar-premium-promotion">%1$s</span>',
-				esc_html__( '30% OFF', 'wordpress-seo' )
+				esc_html__( '-30%', 'wordpress-seo' )
 			);
 		}
 		$wp_admin_bar->add_menu(
@@ -853,20 +849,20 @@ class WPSEO_Admin_Bar_Menu implements WPSEO_WordPress_Integration {
 	/**
 	 * Gets the notification counter if in a valid context.
 	 *
-	 * @param int $notification_count Number of notifications.
-	 *
 	 * @return string Notification counter markup, or empty string if not available.
 	 */
-	protected function get_notification_counter( $notification_count ) {
+	protected function get_notification_counter() {
+		$notification_center = Yoast_Notification_Center::get();
+		$notification_count  = $notification_center->get_notification_count();
+
+		if ( ! $notification_count ) {
+			return '';
+		}
+
 		/* translators: Hidden accessibility text; %s: number of notifications. */
 		$counter_screen_reader_text = sprintf( _n( '%s notification', '%s notifications', $notification_count, 'wordpress-seo' ), number_format_i18n( $notification_count ) );
 
-		return sprintf(
-			' <div class="wp-core-ui wp-ui-notification yoast-issue-counter%s"><span class="yoast-issues-count" aria-hidden="true">%d</span><span class="screen-reader-text">%s</span></div>',
-			( $notification_count ) ? '' : ' wpseo-no-adminbar-notifications',
-			$notification_count,
-			$counter_screen_reader_text
-		);
+		return sprintf( ' <div class="wp-core-ui wp-ui-notification yoast-issue-counter"><span class="yoast-issues-count" aria-hidden="true">%d</span><span class="screen-reader-text">%s</span></div>', $notification_count, $counter_screen_reader_text );
 	}
 
 	/**

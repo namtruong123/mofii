@@ -1,1 +1,0 @@
-p¿Êg<?php exit; ?>a:1:{s:7:"content";s:66:"{{WP_CONTENT_DIR}}/themes/woodmart/woocommerce/content-product.php";}

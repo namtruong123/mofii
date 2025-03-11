@@ -1,0 +1,193 @@
+:root {
+	--em-background-color-primary: var( --em-color__primary );
+	--em-background-color-gray: #ebebeb;
+}
+
+@keyframes raise {
+	0% {
+		width: 36px;
+	}
+	100% {
+		width: var(--em-progress, 100%);
+	}
+}
+
+@keyframes move {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: var(--em-progress, 100%);
+	}
+}
+
+@keyframes raiseFull {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: calc( var(--em-progress, 100%) - 36px );
+	}
+}
+
+@keyframes moveFull {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: calc( var(--em-progress, 100%) - 36px );
+	}
+}
+
+.ecomus-free-shipping-bar {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.ecomus-free-shipping-bar.em-is-unreached {
+	--em-background-color-primary: #E0B252;
+}
+
+.ecomus-free-shipping-bar.em-is-success {
+	--em-background-color-primary: #428445;
+}
+
+.ecomus-free-shipping-bar__message {
+	color: var( --em-color__dark );
+	width: 100%;
+	margin-top: 29px;
+}
+
+.ecomus-free-shipping-bar__message strong {
+	text-transform: uppercase;
+}
+
+.ecomus-free-shipping-bar__progress {
+    width: 100%;
+    background-color: var(--em-background-color-gray);
+	display: flex;
+	height: 4px;
+	border-radius: var( --em-rounded-x );
+	position: relative;
+}
+
+.ecomus-free-shipping-bar__progress-bar {
+    background-color: var(--em-background-color-primary);
+    background-size: 15px 15px;
+	border-radius: var( --em-rounded-x );
+	height: 100%;
+	position: relative;
+	min-width: 36px;
+	width: var(--em-progress);
+	transition: all .5s ease .2s;
+}
+
+.ecomus-free-shipping-bar__icon {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 1px solid var( --em-background-color-primary );
+	border-radius: var( --em-rounded-x );
+	width: 36px;
+	height: 26px;
+	line-height: 28px;
+	text-align: center;
+	background-color: var( --em-color__light );
+	transition: all .5s ease .2s;
+}
+
+.rtl .ecomus-free-shipping-bar__icon {
+	right: auto;
+	left: 0;
+	transform: translateY(-50%) scaleX(-1);
+}
+
+.rtl .ecomus-free-shipping-bar--preload .ecomus-free-shipping-bar__icon {
+	right: auto;
+	left: 0;
+}
+
+.ecomus-free-shipping-bar--preload .ecomus-free-shipping-bar__progress-bar {
+	width: 36px;
+	min-width: 36px;
+	animation: raise 0.8s forwards;
+	animation-delay: 1s;
+}
+
+.em-is-success .ecomus-free-shipping-bar__message {
+	font-weight: 600;
+}
+
+.em-is-success .ecomus-free-shipping-bar__icon {
+	background-color: var( --em-background-color-primary );
+}
+
+.em-is-success .ecomus-free-shipping-bar__icon .ecomus-svg-icon {
+	color: var( --em-color__light );
+}
+
+.ecomus-free-shipping-bar__icon .ecomus-svg-icon {
+	font-size: 19px;
+	color: var( --em-background-color-primary );
+	transition: all .5s ease .2s;
+}
+
+.ecomus-free-shipping-bar__percent-value {
+	font-size: 13px;
+	font-weight: 500;
+	width: 50px;
+	text-align: right;
+	margin-top: -9px;
+	display: none;
+}
+
+.rtl .ecomus-free-shipping-bar__percent-value {
+	text-align: left;
+}
+
+.woocommerce-cart .site-content .ecomus-free-shipping-bar,
+.woocommerce-checkout .site-content .ecomus-free-shipping-bar {
+	border: 1px dashed var(--em-border-color);
+	padding: 42px 30px 25px;
+	margin-bottom: 25px;
+}
+
+.woocommerce-checkout .site-content .ecomus-free-shipping-bar {
+	margin-bottom: 25px;
+	padding-bottom: 20px;
+}
+
+.cart-panel .ecomus-free-shipping-bar {
+	padding: 15px 30px 20px;
+	position: relative;
+}
+
+.cart-panel .ecomus-free-shipping-bar__message {
+	font-size: 16px;
+	margin-top: 20px;
+	margin-bottom: 18px;
+}
+
+.cart-panel .ecomus-free-shipping-bar:after {
+	content: '';
+	bottom: 0;
+	height: 1px;
+	width: 100%;
+	background-color: var(--em-border-color);
+}
+
+.ecomus-popup-add-to-cart .ecomus-free-shipping-bar  {
+	padding-top: 20px;
+}
+
+.ecomus-free-shipping-bar + .widget_shopping_cart_content {
+	height: calc( 100% - 105px );
+}
+
+@media (max-width: 767px) {
+	.cart-panel .ecomus-free-shipping-bar__message {
+		font-size: 13px;
+	}
+}

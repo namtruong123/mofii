@@ -1,0 +1,121 @@
+.deal {
+	margin: 50px 0 40px;
+}
+
+.deal-expire-text,
+.deal-sold-text {
+	margin-bottom: 0.5em;
+	width: 40%;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.deal-progress .progress-bar,
+.deal-progress .progress-value {
+	height: 6px;
+}
+
+.deal-progress .progress-bar {
+	position: relative;
+	background: #F6F6F6;
+	margin-bottom: 3px;
+	border-radius: var( --em-rounded-xs );
+}
+
+.deal-progress .progress-value {
+	background-color: var( --em-color__primary );
+	border-radius: var( --em-rounded-xs ) 0 0 var( --em-rounded-xs );
+}
+
+.deal-progress .progress-value[style*="width: 100%"] {
+	border-radius: var( --em-rounded-xs );
+}
+
+.deal-expire-date {
+	margin-bottom: 20px;
+}
+
+.deal-expire-date,
+.deal-sold{
+	display: flex;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.deal-expire-countdown,
+.deal-progress{
+	overflow: hidden;
+	width: 100%;
+}
+
+.deal-progress .deal-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.deal-expire-countdown .timer,
+.deal-expire-countdown .divider {
+	text-align: center;
+	display: block;
+	float: left;
+}
+
+.deal-expire-countdown .timer {
+	width: 20%;
+}
+
+.deal-expire-countdown .divider {
+	font-size: 1.8em;
+	width: 6.3333%;
+	padding-top: 0.3em;
+}
+
+.deal-expire-countdown .timer span {
+	display: block;
+}
+
+.deal-expire-countdown .timer .digits {
+	font-size: 28px;
+	margin: 0 0 3px 0;
+	padding: 12px 8px;
+	min-width: 56px;
+	min-height: 56px;
+	border: 1px solid #ddd;
+	font-weight: 600;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #1d2128;
+}
+
+.deal-expire-countdown .timer .text,
+.deal-progress .deal-text {
+	font-size: 14px;
+}
+
+.deal-expire-countdown.ecomus-countdown {
+	justify-content: space-between;
+	overflow: inherit;
+}
+
+.deal-expire-countdown.ecomus-countdown .timer {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+
+.deal-expire-countdown.ecomus-countdown .divider {
+    font-size: 21px;
+    width: auto;
+	padding-top: 20px;
+	top: 0;
+    right: -13px;
+}
+
+.deal-expire-countdown.ecomus-countdown .timer .text{
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: capitalize;
+}

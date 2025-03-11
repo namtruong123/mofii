@@ -1,0 +1,141 @@
+.ecomus-popup {
+	z-index: 1100;
+	--em-modal-content-border-radius: 10px;
+}
+
+.ecomus-popup__close {
+	position: absolute;
+	right: calc( var(--em-modal-container-padding) + 20px );
+	top: calc( var(--em-modal-container-padding) + 15px );
+	color: var(--em-color__dark);
+	transition: color .2s;
+}
+
+.rtl .ecomus-popup__close {
+	right: auto;
+	left: calc( var(--em-modal-container-padding) + 20px );
+}
+
+.ecomus-popup__close:hover {
+	color: #db1215;
+}
+
+.ecomus-popup__close.outside {
+	display: none;
+}
+
+.ecomus-popup__wrapper {
+	--em-modal-content-padding-y: 0;
+	--em-modal-content-padding-x: 0;
+
+	overflow: visible;
+	z-index: 2;
+}
+
+@media (min-width: 1200px) {
+	.ecomus-popup__content {
+		--em-modal-container-padding: 0px;
+	}
+}
+
+@media (min-width: 768px) {
+	.ecomus-popup__close {
+		right: 20px;
+		top: 20px;
+	}
+
+	.rtl .ecomus-popup__close {
+		right: auto;
+		left: 20px;
+	}
+
+	.ecomus-popup-position--left-bottom .ecomus-popup__content {
+		top: auto;
+		bottom: 40px;
+		left: 30px;
+		right: auto;
+		transform: translateX(-100%);
+		transform: none;
+	}
+
+	.ecomus-popup-position--right-bottom .ecomus-popup__content {
+		top: auto;
+		bottom: 40px;
+		left: auto;
+		right: 30px;
+		transform: translateX(100%);
+		transform: none;
+	}
+
+	.ecomus-popup-position--left-top .ecomus-popup__content {
+		top: 40px;
+		bottom: auto;
+		left: 30px;
+		right: auto;
+		transform: translateX(100%);
+		transform: none;
+	}
+
+	.ecomus-popup-position--center-bottom .ecomus-popup__content {
+		top: auto;
+		bottom: auto;
+		left: 30px;
+		right: auto;
+		transform: translateY(-100%);
+		transform: none;
+	}
+
+	.ecomus-popup.hide-overlay .ecomus-popup__backdrop {
+		display: none;
+	}
+
+	.ecomus-popup.hide-overlay {
+		pointer-events: none;
+	}
+
+	.ecomus-popup.hide-overlay .ecomus-popup__content  {
+		pointer-events: auto;
+	}
+
+}
+
+@media (max-width: 767px) {
+	.ecomus-popup__close {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 12px;
+		width: 44px;
+		height: 44px;
+		color: #000000;
+		background-color: #ffffff;
+		position: static;
+		margin-bottom: 10px;
+		cursor: pointer;
+		border-radius: 50px;
+	}
+
+	.ecomus-popup__close.outside {
+		display: inline-flex;
+	}
+
+	.ecomus-popup__close.inside {
+		display: none;
+	}
+
+	.ecomus-popup__content {
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.ecomus-popup__wrapper {
+		max-height: 80%;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	.ecomus-popup.hide-overlay-mobile .ecomus-popup__backdrop {
+		display: none;
+	}
+}

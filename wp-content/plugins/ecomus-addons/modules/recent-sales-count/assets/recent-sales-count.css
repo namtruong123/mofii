@@ -1,0 +1,44 @@
+@keyframes flash {
+	50%,
+    from,
+    to {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.ecomus-recent-sales-count {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.ecomus-recent-sales-count__text {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--em-color__dark);
+}
+
+.ecomus-recent-sales-count__icon {
+    display: inline-flex;
+    font-size: 20px;
+    color: var(--em-color__primary);
+    margin-right: 5px;
+    animation: flash 2s linear infinite;
+}
+
+.rtl .ecomus-recent-sales-count__icon {
+    margin-left: 3px;
+    margin-right: 0;
+}
+
+.ecomus-recent-sales-count__numbers {
+    margin: 0 5px;
+}

@@ -1,0 +1,352 @@
+.dynamic-pricing-discounts {
+    margin-bottom: 33px;
+}
+
+.dynamic-pricing-discounts--below {
+    margin-top: 30px;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item {
+    padding: 18px 16px 20px;
+    background-color: #f6f6f6;
+    border-radius: var(--em-rounded-md);
+    margin-bottom: 18px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: .4s;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item:last-child {
+    margin-bottom: 0;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item.active {
+    border-color: #000000;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item {
+    border-radius: var(--em-rounded-md);
+    cursor: pointer;
+    padding: 24px 16px 20px;
+    border: 1px solid #e9e9e9;
+    transition: .4s;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item.active {
+    background-color: #fcf2f2;
+    border-color: #ed2424;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item__summary {
+    column-gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 9px;
+}
+
+.dynamic-pricing-discounts-item input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item input[type="radio"] {
+    margin-top: 2px;
+    margin-right: 12px;
+}
+
+.rtl .dynamic-pricing-discounts--list .dynamic-pricing-discounts-item input[type="radio"] {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item input[type="radio"] {
+    width: 14px;
+    height: 14px;
+    margin: 0 0 3px 0;
+}
+
+.dynamic-pricing-discounts-item:not(.active):hover input[type="radio"]::after {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border: none;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.rtl .dynamic-pricing-discounts-item:not(.active):hover input[type="radio"]::after {
+    left: auto;
+    right: 4px;
+}
+
+.dynamic-pricing-discounts-item:not(.active):hover label {
+    cursor: pointer;
+    color: #000;
+}
+
+.dynamic-pricing-discounts-item__summary input[type="radio"]::before {
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #000;
+}
+
+.rtl .dynamic-pricing-discounts-item__summary input[type="radio"]::before {
+    left: auto;
+    right: 0;
+}
+
+.dynamic-pricing-discounts-item__summary input[type="radio"]:checked::before {
+    background-color: #fff;
+}
+
+.dynamic-pricing-discounts-item__summary input[type="radio"]:checked::after {
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border: none;
+    background-color: #000;
+}
+
+.rtl .dynamic-pricing-discounts-item__summary input[type="radio"]:checked::after {
+    left: auto;
+    right: 4px;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item label {
+    font-size: 16px;
+    line-height: 19.2px;
+    transition: 0.3s;
+}
+
+.dynamic-pricing-discounts-item__discount {
+    display: inline-block;
+    width: max-content;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+    border-radius: 16px;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item__discount {
+    padding: 3px 15px;
+    background-color: #f18506;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item__discount {
+    padding: 3px 12px;
+    background-color: #000;
+    margin-top: 3px;
+    margin-left: auto;
+}
+
+.rtl .dynamic-pricing-discounts--list .dynamic-pricing-discounts-item__discount {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.dynamic-pricing-discounts--list .dynamic-pricing-discounts-item__price {
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item__price {
+    align-items: center;
+    justify-content: center;
+}
+
+.dynamic-pricing-discounts-item__price > span:first-child {
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.single-product div.product .dynamic-pricing-discounts-item__price .price {
+    margin: 0 0 0 9px;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.single-product div.product .dynamic-pricing-discounts-item__price .price del {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--em-color__dark);
+    opacity: .3;
+}
+
+.single-product div.product .dynamic-pricing-discounts-item__price .price ins {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--em-color__dark);
+    background: none;
+    margin-left: 3px;
+}
+
+.single-product div.product .dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item__price .price del {
+    font-size: 12px;
+    opacity: 1;
+}
+
+.single-product div.product .dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item__price .price ins {
+    font-size: 14px;
+    color: #fc0510;
+}
+
+.rtl.single-product div.product .dynamic-pricing-discounts-item__price .price {
+    margin: 0 9px 0 0;
+}
+
+.rtl.single-product div.product .dynamic-pricing-discounts-item__price .price ins {
+    margin-right: 3px;
+    margin-left: 0;
+}
+
+.dynamic-pricing-discounts-item__price .price .sale-off {
+    display: none;
+}
+
+.dynamic-pricing-discounts-item__price .em-price-unit {
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
+}
+
+.dynamic-pricing-discounts__button {
+    margin-top: 16px;
+    width: 100%;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.dynamic-pricing-discounts__button.em-loading-spin {
+    --em-loading-color: #fff;
+
+    color: #fff;
+}
+
+.dynamic-pricing-discounts__button.em-loading-spin.loading {
+    color: transparent;
+}
+
+.dynamic-pricing-discounts__button::before {
+    opacity: 0;
+}
+
+.dynamic-pricing-discounts__button.loading::before {
+    opacity: 1;
+}
+
+.dynamic-pricing-discounts--grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+    padding-top: 8px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item {
+    width: calc( ( 100% / 3 ) - ( 20px / 3 ) );
+    min-width: 150px;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item__summary {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.dynamic-pricing-discounts-item__thumbnail {
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: max( 8px, var(--em-image-rounded-product-thumbnail) );
+}
+
+.dynamic-pricing-discounts-item__thumbnail img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.dynamic-pricing-discounts--grid .dynamic-pricing-discounts-item__form {
+    font-size: 16px;
+    line-height: 1;
+    margin-top: -3px;
+}
+
+.dynamic-pricing-discounts-item__popular {
+    --em-popular-bg-color: #ed2424;
+
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    top: -8px;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.dynamic-pricing-discounts-item__popular::before {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 0 0 8px 6px;
+    border-color: transparent transparent var(--em-popular-bg-color) transparent;
+    top: 0;
+    left: 1px;
+    transform: translate(-100%);
+    filter: brightness(0.8);
+}
+
+.dynamic-pricing-discounts-item__popular::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 0 6px 8px 0;
+    border-color: transparent transparent var(--em-popular-bg-color) transparent;
+    top: 0;
+    right: 1px;
+    transform: translate(100%);
+    filter: brightness(0.8);
+}
+
+.dynamic-pricing-discounts-item__popular-badges {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px;
+    border-radius: 0;
+    background-color: var(--em-popular-bg-color);
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    padding: 3px 6px;
+}
+
+.dynamic-pricing-discounts-item__popular-badges .text {
+    white-space: nowrap;
+}
+
+.dynamic-pricing-discounts-item.active .dynamic-pricing-discounts-item__popular {
+    --em-popular-bg-color: #000000;
+}
+
+@media (max-width: 1024px) {
+    .dynamic-pricing-discounts-item__discount {
+        margin-top: 0;
+    }
+}

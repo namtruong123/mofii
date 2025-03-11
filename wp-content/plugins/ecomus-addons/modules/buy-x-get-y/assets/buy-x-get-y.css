@@ -1,0 +1,212 @@
+.ecomus-buy-x-get-y {
+    margin-top: 30px;
+    padding: 25px 15px 15px;
+    border: 1px solid #000;
+    border-radius: min( var(--em-rounded-md), 8px );
+}
+
+.ecomus-buy-x-get-y__heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.ecomus-buy-x-get-y__heading::before,
+.ecomus-buy-x-get-y__heading::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    vertical-align: middle;
+    background-color: #000;
+}
+
+.ecomus-buy-x-get-y__heading span {
+    margin: 0 30px;
+}
+
+.ecomus-buy-x-get-y__line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 0;
+}
+
+.ecomus-buy-x-get-y__line::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 2px;
+    background-color: #000;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.ecomus-buy-x-get-y__line span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #000;
+    border-radius: 9999em;
+    width: 35px;
+    height: 35px;
+}
+
+.ecomus-buy-x-get-y__line span::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 3px;
+    border-radius: 9999em;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ecomus-buy-x-get-y__line span::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 3px;
+    height: 15px;
+    border-radius: 9999em;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ecomus-buy-x-get-y__products {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 10px 10px 10px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .15);
+}
+
+.ecomus-buy-x-get-y__product {
+    display: flex;
+    gap: 10px;
+}
+
+.ecomus-buy-x-get-y__product.out-of-stock {
+    opacity: 0.6;
+}
+
+.ecomus-buy-x-get-y__product .product-thumbnail {
+    position: relative;
+}
+.ecomus-buy-x-get-y__product .product-thumbnail.change img {
+    opacity: 0;
+}
+
+.ecomus-buy-x-get-y__product .product-thumbnail.change img.product-thumbnail__new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+.ecomus-buy-x-get-y__product img {
+    max-width: 100px;
+}
+
+.ecomus-buy-x-get-y__product-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ecomus-buy-x-get-y__product .woocommerce-loop-product__title {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.ecomus-buy-x-get-y__product .woocommerce-loop-product__title .stock {
+	color: #db1215;
+	font-weight: 600;
+}
+
+.ecomus-buy-x-get-y__product .price {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: #585858;
+    line-height: 1;
+}
+
+.ecomus-buy-x-get-y__product .price ins {
+    color: #e91f1f;
+    background: none;
+}
+
+.ecomus-buy-x-get-y__product .price .badges {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 600;
+    color: #fff;
+    background-color: #e91f1f;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.ecomus-buy-x-get-y__product .qty {
+    font-size: 12px;
+    color: #8e8e8e;
+    font-weight: 500;
+}
+
+.ecomus-buy-x-get-y__product .attributes select {
+    padding: 8px 25px 8px 10px;
+    background-position: calc(100% - 10px) center;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.ecomus-buy-x-get-y__total .text {
+    color: #000;
+    font-weight: 500;
+}
+
+.ecomus-buy-x-get-y__button {
+    margin-top: 15px;
+}
+
+.ecomus-buy-x-get-y__button button {
+    --em-button-border-color: #f37b7b;
+    --em-button-border-color-hover: #f37b7b;
+    --em-button-bg-color: #f37b7b;
+    --em-button-bg-color-hover: #f37b7b;
+    --em-button-color: #fff;
+
+    width: 100%;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .ecomus-buy-x-get-y__product .attributes select {
+        font-size: 14px;
+    }
+}

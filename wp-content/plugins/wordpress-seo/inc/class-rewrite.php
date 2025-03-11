@@ -17,7 +17,7 @@ class WPSEO_Rewrite {
 		add_filter( 'query_vars', [ $this, 'query_vars' ] );
 		add_filter( 'term_link', [ $this, 'no_category_base' ], 10, 3 );
 		add_filter( 'request', [ $this, 'request' ] );
-		add_filter( 'category_rewrite_rules', [ $this, 'category_rewrite_rules_wrapper' ] );
+		add_filter( 'category_rewrite_rules', [ $this, 'category_rewrite_rules' ] );
 
 		add_action( 'created_category', [ $this, 'schedule_flush' ] );
 		add_action( 'edited_category', [ $this, 'schedule_flush' ] );
@@ -32,9 +32,7 @@ class WPSEO_Rewrite {
 	 * @return void
 	 */
 	public function schedule_flush() {
-		if ( WPSEO_Options::get( 'stripcategorybase' ) === true ) {
-			add_action( 'shutdown', 'flush_rewrite_rules' );
-		}
+		add_action( 'shutdown', 'flush_rewrite_rules' );
 	}
 
 	/**
@@ -47,10 +45,6 @@ class WPSEO_Rewrite {
 	 * @return string
 	 */
 	public function no_category_base( $link, $term, $taxonomy ) {
-		if ( WPSEO_Options::get( 'stripcategorybase' ) !== true ) {
-			return $link;
-		}
-
 		if ( $taxonomy !== 'category' ) {
 			return $link;
 		}
@@ -97,31 +91,12 @@ class WPSEO_Rewrite {
 	 * @return array<string> The query vars.
 	 */
 	public function request( $query_vars ) {
-		if ( WPSEO_Options::get( 'stripcategorybase' ) !== true ) {
-			return $query_vars;
-		}
-
 		if ( ! isset( $query_vars['wpseo_category_redirect'] ) ) {
 			return $query_vars;
 		}
 
 		$this->redirect( $query_vars['wpseo_category_redirect'] );
 		return [];
-	}
-
-	/**
-	 * Wrapper for the category_rewrite_rules() below, so we can add the $rules param in a BC way.
-	 *
-	 * @param array<string> $rules Rewrite rules generated for the current permastruct, keyed by their regex pattern.
-	 *
-	 * @return array<string> The category rewrite rules.
-	 */
-	public function category_rewrite_rules_wrapper( $rules ) {
-		if ( WPSEO_Options::get( 'stripcategorybase' ) !== true ) {
-			return $rules;
-		}
-
-		return $this->category_rewrite_rules();
 	}
 
 	/**
@@ -194,10 +169,7 @@ class WPSEO_Rewrite {
 	protected function add_category_rewrites( $rewrites, $category_name, $blog_prefix, $pagination_base ) {
 		$rewrite_name = $blog_prefix . '(' . $category_name . ')';
 
-		global $wp_rewrite;
-		$feed_regex = '(' . implode( '|', $wp_rewrite->feeds ) . ')';
-
-		$rewrites[ $rewrite_name . '/(?:feed/)?' . $feed_regex . '/?$' ]         = 'index.php?category_name=$matches[1]&feed=$matches[2]';
+		$rewrites[ $rewrite_name . '/(?:feed/)?(feed|rdf|rss|rss2|atom)/?$' ]    = 'index.php?category_name=$matches[1]&feed=$matches[2]';
 		$rewrites[ $rewrite_name . '/' . $pagination_base . '/?([0-9]{1,})/?$' ] = 'index.php?category_name=$matches[1]&paged=$matches[2]';
 		$rewrites[ $rewrite_name . '/?$' ]                                       = 'index.php?category_name=$matches[1]';
 

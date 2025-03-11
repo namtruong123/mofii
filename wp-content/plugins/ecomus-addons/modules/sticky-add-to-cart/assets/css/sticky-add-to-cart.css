@@ -1,0 +1,292 @@
+body {
+	padding-bottom: var(--em-atc-sticky-height, 0);
+}
+
+.ecomus-sticky-add-to-cart {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -9999;
+	overflow: hidden;
+	background-color: #ffffff;
+	transition: transform .3s;
+	opacity: 0;
+	transform: translate3d(0,100%,0);
+	box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.16);
+}
+
+.ecomus-sticky-add-to-cart.open {
+	overflow: initial;
+	opacity: 1;
+	z-index: 800;
+    transform: translate3d(0,0,0);
+}
+
+.ecomus-sticky-add-to-cart .single_add_to_cart_button {
+	font-weight: 600;
+	height: 46px;
+	min-width: 190px;
+}
+
+.ecomus-sticky-add-to-cart.sold-individually form.cart .quantity{display:  none;}
+
+.ecomus-sticky-add-to-cart .single_add_to_cart_button.loading {
+	--em-loading-color: #fff;
+	--em-animation-state: running;
+
+	position: relative;
+	color: transparent;
+	--em-button-color: transparent;
+}
+
+.ecomus-sticky-add-to-cart .single_add_to_cart_button.loading::before {
+	display: inline-block;
+	content: "";
+	width: 18px;
+	height: 18px;
+	border-radius: 100%;
+	border: solid 2px var(--em-loading-color);
+	border-top-color: transparent;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	animation: spin .6s linear infinite var(--em-animation-state);
+}
+
+.ecomus-sticky-add-to-cart .single_add_to_cart_button .divide,
+.ecomus-sticky-add-to-cart .single_add_to_cart_button .price {
+	display: none;
+}
+
+.ecomus-sticky-add-to-cart .single_variation_wrap .woocommerce-variation-price,
+.ecomus-sticky-add-to-cart .single_variation_wrap .em-product-item__data,
+.ecomus-sticky-add-to-cart .single_variation_wrap .woocommerce-variation-availability {
+	display: none;
+}
+
+.ecomus-sticky-atc__content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ecomus-sticky-atc__image {
+	width: 80px;
+	height: 80px;
+	min-width: 80px;
+	margin-right: 15px;
+	position: relative;
+}
+
+.rtl .ecomus-sticky-atc__image {
+	margin-left: 15px;
+	margin-right: 0;
+}
+
+.ecomus-sticky-atc__image img {
+	position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100px;
+}
+
+.ecomus-sticky-atc__product-info {
+	padding-right: 30px;
+}
+
+.rtl .ecomus-sticky-atc__product-info  {
+	padding-left: 30px;
+	padding-right: 0;
+}
+
+.ecomus-sticky-atc__title {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 24px;
+	color: var(--em-color__dark);
+}
+
+.ecomus-sticky-add-to-cart .quantity {
+	margin: 0 10px;
+}
+
+.ecomus-sticky-add-to-cart  .em-buy-now-button {
+	display: none;
+}
+
+.ecomus-sticky-add-to-cart .buy-now-before-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.ecomus-sticky-add-to-cart .ecomus-sticky-atc__content {
+	padding: 10px 0;
+}
+
+.ecomus-sticky-add-to-cart .ecomus-sticky-atc__actions,
+.ecomus-sticky-add-to-cart .ecomus-sticky-atc__actions form {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+}
+
+.rtl .ecomus-sticky-add-to-cart .ecomus-sticky-atc__actions,
+.rtl .ecomus-sticky-add-to-cart .ecomus-sticky-atc__actions form {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.ecomus-sticky-add-to-cart .ecomus-sticky-atc__actions select {
+	padding-top: 13px;
+	padding-bottom: 13px;
+}
+
+.ecomus-sticky-atc__actions table.variations {
+	margin: 0;
+}
+
+.ecomus-sticky-atc__actions table.variations tbody {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	height: 100%;
+}
+
+.ecomus-sticky-atc__actions table.variations .value {
+	padding: 0;
+	border-bottom: none;
+}
+
+.ecomus-sticky-atc__actions table.variations .label {
+	display: none;
+	border-bottom: none;
+}
+
+.ecomus-sticky-atc__actions table.variations .value select {
+	width: auto;
+	padding-right: 35px;
+}
+
+.ecomus-sticky-atc__actions table.variations .value .reset_variations {
+	display: none !important;
+}
+
+.ecomus-sticky-atc__actions .single_variation_wrap {
+	width: 100%;
+}
+
+.ecomus-sticky-atc__actions .woocommerce-variation .woocommerce-variation-description,
+.ecomus-sticky-atc__actions .woocommerce-variation .woocommerce-variation-price,
+.ecomus-sticky-atc__actions .woocommerce-variation .woocommerce-variation-availability {
+	display: none;
+}
+
+.ecomus-sticky-add-to-cart.variations-custom .ecomus-sticky-atc__price {
+	display: none;
+}
+
+.ecomus-sticky-atc__price {
+	margin-top: 5px;
+	font-weight: 600;
+	color: var(--em-color__dark);
+}
+
+.ecomus-sticky-atc__price del {
+	color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+
+.ecomus-sticky-atc__price ins {
+	background: transparent;
+}
+
+.ecomus-sticky-atc__price .em-price-unit {
+	margin-left: 3px;
+}
+
+.ecomus-sticky-add-to-cart.product-variable .em-add-to-cart-options {
+	display: none;
+}
+
+.ecomus-sticky-atc__buttons {
+	display: flex;
+	align-items: center;
+}
+
+.ecomus-sticky-atc__actions  .product-featured-icons,
+.ecomus-sticky-atc__actions  .product-size-guide {
+	display: none;
+}
+
+.ecomus-atc-sticky-height-open .live-sales-notification,
+.ecomus-atc-sticky-height-open .em-button-go-top {
+	bottom: calc( var(--em-atc-sticky-height) + 10px );
+}
+
+@media (max-width: 1200px) {
+	.ecomus-sticky-add-to-cart.variations-custom .ecomus-sticky-atc__title {
+		display: none;
+	}
+
+	.ecomus-sticky-add-to-cart.product-variable .ecomus-sticky-atc__actions form.variations_form {
+		display: none;
+	}
+
+	.ecomus-sticky-add-to-cart.product-variable .em-add-to-cart-options {
+		display: block;
+	}
+
+}
+
+@media (max-width: 767px) {
+	.ecomus-sticky-atc__image,
+	.ecomus-sticky-atc__product-info{
+		display: none;
+	}
+
+	.ecomus-sticky-add-to-cart .ecomus-sticky-atc__actions,
+	.ecomus-sticky-add-to-cart .ecomus-sticky-atc__actions form {
+		margin-left: 0;
+		width: 100%;
+	}
+
+	.ecomus-sticky-add-to-cart .buy-now-before-wrapper {
+		width: 100%;
+	}
+
+	.ecomus-sticky-add-to-cart.variations-custom .ecomus-sticky-atc__actions form {
+		flex-direction: column;
+	}
+
+	.ecomus-sticky-add-to-cart .ecomus-sticky-atc__variations,
+	.ecomus-sticky-add-to-cart .ecomus-sticky-atc__variations select {
+		width: 100%;
+	}
+
+	.ecomus-sticky-add-to-cart .quantity {
+		margin-left: 0;
+	}
+
+	.rtl .ecomus-sticky-add-to-cart .quantity {
+		margin-left: 10px;
+		margin-right: 0;
+	}
+
+	.ecomus-sticky-atc__buttons {
+		margin-top: 10px;
+		width: 100%;
+	}
+
+	.ecomus-sticky-add-to-cart .single_add_to_cart_button {
+		width: 100%;
+	}
+
+}

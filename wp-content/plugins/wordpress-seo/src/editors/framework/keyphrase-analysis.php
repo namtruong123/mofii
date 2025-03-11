@@ -2,15 +2,12 @@
 
 namespace Yoast\WP\SEO\Editors\Framework;
 
-use Yoast\WP\SEO\Editors\Domain\Analysis_Features\Analysis_Feature_Interface;
 use Yoast\WP\SEO\Helpers\Options_Helper;
 
 /**
  * Describes how it is determined if the Keyphrase analysis is turned on.
  */
 class Keyphrase_Analysis implements Analysis_Feature_Interface {
-
-	public const NAME = 'keyphraseAnalysis';
 
 	/**
 	 * The options helper.
@@ -61,7 +58,7 @@ class Keyphrase_Analysis implements Analysis_Feature_Interface {
 	 * @return string The name.
 	 */
 	public function get_name(): string {
-		return self::NAME;
+		return 'keyphraseAnalysis';
 	}
 
 	/**

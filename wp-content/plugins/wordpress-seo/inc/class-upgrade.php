@@ -103,6 +103,10 @@ class WPSEO_Upgrade {
 			add_action( 'init', [ $this, 'upgrade_125' ] );
 		}
 
+		// Since 3.7.
+		$upsell_notice = new WPSEO_Product_Upsell_Notice();
+		$upsell_notice->set_upgrade_notice();
+
 		/**
 		 * Filter: 'wpseo_run_upgrade' - Runs the upgrade hook which are dependent on Yoast SEO.
 		 *
@@ -150,9 +154,9 @@ class WPSEO_Upgrade {
 	 */
 	protected function finish_up( $previous_version = null ) {
 		if ( $previous_version ) {
-			WPSEO_Options::set( 'previous_version', $previous_version, 'wpseo' );
+			WPSEO_Options::set( 'previous_version', $previous_version );
 		}
-		WPSEO_Options::set( 'version', WPSEO_VERSION, 'wpseo' );
+		WPSEO_Options::set( 'version', WPSEO_VERSION );
 
 		// Just flush rewrites, always, to at least make them work after an upgrade.
 		add_action( 'shutdown', 'flush_rewrite_rules' );

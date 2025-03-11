@@ -1,7 +1,4 @@
 <?php
-/** Enable W3 Total Cache */
-define('WP_CACHE', true); // Added by W3 Total Cache
-
 /**
  * The base configuration for WordPress
  *
@@ -16,7 +13,7 @@ define('WP_CACHE', true); // Added by W3 Total Cache
  * * Database table prefix
  * * ABSPATH
  *
- * @link https://wordpress.org/documentation/article/editing-wp-config-php/
+ * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/
  *
  * @package WordPress
  */
@@ -26,7 +23,7 @@ define('WP_CACHE', true); // Added by W3 Total Cache
 define( 'DB_NAME', 'mofii' );
 
 /** Database username */
-define( 'DB_USER', 'mofii' );
+define( 'DB_USER', '' );
 
 /** Database password */
 define( 'DB_PASSWORD', '' );
@@ -51,14 +48,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'YC*.Zq`*d3=88k=OY&:{XGHuwy5RVNYH:7G/bV^fCC;r%]n]qoJ]+WY5O5c>ucC@' );
-define( 'SECURE_AUTH_KEY',  'X>*wjS]4i4k)ijr)=Lf./yfT8Q]yCg8lXKb{? Y_!:ncL]D<z{8p~K7}10xbOt@;' );
-define( 'LOGGED_IN_KEY',    'J-UtW/O@Shy>u sv=|>NTzHJ]TFr?6w_{pWF=L=`Q+pg1Fb UU>pg :#[)ypN`QY' );
-define( 'NONCE_KEY',        '<>?<UJ^1*&R1Pn(`X0Jrt#/o<ww%K>Y`;jBc!f<x&gOf@elM~,}qe.hu*Wb#f(/5' );
-define( 'AUTH_SALT',        '&.B?D.]8Vk;~C|1WNgWK)wn5L@J*n*dydUrv+jP-SG#yI1(=0L+dMF+C@CYU{i7~' );
-define( 'SECURE_AUTH_SALT', 'vKy0IQ}/*l*U@fVrDbt@CMd%aM;^gC<#t`NSa]^4#!+EH@~epk*e#zvH>hA@.bOO' );
-define( 'LOGGED_IN_SALT',   'u%YHha_MUrJkyVyUa]MnB[y.J0h#Fo/f/jfBKIa%Ib^7{J+1o=D,QMDm+RI)Qni8' );
-define( 'NONCE_SALT',       '5zXF{)!py3,|[Uz&,O^QpJASu9LIY359hiv~7RZIY1Kwqa?~Wapi)UqCK2mtk7}5' );
+define( 'AUTH_KEY',         '~-u:Fm]q@U,b~mM0RY#DdH3eZ+ $}ONP;{?@7C,ZkL DP=y(k9cA:H#Qc-u6pE+c' );
+define( 'SECURE_AUTH_KEY',  '+q)gG0q8oPvM#.k7 `>{7p.--%4jcTaa.vZfr|mRpKzp9Ax,YY6G/Y>}+l|*vw=R' );
+define( 'LOGGED_IN_KEY',    '(pW9QGNzw3[&9U`*7yPCfgIpTAMz|~<iJfKs=9Ku ,$-%K9Q-zZQS$Eq}j|glZpX' );
+define( 'NONCE_KEY',        'NUi&D+htvR|$O,nfF.^yJ@gGb!wTu@3]bc.OT@T,_i@S(]#aLK=OY{Aw&kTZ*0vx' );
+define( 'AUTH_SALT',        'ZODg i6qNwx&$:;@md7Kmxw)`4S?QPMfnb%).0]EjT>D4mFf!FwVuXRuU,WKZ YO' );
+define( 'SECURE_AUTH_SALT', '9WiUaG%Cff-Q>D8t7;PZSR97@+7Ko(tb@kI]]*&qU+rfhm@C|O]?. %b!|8*zB#-' );
+define( 'LOGGED_IN_SALT',   'RhEvVjY:;8zC,y@8n nW-SG|#mv|)Qw!4!=LZ6eDKaDo}AD??&%9*%((;>JO[QUT' );
+define( 'NONCE_SALT',       'Nf2N6?qgbS>-*_6Cv5hv?{5U/Cj(eenCvlIXF,VZ%>Us2/H0TyT9hShz0 }4o`e%' );
 
 /**#@-*/
 
@@ -67,6 +64,12 @@ define( 'NONCE_SALT',       '5zXF{)!py3,|[Uz&,O^QpJASu9LIY359hiv~7RZIY1Kwqa?~Wap
  *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
+ *
+ * At the installation time, database tables are created with the specified prefix.
+ * Changing this value after WordPress is installed will make your site think
+ * it has not been installed.
+ *
+ * @link https://developer.wordpress.org/advanced-administration/wordpress/wp-config/#table-prefix
  */
 $table_prefix = 'wp_admin';
 
@@ -80,7 +83,7 @@ $table_prefix = 'wp_admin';
  * For information on other constants that can be used for debugging,
  * visit the documentation.
  *
- * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
+ * @link https://developer.wordpress.org/advanced-administration/debug/debug-wordpress/
  */
 define( 'WP_DEBUG', false );
 

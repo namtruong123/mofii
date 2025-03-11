@@ -1,0 +1,23 @@
+.ecomus-people-view {
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ecomus-people-view__numbers {
+    line-height: 1;
+    color: var(--em-color__light);
+    background-color: var(--em-color__dark);
+    padding: 3.5px 9px;
+    border-radius: var(--em-rounded-xs);
+    margin-right: 6px;
+}
+
+.rtl .ecomus-people-view__numbers {
+    margin-left: 6px;
+    margin-right: 0;
+}
+
+.ecomus-people-view__text {
+    color: var(--em-color__dark);
+}

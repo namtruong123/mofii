@@ -3,7 +3,6 @@
 namespace Yoast\WP\SEO\Integrations\Admin;
 
 use Yoast\WP\SEO\Conditionals\No_Conditionals;
-use Yoast\WP\SEO\Helpers\Indexable_Helper;
 use Yoast\WP\SEO\Helpers\Options_Helper;
 use Yoast\WP\SEO\Integrations\Cleanup_Integration;
 use Yoast\WP\SEO\Integrations\Integration_Interface;
@@ -16,13 +15,6 @@ class Activation_Cleanup_Integration implements Integration_Interface {
 	use No_Conditionals;
 
 	/**
-	 * The indexable helper.
-	 *
-	 * @var Indexable_Helper
-	 */
-	protected $indexable_helper;
-
-	/**
 	 * The options helper.
 	 *
 	 * @var Options_Helper
@@ -32,15 +24,12 @@ class Activation_Cleanup_Integration implements Integration_Interface {
 	/**
 	 * Activation_Cleanup_Integration constructor.
 	 *
-	 * @param Options_Helper   $options_helper   The options helper.
-	 * @param Indexable_Helper $indexable_helper The indexable helper.
+	 * @param Options_Helper $options_helper The options helper.
 	 */
 	public function __construct(
-		Options_Helper $options_helper,
-		Indexable_Helper $indexable_helper
+		Options_Helper $options_helper
 	) {
-		$this->options_helper   = $options_helper;
-		$this->indexable_helper = $indexable_helper;
+		$this->options_helper = $options_helper;
 	}
 
 	/**
@@ -58,9 +47,6 @@ class Activation_Cleanup_Integration implements Integration_Interface {
 	 * @return void
 	 */
 	public function register_cleanup_routine() {
-		if ( ! $this->indexable_helper->should_index_indexables() ) {
-			return;
-		}
 		$first_activated_on = $this->options_helper->get( 'first_activated_on', false );
 
 		if ( ! $first_activated_on || \time() > ( $first_activated_on + ( \MINUTE_IN_SECONDS * 5 ) ) ) {

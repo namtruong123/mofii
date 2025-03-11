@@ -6,7 +6,6 @@ use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Indexation_Action;
 use Yoast\WP\SEO\Conditionals\Migrations_Conditional;
 use Yoast\WP\SEO\Config\Indexing_Reasons;
 use Yoast\WP\SEO\Helpers\Attachment_Cleanup_Helper;
-use Yoast\WP\SEO\Helpers\Indexable_Helper;
 use Yoast\WP\SEO\Helpers\Indexing_Helper;
 use Yoast\WP\SEO\Integrations\Cleanup_Integration;
 use Yoast\WP\SEO\Integrations\Integration_Interface;
@@ -32,13 +31,6 @@ class Indexable_Attachment_Watcher implements Integration_Interface {
 	protected $attachment_cleanup;
 
 	/**
-	 * The indexable helper.
-	 *
-	 * @var Indexable_Helper
-	 */
-	protected $indexable_helper;
-
-	/**
 	 * The notifications center.
 	 *
 	 * @var Yoast_Notification_Center
@@ -48,7 +40,7 @@ class Indexable_Attachment_Watcher implements Integration_Interface {
 	/**
 	 * Returns the conditionals based on which this loadable should be active.
 	 *
-	 * @return array<string> The conditionals.
+	 * @return array
 	 */
 	public static function get_conditionals() {
 		return [ Migrations_Conditional::class ];
@@ -60,18 +52,15 @@ class Indexable_Attachment_Watcher implements Integration_Interface {
 	 * @param Indexing_Helper           $indexing_helper     The indexing helper.
 	 * @param Attachment_Cleanup_Helper $attachment_cleanup  The attachment cleanup helper.
 	 * @param Yoast_Notification_Center $notification_center The notification center.
-	 * @param Indexable_Helper          $indexable_helper    The indexable helper.
 	 */
 	public function __construct(
 		Indexing_Helper $indexing_helper,
 		Attachment_Cleanup_Helper $attachment_cleanup,
-		Yoast_Notification_Center $notification_center,
-		Indexable_Helper $indexable_helper
+		Yoast_Notification_Center $notification_center
 	) {
 		$this->indexing_helper     = $indexing_helper;
 		$this->attachment_cleanup  = $attachment_cleanup;
 		$this->notification_center = $notification_center;
-		$this->indexable_helper    = $indexable_helper;
 	}
 
 	/**
@@ -90,12 +79,9 @@ class Indexable_Attachment_Watcher implements Integration_Interface {
 	 * either it cleans up attachment indexables when it has been toggled to true,
 	 * or it starts displaying a notification for the user to start a new SEO optimization.
 	 *
-	 * @phpcs:disable SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification
-	 *
 	 * @param array $old_value The old value of the wpseo_titles option.
 	 * @param array $new_value The new value of the wpseo_titles option.
 	 *
-	 * @phpcs:enable
 	 * @return void
 	 */
 	public function check_option( $old_value, $new_value ) {
@@ -133,7 +119,7 @@ class Indexable_Attachment_Watcher implements Integration_Interface {
 					$this->attachment_cleanup->remove_attachment_indexables( false );
 					$this->attachment_cleanup->clean_attachment_links_from_target_indexable_ids( false );
 
-					if ( $this->indexable_helper->should_index_indexables() && ! \wp_next_scheduled( Cleanup_Integration::START_HOOK ) ) {
+					if ( ! \wp_next_scheduled( Cleanup_Integration::START_HOOK ) ) {
 						// This just schedules the cleanup routine cron again.
 						\wp_schedule_single_event( ( \time() + ( \MINUTE_IN_SECONDS * 5 ) ), Cleanup_Integration::START_HOOK );
 					}

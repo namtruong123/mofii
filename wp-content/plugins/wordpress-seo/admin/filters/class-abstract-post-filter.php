@@ -61,7 +61,7 @@ abstract class WPSEO_Abstract_Post_Filter implements WPSEO_WordPress_Integration
 			add_action( 'restrict_manage_posts', [ $this, 'render_hidden_input' ] );
 		}
 
-		if ( $this->is_filter_active() ) {
+		if ( $this->is_filter_active() && $this->get_explanation() !== null ) {
 			add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_explanation_assets' ] );
 		}
 	}
@@ -83,19 +83,13 @@ abstract class WPSEO_Abstract_Post_Filter implements WPSEO_WordPress_Integration
 	 * @return void
 	 */
 	public function enqueue_explanation_assets() {
-		$explanation = $this->get_explanation();
-
-		if ( $explanation === null ) {
-			return;
-		}
-
 		$asset_manager = new WPSEO_Admin_Asset_Manager();
 		$asset_manager->enqueue_script( 'filter-explanation' );
 		$asset_manager->enqueue_style( 'filter-explanation' );
 		$asset_manager->localize_script(
 			'filter-explanation',
 			'yoastFilterExplanation',
-			[ 'text' => $explanation ]
+			[ 'text' => $this->get_explanation() ]
 		);
 	}
 

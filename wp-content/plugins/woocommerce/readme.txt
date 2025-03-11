@@ -4,7 +4,7 @@ Tags: online store, ecommerce, shop, shopping cart, sell online
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 9.4.3
+Stable tag: 9.7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,7 +36,7 @@ Built-in tools and popular integrations help you efficiently manage your busines
 
 = Grow your business, add features, and monitor your store on the go =
 
-WooCommerce means business. Keep tabs on the performance metrics most important to you with [WooCommerce Admin](https://wordpress.org/plugins/woocommerce-admin/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) – a powerful, customizable central dashboard for your store.
+WooCommerce means business. Keep tabs on the performance metrics most important to you with a powerful and flexible central dashboard built into WooCommerce.
 
 Expand your audience across marketing and social channels with [Google Ads](https://woocommerce.com/products/google-ads/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing), [HubSpot](https://woocommerce.com/products/hubspot-for-woocommerce/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing), [Mailchimp](https://woocommerce.com/products/mailchimp-for-woocommerce/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing), and [Facebook](https://woocommerce.com/products/facebook/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) integrations. You can always check out the in-dashboard [Marketing Hub](https://woocommerce.com/document/marketing-hub/?utm_medium=referral&utm_source=wordpress.org&utm_campaign=wp_org_repo_listing) for fresh ideas and tips to help you succeed.
 
@@ -169,11 +169,13 @@ WooCommerce comes with some sample data you can use to see how products look; im
 
 == Changelog ==
 
-= 9.5.1 2024-12-17 =
+= 9.7.1 2025-03-04 =
 
 **WooCommerce**
 
-* Fix - Product Gallery: fix PHP fatal error. [#53762](https://github.com/woocommerce/woocommerce/pull/53762)
+* Fix - Remove decodeEntities from the product name used on cart & checkout [#56048](https://github.com/woocommerce/woocommerce/pull/56048)
+* Fix - Improved shortcode cart and checkout coupon notices by appending elements instead of text. [#56047](https://github.com/woocommerce/woocommerce/pull/56047)
+* Update - Replaced concatenated string-based HTML elements in JS with createElement(). [#56047](https://github.com/woocommerce/woocommerce/pull/56047)
 
 
 [See changelog for all versions](https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/changelog.txt).

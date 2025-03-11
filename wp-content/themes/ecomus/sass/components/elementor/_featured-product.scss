@@ -1,0 +1,21 @@
+.ecomus-featured-product {
+    .view-full-details-button {
+        margin-top: 30px;
+    }
+}
+
+.ecomus-featured-product__gallery--left {
+    .woocommerce-product-gallery {
+        display: flex;
+        flex-direction: row;
+
+        .woocommerce-product-gallery__wrapper {
+            width: 86%;
+            margin-bottom: 0;
+        }
+
+        .ecomus-product-gallery-thumbnails {
+            width: 14%;
+        }
+    }
+}

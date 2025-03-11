@@ -1,0 +1,55 @@
+@keyframes flash {
+	50%,
+    from,
+    to {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.ecomus-cart-tracking {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.ecomus-cart-tracking__badges {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--em-color__dark);
+    border: 1px solid var(--em-color__dark);
+    border-radius: var(--em-rounded-xs);
+    padding: 9px 15.5px;
+    text-transform: uppercase;
+}
+
+.ecomus-cart-tracking__text {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--em-color__dark);
+}
+
+.ecomus-cart-tracking__icon {
+    font-size: 21px;
+    color: var(--em-color__primary);
+    margin-right: 3px;
+    animation: flash 2s linear infinite;
+}
+
+.rtl .ecomus-cart-tracking__icon {
+    margin-left: 3px;
+    margin-right: 0;
+}
+
+.ecomus-cart-tracking__numbers {
+    margin: 0 5px;
+}

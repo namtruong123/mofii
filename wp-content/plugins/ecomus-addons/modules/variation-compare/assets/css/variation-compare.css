@@ -1,0 +1,176 @@
+.product-variation-compare-modal {
+	--em-modal-content-width: 1400px;
+}
+
+.product-variation-compare-modal .modal__header {
+	justify-content: center;
+	margin-bottom: 0;
+}
+
+.product-variation-compare-modal .modal__button-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.product-variation-compare-modal .em-row {
+	margin: 0;
+	flex-wrap: nowrap;
+	overflow: auto;
+}
+
+.product-variation-compare-modal .em-row::-webkit-scrollbar {
+	height: 6px;
+	border-radius: var( --em-rounded-xs );
+}
+
+.product-variation-compare-modal .em-row::-webkit-scrollbar-track {
+	background: #fff;
+}
+
+.product-variation-compare-modal .em-row::-webkit-scrollbar-thumb {
+	background-color: var(--em-color__grayer);
+	border-radius: 30px;
+}
+
+.product-variation-compare-modal .em-row::-webkit-scrollbar-thumb:hover {
+	background-color: var(--em-color__dark);
+}
+
+.product-variation-compare-modal .em-col {
+	padding: 0;
+}
+
+.product-variation-compare-modal .em-product-compare-item {
+	position: relative;
+	padding: 20px;
+	text-align: center;
+}
+
+.product-variation-compare-modal .em-product-compare-item::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	border: 1px solid var(--em-border-color);
+	border-right-width: 0;
+}
+
+.product-variation-compare-modal .em-col:last-child .em-product-compare-item::before {
+	border-right-width: 1px;
+}
+
+.rtl .product-variation-compare-modal .em-product-compare-item::before {
+	border-right-width: 1px;
+	border-left-width: 0;
+}
+
+.rtl .product-variation-compare-modal .em-col:last-child .em-product-compare-item::before {
+	border-right-width: 1px;
+	border-left-width: 1px;
+}
+
+.product-variation-compare-modal .em-product-compare-item .price {
+	color: var(--em-color__dark);
+	font-size: 16px;
+}
+
+.product-variation-compare-modal .em-product-compare__thumbnail {
+	--em-product-thumbnail-border-radius: 10px;
+	border-radius: var(--em-product-thumbnail-border-radius);
+	overflow: hidden;
+}
+
+.product-variation-compare-modal .em-product-compare__name {
+	border: 1px solid var(--em-border-color);
+	border-radius: 9999px;
+	padding: 3px 12px 3px 3px;
+	display: inline-flex;
+	align-items: center;
+	margin: 15px 0;
+	gap: 10px;
+	font-weight: 600;
+	color: var(--em-color__dark);
+	line-height: 1;
+}
+
+.rtl .product-variation-compare-modal .em-product-compare__name {
+	padding: 3px 3px 3px 12px;
+}
+
+.product-variation-compare-modal .em-product-compare__name.no-swatches {
+	padding: 10px 20px 8px;
+}
+
+.product-variation-compare-modal .em-product-compare__attribute-label {
+	position: relative;
+	width: 24px;
+	height: 24px;
+	border-radius: 100%;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	overflow: hidden;
+}
+
+.product-variation-compare-modal .em-product-compare__attribute-label img {
+	display: block;
+    max-width: 100%;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+	object-fit: cover;
+	object-position: center;
+}
+
+.product-variation-compare-modal .single_add_to_cart_button,
+.product-variation-compare-modal select {
+	width: 100%;
+}
+
+.product-variation-compare-modal .single_add_to_cart_button {
+	margin-top: 15px;
+	--em-button-font-size: 16px;
+}
+
+.product-variation-compare-modal .single_add_to_cart_button.loading {
+	--em-loading-color: #fff;
+	--em-animation-state: running;
+
+	position: relative;
+	color: transparent;
+	--em-button-color: transparent;
+}
+
+.product-variation-compare-modal .single_add_to_cart_button.loading::before {
+	display: inline-block;
+	content: "";
+	width: 18px;
+	height: 18px;
+	border-radius: 100%;
+	border: solid 2px var(--em-loading-color);
+	border-top-color: transparent;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	animation: spin .6s linear infinite var(--em-animation-state);
+}
+
+@media (max-width: 767px) {
+	.product-variation-compare-modal .em-product-compare-item {
+		padding: 10px;
+	}
+
+	.product-variation-compare-modal .em-col {
+		flex: 0 0 60%;
+		max-width: 60%;
+	}
+}

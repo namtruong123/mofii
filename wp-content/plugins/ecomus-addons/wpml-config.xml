@@ -1,0 +1,228 @@
+<wpml-config>
+	<taxonomies>
+		<taxonomy translate="1">product_brand</taxonomy>
+	</taxonomies>
+	<elementor-widgets>
+		<widget name="ecomus-button">
+			<fields>
+				<field>button_text</field>
+				<field editor_type="LINK">button_link>url</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-accordion">
+			<fields-in-item items_of="tabs">
+				<field>tab_title</field>
+				<field editor_type="AREA">tab_content</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-banner">
+			<fields>
+				<field>title</field>
+				<field>sub_title</field>
+				<field editor_type="AREA">description</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-categories-carousel">
+			<fields>
+				<field>heading</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-code-discount">
+			<fields>
+				<field editor_type="AREA">code</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-contact-form">
+			<fields>
+				<field editor_type="AREA">form_shortcode</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-dual-image">
+			<fields>
+				<field editor_type="LINK">primary_link>url</field>
+				<field editor_type="LINK">secondary_link>url</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-flash-sale">
+			<fields>
+				<field>title</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-heading">
+			<fields>
+				<field editor_type="AREA">title</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-hero-images">
+			<fields>
+				<field editor_type="AREA">subtitle</field>
+				<field editor_type="AREA">title</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-icon-box-carousel">
+			<fields-in-item items_of="icons_box">
+				<field>icon_url</field>
+				<field>title</field>
+				<field editor_type="AREA">description</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-icon-box">
+			<fields>
+				<field>icon_url</field>
+				<field>title</field>
+				<field editor_type="AREA">description</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-image-box-carousel">
+			<fields>
+				<field>heading</field>
+			</fields>
+			<fields-in-item items_of="items">
+				<field>title</field>
+				<field editor_type="AREA">description</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-image-box-grid">
+			<fields-in-item items_of="items">
+				<field>text</field>
+				<field>badges</field>
+				<field>title</field>
+				<field editor_type="LINK">link>url</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-image-carousel">
+			<fields-in-item items_of="items">
+				<field editor_type="LINK">link>url</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-image-content-slider">
+			<fields-in-item items_of="slides">
+				<field>title</field>
+				<field editor_type="AREA">description</field>
+				<field editor_type="LINK">link>url</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-image-info">
+			<fields>
+				<field>title</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-instagram">
+			<fields-in-item items_of="instagrams">
+				<field>link</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-lookbook-products">
+			<fields>
+				<field>title</field>
+				<field>sub_title</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-marquee">
+			<fields-in-item items_of="items">
+				<field editor_type="AREA">text</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-navigation-bar">
+			<fields-in-item items_of="items">
+				<field>title</field>
+				<field editor_type="LINK">link>url</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-navigation-menu">
+			<fields-in-item items_of="menu_items">
+				<field>title_menu</field>
+				<field editor_type="LINK">link_menu>url</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-product-tabs-carousel">
+			<fields-in-item items_of="tabs">
+				<field>heading</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-product-tabs-grid">
+			<fields-in-item items_of="tabs">
+				<field>heading</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-products-carousel">
+			<fields>
+				<field>heading</field>
+				<field editor_type="LINK">link>url</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-slides">
+			<fields-in-item items_of="tabs">
+				<field>before_title</field>
+				<field>title</field>
+				<field editor_type="AREA">description</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-social-icons">
+			<fields-in-item items_of="slides">
+				<field>external_url</field>
+				<field editor_type="LINK">link>url</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-store-locations">
+			<fields-in-item items_of="locations">
+				<field>title</field>
+				<field>address</field>
+				<field>phone</field>
+				<field>email</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-stores-tab">
+			<fields-in-item items_of="stores">
+				<field>heading</field>
+				<field>title</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-subscribe-box">
+			<fields>
+				<field editor_type="AREA">form_shortcode</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-subscribe-group">
+			<fields>
+				<field editor_type="AREA">form_shortcode</field>
+				<field editor_type="AREA">description</field>
+				<field>title</field>
+			</fields>
+		</widget>
+		<widget name="ecomus-testimonial-carousel-2">
+			<fields-in-item items_of="testimonials">
+				<field editor_type="AREA">testimonial_title</field>
+				<field editor_type="AREA">testimonial_content</field>
+				<field>testimonial_name</field>
+				<field>testimonial_text</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-testimonial-carousel-3">
+			<fields-in-item items_of="testimonials">
+				<field editor_type="AREA">testimonial_title</field>
+				<field editor_type="AREA">testimonial_content</field>
+				<field>testimonial_name</field>
+				<field>testimonial_text</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-testimonial-carousel">
+			<fields-in-item items_of="testimonials">
+				<field editor_type="AREA">testimonial_title</field>
+				<field editor_type="AREA">testimonial_subtitle</field>
+				<field editor_type="AREA">testimonial_content</field>
+				<field>testimonial_name</field>
+				<field>testimonial_company</field>
+				<field editor_type="LINK">testimonial_link>url</field>
+			</fields-in-item>
+		</widget>
+		<widget name="ecomus-timeline">
+			<fields-in-item items_of="timeline">
+				<field>year</field>
+				<field>subtitle</field>
+				<field>title</field>
+				<field editor_type="AREA">description</field>
+			</fields-in-item>
+		</widget>
+	</elementor-widgets>
+</wpml-config>
