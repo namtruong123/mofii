@@ -7706,7 +7706,7 @@ p.wp-block-tag-cloud {
 --------------------------------------------- */
 body .blockUI.blockOverlay {
 	position: relative;
-	background-color: rgba(255, 255, 255, 0.6) !important;
+	/*background-color: rgba(255, 255, 255, 0.6) !important;*/
 	background-image: none !important;
 }
 

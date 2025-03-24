@@ -1,6 +1,5 @@
 /* global wc_checkout_params */
 jQuery( function( $ ) {
-
 	// wc_checkout_params is required to continue, ensure the object exists
 	if ( typeof wc_checkout_params === 'undefined' ) {
 		return false;

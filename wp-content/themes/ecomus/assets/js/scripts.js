@@ -1,8 +1,8 @@
+
 (function ($) {
 	'use strict';
-
 	var ecomus = ecomus || {};
-
+	
 	ecomus.init = function () {
 		ecomus.$body   = $(document.body),
 		ecomus.$window = $(window),
@@ -1633,6 +1633,7 @@
 		});
 	};
 
+	
 	/**
 	 * Recently viewed
 	 */
@@ -2553,6 +2554,8 @@
 			rect.top < (window.innerHeight || document.documentElement.clientHeight);
 	};
 
+	
+	
 	/**
 	 * Document ready
 	 */

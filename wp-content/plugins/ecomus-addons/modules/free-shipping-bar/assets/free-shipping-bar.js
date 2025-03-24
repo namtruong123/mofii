@@ -75,12 +75,26 @@
 		}
 	}
 
+	 /**
+     * Lắng nghe sự kiện thay đổi thành phố và cập nhật lại Free Shipping Bar
+     */
+    function watchBillingStateChange() {
+        $(document).on('change', '#billing_state', function () {
+
+            // Đợi WooCommerce cập nhật dữ liệu rồi mới làm mới Free Shipping Bar
+            $(document.body).one('updated_checkout', function () {
+                $(document.body).trigger('wc_fragment_refresh'); // Làm mới WooCommerce fragments
+            });
+        });
+    }
+
     /**
      * Document ready
      */
     $(function () {
 		freeShippingContent();
 		updateFreeShippingCheckoutPage();
+		 watchBillingStateChange(); // Kích hoạt lắng nghe sự kiện thay đổi thành phố
     });
 
 })(jQuery);

@@ -220,7 +220,7 @@ class Quick_View extends \Ecomus\WooCommerce\Single_Product\Product_Base {
 	public function view_full_details_button() {
 	?>
 		<a class="view-full-details-button em-button em-button-subtle em-font-semibold" href="<?php echo esc_url( get_permalink() ); ?>">
-			<span class="ecomus-button-text"><?php esc_html_e( 'View full details', 'ecomus' ); ?></span>
+			<span class="ecomus-button-text"><?php esc_html_e( 'Xem chi tiết đầy đủ', 'ecomus' ); ?></span>
 			<?php echo Icon::get_svg( 'arrow-top' ); ?>
 		</a>
 	<?php

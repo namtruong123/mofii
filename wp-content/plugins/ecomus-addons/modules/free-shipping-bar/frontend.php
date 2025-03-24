@@ -75,8 +75,11 @@ class Frontend {
 	public function enqueue_scripts() {
 		wp_enqueue_style( 'ecomus-free-shipping-bar', ECOMUS_ADDONS_URL . 'modules/free-shipping-bar/assets/free-shipping-bar.css', array(), '1.0.0' );
 		wp_enqueue_script('ecomus-free-shipping-bar', ECOMUS_ADDONS_URL . 'modules/free-shipping-bar/assets/free-shipping-bar.js',  array('jquery'), '1.0.0' );
+		/*wp_localize_script('ecomus-free-shipping-bar', 'wc_cart_fragments_params', array(
+    'ajax_url' => admin_url('admin-ajax.php'),
+));*/
 	}
-
+	
 	/**
 	 * Get shipping amount
 	 *
@@ -161,10 +164,10 @@ class Frontend {
 		$percent_number = number_format($current_total/$min_amount * 100, 2, '.', '');
 
 		if( $amount_more > 0 ) {
-			$message = sprintf(__('Buy %s more to enjoy <strong>Free Shipping</strong>', 'ecomus-addons'), '<strong>' . wc_price($amount_more) .'</strong>' );
+			$message = sprintf(__('Mua thêm <strong>%s</strong>  để được <strong id="free-shipping-text">Miễn phí vận chuyển</strong>', 'ecomus-addons'), '<strong>' . wc_price($amount_more) .'</strong>' );
 			$percent = $percent_number . '%';
 		} else {
-			$message = sprintf(__('Congratulations! You have got free shipping!', 'ecomus-addons'));
+			$message = sprintf(__('<strong style="color:red!important">Chúc mừng! Bạn đã được miễn phí vận chuyển!</strong>', 'ecomus-addons'));
 			$percent = '100%';
 		}
 
@@ -184,7 +187,7 @@ class Frontend {
 
 		return self::$attributes;
 	}
-
+	
 	/**
 	 * Free shipping bar attributes
 	 *
